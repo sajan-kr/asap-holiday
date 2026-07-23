@@ -1,0 +1,109 @@
+.toursPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.toursBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.toursOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient( 135deg, rgba(4, 10, 25, 0.92), rgba(4, 10, 25, 0.55));
+  z-index: 1;
+}
+
+.toursContent {
+  position: relative;
+  z-index: 5;
+  max-width: 1100px;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.toursTag {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 28px;
+}
+
+.toursContent h1 {
+  font-size: 84px;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.tourInfo {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tourCard {
+  width: 260px;
+  padding: 35px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tourCard h3 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.tourCard p {
+  color: rgba(255,255,255,0.7);
+}
+
+.tourButtons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.tourButtons button {
+  height: 70px;
+  padding: 0 38px;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient( 135deg, #ffb347, #ff8c1a);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+@media (max-width: 768px) {
+  .toursContent h1 {
+    font-size: 52px;
+  }
+
+  .tourCard {
+    width: 100%;
+  }
+}

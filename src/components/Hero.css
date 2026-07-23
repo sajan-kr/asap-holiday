@@ -1,0 +1,735 @@
+/* Hero.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modernHero {
+  width: 100%;
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  font-family: "Poppins", sans-serif;
+
+  transition: 1s ease;
+}
+
+.modernHero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 14, 30, 0.94) 0%,
+      rgba(5, 14, 30, 0.74) 45%,
+      rgba(5, 14, 30, 0.28) 100%
+    );
+}
+
+.modernHero__container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  position: relative;
+  z-index: 5;
+
+  padding: 60px 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 520px;
+
+  gap: 70px;
+  align-items: center;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.modernHero__left {
+  max-width: 650px;
+}
+
+.modernHero__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+
+  border-radius: 100px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  margin-bottom: 28px;
+}
+
+.modernHero__title {
+  font-size: 92px;
+  line-height: 0.92;
+
+  font-weight: 800;
+
+  color: white;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 26px;
+}
+
+.modernHero__title span {
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffcc70,
+      #ff8c1a
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modernHero__text {
+  max-width: 560px;
+
+  color: rgba(255,255,255,0.84);
+
+  font-size: 20px;
+  line-height: 1.9;
+
+  margin-bottom: 40px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.modernHero__searchWrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 720px;
+
+  margin-bottom: 34px;
+}
+
+.modernHero__select {
+  width: 100%;
+}
+
+.modernSelect__control {
+  height: 92px !important;
+
+  background: rgba(255,255,255,0.12) !important;
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 30px !important;
+
+  border: 1px solid rgba(255,255,255,0.12) !important;
+
+  padding-left: 16px;
+
+  box-shadow: none !important;
+}
+
+.modernSelect__control:hover {
+  border-color: rgba(255,157,47,0.45) !important;
+}
+
+.modernSelect__placeholder {
+  color: rgba(255,255,255,0.72) !important;
+
+  font-size: 18px !important;
+}
+
+.modernSelect__single-value {
+  color: white !important;
+
+  font-size: 18px !important;
+}
+
+.modernSelect__menu {
+  overflow: hidden;
+
+  border-radius: 24px !important;
+
+  background: rgba(5,14,30,0.96) !important;
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modernSelect__option {
+  padding: 16px 20px !important;
+
+  color: white !important;
+
+  background: transparent !important;
+}
+
+.modernSelect__option:hover {
+  background: rgba(255,157,47,0.12) !important;
+}
+
+.modernHero__searchBtn {
+  position: absolute;
+
+  top: 13px;
+  right: 13px;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 22px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffb347,
+      #ff8c1a
+    );
+
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.modernHero__searchBtn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.modernHero__buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 46px;
+}
+
+.modernHero__exploreBtn {
+  height: 72px;
+
+  padding: 0 40px;
+
+  border-radius: 24px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffb347,
+      #ff8c1a
+    );
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+
+  box-shadow:
+    0 15px 40px rgba(255,140,26,0.3);
+}
+
+.modernHero__exploreBtn:hover {
+  transform: translateY(-3px);
+}
+
+.modernHero__videoBtn {
+  height: 72px;
+
+  padding: 0 30px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.modernHero__videoBtn:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.modernHero__play {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ff8c1a;
+
+  font-size: 14px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.modernHero__stats {
+  display: flex;
+  gap: 20px;
+}
+
+.modernHero__statCard {
+  width: 180px;
+  height: 180px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(18px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transition: 0.3s ease;
+}
+
+.modernHero__statCard:hover {
+  transform: translateY(-6px);
+}
+
+.modernHero__statCard h2 {
+  color: white;
+
+  font-size: 54px;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.modernHero__statCard p {
+  color: rgba(255,255,255,0.8);
+
+  font-size: 17px;
+}
+
+.modernHero__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffd34d;
+
+  margin-top: 6px;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.modernHero__right {
+  position: relative;
+}
+
+.modernHero__card {
+  position: relative;
+
+  height: 700px;
+
+  border-radius: 42px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.45);
+}
+
+.modernHero__card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 1s ease;
+}
+
+.modernHero__card:hover img {
+  transform: scale(1.05);
+}
+
+.modernHero__cardOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.82),
+      rgba(0,0,0,0.1)
+    );
+}
+
+.modernHero__cardContent {
+  position: absolute;
+
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+}
+
+.modernHero__cardContent span {
+  color: rgba(255,255,255,0.82);
+
+  font-size: 15px;
+}
+
+.modernHero__cardContent h2 {
+  color: white;
+
+  font-size: 64px;
+  font-weight: 800;
+
+  margin: 10px 0;
+}
+
+.modernHero__cardContent p {
+  color: rgba(255,255,255,0.82);
+
+  font-size: 18px;
+
+  margin-bottom: 24px;
+}
+
+.modernHero__cardContent button {
+  width: 72px;
+  height: 72px;
+
+  border-radius: 24px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffb347,
+      #ff8c1a
+    );
+
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.modernHero__nav {
+  position: absolute;
+
+  right: -34px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.modernHero__nav button {
+  width: 78px;
+  height: 78px;
+
+  border-radius: 28px;
+
+  border: none;
+
+  background: white;
+
+  color: #111;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.modernHero__nav button:hover {
+  transform: scale(1.06);
+}
+
+/* =========================
+   VIDEO MODAL
+========================= */
+
+.modernHero__videoModal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.82);
+
+  backdrop-filter: blur(14px);
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  animation: fadeIn 0.35s ease;
+}
+
+.modernHero__videoContent {
+  width: 100%;
+  max-width: 1100px;
+
+  position: relative;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 100px rgba(0,0,0,0.55);
+
+  animation: scaleUp 0.4s ease;
+}
+
+.modernHero__videoContent iframe {
+  width: 100%;
+  height: 620px;
+
+  border: none;
+
+  display: block;
+}
+
+.modernHero__closeVideo {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(255,255,255,0.18);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition: 0.3s ease;
+}
+
+.modernHero__closeVideo:hover {
+  transform: rotate(90deg);
+
+  background: #ff8c1a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.88);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+  .modernHero__container {
+    grid-template-columns: 1fr;
+  }
+
+  .modernHero__right {
+    max-width: 700px;
+  }
+
+  .modernHero__nav {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .modernHero {
+    min-height: auto;
+
+    padding: 70px 0;
+  }
+
+  .modernHero__container {
+    padding: 30px 20px;
+  }
+
+  .modernHero__title {
+    font-size: 58px;
+  }
+
+  .modernHero__text {
+    font-size: 16px;
+  }
+
+  .modernHero__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modernHero__exploreBtn,
+  .modernHero__videoBtn {
+    width: 100%;
+  }
+
+  .modernHero__stats {
+    flex-wrap: wrap;
+  }
+
+  .modernHero__statCard {
+    width: calc(50% - 10px);
+
+    height: 150px;
+  }
+
+  .modernHero__card {
+    height: 520px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 44px;
+  }
+
+  .modernHero__videoContent iframe {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .modernHero__title {
+    font-size: 46px;
+  }
+
+  .modernHero__statCard {
+    width: 100%;
+  }
+
+  .modernHero__nav {
+    display: none;
+  }
+
+  .modernHero__card {
+    height: 420px; 
+  }
+
+  .modernHero__cardContent {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 34px;
+  }
+
+  .modernHero__videoContent {
+    border-radius: 20px;
+  }
+}

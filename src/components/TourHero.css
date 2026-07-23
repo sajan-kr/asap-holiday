@@ -1,0 +1,497 @@
+/* ====== TOUR HERO ====== */
+.tourHero {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+/* Dark Overlay */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(8, 28, 58, 0.88) 0%,
+      rgba(8, 28, 58, 0.55) 45%,
+      rgba(8, 28, 58, 0.15) 100%);
+}
+
+/* Main Container */
+.heroContainer {
+  position: relative;
+  z-index: 5;
+  max-width: 1320px;
+  margin: auto;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 64px 20px;
+}
+
+/* ======= LEFT CONTENT ======= */
+
+.heroLeft {
+  width: 55%;
+  color: #fff;
+  text-align: left;
+}
+
+.heroSubtitle {
+  color: #fc8222;
+  font-size: 22px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.heroTitle {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.heroDescription {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 560px;
+  color: rgba(255, 255, 255, .92);
+}
+
+/* ======== TOUR INFO ====== */
+
+.heroInfo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 35px 0;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.infoItem svg {
+  width: 42px;
+  height: 42px;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .15);
+  color: #fc8222;
+}
+
+/* ======== BUTTONS ======= */
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.heroButtons button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: .35s;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.primaryBtn {
+  background: #fc8222;
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 50px;
+  box-shadow: 0 15px 40px rgba(252, 130, 34, .35);
+}
+
+.primaryBtn:hover {
+  background: #ff9b4d;
+  transform: translateY(-3px);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  padding: 18px 32px;
+  border: 1px solid rgba(255, 255, 255, .25) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+}
+
+.secondaryBtn:hover {
+  background: #fff;
+  color: #0c2340;
+}
+
+/* ======= STATISTICS ====== */
+
+.heroStats {
+  display: flex;
+  gap: 45px;
+  margin-top: 16px;
+}
+
+.statBox h3 {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.statBox p {
+  color: rgba(255, 255, 255, .75);
+  font-size: 15px;
+}
+
+/* ======= RIGHT SIDE ====== */
+
+.heroRight {
+  width: 360px;
+  position: relative;
+}
+
+.offerCard {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .20);
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.offerBadge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff3e7;
+  color: #fc8222;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.offerCard h4 {
+  margin-top: 22px;
+  color: #666;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.offerCard h2 {
+  font-size: 58px;
+  font-weight: 800;
+  color: #fc8222;
+  margin: 8px 0;
+  line-height: 1;
+}
+
+.offerCard p {
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.offerCard button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #0d274d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .35s;
+}
+
+.offerCard button:hover {
+  background: #fc8222;
+}
+
+.offerCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-top: 22px;
+}
+
+/* ========= FLOATING DESTINATION CARD ======== */
+
+.floatingCard {
+  position: absolute;
+  left: -70px;
+  bottom: 40px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .15);
+}
+
+.floatingIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fc8222;
+  color: #fff;
+  font-size: 22px;
+}
+
+.floatingCard small {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.floatingCard h5 {
+  font-size: 18px;
+  color: #0d274d;
+  font-weight: 700;
+}
+
+/* ===========  DECORATIVE SHAPES =========== */
+
+.heroCircle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.heroCircle1 {
+  width: 250px;
+  height: 250px;
+  background: rgba(252, 130, 34, .18);
+  top: -90px;
+  right: -70px;
+}
+
+.heroCircle2 {
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, .08);
+  bottom: 40px;
+  left: -60px;
+}
+
+/* =========== ANIMATION ========= */
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+
+}
+/* ========== AIRPLANE PATH ======== */
+.planeWrapper {
+  position: absolute;
+  right: 370px;
+  top: 110px;
+  width: 450px;
+  pointer-events: none;
+  z-index: 2;
+}
+.planeSvg {
+  width: 100%;
+  height: auto;
+  opacity: .8;
+}
+
+@media(max-width:1200px) {
+  .heroContainer {
+    padding: 70px 40px;
+  }
+  .heroTitle {
+    font-size: 54px;
+  }
+  .heroRight {
+    width: 320px;
+  }
+}
+
+@media(max-width:992px) {
+  .heroContainer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 60px;
+  }
+  .heroLeft {
+    width: 100%;
+  }
+  .heroRight {
+    width: 100%;
+    max-width: 400px;
+  }
+  .heroButtons {
+    justify-content: center;
+  }
+  .heroInfo {
+    justify-content: center;
+  }
+  .heroStats {
+    justify-content: center;
+  }
+  .floatingCard {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -35px;
+  }
+  .planeWrapper {
+    display: none;
+  }
+}
+
+@media(max-width:768px) {
+  .tourHero {
+    min-height: auto;
+  }
+  .heroContainer {
+    padding: 80px 20px 140px;
+  }
+  .heroTitle {
+    font-size: 42px;
+  }
+  .heroDescription {
+    font-size: 16px;
+  }
+  .heroButtons {
+    flex-direction: column;
+  }
+  .heroButtons button {
+    width: 100%;
+    justify-content: center;
+  }
+  .heroInfo {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .heroStats {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .offerCard {
+    padding: 22px;
+  }
+  .offerCard h2 {
+    font-size: 42px;
+  }
+
+  .floatingCard {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    margin-top: 20px;
+  }
+}
+
+@media(max-width:480px) {
+  .heroTitle {
+    font-size: 34px;
+  }
+  .heroSubtitle {
+    font-size: 18px;
+  }
+  .offerCard {
+    border-radius: 18px;
+  }
+  .offerCard img {
+    height: 170px;
+  }
+}
+
+/* popup stat */
+.videoModal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.videoBox {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 520px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.closeVideo{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#fc8222;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.closeVideo:hover{
+    background:#ff9d47;
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .videoBox {
+        width: 95%;
+        height: 260px;
+    }
+
+}
+/* popup code */

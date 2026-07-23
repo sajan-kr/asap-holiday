@@ -1,0 +1,8 @@
+.App {
+  min-height: 100vh;
+}
+
+/* Add some padding to account for fixed header */
+main {
+  padding-top: 80px;
+}

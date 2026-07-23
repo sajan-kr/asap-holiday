@@ -1,0 +1,431 @@
+/* =====================================================
+   Google Font
+===================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#ffffff;
+}
+
+/* =====================================================
+   Section
+===================================================== */
+
+.travelV3{
+    padding:80px 0;
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff8ef 100%
+    );
+    overflow:hidden;
+}
+
+.travelV3Container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* =====================================================
+   Heading
+===================================================== */
+
+.travelV3Heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.travelV3Heading span{
+    color:#FC8222;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.travelV3Heading h2{
+    margin-top:15px;
+    font-size:48px;
+    font-weight:800;
+    color:#1b2b46;
+}
+
+.travelV3Heading strong{
+    color:#FC8222;
+}
+
+.travelV3Heading p{
+    max-width:650px;
+    margin:18px auto 0;
+    color:#777;
+    line-height:1.8;
+    font-size:16px;
+}
+/* =====================================================
+   Swiper
+===================================================== */
+
+.travelV3 .swiper{
+    padding-bottom:60px;
+}
+
+.travelV3 .swiper-slide{
+    height:auto;
+}
+
+.travelV3 .swiper-button-next,
+.travelV3 .swiper-button-prev{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#ffffff;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.travelV3 .swiper-button-next::after,
+.travelV3 .swiper-button-prev::after{
+    font-size:18px;
+    color:#FC8222;
+    font-weight:700;
+}
+
+.travelV3 .swiper-pagination-bullet{
+    background:#d8d8d8;
+    opacity:1;
+}
+
+.travelV3 .swiper-pagination-bullet-active{
+    width:28px;
+    border-radius:20px;
+    background:#FC8222;
+}
+/* =====================================================
+   Card
+===================================================== */
+
+.travelCardV3{
+    position:relative;
+    height:480px;
+    border-radius:28px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.45s;
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+}
+
+.travelCardV3:hover{
+    transform:translateY(-10px);
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.18);
+}
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.travelCardImage{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.8s;
+}
+
+.travelCardV3:hover .travelCardImage{
+    transform:scale(1.12);
+}
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.travelCardOverlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(0,0,0,0.05),
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.85)
+    );
+    transition:.4s;
+}
+
+.travelCardV3:hover .travelCardOverlay{
+    background:linear-gradient(
+        180deg,
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.30),
+        rgba(0,0,0,0.90)
+    );
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.travelBadge{
+    position:absolute;
+    top:18px;
+    left:18px;
+    background:linear-gradient(
+        135deg,
+        #FC8222,
+        #ffb347
+    );
+
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    z-index:5;
+    box-shadow:0 10px 25px rgba(252,130,34,.35);
+}
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.travelRating{
+    position:absolute;
+    top:18px;
+    right:18px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#fff;
+    color:#222;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+    z-index:5;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.travelRating svg{
+    color:#FFC107;
+}
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+.travelWish{
+    position:absolute;
+    top:72px;
+    right:18px;
+    width:46px;
+    height:46px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.travelWish svg{
+    color:#ff4d6d;
+    font-size:17px;
+}
+
+.travelWish:hover{
+    background:#ff4d6d;
+    transform:scale(1.1);
+}
+
+.travelWish:hover svg{
+    color:#fff;
+}
+
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
+
+.travelCardV3::before{
+    content:"";
+    position:absolute;
+    top:-150%;
+    left:-60%;
+    width:40%;
+    height:300%;
+    background:rgba(255,255,255,.35);
+    transform:rotate(25deg);
+    transition:.8s;
+    z-index:4;
+}
+
+.travelCardV3:hover::before{
+    left:150%;
+}
+/*====================================================
+GLASS PANEL
+====================================================*/
+
+.travelGlass{
+    position:absolute;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    padding:18px 12px;
+    border-radius:22px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    transition:.4s;
+    z-index:5;
+}
+
+.travelCardV3:hover .travelGlass{
+    transform:translateY(-8px);
+}
+
+/*====================================================
+ICON
+====================================================*/
+
+.travelIcon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    color:#fff;
+    margin-bottom:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.35s;
+}
+
+.travelCardV3:hover .travelIcon{
+    transform:rotate(12deg) scale(1.1);
+}
+
+/*====================================================
+SUBTITLE
+====================================================*/
+
+.travelGlass small{
+    display:block;
+    color:rgba(255,255,255,.85);
+    font-size:13px;
+    margin-bottom:8px;
+    letter-spacing:.5px;
+}
+
+/*====================================================
+TITLE
+====================================================*/
+
+.travelGlass h3{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:15px;
+    line-height:1.3;
+}
+
+.travelCardV3:hover .travelGlass h3{
+    color:#FFD166;
+}
+
+/*====================================================
+INFO
+====================================================*/
+
+.travelInfo{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+}
+
+.travelInfo span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:#fff;
+}
+
+.travelInfo svg{
+    color:#FFD166;
+}
+
+/*====================================================
+PRICE
+====================================================*/
+
+.travelPrice{
+    margin-bottom:12px;
+}
+
+.travelPrice label{
+    display:block;
+    font-size:12px;
+    color:rgba(255,255,255,.8);
+    margin-bottom:4px;
+}
+
+.travelPrice h4{
+    font-size:30px;
+    font-weight:800;
+    color:#fff;
+}
+
+/*====================================================
+BUTTON
+====================================================*/
+
+.travelBtn{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:50px;
+    background:#FC8222;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8px 0 20px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.travelBtn span{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#fff;
+    color:#FC8222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.35s;
+}
+
+.travelBtn:hover{
+    background:#fff;
+    color:#FC8222;
+}
+
+.travelBtn:hover span{
+    background:#FC8222;
+    color:#fff;
+    transform:rotate(-45deg);
+}

@@ -1,0 +1,294 @@
+.trending-section {
+  padding: 80px 0;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.trending-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 55px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trending-top h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.tabs {
+  background: #e9e9e9;
+  border-radius: 60px;
+  padding: 6px;
+  display: flex;
+  gap: 8px;
+}
+
+.tabs button {
+  border: none;
+  background: transparent;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  background: #fd8c24;
+  color: white;
+}
+
+.destination-card {
+  position: relative;
+  height: 330px;
+  border-radius: 200px !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.15));
+  transition: 0.4s;
+}
+
+.destination-card:hover .overlay {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.55));
+}
+
+.destination-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 16px;
+}
+
+.destination-content h3 {
+  text-align: center;
+  color: white;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.hover-content {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.4s;
+}
+
+.destination-card:hover .hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-content span {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hover-content h4 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 2px 0 4px;
+}
+
+.hover-content button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #fd8c24;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hover-content button:hover {
+  transform: rotate(45deg);
+}
+
+.explore-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.explore-btn {
+  border: none;
+  background: #2451b7;
+  color: white;
+  padding: 18px 40px;
+  border-radius: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  transform: translateY(-4px);
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 52px !important;
+  height: 52px !important;
+  background: white;
+  border-radius: 50%;
+  color: #2451b7 !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-prev {
+  left: -20px !important;
+}
+
+.swiper-button-next {
+  right: -20px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px !important;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .destination-card {
+    height: 360px;
+    border-radius: 120px;
+  }
+
+  .trending-top h2 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-section {
+    padding: 70px 0;
+  }
+
+  .trending-top h2 {
+    font-size: 28px;
+  }
+
+  @media (max-width: 768px) {
+    .destination-card {
+      height: 280px;
+      border-radius: 120px;
+    }
+  }
+
+  .destination-content h3 {
+    font-size: 17px;
+  }
+
+  .hover-content h4 {
+    font-size: 22px;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tabs button {
+    flex: 1;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
+.swiper-slide {
+  margin-right: 0 !important;
+}
+
+.swiper-wrapper {
+  justify-content: space-between !important;
+  gap: 24px;
+}
+
+.trending-section svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: #fd8c24 !important;
+}
+
+.swiper-navigation-icon {
+  color: #fd7e22;
+    filter: drop-shadow(0 0 0.5px #fd7e22);
+}
+
+.destination-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.hover-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+}
+
+.hover-content span {
+  white-space: nowrap;
+}
+
+.hover-content button {
+  flex-shrink: 0;
+}
+
+/* target css  */
+.tour-trending-section .trending-section {
+  background-color: #fff;
+}
+.tour-trending-section .tabs {
+    background: #fff7ed;
+    border-radius: 60px;
+    padding: 6px;
+    border: 1px solid #fed7aa;
+    display: flex;
+    gap: 8px;
+}

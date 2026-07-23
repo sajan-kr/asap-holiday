@@ -1,0 +1,573 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root{
+  --primary:#082b6f;
+  --primary-dark:#051c48;
+  --secondary:#ff7b00;
+  --secondary-light:#ff9d2f;
+  --bg:#f4f7fb;
+  --white:#ffffff;
+  --text:#67758d;
+  --border:#e9edf5;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  overflow-x:hidden;
+}
+
+/* ====================================
+SECTION
+==================================== */
+
+.recently-booked{
+  position:relative;
+  overflow:hidden;
+  padding:90px 40px;
+  background:
+  radial-gradient(circle at top left,
+  rgba(255,123,0,.08),
+  transparent 30%),
+  radial-gradient(circle at bottom right,
+  rgba(8,43,111,.08),
+  transparent 35%),
+  linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #eef4fb 100%
+  );
+
+}
+
+/* ====================================
+GLOW EFFECTS
+==================================== */
+
+.recently-booked::before{
+  content:'';
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:
+  rgba(255,123,0,.08);
+  border-radius:50%;
+  top:-320px;
+  right:-240px;
+  filter:blur(120px);
+}
+
+.recently-booked::after{
+  content:'';
+  position:absolute;
+  width:520px;
+  height:520px;
+  background:
+  rgba(8,43,111,.06);
+  border-radius:50%;
+  bottom:-260px;
+  left:-220px;
+  filter:blur(120px);
+}
+
+/* ====================================
+LAYOUT
+==================================== */
+
+.main-container{
+  max-width:1450px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:
+  280px 1fr;
+  gap:38px;
+  align-items:start;
+  position:relative;
+  z-index:2;
+}
+
+/* ====================================
+LEFT SIDE
+==================================== */
+
+.left-side{
+  padding-top:10px;
+}
+
+/* HEADING */
+
+.heading-wrapper{
+  position:relative;
+}
+
+.green-circle{
+  position:absolute;
+  width:118px;
+  height:42px;
+  border:2px solid var(--secondary);
+  border-radius:50%;
+  top: -5px;
+  left: 40px;
+}
+
+.heading-wrapper h2{
+  font-size:52px;
+  line-height: 1.1;
+  letter-spacing:-4px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+/* DESCRIPTION */
+
+.description{
+  margin-top:28px;
+  font-size:17px;
+  line-height:1.9;
+  color:var(--text);
+  max-width:260px;
+}
+
+/* BADGE */
+
+.trip-badge{
+  margin-top:32px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 24px;
+  border-radius:70px;
+  background:
+  rgba(255,255,255,.85);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.05);
+  font-size:15px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+/* ====================================
+RIGHT SIDE
+==================================== */
+
+.right-side{
+  min-width:0;
+}
+
+/* ====================================
+TOP BAR
+==================================== */
+
+.top-bar{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+/* ====================================
+DROPDOWN
+==================================== */
+
+.dropdown-wrapper{
+  position:relative;
+}
+
+.dropdown-btn{
+  height:58px;
+  min-width:240px;
+  padding:0 24px;
+  border:none;
+  border-radius:60px;
+  background: rgba(255,255,255,.84);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.9);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:700;
+  color:var(--primary);
+  transition:.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.dropdown-btn:hover{
+  transform:translateY(-2px);
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:68px;
+  width:260px;
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+  z-index:50;
+}
+
+.dropdown-item{
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.dropdown-item:hover{
+  background:#fff4eb;
+}
+
+.radio{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  border:2px solid var(--secondary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--secondary);
+}
+
+/* ====================================
+FILTERS
+==================================== */
+
+.budget-filters{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  height:54px;
+  padding:0 24px;
+  border:none;
+  border-radius:60px;
+  background:rgba(255,255,255,.84);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.9);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.35s;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05);
+}
+
+.filter-btn:hover,
+.active-filter{
+  background: linear-gradient( 135deg, var(--secondary), var(--secondary-light));
+  color:white;
+  transform:translateY(-2px);
+}
+
+/* ====================================
+NAVIGATION
+==================================== */
+
+.slider-nav{
+  display:flex;
+  gap:12px;
+}
+
+.slider-nav button{
+  width:56px;
+  height:56px;
+  border:none;
+  border-radius:50%;
+  background:white;
+  color:var(--secondary);
+  cursor:pointer;
+  transition:.35s;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.slider-nav button:hover{
+  background:var(--secondary);
+  color:white;
+  transform:translateY(-3px);
+}
+
+/* ====================================
+SLIDER
+==================================== */
+
+.cards-slider{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:20px;
+}
+
+.cards-slider::-webkit-scrollbar{
+  display:none;
+}
+
+/* ====================================
+CARD
+==================================== */
+
+.travel-card{
+  min-width:360px;
+  max-width:360px;
+  border-radius:32px;
+  overflow:hidden;
+  background: rgba(255,255,255,.88);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.9);
+  position:relative;
+  transition:.35s;
+  cursor:pointer;
+  box-shadow: 0 15px 40px rgba(0,0,0,.06);
+}
+
+.travel-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0,0,0,.10);
+}
+
+/* ====================================
+USER BAR
+==================================== */
+
+.user-bar{
+  height:60px;
+  background: linear-gradient( 90deg, var(--primary-dark), var(--primary));
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 18px;
+  color:white;
+  font-size:14px;
+  font-weight:600;
+}
+
+.avatar{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background: linear-gradient(135deg, #ffb347, var(--secondary));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* ====================================
+IMAGE
+==================================== */
+
+.card-image{
+  height:220px;
+  overflow:hidden;
+  position:relative;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1.2s;
+}
+
+.travel-card:hover img{
+  transform:scale(1.1);
+}
+
+.card-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient( to top, rgba(0,0,0,.55), transparent);
+}
+
+.image-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding:20px;
+}
+
+/* EXPLORE BUTTON */
+
+.explore-btn{
+  height:48px;
+  padding:0 20px;
+  border:none;
+  border-radius:16px;
+  background: rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--primary);
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.35s;
+}
+.travel-card:hover .explore-btn{
+  transform:translateY(-3px);
+}
+
+/* ====================================
+BODY
+==================================== */
+
+.card-body{
+  padding:24px;
+}
+
+.card-body h3{
+  font-size:28px;
+  line-height:1.1;
+  letter-spacing:-2px;
+  color:var(--primary);
+  font-weight:600;
+  margin-bottom:14px;
+}
+
+.location{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-bottom:18px;
+  color:var(--text);
+  font-size:14px;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;
+  border-radius:40px;
+  background:#fff1e8;
+  color:var(--secondary);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* ====================================
+FOOTER
+==================================== */
+
+.card-footer{
+  padding:22px 24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.card-footer h4{
+  font-size:24px;
+  line-height:1;
+  letter-spacing:-1px;
+  color:#101828;
+  font-weight:600;
+}
+
+.card-footer p{
+  margin-top:6px;
+  font-size:13px;
+  color:var(--text);
+}
+
+.card-footer button{
+  min-width:130px;
+  height:54px;
+  padding:0 22px;
+  border:none;
+  border-radius:16px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color:white;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.35s;
+  flex-shrink:0;
+  box-shadow: 0 15px 30px rgba(255,123,0,.25);
+}
+
+.card-footer button:hover{
+  transform:
+  translateY(-2px)
+  scale(1.03);
+}
+
+/* ====================================
+RESPONSIVE
+==================================== */
+
+@media(max-width:1200px){
+  .main-container{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  .recently-booked{
+    padding:60px 18px;
+  }
+  .heading-wrapper h2{
+    font-size:52px;
+  }
+  .description{
+    font-size:16px;
+  }
+  .travel-card{
+    min-width:300px;
+    max-width:300px;
+  }
+  .card-body h3{
+    font-size:24px;
+  }
+  .card-footer{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .card-footer button{
+    width:100%;
+  }
+}
+
+.dropdown-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.35s ease;
+  color:var(--primary);
+}
+
+.rotate-arrow{
+  transform:rotate(180deg);
+}
+
+.active-item{
+  background:#fff4eb;
+}

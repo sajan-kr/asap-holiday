@@ -1,0 +1,326 @@
+/* ===========================
+   Popular Destinations
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pd-section {
+  padding: 90px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.pd-container {
+  width: 92%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===========================
+      Header
+=========================== */
+
+.pd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.pd-subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fc8222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.pd-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.pd-text {
+  max-width: 650px;
+  color: #666;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.pd-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #fc8222;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .35s;
+}
+
+.pd-view-btn:hover {
+  background: #e76d10;
+  transform: translateY(-3px);
+}
+
+.pd-view-btn span {
+  transition: .3s;
+}
+
+.pd-view-btn:hover span {
+  transform: translateX(5px);
+}
+
+/* ===========================
+      Slider
+=========================== */
+
+.pd-slider {
+  padding: 15px 5px 60px;
+}
+
+/* ===========================
+      Card
+=========================== */
+
+.pd-card {
+  height: 430px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+}
+
+.pd-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .7s;
+}
+
+.pd-card:hover .pd-image {
+  transform: scale(1.12);
+}
+
+/* Overlay */
+
+.pd-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, .85),
+      rgba(0, 0, 0, .15),
+      rgba(0, 0, 0, 0));
+}
+
+/* Content */
+
+.pd-content {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  color: #fff;
+}
+
+.pd-tag {
+  display: inline-block;
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, .18);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.pd-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pd-btn {
+  border: none;
+  outline: none;
+  background: #fc8222;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .35s;
+}
+
+.pd-btn:hover {
+  background: #fff;
+  color: #fc8222;
+}
+
+/* ===========================
+      Swiper Buttons
+=========================== */
+
+.swiper-button-prev,
+.swiper-button-next {
+
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border-radius: 50%;
+  color: #fc8222;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+
+  background: #fc8222;
+  color: #fff;
+}
+
+/* ===========================
+      Pagination
+=========================== */
+
+.swiper-pagination-bullet {
+
+  background: #ddd;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+
+  background: #fc8222;
+}
+
+/* ===========================
+      Hover Animation
+=========================== */
+
+.pd-card:hover .pd-btn {
+
+  transform: translateY(-3px);
+}
+
+.pd-card:hover {
+
+  transform: translateY(-8px);
+  transition: .4s;
+}
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:1200px) {
+
+  .pd-title {
+
+    font-size: 36px;
+
+  }
+
+}
+
+@media(max-width:991px) {
+
+  .pd-header {
+
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .pd-title {
+
+    font-size: 34px;
+
+  }
+
+}
+
+@media(max-width:768px) {
+
+  .pd-section {
+
+    padding: 70px 0;
+
+  }
+
+  .pd-title {
+
+    font-size: 28px;
+
+  }
+
+  .pd-text {
+
+    font-size: 15px;
+    line-height: 26px;
+
+  }
+
+  .pd-card {
+
+    height: 360px;
+
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+
+    display: none;
+
+  }
+
+}
+
+@media(max-width:480px) {
+
+  .pd-title {
+
+    font-size: 24px;
+
+  }
+
+  .pd-name {
+
+    font-size: 22px;
+
+  }
+
+  .pd-btn {
+
+    padding: 10px 22px;
+    font-size: 14px;
+
+  }
+
+  .pd-card {
+
+    height: 330px;
+
+  }
+
+}
