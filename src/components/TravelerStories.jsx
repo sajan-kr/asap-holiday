@@ -282,7 +282,7 @@ const TravelerStories = () => {
 
       {/* ================= SHARE STORY ================= */}
 
-      <div className="tsShareStory">
+      {/* <div className="tsShareStory">
 
         <div className="tsShareContent">
 
@@ -314,7 +314,7 @@ const TravelerStories = () => {
 
         </div>
 
-      </div>
+      </div> */}
 
     </section>
   );
