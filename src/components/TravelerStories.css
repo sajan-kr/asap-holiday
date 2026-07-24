@@ -509,12 +509,14 @@ CONTENT
   font-size: 15px;
   margin-bottom: 22px;
   text-align: left;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* Show only 2 lines */
-  -webkit-box-orient: vertical;
+
   overflow: hidden;
   text-overflow: ellipsis;
+
+  display: -webkit-box;
+  line-clamp: 2;          /* Standard property */
+  -webkit-line-clamp: 2;  /* Chrome, Edge, Safari */
+  -webkit-box-orient: vertical;
 }
 
 /*=========================================================
