@@ -109,7 +109,7 @@ const TravelerStories = () => {
               2500+
             </h3>
 
-            <span>Happy Travelers</span>
+            <span>Loved Trips</span>
 
           </div>
 
