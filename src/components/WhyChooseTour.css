@@ -284,6 +284,7 @@ transform:translateX(0px) rotate(-15deg);
   font-weight: 700;
   color: #0c2145;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .small-line {
@@ -298,6 +299,7 @@ transform:translateX(0px) rotate(-15deg);
   color: #6f7682;
   line-height: 1.8;
   font-size: 16px;
+  text-align: left;
 }
 
 /*==========================
