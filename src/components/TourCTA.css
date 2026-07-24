@@ -1,0 +1,125 @@
+.tourCTA {
+    width: 92%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 22px 30px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+    border: 2px solid #fff4eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.tourCTA::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: -60px;
+    width: 150px;
+    height: 150px;
+    background: #ff7a00;
+    opacity: .08;
+    border-radius: 50%;
+}
+
+.offer {
+    display: inline-block;
+    background: #ff7a00;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ctaLeft h3 {
+    margin: 5px 0;
+    font-size: 28px;
+    color: #222;
+}
+
+.ctaLeft p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.ctaRight {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bookBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #ff7a00;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bookBtn:hover {
+    transform: translateY(-3px);
+    background: #ff6500;
+}
+
+.iconBtn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.callBtn {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.whatsappBtn {
+    background: #25D366;
+    color: #fff;
+}
+
+.iconBtn:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width:768px) {
+
+    .tourCTA {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .ctaLeft h3 {
+        font-size: 22px;
+    }
+
+    .ctaRight {
+        margin-top: 15px;
+    }
+
+    .bookBtn {
+        padding: 12px 22px;
+    }
+
+}
