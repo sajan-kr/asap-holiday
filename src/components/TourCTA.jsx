@@ -22,10 +22,7 @@ const TourCTA = () => {
 
       <div className="ctaRight">
 
-        <button
-          className="bookBtn"
-          onClick={() => alert("Redirect to Booking Page")}
-        >
+        <button className="bookBtn" onClick={() => alert("Redirect to Booking Page")}>
           Book Now
           <FaArrowRight />
         </button>
@@ -34,12 +31,7 @@ const TourCTA = () => {
           <FaPhoneAlt />
         </a>
 
-        <a
-          href={`https://wa.me/${whatsapp}`}
-          target="_blank"
-          rel="noreferrer"
-          className="iconBtn whatsappBtn"
-        >
+        <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="iconBtn whatsappBtn">
           <FaWhatsapp />
         </a>
 
