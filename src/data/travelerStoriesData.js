@@ -11,7 +11,7 @@ const travelerStories = [
     featured: false,
     image: "/images/traveler1.jpg",
     avatar: "/avatars/avatar1.jpg",
-    video: "/videos/maldives.mp4",
+    video: "/video/maldives.mp4",
   },
 
   {
@@ -26,7 +26,7 @@ const travelerStories = [
     featured: false,
     image: "/images/traveler2.jpg",
     avatar: "/avatars/avatar2.jpg",
-    video: "/videos/switzerland.mp4",
+    video: "/video/switzerland.mp4",
   },
 
   {
@@ -41,7 +41,7 @@ const travelerStories = [
     featured: true,
     image: "/images/traveler3.jpg",
     avatar: "/avatars/avatar3.jpg",
-    video: "/videos/bali.mp4",
+    video: "/video/bali.mp4",
   },
 
   {
@@ -54,9 +54,9 @@ const travelerStories = [
     date: "Feb 2024",
     rating: 5,
     featured: false,
-    image: "/images/traveler4.jpg",
+    image: "/images/Luxury-Dubai-Tour-1.webp",
     avatar: "/avatars/avatar4.jpg",
-    video: "/videos/dubai.mp4",
+    video: "/video/dubai.mp4",
   },
 
   {
@@ -69,9 +69,9 @@ const travelerStories = [
     date: "Jan 2024",
     rating: 5,
     featured: false,
-    image: "/images/traveler5.jpg",
+    image: "/images/Turkey.jpg",
     avatar: "/avatars/avatar5.jpg",
-    video: "/videos/turkey.mp4",
+    video: "/video/turkey.mp4",
   },
 ];
 
