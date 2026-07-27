@@ -1,0 +1,93 @@
+.tourGalleryDetails {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.galleryHeading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.galleryHeading span {
+    color: #fc8222;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.galleryHeading h2 {
+    font-size: 38px;
+    margin: 12px 0;
+    color: #222;
+}
+
+.galleryHeading p {
+    color: #666;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galleryCard {
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+.galleryCard img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.galleryCard:hover img {
+    transform: scale(1.08);
+}
+
+.galleryModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.galleryModal img {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+}
+
+@media(max-width:992px) {
+
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .galleryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .galleryCard img {
+        height: 220px;
+    }
+
+    .galleryHeading h2 {
+        font-size: 30px;
+    }
+
+}

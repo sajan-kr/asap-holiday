@@ -1,0 +1,90 @@
+.bookingSidebar {
+    position: sticky;
+    top: 100px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.priceCard {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.startingFrom {
+    color: #666;
+    font-size: 14px;
+}
+
+.priceCard h2 {
+    color: #fc8222;
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.priceCard p {
+    color: #666;
+}
+
+.includedList {
+    margin-bottom: 25px;
+}
+
+.includedList div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.includedList svg {
+    color: #28a745;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.inputGroup svg {
+    color: #fc8222;
+}
+
+.inputGroup input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.bookingSidebar button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #fc8222;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bookingSidebar button:hover {
+    background: #e56d00;
+}
+
+@media(max-width:992px) {
+
+    .bookingSidebar {
+        position: static;
+        margin-top: 30px;
+    }
+
+}

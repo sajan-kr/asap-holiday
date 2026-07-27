@@ -21,6 +21,7 @@ import Testimonials from "./components/Testimonials";
 
 import PackageDetails from "./pages/PackageDetails";
 import Tours from "./pages/Tours";
+import TourDetails from "./pages/TourDetails";
 import DestinationDetails from "./pages/DestinationDetails";
 
 import "./App.css";
@@ -80,6 +81,8 @@ function App() {
           {/* TOURS */}
 
           <Route path="/tours/:country" element={<Tours />} />
+
+          <Route path="/tour/:slug" element={<TourDetails />} />
 
           {/* DESTINATION DETAILS */}
 

@@ -1,0 +1,96 @@
+.tourItinerary {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.itineraryHeading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.itineraryHeading span {
+    color: #fc8222;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.itineraryHeading h2 {
+    font-size: 38px;
+    margin: 12px 0;
+    color: #222;
+}
+
+.itineraryHeading p {
+    max-width: 650px;
+    margin: auto;
+    color: #666;
+    line-height: 1.8;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 35px;
+    border-left: 3px solid #fc8222;
+}
+
+.timelineItem {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timelineCircle {
+    position: absolute;
+    left: -52px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fc8222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.timelineContent {
+    background: #fff;
+    width: 100%;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.timelineDay {
+    color: #fc8222;
+    font-weight: 700;
+}
+
+.timelineContent h3 {
+    margin: 10px 0;
+    color: #222;
+}
+
+.timelineContent p {
+    color: #666;
+    line-height: 1.8;
+}
+
+@media(max-width:768px) {
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timelineCircle {
+        left: -43px;
+    }
+
+    .itineraryHeading h2 {
+        font-size: 30px;
+    }
+
+}

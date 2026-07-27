@@ -1,0 +1,30 @@
+.tourDetailsPage {
+    width: 100%;
+    background: #f8fafc;
+}
+
+.tourMainContainer {
+    width: 90%;
+    max-width: 1300px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.tourLeftContent {
+    width: 100%;
+}
+
+.tourRightContent {
+    width: 100%;
+}
+
+@media(max-width:992px) {
+
+    .tourMainContainer {
+        grid-template-columns: 1fr;
+    }
+
+}

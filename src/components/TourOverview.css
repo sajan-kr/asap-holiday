@@ -1,0 +1,92 @@
+.tourOverview {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.overviewHeader span {
+    color: #fc8222;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.overviewHeader h2 {
+    font-size: 36px;
+    color: #222;
+    margin: 10px 0 25px;
+}
+
+.overviewDescription {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.overviewCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.overviewCard {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.overviewCard svg {
+    font-size: 34px;
+    color: #fc8222;
+}
+
+.overviewCard h4 {
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.overviewCard p {
+    color: #666;
+}
+
+.tourInfoBox {
+    margin-top: 40px;
+    background: #fff7ef;
+    border-left: 5px solid #fc8222;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.tourInfoBox h3 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.tourInfoBox ul {
+    padding-left: 18px;
+}
+
+.tourInfoBox li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+@media(max-width:768px) {
+
+    .overviewCards {
+        grid-template-columns: 1fr;
+    }
+
+    .tourOverview {
+        padding: 25px;
+    }
+
+    .overviewHeader h2 {
+        font-size: 28px;
+    }
+
+}

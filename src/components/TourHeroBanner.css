@@ -1,0 +1,130 @@
+.tourHeroBanner {
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.tourHeroOverlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, .75),
+            rgba(0, 0, 0, .35));
+    display: flex;
+    align-items: center;
+}
+
+.tourHeroContent {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: #fff;
+}
+
+.tourBadge {
+    display: inline-block;
+    background: #fc8222;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.tourHeroContent h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.tourMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.tourMeta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.tourHeroContent h2 {
+    color: #fc8222;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.tourHeroContent p {
+    max-width: 650px;
+    line-height: 1.8;
+    color: #eee;
+    margin-bottom: 35px;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .3s;
+}
+
+.primaryBtn {
+    background: #fc8222;
+    color: #fff;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-3px);
+}
+
+.secondaryBtn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.secondaryBtn:hover {
+    background: #fff;
+    color: #222;
+}
+
+@media (max-width:768px) {
+
+    .tourHeroBanner {
+        height: 75vh;
+    }
+
+    .tourHeroContent h1 {
+        font-size: 38px;
+    }
+
+    .tourMeta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

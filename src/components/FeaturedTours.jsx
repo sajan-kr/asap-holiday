@@ -39,7 +39,7 @@ const FeaturedTours = () => {
         >
           {toursData.map((tour) => (
             <SwiperSlide key={tour.id}>
-              <div className="tourCard" onClick={() => navigate(`/tours/${tour.slug}`)}>
+              <div className="tourCard" onClick={() => navigate(`/tour/${tour.slug}`)}>
                 <div className="tourImage">
                   <img src={tour.image} alt={tour.title} />
                   <span className="offerBadge">{tour.offer}</span>
@@ -61,7 +61,12 @@ const FeaturedTours = () => {
 
                     <h4>{tour.price}</h4>
 
-                    <button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/tour/${tour.slug}`);
+                      }}
+                    >
                       View Details →
                     </button>
 
