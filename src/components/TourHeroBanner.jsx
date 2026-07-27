@@ -9,8 +9,7 @@ import {
 
 const TourHeroBanner = ({ tour }) => {
     return (
-        <section
-            className="tourHeroBanner"
+        <section className="tourHeroBanner"
             style={{
                 backgroundImage: `url(${tour.image})`,
             }}
