@@ -1,4 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import toursData from "../data/toursData";
+
 import "./TourDetails.css";
 
 import TourHeroBanner from "../components/TourHeroBanner";
@@ -13,35 +16,62 @@ import RelatedTours from "../components/RelatedTours";
 import TourCTA from "../components/TourCTA";
 
 const TourDetails = () => {
+    const { slug } = useParams();
+
+    const tour = toursData.find((item) => item.slug === slug);
+
+    if (!tour) {
+        return (
+            <div
+                style={{
+                    padding: "120px 20px",
+                    textAlign: "center",
+                }}
+            >
+                <h1>Tour Not Found</h1>
+                <p>Sorry, the requested tour could not be found.</p>
+            </div>
+        );
+    }
+
     return (
         <div className="tourDetailsPage">
 
-            <TourHeroBanner />
+            {/* Hero Banner */}
+            <TourHeroBanner tour={tour} />
 
-            <TourBreadcrumb />
+            {/* Breadcrumb */}
+            <TourBreadcrumb tour={tour} />
 
+            {/* Overview + Booking Sidebar */}
             <section className="tourMainContainer">
 
                 <div className="tourLeftContent">
-                    <TourOverview />
+                    <TourOverview tour={tour} />
                 </div>
 
                 <div className="tourRightContent">
-                    <BookingSidebar />
+                    <BookingSidebar tour={tour} />
                 </div>
 
             </section>
 
-            <TourHighlights />
+            {/* Highlights */}
+            <TourHighlights tour={tour} />
 
-            <TourGalleryDetails />
+            {/* Gallery */}
+            <TourGalleryDetails tour={tour} />
 
-            <TourItinerary />
+            {/* Itinerary */}
+            <TourItinerary tour={tour} />
 
-            <TourReviews />
+            {/* Reviews */}
+            <TourReviews tour={tour} />
 
-            <RelatedTours />
+            {/* Related Tours */}
+            <RelatedTours currentSlug={tour.slug} />
 
+            {/* CTA */}
             <TourCTA />
 
         </div>

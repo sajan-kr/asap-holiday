@@ -7,13 +7,12 @@ import {
     FaDownload,
 } from "react-icons/fa";
 
-const TourHeroBanner = () => {
+const TourHeroBanner = ({ tour }) => {
     return (
         <section
             className="tourHeroBanner"
             style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1800&auto=format&fit=crop')",
+                backgroundImage: `url(${tour.image})`,
             }}
         >
             <div className="tourHeroOverlay">
@@ -23,7 +22,7 @@ const TourHeroBanner = () => {
                         Best Seller
                     </span>
 
-                    <h1>Dubai Premium Tour</h1>
+                    <h1>{tour.title}</h1>
 
                     <div className="tourMeta">
 
@@ -34,22 +33,20 @@ const TourHeroBanner = () => {
 
                         <span>
                             <FaMapMarkerAlt />
-                            Dubai, UAE
+                            {tour.location}
                         </span>
 
                         <span>
                             <FaClock />
-                            5 Nights / 6 Days
+                            {tour.duration}
                         </span>
 
                     </div>
 
-                    <h2>Starting From ₹1,25,000 / Person</h2>
+                    <h2>Starting From {tour.price} / Person</h2>
 
                     <p>
-                        Discover the best of Dubai with luxury hotels,
-                        Burj Khalifa, Desert Safari, Marina Cruise,
-                        shopping and unforgettable experiences.
+                        {tour.description}
                     </p>
 
                     <div className="heroButtons">

@@ -1,41 +1,36 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./TourBreadcrumb.css";
 
-const TourBreadcrumb = () => {
-    const { slug } = useParams();
+const TourBreadcrumb = ({ tour }) => {
+  return (
+    <section className="tourBreadcrumb">
+      <div className="breadcrumbContainer">
 
-    const tourName = slug
-        ? slug
-            .split("-")
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ")
-        : "Tour Details";
+        <div className="breadcrumbLeft">
+          <h2>{tour.title}</h2>
+          <p>Discover amazing experiences in {tour.location}</p>
+        </div>
 
-    return (
-        <section className="tourBreadcrumb">
-            <div className="breadcrumbContainer">
+        <div className="breadcrumbRight">
 
-                <div className="breadcrumbLeft">
-                    <h2>{tourName}</h2>
-                    <p>Everything you need to know before booking this amazing trip.</p>
-                </div>
+          <Link to="/">Home</Link>
 
-                <div className="breadcrumbRight">
-                    <Link to="/">Home</Link>
+          <span>/</span>
 
-                    <span>/</span>
+          <Link to={`/tours/${tour.slug}`}>Tours</Link>
 
-                    <Link to="/holidays">Tours</Link>
+          <span>/</span>
 
-                    <span>/</span>
+          <span className="active">
+            {tour.title}
+          </span>
 
-                    <span className="active">{tourName}</span>
-                </div>
+        </div>
 
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default TourBreadcrumb;

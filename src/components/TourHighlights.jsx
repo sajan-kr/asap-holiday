@@ -2,91 +2,53 @@ import React from "react";
 import "./TourHighlights.css";
 
 import {
-    FaPlaneDeparture,
-    FaHotel,
-    FaUtensils,
-    FaBus,
-    FaPassport,
-    FaHeadset,
-    FaCamera,
-    FaShieldAlt,
+  FaCheckCircle,
+  FaStar,
 } from "react-icons/fa";
 
-const highlights = [
-    {
-        icon: <FaPlaneDeparture />,
-        title: "Flights Included",
-        desc: "Round-trip flights with selected airlines.",
-    },
-    {
-        icon: <FaHotel />,
-        title: "Premium Hotels",
-        desc: "Comfortable 4★ & 5★ accommodation.",
-    },
-    {
-        icon: <FaUtensils />,
-        title: "Meals",
-        desc: "Daily breakfast and selected meals.",
-    },
-    {
-        icon: <FaBus />,
-        title: "Transfers",
-        desc: "Airport and local transportation included.",
-    },
-    {
-        icon: <FaPassport />,
-        title: "Visa Assistance",
-        desc: "Complete visa guidance and support.",
-    },
-    {
-        icon: <FaCamera />,
-        title: "Sightseeing",
-        desc: "Visit famous attractions with guided tours.",
-    },
-    {
-        icon: <FaShieldAlt />,
-        title: "Safe Travel",
-        desc: "Reliable travel planning and assistance.",
-    },
-    {
-        icon: <FaHeadset />,
-        title: "24×7 Support",
-        desc: "Dedicated travel expert throughout your trip.",
-    },
-];
+const TourHighlights = ({ tour }) => {
+  return (
+    <section className="tourHighlights">
 
-const TourHighlights = () => {
-    return (
-        <section className="tourHighlights">
+      <div className="sectionHeading">
 
-            <div className="sectionHeading">
-                <span>PACKAGE BENEFITS</span>
-                <h2>Tour Highlights</h2>
-                <p>
-                    Everything included to make your holiday enjoyable and hassle-free.
-                </p>
+        <span>PACKAGE HIGHLIGHTS</span>
+
+        <h2>Why You'll Love This Tour</h2>
+
+        <p>
+          Explore the best experiences included in your holiday package.
+        </p>
+
+      </div>
+
+      <div className="highlightGrid">
+
+        {tour.highlights.map((item, index) => (
+
+          <div
+            className="highlightCard"
+            key={index}
+          >
+
+            <div className="highlightIcon">
+              <FaStar />
             </div>
 
-            <div className="highlightGrid">
+            <h3>{item}</h3>
 
-                {highlights.map((item, index) => (
-                    <div className="highlightCard" key={index}>
+            <p>
+              Carefully selected experience included in this holiday package.
+            </p>
 
-                        <div className="highlightIcon">
-                            {item.icon}
-                        </div>
+          </div>
 
-                        <h3>{item.title}</h3>
+        ))}
 
-                        <p>{item.desc}</p>
+      </div>
 
-                    </div>
-                ))}
-
-            </div>
-
-        </section>
-    );
+    </section>
+  );
 };
 
 export default TourHighlights;
