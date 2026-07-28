@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./BookingSidebar.css";
 
-import {
-  FaCalendarAlt,
-  FaUsers,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaCalendarAlt, FaUsers, FaPhoneAlt, FaEnvelope, FaCheckCircle, } from "react-icons/fa";
 
 const BookingSidebar = ({ tour }) => {
   const [formData, setFormData] = useState({
@@ -67,66 +61,27 @@ const BookingSidebar = ({ tour }) => {
 
         <div className="inputGroup">
           <FaCalendarAlt />
-
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
+          <input type="date" name="date" value={formData.date} onChange={handleChange} required/>
         </div>
 
         <div className="inputGroup">
           <FaUsers />
-
-          <input
-            type="number"
-            min="1"
-            name="guests"
-            value={formData.guests}
-            onChange={handleChange}
-            placeholder="Guests"
-          />
+          <input type="number" min="1" name="guests" value={formData.guests} onChange={handleChange} placeholder="Guests"/>
         </div>
 
         <div className="inputGroup">
           <FaUsers />
-
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            required
-          />
+          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required/>
         </div>
 
         <div className="inputGroup">
           <FaEnvelope />
-
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email Address"
-            required
-          />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required/>
         </div>
 
         <div className="inputGroup">
           <FaPhoneAlt />
-
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Phone Number"
-            required
-          />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" required/>
         </div>
 
         <button type="submit">
