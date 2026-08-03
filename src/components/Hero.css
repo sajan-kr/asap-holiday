@@ -105,17 +105,16 @@
 .modernHero__title span {
   display: block;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ffcc70,
-      #ff8c1a
-    );
+  background: linear-gradient(
+    135deg,
+    #ffcc70,
+    #ff8c1a
+  );
 
-  -webkit-background-clip: text;
+  background-clip: text;          /* Standard */
+  -webkit-background-clip: text;  /* Chrome, Edge, Safari */
   -webkit-text-fill-color: transparent;
 }
-
 .modernHero__text {
   max-width: 560px;
 
