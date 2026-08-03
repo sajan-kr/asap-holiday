@@ -1,12 +1,6 @@
 import React from "react";
 import "./TourBookingCard.css";
-import {
-    FaCalendarCheck,
-    FaDownload,
-    FaPhoneAlt,
-    FaShieldAlt,
-    FaStar,
-} from "react-icons/fa";
+import { FaCalendarCheck, FaDownload, FaPhoneAlt, FaShieldAlt, FaStar, } from "react-icons/fa";
 
 const TourBookingCard = ({ tour }) => {
     return (
