@@ -2,75 +2,66 @@
  TOUR FEATURE BAR
 ==============================*/
 
-.tourFeatureBar{
-    width:90%;
-    max-width:1280px;
-    margin:-60px auto 0;
-    background:#fff;
-    border-radius:20px;
-    padding:16px 8px;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-
-    display:grid;
-    grid-template-columns:repeat(8,1fr);
-    gap:4px;
-
-    position:relative;
-    z-index:20;
+.tourFeatureBar {
+    width: 90%;
+    max-width: 1280px;
+    margin: -60px auto 0;
+    background: #fff;
+    border-radius: 20px;
+    padding: 16px 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    position: relative;
+    z-index: 20;
 }
 
-.featureItem{
-    display:flex;
-    align-items:center;
-    gap:2px;
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 2px;
     text-align: start;
 }
 
-.featureItem svg{
-    width:55px;
-    height:55px;
-    background:#fff4ea;
-    color:#fc8222;
-    border-radius:50%;
-    padding:10px;
-    font-size:22px;
+.featureItem svg {
+    width: 55px;
+    height: 55px;
+    background: #fff4ea;
+    color: #fc8222;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 22px;
 }
 
-.featureItem small{
-    display:block;
-    color:#000000;
-    font-size:16px;
-    font-weight:600;
-    margin-bottom:6px;
+.featureItem small {
+    display: block;
+    color: #777;
+    margin-bottom: 4px;
+    font-size: 13px;
 }
 
-.featureItem h4{
-    color:#222;
-    font-size:11px;
-    margin:0;
-    font-weight:600;
+.featureItem h4 {
+    color: #222;
+    font-size: 11px;
+    margin: 0;
+    font-weight: 600;
 }
 
-@media(max-width:992px){
+@media(max-width:992px) {
 
-.tourFeatureBar{
-
-grid-template-columns:repeat(2,1fr);
-
-margin-top:30px;
-
-}
+    .tourFeatureBar {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 30px;
+    }
 
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.tourFeatureBar{
-
-grid-template-columns:1fr;
-
-padding:20px;
-
-}
+    .tourFeatureBar {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
 
 }
