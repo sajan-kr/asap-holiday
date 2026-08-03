@@ -53,60 +53,42 @@
     justify-content: flex-end;
 }
 
-/*==================================================
-                BREADCRUMB
-==================================================*/
+/*========== BREADCRUMB =============*/
 
 .tourBreadcrumbHero {
-
-    display: inline-flex;
-
+    /* display: inline-flex; */
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 12px;
-
     padding: 12px 22px;
-
     border-radius: 50px;
-
     background: rgba(255, 255, 255, .08);
-
     backdrop-filter: blur(18px);
-
+    width: fit-content;
+    text-align: start;
     margin-bottom: 16px;
-
     border: 1px solid rgba(255, 255, 255, .15);
 }
 
 .tourBreadcrumbHero a {
-
     color: #fff;
-
     text-decoration: none;
-
     font-size: 14px;
-
     transition: .35s;
 }
 
 .tourBreadcrumbHero a:hover {
-
     color: #fc8222;
 }
 
 .tourBreadcrumbHero svg {
-
     color: #bbb;
-
     font-size: 12px;
+    margin: 0 4px;
 }
 
 .activeBreadcrumb {
-
     color: #fc8222;
-
     font-weight: 600;
 }
 
@@ -115,32 +97,23 @@
 ==================================================*/
 
 .tourTopBadge {
-
+     text-align: start;
     margin-bottom: 0px;
 }
 
 .tourBadge {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
-    padding: 12px 24px;
-
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    margin-top: 12px;
     border-radius: 50px;
-
     background: #fc8222;
-
     color: #fff;
-
     font-size: 14px;
-
-    font-weight: 700;
-
+    font-weight: 400;
     letter-spacing: .4px;
-
     box-shadow: 0 12px 35px rgba(252, 130, 34, .35);
 }
 
@@ -149,17 +122,13 @@
 ==================================================*/
 
 .tourHeroTitle {
-
     font-size: 60px;
-
     line-height: 1.08;
-
     color: #fff;
-
     font-weight: 800;
     margin: 8px 0;
-
     max-width: 700px;
+    text-align: start;
 }
 
 /*==================================================
@@ -167,40 +136,28 @@
 ==================================================*/
 
 .tourPriceRow {
-
     display: flex;
-
     align-items: flex-end;
-
     gap: 25px;
-
     margin-bottom: 35px;
 }
 
 .priceLabel {
-
     color: #ddd;
     margin-bottom: 10px;
     font-size: 15px;
 }
 
 .tourPriceRow h2 {
-
     font-size: 60px;
-
     color: #fc8222;
-
     margin: 0;
-
     font-weight: 800;
 }
 
 .tourPriceRow small {
-
     color: #ddd;
-
     font-size: 15px;
-
     margin-bottom: 12px;
 }
 
@@ -209,16 +166,12 @@
 ==================================================*/
 
 .tourDescription {
-
     font-size: 17px;
-
     line-height: 1.9;
-
     color: #ececec;
-
     max-width: 700px;
-
     margin-bottom: 24px;
+    text-align: start;
 }
 
 /*==================================================
@@ -236,67 +189,42 @@
     display: flex;
     align-items: center;
     gap: 8px;
-
     padding: 8px;
-
     background: rgba(255, 255, 255, .08);
-
     backdrop-filter: blur(18px);
-
     border: 1px solid rgba(255, 255, 255, .12);
-
     border-radius: 18px;
-
     transition: .35s;
 }
 
 .infoCard:hover {
-
     transform: translateY(-6px);
-
     background: rgba(255, 255, 255, .14);
-
     box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
 }
 
 .infoCard svg {
-
     width: 32px;
-
     height: 32px;
-
     border-radius: 50%;
-
     background: #fc8222;
-
     color: #fff;
-
     padding: 6px;
-
     flex-shrink: 0;
-
     font-size: 22px;
 }
 
 .infoCard strong {
-
-    /* display: block; */
     display: none;
     color: #fff;
-
     font-size: 17px;
-
     margin-bottom: 6px;
-
     font-weight: 700;
 }
 
 .infoCard span {
-
     color: #d8d8d8;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -305,57 +233,37 @@
 ==================================================*/
 
 .tourTrustRow {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 16px;
-
     margin-bottom: 35px;
 }
 
 .trustItem {
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
     padding: 12px 18px;
-
     background: rgba(255, 255, 255, .08);
-
     backdrop-filter: blur(16px);
-
     border-radius: 50px;
-
     border: 1px solid rgba(255, 255, 255, .15);
-
     color: #fff;
-
     font-size: 14px;
-
     transition: .3s;
 }
 
 .trustItem:hover {
-
     background: #fc8222;
-
     border-color: #fc8222;
 }
 
 .trustItem svg {
-
     color: #30d158;
-
     font-size: 16px;
 }
 
 .trustItem:hover svg {
-
     color: #fff;
 }
 
@@ -364,88 +272,58 @@
 ==================================================*/
 
 .heroButtons {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 18px;
-
     margin-top: 15px;
 }
 
 .primaryBtn,
 .secondaryBtn,
 .videoBtn {
-
     height: 58px;
-
     padding: 0 32px;
-
     border: none;
-
     border-radius: 50px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 10px;
-
     cursor: pointer;
-
     transition: .35s;
-
     font-size: 15px;
-
     font-weight: 700;
 }
 
 .primaryBtn {
-
     background: #fc8222;
-
     color: #fff;
-
     box-shadow: 0 20px 40px rgba(252, 130, 34, .35);
 }
 
 .primaryBtn:hover {
-
     transform: translateY(-5px);
-
     box-shadow: 0 25px 45px rgba(252, 130, 34, .45);
 }
 
 .secondaryBtn {
-
     background: #fff;
-
     color: #222;
 }
 
 .secondaryBtn:hover {
-
     transform: translateY(-5px);
 }
 
 .videoBtn {
-
     background: transparent;
-
     color: #fff;
-
     border: 2px solid rgba(255, 255, 255, .25);
 }
 
 .videoBtn:hover {
-
     background: #fff;
-
     color: #222;
-
     transform: translateY(-5px);
 }
 
@@ -454,18 +332,13 @@
 ==================================================*/
 
 .tourHeroRight {
-
     display: flex;
-
     justify-content: flex-end;
-
     align-items: center;
 }
 
 .tourBookingCard {
-
     width: 380px;
-
     max-width: 100%;
 }
 
@@ -505,23 +378,16 @@
     position: absolute;
     top: 18px;
     right: 18px;
-
     width: 46px;
     height: 46px;
-
     border: none;
     border-radius: 50%;
-
     background: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
-
     transition: .3s;
-
     z-index: 10;
 }
 
@@ -552,25 +418,17 @@
 @media(max-width:1200px) {
 
     .tourHeroGrid {
-
         grid-template-columns: 1fr;
-
         gap: 50px;
-
     }
 
     .tourHeroRight {
-
         justify-content: flex-start;
-
     }
 
     .tourBookingCard {
-
         width: 100%;
-
         max-width: 480px;
-
     }
 
 }
@@ -578,35 +436,24 @@
 @media(max-width:992px) {
 
     .tourHeroBanner {
-
         min-height: auto;
-
     }
 
     .tourHeroOverlay {
-
         min-height: auto;
-
         padding: 170px 0 120px;
-
     }
 
     .tourHeroTitle {
-
         font-size: 52px;
-
     }
 
     .tourPriceRow h2 {
-
         font-size: 40px;
-
     }
 
     .tourInfoCards {
-
         grid-template-columns: 1fr 1fr;
-
     }
 
 }
@@ -614,75 +461,50 @@
 @media(max-width:768px) {
 
     .tourHeroContent {
-
         width: 92%;
-
     }
 
     .tourHeroTitle {
-
         font-size: 38px;
-
         line-height: 1.2;
-
     }
 
     .tourPriceRow {
-
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 6px;
-
     }
 
     .tourPriceRow h2 {
-
         font-size: 34px;
-
     }
 
     .tourDescription {
-
         font-size: 15px;
-
     }
 
     .tourInfoCards {
-
         grid-template-columns: 1fr;
-
     }
 
     .heroButtons {
-
         flex-direction: column;
-
     }
 
     .primaryBtn,
     .secondaryBtn,
     .videoBtn {
-
         width: 100%;
-
     }
 
     .tourTrustRow {
-
         flex-direction: column;
-
         align-items: flex-start;
-
     }
 
     .tourBreadcrumbHero {
-
         padding: 10px 15px;
-
         font-size: 13px;
-
     }
 
 }
@@ -690,49 +512,34 @@
 @media(max-width:576px) {
 
     .tourHeroOverlay {
-
         padding: 100px 0 60px;
-
     }
 
     .tourHeroTitle {
-
         font-size: 30px;
-
     }
 
     .tourBadge {
-
         font-size: 12px;
-
         padding: 10px 18px;
-
     }
 
     .infoCard {
-
         padding: 16px;
-
     }
 
     .infoCard svg {
-
         width: 48px;
         height: 48px;
         padding: 14px;
-
     }
 
     .videoModal {
-
         padding: 15px;
-
     }
 
     .videoBox {
-
         border-radius: 16px;
-
     }
 
 }
