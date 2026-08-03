@@ -80,6 +80,8 @@ function App() {
 
           {/* TOURS */}
 
+          <Route path="/tours" element={<Tours />} />
+
           <Route path="/tours/:country" element={<Tours />} />
 
           <Route path="/tour/:slug" element={<TourDetails />} />
