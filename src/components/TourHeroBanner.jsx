@@ -5,17 +5,7 @@ import "./TourHeroBanner.css";
 import TourBookingCard from "./TourBookingCard";
 import TourFeatureBar from "./TourFeatureBar";
 
-import {
-  FaStar,
-  FaMapMarkerAlt,
-  FaClock,
-  FaDownload,
-  FaPlay,
-  FaUsers,
-  FaChevronRight,
-  FaTimes,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaStar, FaMapMarkerAlt, FaClock, FaDownload, FaPlay, FaUsers, FaChevronRight, FaTimes, FaCheckCircle, } from "react-icons/fa";
 
 const TourHeroBanner = ({ tour }) => {
   const [showVideo, setShowVideo] = useState(false);
