@@ -3,6 +3,37 @@ import "./TourBookingCard.css";
 import { FaCalendarCheck, FaDownload, FaPhoneAlt, FaShieldAlt, FaStar, } from "react-icons/fa";
 
 const TourBookingCard = ({ tour }) => {
+
+    const handleBookNow = () => {
+        const booking = document.getElementById("bookingSidebar");
+
+        if (booking) {
+            booking.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    const handleEnquiry = () => {
+        const message = `Hi ASAP Holidays,
+
+            I'm interested in the ${tour.title} package.
+
+            Please share:
+            • Complete itinerary
+            • Inclusions & Exclusions
+            • Best Available Price
+            • Available Travel Dates
+
+            Thank you.`;
+
+        window.open(
+            `https://wa.me/919205129996?text=${encodeURIComponent(message)}`,
+            "_blank"
+        );
+    };
+
     return (
         <div className="tourBookingCard">
 
@@ -20,29 +51,27 @@ const TourBookingCard = ({ tour }) => {
 
             </div>
 
-            <button className="bookingBtn">
-
+            <button className="bookingBtn" onClick={handleBookNow}>
                 <FaCalendarCheck />
-
                 Book Now
-
             </button>
 
-            <button className="enquiryBtn">
-
+            <button
+                className="enquiryBtn"
+                onClick={handleEnquiry}
+            >
                 <FaPhoneAlt />
-
                 Enquiry Now
-
             </button>
 
-            <button className="brochureBtn">
-
+            <a
+                href={tour.brochure}
+                download
+                className="brochureBtn"
+            >
                 <FaDownload />
-
                 Download Brochure
-
-            </button>
+            </a>
 
             <div className="bookingDivider"></div>
 

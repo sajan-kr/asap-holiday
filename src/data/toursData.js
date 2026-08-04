@@ -2,23 +2,15 @@ const toursData = [
   {
     id: 1,
     slug: "dubai",
-
     title: "Dubai Premium Tour",
-
     location: "Dubai, UAE",
-
     image: "/images/Luxury-Dubai-Tour-1.webp",
-
     duration: "5 Nights / 6 Days",
-
     price: "₹1,89,000",
-
+    brochure: "/brochures/dubai.pdf",
     rating: 4.8,
-
     reviews: 120,
-
     offer: "30% OFF",
-
     description:
       "Experience the glamour of Dubai with Burj Khalifa, Desert Safari, Marina Cruise, luxury shopping and premium hotels.",
 
@@ -85,23 +77,15 @@ const toursData = [
   {
     id: 2,
     slug: "bali",
-
     title: "Bali Luxury Retreat",
-
     location: "Bali, Indonesia",
-
     image: "/images/bali-resort.jpg",
-
     duration: "5 Nights / 6 Days",
-
     price: "₹1,59,000",
-
+    brochure: "/brochures/bali.pdf",
     rating: 4.9,
-
     reviews: 165,
-
     offer: "25% OFF",
-
     description:
       "Discover Bali's beautiful beaches, waterfalls, temples, rice terraces and luxury resorts with unforgettable island experiences.",
 
@@ -167,26 +151,18 @@ const toursData = [
 
   // Continue in Part 2...
 
-    {
+  {
     id: 3,
     slug: "maldives",
-
     title: "Maldives Luxury Escape",
-
     location: "Maldives",
-
     image: "/images/maldives.jpg",
-
     duration: "6 Nights / 7 Days",
-
     price: "₹2,09,000",
-
+    brochure: "/brochures/maldives.pdf",
     rating: 5.0,
-
     reviews: 210,
-
     offer: "35% OFF",
-
     description:
       "Stay in luxurious overwater villas surrounded by crystal-clear lagoons, white sandy beaches and world-class hospitality.",
 
@@ -259,23 +235,15 @@ const toursData = [
   {
     id: 4,
     slug: "switzerland",
-
     title: "Swiss Alps Experience",
-
     location: "Switzerland",
-
     image: "/images/switzerland.jpg",
-
     duration: "8 Nights / 9 Days",
-
     price: "₹2,89,000",
-
+    brochure: "/brochures/switzerland.pdf",
     rating: 4.9,
-
     reviews: 98,
-
     offer: "20% OFF",
-
     description:
       "Explore the breathtaking Swiss Alps with scenic train journeys, mountain adventures and charming alpine villages.",
 
@@ -359,23 +327,15 @@ const toursData = [
   {
     id: 5,
     slug: "thailand",
-
     title: "Thailand Island Escape",
-
     location: "Thailand",
-
     image: "/images/thailand.jpg",
-
     duration: "5 Nights / 6 Days",
-
     price: "₹99,000",
-
+    brochure: "/brochures/thailand.pdf",
     rating: 4.8,
-
     reviews: 145,
-
     offer: "18% OFF",
-
     description:
       "Explore the beautiful beaches of Phuket, vibrant Bangkok, stunning islands and exciting nightlife.",
 
@@ -442,23 +402,15 @@ const toursData = [
   {
     id: 6,
     slug: "singapore",
-
     title: "Singapore Family Tour",
-
     location: "Singapore",
-
     image: "/images/singapore.jpg",
-
     duration: "4 Nights / 5 Days",
-
     price: "₹1,29,000",
-
+    brochure: "/brochures/singapore.pdf",
     rating: 4.9,
-
     reviews: 170,
-
     offer: "15% OFF",
-
     description:
       "Visit Marina Bay Sands, Gardens by the Bay, Sentosa Island and Universal Studios with your family.",
 

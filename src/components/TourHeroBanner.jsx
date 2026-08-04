@@ -236,19 +236,30 @@ const TourHeroBanner = ({ tour }) => {
 
                 <div className="heroButtons">
 
-                  <button className="primaryBtn">
+                  <button
+                    className="primaryBtn"
+                    onClick={() => {
+                      const booking = document.getElementById("bookingSidebar");
 
+                      if (booking) {
+                        booking.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }
+                    }}
+                  >
                     Book Now
-
                   </button>
 
-                  <button className="secondaryBtn">
-
+                  <a
+                    href={tour.brochure}
+                    download
+                    className="secondaryBtn"
+                  >
                     <FaDownload />
-
                     Download Brochure
-
-                  </button>
+                  </a>
 
                   <button
                     className="videoBtn"
