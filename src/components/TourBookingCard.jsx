@@ -1,6 +1,7 @@
 import React from "react";
 import "./TourBookingCard.css";
 import { FaCalendarCheck, FaDownload, FaPhoneAlt, FaShieldAlt, FaStar, } from "react-icons/fa";
+import { generateBrochure } from "../utils/generateBrochure";
 
 const TourBookingCard = ({ tour }) => {
 
@@ -64,14 +65,13 @@ const TourBookingCard = ({ tour }) => {
                 Enquiry Now
             </button>
 
-            <a
-                href={tour.brochure}
-                download
+            <button
                 className="brochureBtn"
+                onClick={() => generateBrochure(tour)}
             >
                 <FaDownload />
                 Download Brochure
-            </a>
+            </button>
 
             <div className="bookingDivider"></div>
 

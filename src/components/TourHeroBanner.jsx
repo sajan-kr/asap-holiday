@@ -6,6 +6,7 @@ import TourBookingCard from "./TourBookingCard";
 import TourFeatureBar from "./TourFeatureBar";
 
 import { FaStar, FaMapMarkerAlt, FaClock, FaDownload, FaPlay, FaUsers, FaChevronRight, FaTimes, FaCheckCircle, } from "react-icons/fa";
+import { generateBrochure } from "../utils/generateBrochure";
 
 const TourHeroBanner = ({ tour }) => {
   const [showVideo, setShowVideo] = useState(false);
@@ -252,14 +253,13 @@ const TourHeroBanner = ({ tour }) => {
                     Book Now
                   </button>
 
-                  <a
-                    href={tour.brochure}
-                    download
+                  <button
                     className="secondaryBtn"
+                    onClick={() => generateBrochure(tour)}
                   >
                     <FaDownload />
                     Download Brochure
-                  </a>
+                  </button>
 
                   <button
                     className="videoBtn"
