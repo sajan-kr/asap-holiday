@@ -263,13 +263,14 @@ const TourHeroBanner = ({ tour }) => {
 
                   <button
                     className="videoBtn"
-                    onClick={() => setShowVideo(true)}
+                    onClick={() => {
+                      console.log("Watch Video clicked");
+                      console.log("Video Path:", tour.video);
+                      setShowVideo(true);
+                    }}
                   >
-
                     <FaPlay />
-
                     Watch Video
-
                   </button>
 
                 </div>
