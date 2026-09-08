@@ -505,7 +505,7 @@ const toursData = [
     slug: "japan",
     title: "Japan Cultural Escape",
     location: "Japan",
-    image: "/images/japan.jpg",
+    image: "/images/japan.webp",
     video: "/video/japan.mp4",
     duration: "6 Nights / 7 Days",
     price: "₹2,49,000",
@@ -529,12 +529,12 @@ const toursData = [
     ],
 
     gallery: [
-      "/images/japan.jpg",
-      "/images/japan2.jpg",
-      "/images/japan3.jpg",
-      "/images/japan4.jpg",
-      "/images/japan5.jpg",
-      "/images/japan6.jpg",
+      "/images/japan.webp",
+      "/images/japan2.webp",
+      "/images/japan3.webp",
+      "/images/japan4.webp",
+      "/images/japan5.webp",
+      "/images/japan6.webp",
     ],
 
     itinerary: [
