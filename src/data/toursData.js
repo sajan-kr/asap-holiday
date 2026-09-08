@@ -104,11 +104,11 @@ const toursData = [
 
     gallery: [
       "/images/bali-resort.jpg",
-      "/images/bali2.jpg",
-      "/images/bali3.jpg",
-      "/images/bali4.jpg",
-      "/images/bali5.jpg",
-      "/images/bali6.jpg",
+      "/images/bali2.webp",
+      "/images/bali3.webp",
+      "/images/bali4.webp",
+      "/images/bali5.webp",
+      "/images/bali6.webp",
     ],
 
     itinerary: [
