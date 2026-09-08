@@ -68,17 +68,12 @@ const TourGalleryDetails = ({ tour }) => {
 
       <div className="galleryGrid">
         {gallery.map((image, index) => (
-          <button
-            key={index}
-            className="galleryCard"
-            onClick={() => setSelectedIndex(index)}
-            aria-label={`View ${tour.title} image ${index + 1}`}
-          >
+          <button key={index} className="galleryCard" onClick={() => setSelectedIndex(index)}
+            aria-label={`View ${tour.title} image ${index + 1}`}>
             <img
               src={image}
               alt={`${tour.title} destination view ${index + 1}`}
-              loading="lazy"
-            />
+              loading="lazy"/>
 
             <div className="galleryOverlay">
               <span className="zoomIcon">⌕</span>
@@ -89,50 +84,26 @@ const TourGalleryDetails = ({ tour }) => {
       </div>
 
       {selectedIndex !== null && (
-        <div
-          className="galleryModal"
-          onClick={closeModal}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="galleryModalContent"
-            onClick={(event) => event.stopPropagation()}
-          >
+        <div className="galleryModal" onClick={closeModal} role="dialog" aria-modal="true">
+          <div className="galleryModalContent" onClick={(event) => event.stopPropagation()}>
             
-            <button
-              className="closeButton"
-              onClick={closeModal}
-              aria-label="Close gallery"
-            >
+            <button className="closeButton" onClick={closeModal} aria-label="Close gallery">
               ×
             </button>
 
-            <button
-              className="galleryNav galleryPrev"
-              onClick={previousImage}
-              aria-label="Previous image"
-            >
+            <button className="galleryNav galleryPrev" onClick={previousImage} aria-label="Previous image">
               ‹
             </button>
 
             <div className="mainImageWrapper">
-              <img
-                src={gallery[selectedIndex]}
-                alt={`${tour.title} ${selectedIndex + 1}`}
-                className="modalImage"
-              />
+              <img src={gallery[selectedIndex]} alt={`${tour.title} ${selectedIndex + 1}`} className="modalImage"/>
 
               <div className="imageCounter">
                 {selectedIndex + 1} / {gallery.length}
               </div>
             </div>
 
-            <button
-              className="galleryNav galleryNext"
-              onClick={nextImage}
-              aria-label="Next image"
-            >
+            <button className="galleryNav galleryNext" onClick={nextImage} aria-label="Next image">
               ›
             </button>
 
@@ -146,10 +117,7 @@ const TourGalleryDetails = ({ tour }) => {
                   onClick={() => setSelectedIndex(index)}
                   aria-label={`Open image ${index + 1}`}
                 >
-                  <img
-                    src={image}
-                    alt={`Thumbnail ${index + 1}`}
-                  />
+                  <img src={image} alt={`Thumbnail ${index + 1}`}/>
                 </button>
               ))}
             </div>
