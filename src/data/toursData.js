@@ -351,7 +351,7 @@ const toursData = [
     slug: "thailand",
     title: "Thailand Island Escape",
     location: "Thailand",
-    image: "/images/thailand.jpg",
+    image: "/images/thailand.webp",
     video: "/video/thailand.mp4",
     duration: "5 Nights / 6 Days",
     price: "₹99,000",
@@ -375,12 +375,12 @@ const toursData = [
     ],
 
     gallery: [
-      "/images/thailand.jpg",
-      "/images/thailand2.jpg",
-      "/images/thailand3.jpg",
-      "/images/thailand4.jpg",
-      "/images/thailand5.jpg",
-      "/images/thailand6.jpg",
+      "/images/thailand.webp",
+      "/images/thailand2.webp",
+      "/images/thailand3.webp",
+      "/images/thailand4.webp",
+      "/images/thailand5.webp",
+      "/images/thailand6.webp",
     ],
 
     itinerary: [
