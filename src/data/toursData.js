@@ -591,7 +591,7 @@ const toursData = [
     slug: "paris",
     title: "Paris Romantic Getaway",
     location: "Paris, France",
-    image: "/images/paris.jpg",
+    image: "/images/paris.webp",
     video: "/video/paris.mp4",
     duration: "5 Nights / 6 Days",
     price: "₹2,19,000",
@@ -615,12 +615,12 @@ const toursData = [
     ],
 
     gallery: [
-      "/images/paris.jpg",
-      "/images/paris2.jpg",
-      "/images/paris3.jpg",
-      "/images/paris4.jpg",
-      "/images/paris5.jpg",
-      "/images/paris6.jpg",
+      "/images/paris.webp",
+      "/images/paris2.webp",
+      "/images/paris3.webp",
+      "/images/paris4.webp",
+      "/images/paris5.webp",
+      "/images/paris6.webp",
     ],
 
     itinerary: [
@@ -671,7 +671,7 @@ const toursData = [
     slug: "london",
     title: "London Heritage Tour",
     location: "London, UK",
-    image: "/images/london.jpg",
+    image: "/images/london.webp",
     video: "/video/london.mp4",
     duration: "5 Nights / 6 Days",
     price: "₹2,29,000",
@@ -695,12 +695,12 @@ const toursData = [
     ],
 
     gallery: [
-      "/images/london.jpg",
-      "/images/london2.jpg",
-      "/images/london3.jpg",
-      "/images/london4.jpg",
-      "/images/london5.jpg",
-      "/images/london6.jpg",
+      "/images/london.webp",
+      "/images/london2.webp",
+      "/images/london3.webp",
+      "/images/london4.webp",
+      "/images/london5.webp",
+      "/images/london6.webp",
     ],
 
     itinerary: [
