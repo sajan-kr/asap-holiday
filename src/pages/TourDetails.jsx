@@ -50,10 +50,7 @@ const TourDetails = () => {
                     <TourOverview tour={tour} />
                 </div>
 
-                <div
-                    className="tourRightContent"
-                    id="bookingSidebar"
-                >
+                <div className="tourRightContent" id="bookingSidebar">
                     <BookingSidebar tour={tour} />
                 </div>
 
