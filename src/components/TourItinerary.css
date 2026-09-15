@@ -1,240 +1,268 @@
 
 /* =========================================================
-   ULTIMATE TOUR ITINERARY
+   INTERACTIVE ITINERARY
 ========================================================= */
 
-.ultimateItinerary {
+.interactiveItinerary {
     width: min(92%, 1320px);
-    margin: 130px auto;
-    position: relative;
+    margin: 120px auto;
 }
 
 
 /* =========================================================
-   INTRO
+   HEADER
 ========================================================= */
 
-.itineraryIntro {
-    max-width: 780px;
-    margin: 0 auto 65px;
+.interactiveHeader {
     text-align: center;
+    max-width: 760px;
+    margin: 0 auto 55px;
 }
 
-.introEyebrow {
+.headerEyebrow {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    gap: 13px;
 
     color: #fc8222;
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: 3px;
 }
 
-.introEyebrow span {
-    width: 32px;
+.headerEyebrow span {
+    width: 30px;
     height: 1px;
-
     background: #fc8222;
 }
 
-.itineraryIntro h2 {
-    margin: 20px 0 17px;
+.interactiveHeader h2 {
+    margin: 18px 0 14px;
 
-    color: #181818;
-
-    font-size: clamp(40px, 5vw, 62px);
-
-    line-height: 1.03;
-
+    color: #191919;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.04;
     letter-spacing: -2.5px;
 }
 
-.itineraryIntro h2 em {
+.interactiveHeader h2 em {
     color: #fc8222;
     font-style: normal;
 }
 
-.itineraryIntro p {
-    max-width: 650px;
-
-    margin: auto;
-
+.interactiveHeader p {
     color: #777;
-
     font-size: 15px;
-
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   DAY NAVIGATION
+   TOOLBAR
 ========================================================= */
 
-.itineraryDays {
-    position: relative;
-
+.itineraryToolbar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-
-    max-width: 1050px;
-
-    margin: 0 auto 65px;
-
-    padding: 0 10px;
-}
-
-.daysLine {
-    position: absolute;
-
-    left: 35px;
-    right: 35px;
-
-    top: 24px;
-
-    height: 1px;
-
-    background: #e5e5e5;
-
-    z-index: 0;
-}
-
-.itineraryDay {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
     align-items: center;
 
-    gap: 10px;
+    padding: 15px 18px;
 
-    min-width: 60px;
+    margin-bottom: 15px;
 
-    border: none;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.toolbarLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.journeyLength {
+    color: #fc8222;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.toolbarDivider {
+    width: 1px;
+    height: 14px;
+    background: #ddd;
+}
+
+.toolbarActions {
+    display: flex;
+    gap: 5px;
+}
+
+.toolbarActions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.toolbarActions button:hover,
+.toolbarActions button.toolActive {
+    color: #fc8222;
+    background: #fff5ed;
+}
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.tourSvg {
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   DAY RAIL
+========================================================= */
+
+.dayRail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 7px;
+
+    margin-bottom: 30px;
+
+    background: #f7f7f7;
+
+    border-radius: 13px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.dayRail::-webkit-scrollbar {
+    display: none;
+}
+
+.railDay {
+    flex: 1;
+    min-width: 105px;
+
+    padding: 12px 15px;
+
+    border: 0;
+    border-radius: 9px;
 
     background: transparent;
 
     cursor: pointer;
+
+    transition: .3s ease;
 }
 
-.dayCircle {
-    width: 48px;
-    height: 48px;
+.railDay span {
+    display: block;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 4px;
 
-    border-radius: 50%;
+    color: #aaa;
 
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.railDay small {
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.railDay:hover {
+    background: #fff;
+}
+
+.railDay.active {
     background: #fff;
 
-    border: 1px solid #dedede;
-
-    color: #aaa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    transition:
-        all .35s ease;
-}
-
-.dayCircle .tourIcon {
-    width: 13px;
-    height: 13px;
-}
-
-.dayName {
-    color: #aaa;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-
-    transition: color .3s ease;
-}
-
-.itineraryDay:hover .dayCircle {
-    border-color: #fc8222;
-    color: #fc8222;
-}
-
-.itineraryDay:hover .dayName {
-    color: #fc8222;
-}
-
-.itineraryDay.active .dayCircle {
-    background: #fc8222;
-
-    border-color: #fc8222;
-
-    color: #fff;
-
     box-shadow:
-        0 0 0 7px rgba(252, 130, 34, .10),
-        0 10px 25px rgba(252, 130, 34, .2);
-
-    transform: scale(1.08);
+        0 5px 20px rgba(0, 0, 0, .07);
 }
 
-.itineraryDay.active .dayName {
-    color: #222;
-}
-
-.itineraryDay.complete .dayCircle {
+.railDay.active span,
+.railDay.active small {
     color: #fc8222;
-    border-color: #fc8222;
 }
 
 
 /* =========================================================
-   MAIN EXPERIENCE
+   MAIN
 ========================================================= */
 
-.journeyExperience {
+.itineraryMain {
     display: grid;
 
     grid-template-columns:
-        minmax(430px, .9fr)
-        minmax(500px, 1.1fr);
+        minmax(430px, .92fr)
+        minmax(500px, 1.08fr);
 
     min-height: 650px;
-
-    position: relative;
 }
 
 
 /* =========================================================
-   PHOTO
+   IMAGE
 ========================================================= */
 
-.journeyPhoto {
+.itineraryHeroImage {
     position: relative;
 
     min-height: 650px;
 
     overflow: hidden;
 
-    border-radius: 30px;
+    border-radius: 28px;
 
     background: #ddd;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, .13);
+        0 25px 70px rgba(0, 0, 0, .14);
 }
 
-.journeyPhoto img {
+.itineraryHeroImage img {
     position: absolute;
 
     inset: 0;
@@ -244,14 +272,14 @@
 
     object-fit: cover;
 
-    animation: imageReveal .65s ease;
+    animation: itineraryImage .55s ease;
 }
 
-@keyframes imageReveal {
+@keyframes itineraryImage {
 
     from {
-        opacity: .5;
-        transform: scale(1.04);
+        opacity: .4;
+        transform: scale(1.05);
     }
 
     to {
@@ -260,32 +288,31 @@
     }
 }
 
-.photoGradient {
+.imageShade {
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             to top,
             rgba(0, 0, 0, .78),
-            transparent 55%
+            rgba(0, 0, 0, .05) 65%
         );
 }
 
 
 /* =========================================================
-   PHOTO DAY
+   DAY BADGE
 ========================================================= */
 
-.photoDay {
+.imageDayBadge {
     position: absolute;
 
-    top: 28px;
-    left: 28px;
+    top: 25px;
+    left: 25px;
 
-    width: 78px;
-    height: 78px;
+    width: 72px;
+    height: 72px;
 
     display: flex;
     flex-direction: column;
@@ -293,152 +320,373 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 18px;
-
     background: #fc8222;
 
     color: #fff;
 
+    border-radius: 16px;
+
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, .2);
+        0 15px 35px rgba(0, 0, 0, .22);
 }
 
-.photoDay span {
+.imageDayBadge small {
     font-size: 8px;
-
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
-.photoDay strong {
-    margin-top: 3px;
-
-    font-size: 27px;
-
+.imageDayBadge strong {
+    font-size: 25px;
     line-height: 1;
 }
 
 
 /* =========================================================
-   PHOTO CAPTION
+   IMAGE INFORMATION
 ========================================================= */
 
-.photoBottom {
+.imageInformation {
     position: absolute;
 
-    left: 35px;
-    right: 35px;
-    bottom: 35px;
+    left: 32px;
+    right: 32px;
+    bottom: 30px;
 }
 
-.photoBottom > span {
-    color: rgba(255, 255, 255, .75);
+.imageInformation span {
+    color: rgba(255,255,255,.7);
 
     font-size: 9px;
-
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
-.photoBottom h3 {
+.imageInformation h3 {
     margin: 8px 0 0;
 
     color: #fff;
 
     font-size: 30px;
-
     line-height: 1.2;
 }
 
 
 /* =========================================================
-   INFORMATION CARD
+   CONTENT
 ========================================================= */
 
-.journeyInformation {
+.itineraryContent {
     align-self: center;
 
     position: relative;
-
     z-index: 3;
 
-    margin-left: -70px;
+    margin-left: -65px;
 
-    padding: 45px;
+    padding: 42px;
 
     background: #fff;
 
     border: 1px solid #ededed;
 
-    border-radius: 28px;
+    border-radius: 27px;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, .10);
+        0 25px 75px rgba(0, 0, 0, .10);
 }
 
 
 /* =========================================================
-   INFORMATION TOP
+   CONTENT HEADING
 ========================================================= */
 
-.informationTop {
+.contentHeading {
     display: flex;
 
     justify-content: space-between;
-
     align-items: flex-start;
 
-    gap: 20px;
+    padding-bottom: 22px;
 
-    padding-bottom: 25px;
-
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #eee;
 }
 
-.informationEyebrow {
+.contentEyebrow {
     color: #fc8222;
 
-    font-size: 10px;
-
+    font-size: 9px;
     font-weight: 800;
 
     letter-spacing: 2px;
 }
 
-.informationTop h3 {
-    max-width: 520px;
+.contentHeading h3 {
+    max-width: 500px;
 
     margin: 8px 0 0;
 
-    color: #191919;
+    color: #1b1b1b;
 
-    font-size: 32px;
+    font-size: 30px;
 
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
-.largeDayNumber {
-    color: #f0f0f0;
+.backgroundNumber {
+    color: #f1f1f1;
 
     font-size: 65px;
-
-    font-weight: 800;
-
     line-height: .8;
 }
 
 
 /* =========================================================
-   STORY
+   DESCRIPTION
 ========================================================= */
 
-.journeyStory {
-    padding: 25px 0;
+.dayDescription {
+    padding: 23px 0;
 }
 
-.sectionMiniTitle {
+.dayDescription p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.dayInfo {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.infoBox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 6px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.infoBox:nth-child(odd) {
+    border-right: 1px solid #eee;
+}
+
+.infoBox:nth-child(3),
+.infoBox:nth-child(4) {
+    border-bottom: 0;
+}
+
+.infoIcon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #fff4eb;
+
+    color: #fc8222;
+}
+
+.infoIcon .tourSvg {
+    width: 15px;
+    height: 15px;
+}
+
+.infoBox small {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #aaa;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.infoBox strong {
+    display: block;
+
+    color: #444;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SCHEDULE
+========================================================= */
+
+.scheduleSection {
+    padding-top: 23px;
+}
+
+.sectionHeading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+.sectionHeading > span {
+    color: #aaa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.sectionHeading button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border: 0;
+    background: none;
+
+    color: #fc8222;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.sectionHeading button .tourSvg {
+    width: 12px;
+    height: 12px;
+
+    transition: transform .3s ease;
+}
+
+
+/* =========================================================
+   SCHEDULE LIST
+========================================================= */
+
+.scheduleList {
+    position: relative;
+}
+
+.scheduleList::before {
+    content: "";
+
+    position: absolute;
+
+    left: 61px;
+
+    top: 10px;
+    bottom: 10px;
+
+    width: 1px;
+
+    background: #eee;
+}
+
+.scheduleItem {
+    display: grid;
+
+    grid-template-columns: 55px 13px 1fr;
+
+    gap: 8px;
+
+    position: relative;
+
+    padding-bottom: 17px;
+}
+
+.scheduleItem:last-child {
+    padding-bottom: 0;
+}
+
+.scheduleTime {
+    color: #fc8222;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.scheduleDot {
+    width: 8px;
+    height: 8px;
+
+    margin-top: 3px;
+
+    border-radius: 50%;
+
+    background: #fc8222;
+
+    border: 2px solid #fff;
+
+    box-shadow:
+        0 0 0 1px #fc8222;
+
+    z-index: 2;
+}
+
+.scheduleText h4 {
+    margin: 0 0 3px;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+.scheduleText p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlightSection {
+    padding-top: 20px;
+}
+
+.sectionHeadingText {
     display: block;
 
     margin-bottom: 10px;
@@ -449,366 +697,167 @@
 
     font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.7px;
 }
 
-.journeyStory p {
-    margin: 0;
-
-    color: #666;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
-
-/* =========================================================
-   INFO GRID
-========================================================= */
-
-.journeyInfoGrid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    border-top: 1px solid #eeeeee;
-
-    border-bottom: 1px solid #eeeeee;
-}
-
-.journeyInfoItem {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 17px 7px;
-
-    border-bottom: 1px solid #eeeeee;
-}
-
-.journeyInfoItem:nth-child(odd) {
-    border-right: 1px solid #eeeeee;
-}
-
-.journeyInfoItem:nth-child(3),
-.journeyInfoItem:nth-child(4) {
-    border-bottom: none;
-}
-
-
-/* =========================================================
-   ICON
-========================================================= */
-
-.tourIcon {
-    width: 17px;
-    height: 17px;
-
-    display: inline-flex;
-
-    flex-shrink: 0;
-}
-
-.tourIcon svg {
-    width: 100%;
-    height: 100%;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-
-    stroke-linecap: round;
-
-    stroke-linejoin: round;
-}
-
-.journeyInfoItem > .tourIcon {
-    width: 34px;
-    height: 34px;
-
-    padding: 9px;
-
-    border-radius: 10px;
-
-    background: #fff4eb;
-
-    color: #fc8222;
-}
-
-.journeyInfoItem small {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: #aaa;
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.journeyInfoItem strong {
-    display: block;
-
-    color: #444;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   HIGHLIGHTS
-========================================================= */
-
-.journeyHighlights {
-    padding: 22px 0;
-}
-
-.highlightList {
+.highlightTags {
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 7px;
+    gap: 6px;
 }
 
-.highlightList span {
+.highlightTags span {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 6px;
+    gap: 5px;
 
-    padding: 8px 11px;
+    padding: 7px 10px;
 
-    border: 1px solid #ededed;
+    border: 1px solid #eee;
 
     border-radius: 30px;
 
     color: #777;
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 600;
 }
 
-.highlightList .tourIcon {
-    width: 11px;
-    height: 11px;
+.highlightTags .tourSvg {
+    width: 10px;
+    height: 10px;
 
     color: #fc8222;
 }
 
 
 /* =========================================================
-   TRAVELER TIP
+   NAVIGATION
 ========================================================= */
 
-.travelerTip {
+.itineraryNavigation {
     display: flex;
 
     align-items: center;
-
-    gap: 12px;
-
-    padding: 13px 15px;
-
-    background: #fff8f3;
-
-    border-radius: 12px;
-
-    border-left: 3px solid #fc8222;
-}
-
-.tipIcon {
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-
-    border-radius: 9px;
-
-    background: #fff;
-
-    color: #fc8222;
-}
-
-.tipIcon .tourIcon {
-    width: 15px;
-    height: 15px;
-}
-
-.travelerTip span {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: #fc8222;
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-}
-
-.travelerTip p {
-    margin: 0;
-
-    color: #777;
-
-    font-size: 10px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.journeyFooter {
-    display: flex;
 
     justify-content: space-between;
 
-    align-items: center;
+    margin-top: 21px;
 
-    padding-top: 22px;
+    padding-top: 19px;
+
+    border-top: 1px solid #eee;
 }
 
-.journeyCounter {
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 4px;
-}
-
-.journeyCounter strong {
-    color: #fc8222;
-
-    font-size: 22px;
-}
-
-.journeyCounter span {
-    color: #aaa;
-
-    font-size: 11px;
-}
-
-.journeyControls {
-    display: flex;
-
-    gap: 7px;
-}
-
-.journeyControls button {
-    width: 42px;
-    height: 42px;
-
+.previousDay,
+.nextDay {
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    border-radius: 50%;
+    gap: 8px;
 
-    border: 1px solid #e5e5e5;
+    border: 0;
 
-    background: #fff;
+    background: transparent;
 
-    color: #444;
+    color: #555;
+
+    font-size: 10px;
+
+    font-weight: 700;
 
     cursor: pointer;
-
-    transition: all .3s ease;
 }
 
-.journeyControls button:hover:not(:disabled) {
-    background: #fc8222;
-
-    border-color: #fc8222;
-
-    color: #fff;
-
-    transform: translateY(-2px);
+.previousDay:hover:not(:disabled),
+.nextDay:hover:not(:disabled) {
+    color: #fc8222;
 }
 
-.journeyControls button:disabled {
+.previousDay:disabled,
+.nextDay:disabled {
     opacity: .25;
 
     cursor: not-allowed;
 }
 
-.journeyControls .tourIcon {
-    width: 15px;
-    height: 15px;
+.nextDay .tourSvg {
+    width: 14px;
+}
+
+.dayCounter {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+}
+
+.dayCounter strong {
+    color: #fc8222;
+
+    font-size: 20px;
+}
+
+.dayCounter span {
+    color: #aaa;
+
+    font-size: 10px;
 }
 
 
 /* =========================================================
-   SUMMARY
+   STATS
 ========================================================= */
 
-.itinerarySummary {
-    max-width: 850px;
-
-    margin: 65px auto 0;
+.itineraryStats {
+    max-width: 900px;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-    border-top: 1px solid #eeeeee;
+    margin: 60px auto 0;
 
-    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-.itinerarySummary > div {
+.itineraryStats div {
+    min-height: 90px;
+
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
+    align-items: center;
 
     gap: 4px;
 
-    min-height: 90px;
-
-    border-right: 1px solid #eeeeee;
+    border-right: 1px solid #eee;
 }
 
-.itinerarySummary > div:last-child {
-    border-right: none;
+.itineraryStats div:last-child {
+    border-right: 0;
 }
 
-.itinerarySummary strong {
+.itineraryStats strong {
     color: #222;
 
-    font-size: 24px;
-
-    font-weight: 700;
+    font-size: 23px;
 }
 
-.itinerarySummary span {
+.itineraryStats span {
     color: #aaa;
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 700;
 
@@ -824,16 +873,18 @@
 
 @media (max-width: 1050px) {
 
-    .journeyExperience {
+    .itineraryMain {
         grid-template-columns: 1fr;
     }
 
-    .journeyPhoto {
+    .itineraryHeroImage {
         min-height: 520px;
     }
 
-    .journeyInformation {
-        margin: -80px 35px 0;
+    .itineraryContent {
+        margin: -70px 35px 0;
+
+        padding: 35px;
     }
 }
 
@@ -844,196 +895,203 @@
 
 @media (max-width: 650px) {
 
-    .ultimateItinerary {
+    .interactiveItinerary {
         width: 92%;
-
-        margin: 80px auto;
+        margin: 75px auto;
     }
 
-
-    /* Header */
-
-    .itineraryIntro {
-        margin-bottom: 42px;
+    .interactiveHeader {
+        margin-bottom: 38px;
     }
 
-    .itineraryIntro h2 {
-        font-size: 35px;
-
-        letter-spacing: -1.2px;
+    .interactiveHeader h2 {
+        font-size: 34px;
+        letter-spacing: -1px;
     }
 
-    .itineraryIntro p {
+    .interactiveHeader p {
         font-size: 13px;
+    }
 
-        line-height: 1.75;
+
+    /* Toolbar */
+
+    .itineraryToolbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .toolbarActions {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .toolbarActions button {
+        flex-shrink: 0;
+    }
+
+    .toolbarActions button span {
+        display: none;
     }
 
 
     /* Days */
 
-    .itineraryDays {
-        justify-content: flex-start;
-
-        overflow-x: auto;
-
-        gap: 17px;
-
-        margin-bottom: 35px;
-
-        padding: 5px 5px 15px;
-
-        scrollbar-width: none;
+    .dayRail {
+        margin-bottom: 20px;
     }
 
-    .itineraryDays::-webkit-scrollbar {
-        display: none;
-    }
-
-    .daysLine {
-        display: none;
-    }
-
-    .itineraryDay {
-        min-width: 62px;
-    }
-
-    .dayCircle {
-        width: 43px;
-        height: 43px;
+    .railDay {
+        min-width: 82px;
     }
 
 
-    /* Photo */
+    /* Image */
 
-    .journeyPhoto {
+    .itineraryHeroImage {
         min-height: 400px;
 
         border-radius: 20px;
     }
 
-    .photoDay {
+    .imageDayBadge {
         top: 18px;
         left: 18px;
 
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
 
-        border-radius: 14px;
+        border-radius: 13px;
     }
 
-    .photoDay strong {
-        font-size: 22px;
+    .imageDayBadge strong {
+        font-size: 21px;
     }
 
-    .photoBottom {
-        left: 22px;
-        right: 22px;
-        bottom: 23px;
+    .imageInformation {
+        left: 20px;
+        right: 20px;
+        bottom: 21px;
     }
 
-    .photoBottom h3 {
+    .imageInformation h3 {
         font-size: 23px;
     }
 
 
     /* Content */
 
-    .journeyInformation {
+    .itineraryContent {
         margin: -45px 10px 0;
 
-        padding: 24px;
+        padding: 22px;
 
         border-radius: 20px;
     }
 
-    .informationTop h3 {
-        font-size: 23px;
+    .contentHeading h3 {
+        font-size: 22px;
     }
 
-    .largeDayNumber {
-        font-size: 42px;
+    .backgroundNumber {
+        font-size: 40px;
     }
 
 
-    /* Grid */
+    /* Info */
 
-    .journeyInfoGrid {
+    .dayInfo {
         grid-template-columns: 1fr;
     }
 
-    .journeyInfoItem,
-    .journeyInfoItem:nth-child(odd),
-    .journeyInfoItem:nth-child(3),
-    .journeyInfoItem:nth-child(4) {
-        border-right: none;
+    .infoBox,
+    .infoBox:nth-child(odd),
+    .infoBox:nth-child(3),
+    .infoBox:nth-child(4) {
+        border-right: 0;
 
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee;
     }
 
-    .journeyInfoItem:last-child {
-        border-bottom: none;
-    }
-
-
-    /* Highlights */
-
-    .highlightList {
-        gap: 6px;
-    }
-
-    .highlightList span {
-        font-size: 9px;
+    .infoBox:last-child {
+        border-bottom: 0;
     }
 
 
-    /* Summary */
+    /* Schedule */
 
-    .itinerarySummary {
-        margin-top: 45px;
+    .scheduleList::before {
+        left: 59px;
     }
 
-    .itinerarySummary > div {
-        min-height: 75px;
+
+    /* Navigation */
+
+    .previousDay span,
+    .nextDay span {
+        display: none;
     }
 
-    .itinerarySummary strong {
-        font-size: 19px;
+
+    /* Stats */
+
+    .itineraryStats {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-top: 40px;
     }
 
-    .itinerarySummary span {
-        font-size: 7px;
+    .itineraryStats div:nth-child(2) {
+        border-right: 0;
+    }
+
+    .itineraryStats div:nth-child(1),
+    .itineraryStats div:nth-child(2) {
+        border-bottom: 1px solid #eee;
     }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   PRINT
 ========================================================= */
 
-@media (max-width: 400px) {
+@media print {
 
-    .itineraryIntro h2 {
-        font-size: 30px;
+    body * {
+        visibility: hidden;
     }
 
-    .journeyInformation {
-        padding: 20px;
+    .interactiveItinerary,
+    .interactiveItinerary * {
+        visibility: visible;
     }
 
-    .journeyPhoto {
-        min-height: 360px;
+    .interactiveItinerary {
+        width: 100%;
+        margin: 0;
     }
 
-    .informationTop h3 {
-        font-size: 21px;
+    .itineraryToolbar,
+    .dayRail,
+    .itineraryNavigation {
+        display: none;
     }
 
-    .largeDayNumber {
-        font-size: 35px;
+    .itineraryMain {
+        display: block;
     }
 
-    .travelerTip {
-        align-items: flex-start;
+    .itineraryHeroImage {
+        min-height: 350px;
+    }
+
+    .itineraryContent {
+        margin: 20px 0 0;
+        box-shadow: none;
     }
 }
