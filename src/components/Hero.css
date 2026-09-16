@@ -35,15 +35,11 @@
 
   display: flex;
   align-items: center;
-
   overflow: hidden;
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
   font-family: "Poppins", sans-serif;
-
   isolation: isolate;
 }
 
@@ -53,12 +49,9 @@
 
 .modernHero::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   z-index: -2;
-
   background:
     linear-gradient(
       90deg,
@@ -73,11 +66,8 @@
 .modernHero__overlay {
   position: absolute;
   inset: 0;
-
   z-index: -1;
-
   pointer-events: none;
-
   background:
     radial-gradient(
       circle at 80% 50%,
@@ -93,28 +83,17 @@
 .modernHero__container {
   position: relative;
   z-index: 5;
-
   width: min(100% - 64px, 1320px);
-
   margin: 0 auto;
 
   /*
     Responsive vertical spacing.
     This is important for 110% / 125% zoom.
   */
-  padding:
-    clamp(35px, 5vh, 65px)
-    0;
-
+  padding: clamp(35px, 5vh, 65px) 0;
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(350px, 420px);
-
-  gap:
-    clamp(28px, 4vw, 55px);
-
+  grid-template-columns: minmax(0, 1fr) minmax(350px, 420px);
+  gap: clamp(28px, 4vw, 55px);
   align-items: center;
 }
 
@@ -125,7 +104,6 @@
 .modernHero__left {
   width: 100%;
   max-width: 640px;
-
   min-width: 0;
 }
 
@@ -137,52 +115,28 @@
   display: flex;
   width: fit-content;
   align-items: center;
-
   gap: 8px;
-
-  padding:
-    8px
-    14px;
-
-  margin-bottom:
-    clamp(13px, 2vh, 20px);
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.17);
-
+  padding: 8px 14px;
+  margin-bottom: clamp(13px, 2vh, 20px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
   border-radius: 50px;
-
-  background:
-    rgba(255, 255, 255, 0.08);
-
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   color: #fff;
-
   font-size: 12px;
-
   font-weight: 500;
-
   line-height: 1;
 }
 
 .modernHero__badge::before {
   content: "";
-
   width: 7px;
   height: 7px;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: #ff7a00;
-
-  box-shadow:
-    0 0 0 5px
-    rgba(255, 122, 0, 0.12);
+  box-shadow: 0 0 0 5px rgba(255, 122, 0, 0.12);
 }
 
 /* =========================================================
@@ -192,25 +146,17 @@
 .modernHero__title {
   width: 100%;
   max-width: 640px;
-   text-align: left;
-  margin: 0 0
-    clamp(14px, 2vh, 20px);
-
+  text-align: left;
+  margin: 0 0 clamp(14px, 2vh, 20px);
   color: #fff;
-
   /*
     Fluid font size.
     Does NOT jump aggressively when zoom changes.
   */
-  font-size:
-    clamp(48px, 5vw, 72px);
-
+  font-size: clamp(48px, 5vw, 72px);
   font-weight: 800;
-
   line-height: 0.98;
-
-  letter-spacing:
-    clamp(-2.7px, -0.22vw, -2px);
+  letter-spacing: clamp(-2.7px, -0.22vw, -2px);
 }
 
 .modernHero__title span {
@@ -349,44 +295,23 @@
   top: 7px;
   right: 7px;
   width: clamp(42px, 4vw, 48px);
-
-  height:
-    clamp(42px, 4vw, 48px);
-
+  height: clamp(42px, 4vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 0;
-
   border-radius: 12px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff9d3d,
-      #ff7000
-    );
-
+  background: linear-gradient(135deg, #ff9d3d, #ff7000);
   color: #fff;
-
   font-size: 15px;
-
   cursor: pointer;
-
-  box-shadow:
-    0 8px 22px
-    rgba(255, 122, 0, 0.28);
-
+  box-shadow: 0 8px 22px rgba(255, 122, 0, 0.28);
   transition: 0.3s ease;
 }
 
 .modernHero__searchBtn:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 28px
-    rgba(255, 122, 0, 0.40);
+  box-shadow: 0 12px 28px rgba(255, 122, 0, 0.40);
 }
 
 /* =========================================================
@@ -396,56 +321,30 @@
 .modernHero__buttons {
   display: flex;
   align-items: center;
-
   gap: 10px;
-
-  margin-bottom:
-    clamp(20px, 3vh, 28px);
+  margin-bottom: clamp(20px, 3vh, 28px);
 }
 
 .modernHero__exploreBtn {
-  min-height:
-    clamp(47px, 6vh, 51px);
-
-  padding:
-    0
-    clamp(18px, 2vw, 22px);
-
+  min-height: clamp(47px, 6vh, 51px);
+  padding: 0 clamp(18px, 2vw, 22px);
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   border: 0;
-
   border-radius: 13px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff9c3c,
-      #ff7000
-    );
-
+  background: linear-gradient(135deg, #ff9c3c, #ff7000);
   color: #fff;
-
   font-size: 13px;
-
   font-weight: 600;
-
   cursor: pointer;
-
-  box-shadow:
-    0 10px 25px
-    rgba(255, 122, 0, 0.25);
-
+  box-shadow: 0 10px 25px rgba(255, 122, 0, 0.25);
   transition: 0.3s ease;
 }
 
 .modernHero__exploreBtn svg {
   font-size: 12px;
-
   transition: 0.3s ease;
 }
 
@@ -462,65 +361,38 @@
 ========================================================= */
 
 .modernHero__videoBtn {
-  min-height:
-    clamp(47px, 6vh, 51px);
-
-  padding:
-    0
-    clamp(13px, 1.5vw, 16px);
-
+  min-height: clamp(47px, 6vh, 51px);
+  padding: 0 clamp(13px, 1.5vw, 16px);
   display: flex;
   align-items: center;
-
   gap: 10px;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.18);
-
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 13px;
-
-  background:
-    rgba(255, 255, 255, 0.08);
-
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
-
   color: #fff;
-
   font-size: 13px;
-
   font-weight: 500;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .modernHero__videoBtn:hover {
-  background:
-    rgba(255, 255, 255, 0.14);
-
+  background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
 }
 
 .modernHero__play {
   width: 33px;
   height: 33px;
-
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding-left: 2px;
-
   border-radius: 50%;
-
   background: #fff;
-
   color: #ff7200;
-
   font-size: 10px;
 }
 
@@ -531,76 +403,48 @@
 .modernHero__stats {
   display: flex;
   align-items: center;
-
-  gap:
-    clamp(15px, 2vw, 23px);
+  gap: clamp(15px, 2vw, 23px);
 }
 
 .modernHero__statCard {
   position: relative;
-
-  min-width:
-    clamp(85px, 8vw, 105px);
-
-  padding-right:
-    clamp(15px, 2vw, 23px);
-
+  min-width: clamp(85px, 8vw, 105px);
+  padding-right: clamp(15px, 2vw, 23px);
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 }
 
 .modernHero__statCard:not(:last-child)::after {
   content: "";
-
   position: absolute;
-
   top: 1px;
   right: 0;
-
   width: 1px;
-
-  height:
-    clamp(36px, 5vh, 42px);
-
-  background:
-    rgba(255, 255, 255, 0.17);
+  height: clamp(36px, 5vh, 42px);
+  background: rgba(255, 255, 255, 0.17);
 }
 
 .modernHero__statCard strong {
   color: #fff;
-
-  font-size:
-    clamp(21px, 2vw, 26px);
-
+  font-size: clamp(21px, 2vw, 26px);
   font-weight: 700;
-
   line-height: 1;
-
   margin-bottom: 5px;
 }
 
 .modernHero__statCard > span {
-  color:
-    rgba(255, 255, 255, 0.60);
-
-  font-size:
-    clamp(8px, 0.75vw, 10px);
-
+  color: rgba(255, 255, 255, 0.60);
+  font-size: clamp(8px, 0.75vw, 10px);
   line-height: 1.3;
-
   white-space: nowrap;
 }
 
 .modernHero__rating {
   display: flex;
   align-items: center;
-
   gap: 5px;
-
   color: #ffc247;
-
   font-size: 10px;
 }
 
@@ -614,23 +458,15 @@
 
 .modernHero__right {
   position: relative;
-
   width: 100%;
-
   max-width: 420px;
-
   justify-self: end;
 
   /*
     Prevents the card from becoming taller than
     the available viewport at 110% zoom.
   */
-  height:
-    min(
-      560px,
-      calc(100vh - 175px)
-    );
-
+  height: min(560px, calc(100vh - 175px));
   min-height: 440px;
 }
 
@@ -640,35 +476,21 @@
 
 .modernHero__card {
   position: relative;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.19);
-
+  border: 1px solid rgba(255, 255, 255, 0.19);
   border-radius: 26px;
-
   background: #111;
-
-  box-shadow:
-    0 30px 75px
-    rgba(0, 0, 0, 0.42);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.42);
 }
 
 .modernHero__card img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
-  transition:
-    transform 1s ease;
+  transition: transform 1s ease;
 }
 
 .modernHero__card:hover img {
@@ -682,7 +504,6 @@
 .modernHero__cardOverlay {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       to bottom,
@@ -699,38 +520,22 @@
 
 .modernHero__cardTop {
   position: absolute;
-
   top: 18px;
   left: 18px;
-
   z-index: 3;
 }
 
 .modernHero__cardTop span {
   display: inline-flex;
   align-items: center;
-
-  padding:
-    6px
-    11px;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.20);
-
+  padding: 6px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
   border-radius: 50px;
-
-  background:
-    rgba(255, 255, 255, 0.10);
-
+  background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(12px);
-
   color: #fff;
-
   font-size: 8px;
-
   font-weight: 600;
-
   letter-spacing: 1.2px;
 }
 
@@ -740,84 +545,55 @@
 
 .modernHero__cardContent {
   position: absolute;
-
   left: 25px;
   right: 25px;
-
   bottom: 25px;
-
   z-index: 3;
 }
 
 .modernHero__cardContent small {
   display: block;
-
   margin-bottom: 6px;
-
-  color:
-    rgba(255, 255, 255, 0.62);
-
+  color: rgba(255, 255, 255, 0.62);
   font-size: 8px;
-
   font-weight: 500;
-
   letter-spacing: 1.1px;
-
   text-transform: uppercase;
 }
 
 .modernHero__cardContent h2 {
   margin: 0 0 7px;
-
   color: #fff;
-
-  font-size:
-    clamp(34px, 3vw, 43px);
-
+  font-size: clamp(34px, 3vw, 43px);
   font-weight: 700;
-
   line-height: 1;
-
   letter-spacing: -1px;
 }
 
 .modernHero__cardContent p {
   margin: 0 0 15px;
-
-  color:
-    rgba(255, 255, 255, 0.75);
-
+  color: rgba(255, 255, 255, 0.75);
   font-size: 12px;
-
   line-height: 1.5;
 }
 
 .modernHero__cardContent button {
   width: 45px;
   height: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 0;
-
   border-radius: 12px;
-
   background: #ff7a00;
-
   color: #fff;
-
   font-size: 13px;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .modernHero__cardContent button:hover {
   transform: translateX(5px);
-
   background: #ff6800;
 }
 
@@ -827,57 +603,35 @@
 
 .modernHero__nav {
   position: absolute;
-
   top: 50%;
   right: -20px;
-
   transform: translateY(-50%);
-
   display: flex;
   flex-direction: column;
-
   gap: 7px;
-
   z-index: 10;
 }
 
 .modernHero__nav button {
   width: 45px;
   height: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.22);
-
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 12px;
-
-  background:
-    rgba(255, 255, 255, 0.94);
-
+  background: rgba(255, 255, 255, 0.94);
   color: #172033;
-
   font-size: 12px;
-
   cursor: pointer;
-
-  box-shadow:
-    0 10px 25px
-    rgba(0, 0, 0, 0.22);
-
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
   transition: 0.3s ease;
 }
 
 .modernHero__nav button:hover {
   background: #ff7a00;
-
   border-color: #ff7a00;
-
   color: #fff;
-
   transform: translateX(3px);
 }
 
@@ -1480,9 +1234,7 @@
   }
 
   .modernHero__container {
-    padding:
-      30px
-      0;
+    padding: 30px 0;
   }
 
   .modernHero__badge {
@@ -1491,13 +1243,11 @@
 
   .modernHero__title {
     font-size: 74px;
-
     margin-bottom: 14px;
   }
 
   .modernHero__text {
     margin-bottom: 17px;
-
     font-size: 13px;
   }
 
@@ -1506,12 +1256,7 @@
   }
 
   .modernHero__right {
-    height:
-      min(
-        470px,
-        calc(100vh - 160px)
-      );
-
+    height: min(470px, calc(100vh - 160px));
     min-height: 400px;
   }
 
@@ -1532,9 +1277,7 @@
   }
 
   .modernHero__container {
-    padding:
-      22px
-      0;
+    padding: 22px 0;
   }
 
   .modernHero__title {
@@ -1548,13 +1291,11 @@
 
   .modernHero__text {
     margin-bottom: 14px;
-
     font-size: 12px;
   }
 
   .modernSelect__control {
     height: 55px !important;
-
     min-height: 55px !important;
   }
 
@@ -1573,11 +1314,7 @@
   }
 
   .modernHero__right {
-    height:
-      min(
-        430px,
-        calc(100vh - 145px)
-      );
+    height: min(430px, calc(100vh - 145px));
   }
 
   .modernHero__cardContent {
@@ -1597,89 +1334,56 @@
 
 .modernHero__videoModal {
   position: fixed;
-
   inset: 0;
-
   z-index: 99999;
-
   padding: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background:
-    rgba(0, 0, 0, 0.86);
-
+  background: rgba(0, 0, 0, 0.86);
   backdrop-filter: blur(12px);
-
   animation: heroFade 0.3s ease;
 }
 
 .modernHero__videoContent {
   position: relative;
-
   width: 100%;
   max-width: 1050px;
-
   overflow: hidden;
-
   border-radius: 20px;
-
   background: #000;
-
-  box-shadow:
-    0 30px 100px
-    rgba(0, 0, 0, 0.55);
-
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
   animation: heroZoom 0.35s ease;
 }
 
 .modernHero__videoContent iframe {
   display: block;
-
   width: 100%;
   height: 590px;
-
   border: 0;
 }
 
 .modernHero__closeVideo {
   position: absolute;
-
   top: 13px;
   right: 13px;
-
   z-index: 5;
-
   width: 42px;
   height: 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.15);
-
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-
-  background:
-    rgba(0, 0, 0, 0.52);
-
+  background: rgba(0, 0, 0, 0.52);
   color: #fff;
-
   font-size: 15px;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .modernHero__closeVideo:hover {
   background: #ff7a00;
-
   transform: rotate(90deg);
 }
 
@@ -1696,13 +1400,11 @@
 @keyframes heroZoom {
   from {
     opacity: 0;
-
     transform: scale(0.94);
   }
 
   to {
     opacity: 1;
-
     transform: scale(1);
   }
 }
@@ -1728,7 +1430,6 @@
   .modernHero__closeVideo {
     width: 36px;
     height: 36px;
-
     top: 9px;
     right: 9px;
   }
