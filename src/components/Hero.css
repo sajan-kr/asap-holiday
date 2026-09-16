@@ -1,302 +1,512 @@
-/* Hero.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* =========================================================
+   RESET
+========================================================= */
 
-* {
-  margin: 0;
-  padding: 0;
+.modernHero,
+.modernHero * {
   box-sizing: border-box;
 }
 
-.modernHero {
-  width: 100%;
-  min-height: 100vh;
+.modernHero button,
+.modernHero input {
+  font-family: "Poppins", sans-serif;
+}
 
+/* =========================================================
+   HERO
+========================================================= */
+
+.modernHero {
   position: relative;
 
-  overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  min-height: calc(100vh - 122px);
 
   display: flex;
   align-items: center;
 
+  overflow: hidden;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   font-family: "Poppins", sans-serif;
 
-  transition: 1s ease;
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.modernHero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 13, 27, 0.96) 0%,
+      rgba(6, 13, 27, 0.88) 25%,
+      rgba(6, 13, 27, 0.68) 48%,
+      rgba(6, 13, 27, 0.35) 72%,
+      rgba(6, 13, 27, 0.16) 100%
+    );
 }
 
 .modernHero__overlay {
   position: absolute;
   inset: 0;
 
+  z-index: -1;
+
+  pointer-events: none;
+
   background:
-    linear-gradient(
-      90deg,
-      rgba(5, 14, 30, 0.94) 0%,
-      rgba(5, 14, 30, 0.74) 45%,
-      rgba(5, 14, 30, 0.28) 100%
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255, 122, 0, 0.12),
+      transparent 30%
     );
 }
 
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
 .modernHero__container {
-  width: 100%;
-  max-width: 1400px;
-
-  margin: auto;
-
   position: relative;
   z-index: 5;
 
-  padding: 60px 50px;
+  width: 100%;
+  max-width: 1380px;
+
+  margin: 0 auto;
+
+  padding: 70px 48px 55px;
 
   display: grid;
-  grid-template-columns: 1fr 520px;
 
-  gap: 70px;
+  grid-template-columns:
+    minmax(0, 1fr)
+    440px;
+
+  gap: 55px;
+
   align-items: center;
 }
 
-/* =========================
-   LEFT
-========================= */
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
 
 .modernHero__left {
+  width: 100%;
   max-width: 650px;
 }
 
+/* =========================================================
+   BADGE
+========================================================= */
+
 .modernHero__badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-
-  padding: 14px 28px;
-
-  border-radius: 100px;
-
-  background: rgba(255,255,255,0.08);
-
-  border: 1px solid rgba(255,255,255,0.12);
-
-  backdrop-filter: blur(12px);
-
-  color: white;
-
-  font-size: 15px;
+  width: fit-content;
+  gap: 8px;
+  padding: 8px 15px;
+  margin-bottom: 19px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+  border-radius: 50px;
+  background:
+    rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #fff;
+  font-size: 12px;
   font-weight: 500;
-
-  margin-bottom: 28px;
+  line-height: 1;
 }
 
+.modernHero__badge::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff7a00;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(255, 122, 0, 0.12);
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
 .modernHero__title {
-  font-size: 92px;
-  line-height: 0.92;
+  max-width: 650px;
+
+  margin: 0 0 19px;
+
+  color: #fff;
+
+  font-size: clamp(54px, 5.2vw, 76px);
 
   font-weight: 800;
 
-  color: white;
+  line-height: 0.98;
 
-  letter-spacing: -4px;
-
-  margin-bottom: 26px;
+  letter-spacing: -3px;
+  text-align: left;
 }
 
 .modernHero__title span {
   display: block;
 
-  background: linear-gradient(
-    135deg,
-    #ffcc70,
-    #ff8c1a
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #ffc47e 0%,
+      #ff8b22 50%,
+      #ff6900 100%
+    );
 
-  background-clip: text;          /* Standard */
-  -webkit-background-clip: text;  /* Chrome, Edge, Safari */
+  background-clip: text;
+
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
 .modernHero__text {
-  max-width: 560px;
-
-  color: rgba(255,255,255,0.84);
-
-  font-size: 20px;
-  line-height: 1.9;
-
-  margin-bottom: 40px;
+  max-width: 550px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: left;
 }
 
-/* =========================
+/* =========================================================
    SEARCH
-========================= */
+========================================================= */
 
 .modernHero__searchWrapper {
   position: relative;
 
   width: 100%;
-  max-width: 720px;
+  max-width: 620px;
 
-  margin-bottom: 34px;
+  margin-bottom: 15px;
 }
 
 .modernHero__select {
   width: 100%;
 }
 
+/* =========================================================
+   REACT SELECT
+========================================================= */
+
 .modernSelect__control {
-  height: 92px !important;
+  width: 100%;
 
-  background: rgba(255,255,255,0.12) !important;
+  height: 62px !important;
+  min-height: 62px !important;
 
-  backdrop-filter: blur(18px);
+  padding:
+    0
+    67px
+    0
+    16px !important;
 
-  border-radius: 30px !important;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18) !important;
 
-  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 15px !important;
 
-  padding-left: 16px;
+  background:
+    rgba(27, 33, 46, 0.82) !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.14) !important;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  transition: 0.3s ease !important;
 }
 
 .modernSelect__control:hover {
-  border-color: rgba(255,157,47,0.45) !important;
+  border-color:
+    rgba(255, 122, 0, 0.55) !important;
+}
+
+.modernSelect__control--is-focused {
+  border-color:
+    #ff7a00 !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 122, 0, 0.12) !important;
+}
+
+.modernSelect__value-container {
+  padding: 0 !important;
 }
 
 .modernSelect__placeholder {
-  color: rgba(255,255,255,0.72) !important;
+  margin: 0 !important;
 
-  font-size: 18px !important;
+  color:
+    rgba(255, 255, 255, 0.65) !important;
+
+  font-size: 14px !important;
 }
 
 .modernSelect__single-value {
-  color: white !important;
+  margin: 0 !important;
 
-  font-size: 18px !important;
+  color: #fff !important;
+
+  font-size: 14px !important;
 }
+
+.modernSelect__indicators {
+  display: flex;
+}
+
+.modernSelect__indicator-separator {
+  display: none;
+}
+
+.modernSelect__dropdown-indicator {
+  color:
+    rgba(255, 255, 255, 0.52) !important;
+}
+
+/* Dropdown */
 
 .modernSelect__menu {
   overflow: hidden;
 
-  border-radius: 24px !important;
+  margin-top: 7px !important;
 
-  background: rgba(5,14,30,0.96) !important;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
 
-  backdrop-filter: blur(18px);
+  border-radius: 14px !important;
 
-  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    rgba(10, 17, 30, 0.98) !important;
+
+  box-shadow:
+    0 20px 55px
+    rgba(0, 0, 0, 0.40);
+
+  z-index: 9999;
+}
+
+.modernSelect__menu-list {
+  padding: 5px !important;
 }
 
 .modernSelect__option {
-  padding: 16px 20px !important;
+  padding:
+    11px
+    14px !important;
 
-  color: white !important;
+  border-radius: 8px;
 
   background: transparent !important;
+
+  color:
+    rgba(255, 255, 255, 0.80) !important;
+
+  font-size: 13px;
+
+  cursor: pointer;
 }
 
-.modernSelect__option:hover {
-  background: rgba(255,157,47,0.12) !important;
+.modernSelect__option:hover,
+.modernSelect__option--is-focused {
+  background:
+    rgba(255, 122, 0, 0.14) !important;
+
+  color: #fff !important;
 }
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
 
 .modernHero__searchBtn {
   position: absolute;
 
-  top: 13px;
-  right: 13px;
+  top: 7px;
+  right: 7px;
 
-  width: 66px;
-  height: 66px;
+  width: 48px;
+  height: 48px;
 
-  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: none;
+  border: 0;
+
+  border-radius: 12px;
 
   background:
     linear-gradient(
       135deg,
-      #ffb347,
-      #ff8c1a
+      #ff9d3d,
+      #ff7000
     );
 
-  color: white;
+  color: #fff;
 
-  font-size: 22px;
+  font-size: 16px;
 
   cursor: pointer;
 
+  box-shadow:
+    0 8px 22px
+    rgba(255, 122, 0, 0.28);
+
   transition: 0.3s ease;
+
+  z-index: 3;
 }
 
 .modernHero__searchBtn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(255, 122, 0, 0.40);
 }
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .modernHero__buttons {
   display: flex;
   align-items: center;
 
-  gap: 18px;
+  gap: 10px;
 
-  margin-bottom: 46px;
+  margin-bottom: 27px;
 }
 
 .modernHero__exploreBtn {
-  height: 72px;
+  min-height: 51px;
 
-  padding: 0 40px;
+  padding:
+    0
+    22px;
 
-  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: none;
+  gap: 10px;
+
+  border: 0;
+
+  border-radius: 13px;
 
   background:
     linear-gradient(
       135deg,
-      #ffb347,
-      #ff8c1a
+      #ff9c3c,
+      #ff7000
     );
 
-  color: white;
+  color: #fff;
 
-  font-size: 18px;
+  font-size: 13px;
+
   font-weight: 600;
 
   cursor: pointer;
 
-  transition: 0.35s ease;
-
   box-shadow:
-    0 15px 40px rgba(255,140,26,0.3);
+    0 10px 25px
+    rgba(255, 122, 0, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.modernHero__exploreBtn svg {
+  font-size: 12px;
+
+  transition: 0.3s ease;
 }
 
 .modernHero__exploreBtn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
+.modernHero__exploreBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Video */
+
 .modernHero__videoBtn {
-  height: 72px;
+  min-height: 51px;
 
-  padding: 0 30px;
-
-  border-radius: 24px;
-
-  border: 1px solid rgba(255,255,255,0.12);
-
-  background: rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(14px);
+  padding:
+    0
+    16px;
 
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  gap: 10px;
 
-  color: white;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -304,118 +514,158 @@
 }
 
 .modernHero__videoBtn:hover {
-  background: rgba(255,255,255,0.14);
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  transform: translateY(-2px);
 }
 
 .modernHero__play {
-  width: 46px;
-  height: 46px;
+  width: 33px;
+  height: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 2px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
-  background: white;
+  background: #fff;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #ff7200;
 
-  color: #ff8c1a;
-
-  font-size: 14px;
+  font-size: 10px;
 }
 
-/* =========================
+/* =========================================================
    STATS
-========================= */
+========================================================= */
 
 .modernHero__stats {
   display: flex;
-  gap: 20px;
+  align-items: center;
+
+  gap: 23px;
 }
 
 .modernHero__statCard {
-  width: 180px;
-  height: 180px;
+  position: relative;
 
-  border-radius: 30px;
+  min-width: 105px;
 
-  background: rgba(255,255,255,0.08);
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(18px);
+  padding-right: 23px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  text-align: center;
-
-  transition: 0.3s ease;
+  align-items: flex-start;
 }
 
-.modernHero__statCard:hover {
-  transform: translateY(-6px);
+.modernHero__statCard:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 1px;
+  right: 0;
+
+  width: 1px;
+  height: 42px;
+
+  background:
+    rgba(255, 255, 255, 0.17);
 }
 
-.modernHero__statCard h2 {
-  color: white;
+.modernHero__statCard strong {
+  color: #fff;
 
-  font-size: 54px;
-  font-weight: 800;
+  font-size: 26px;
 
-  margin-bottom: 10px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  margin-bottom: 5px;
 }
 
-.modernHero__statCard p {
-  color: rgba(255,255,255,0.8);
+.modernHero__statCard > span {
+  color:
+    rgba(255, 255, 255, 0.60);
 
-  font-size: 17px;
+  font-size: 10px;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
 }
 
 .modernHero__rating {
   display: flex;
   align-items: center;
-  gap: 8px;
 
-  color: #ffd34d;
+  gap: 5px;
 
-  margin-top: 6px;
+  color: #ffc247;
+
+  font-size: 10px;
 }
 
-/* =========================
-   RIGHT
-========================= */
+.modernHero__rating svg {
+  font-size: 10px;
+}
+
+/* =========================================================
+   RIGHT DESTINATION CARD
+========================================================= */
 
 .modernHero__right {
   position: relative;
+
+  width: 100%;
+  max-width: 440px;
+
+  justify-self: end;
 }
 
 .modernHero__card {
   position: relative;
 
-  height: 700px;
-
-  border-radius: 42px;
+  width: 100%;
+  height: 560px;
 
   overflow: hidden;
 
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.19);
+
+  border-radius: 26px;
+
+  background: #111;
+
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.45);
+    0 30px 75px
+    rgba(0, 0, 0, 0.42);
 }
 
 .modernHero__card img {
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
-  transition: 1s ease;
+  transition:
+    transform 1s ease;
 }
 
 .modernHero__card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.045);
 }
 
 .modernHero__cardOverlay {
@@ -424,189 +674,297 @@
 
   background:
     linear-gradient(
-      to top,
-      rgba(0,0,0,0.82),
-      rgba(0,0,0,0.1)
+      to bottom,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.03) 38%,
+      rgba(0, 0, 0, 0.70) 76%,
+      rgba(0, 0, 0, 0.93) 100%
     );
 }
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.modernHero__cardTop {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 3;
+}
+
+.modernHero__cardTop span {
+  display: inline-flex;
+  align-items: center;
+
+  padding:
+    6px
+    11px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.20);
+
+  border-radius: 50px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
 
 .modernHero__cardContent {
   position: absolute;
 
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 3;
 }
 
-.modernHero__cardContent span {
-  color: rgba(255,255,255,0.82);
+.modernHero__cardContent small {
+  display: block;
 
-  font-size: 15px;
+  margin-bottom: 6px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.1px;
+
+  text-transform: uppercase;
 }
 
 .modernHero__cardContent h2 {
-  color: white;
+  margin: 0 0 7px;
 
-  font-size: 64px;
-  font-weight: 800;
+  color: #fff;
 
-  margin: 10px 0;
+  font-size: 43px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -1px;
 }
 
 .modernHero__cardContent p {
-  color: rgba(255,255,255,0.82);
+  margin: 0 0 15px;
 
-  font-size: 18px;
+  color:
+    rgba(255, 255, 255, 0.75);
 
-  margin-bottom: 24px;
+  font-size: 12px;
+
+  line-height: 1.5;
 }
 
 .modernHero__cardContent button {
-  width: 72px;
-  height: 72px;
+  width: 45px;
+  height: 45px;
 
-  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: none;
+  border: 0;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ffb347,
-      #ff8c1a
-    );
+  border-radius: 12px;
 
-  color: white;
+  background: #ff7a00;
 
-  font-size: 22px;
+  color: #fff;
+
+  font-size: 13px;
 
   cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
-/* =========================
-   NAV
-========================= */
+.modernHero__cardContent button:hover {
+  transform: translateX(5px);
+
+  background: #ff6800;
+}
+
+/* =========================================================
+   SLIDER NAV
+========================================================= */
 
 .modernHero__nav {
   position: absolute;
 
-  right: -34px;
   top: 50%;
+  right: -21px;
 
   transform: translateY(-50%);
 
   display: flex;
   flex-direction: column;
 
-  gap: 18px;
+  gap: 7px;
+
+  z-index: 10;
 }
 
 .modernHero__nav button {
-  width: 78px;
-  height: 78px;
-
-  border-radius: 28px;
-
-  border: none;
-
-  background: white;
-
-  color: #111;
-
-  font-size: 22px;
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.modernHero__nav button:hover {
-  transform: scale(1.06);
-}
-
-/* =========================
-   VIDEO MODAL
-========================= */
-
-.modernHero__videoModal {
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0,0,0,0.82);
-
-  backdrop-filter: blur(14px);
-
-  z-index: 99999;
+  width: 45px;
+  height: 45px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: #172033;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0, 0, 0, 0.22);
+
+  transition: 0.3s ease;
+}
+
+.modernHero__nav button:hover {
+  background: #ff7a00;
+
+  border-color: #ff7a00;
+
+  color: #fff;
+
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   VIDEO MODAL
+========================================================= */
+
+.modernHero__videoModal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
   padding: 20px;
 
-  animation: fadeIn 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(0, 0, 0, 0.86);
+
+  backdrop-filter: blur(12px);
+
+  animation: heroFade 0.3s ease;
 }
 
 .modernHero__videoContent {
-  width: 100%;
-  max-width: 1100px;
-
   position: relative;
 
-  border-radius: 32px;
+  width: 100%;
+  max-width: 1050px;
 
   overflow: hidden;
 
-  box-shadow:
-    0 25px 100px rgba(0,0,0,0.55);
+  border-radius: 20px;
 
-  animation: scaleUp 0.4s ease;
+  background: #000;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.55);
+
+  animation: heroZoom 0.35s ease;
 }
 
 .modernHero__videoContent iframe {
-  width: 100%;
-  height: 620px;
-
-  border: none;
-
   display: block;
+
+  width: 100%;
+  height: 590px;
+
+  border: 0;
 }
 
 .modernHero__closeVideo {
   position: absolute;
 
-  top: 18px;
-  right: 18px;
+  top: 13px;
+  right: 13px;
 
-  width: 52px;
-  height: 52px;
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
 
   border-radius: 50%;
 
-  border: none;
+  background:
+    rgba(0, 0, 0, 0.52);
 
-  background: rgba(255,255,255,0.18);
+  color: #fff;
 
-  backdrop-filter: blur(10px);
-
-  color: white;
-
-  font-size: 18px;
+  font-size: 15px;
 
   cursor: pointer;
-
-  z-index: 5;
 
   transition: 0.3s ease;
 }
 
 .modernHero__closeVideo:hover {
+  background: #ff7a00;
+
   transform: rotate(90deg);
-
-  background: #ff8c1a;
 }
 
-@keyframes fadeIn {
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroFade {
   from {
     opacity: 0;
   }
@@ -616,119 +974,723 @@
   }
 }
 
-@keyframes scaleUp {
+@keyframes heroZoom {
   from {
-    transform: scale(0.88);
     opacity: 0;
+    transform: scale(0.94);
   }
 
   to {
+    opacity: 1;
     transform: scale(1);
-    opacity: 1;
   }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================================
+   1200px
+========================================================= */
 
 @media (max-width: 1200px) {
 
   .modernHero__container {
-    grid-template-columns: 1fr;
+    max-width: 1120px;
+
+    padding:
+      65px
+      30px
+      50px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      390px;
+
+    gap: 38px;
   }
 
-  .modernHero__right {
-    max-width: 700px;
+  .modernHero__title {
+    font-size: 61px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .modernHero__text {
+    font-size: 14px;
+  }
+
+  .modernHero__searchWrapper {
+    max-width: 570px;
+  }
+
+  .modernHero__card {
+    height: 500px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 39px;
   }
 
   .modernHero__nav {
-    right: 20px;
+    right: -17px;
+  }
+
+  .modernHero__nav button {
+    width: 42px;
+    height: 42px;
   }
 }
 
-@media (max-width: 768px) {
+/* =========================================================
+   1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .modernHero {
+    min-height: calc(100vh - 120px);
+  }
+
+  .modernHero__container {
+    padding:
+      55px
+      25px
+      45px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      350px;
+
+    gap: 28px;
+  }
+
+  .modernHero__title {
+    font-size: 53px;
+
+    letter-spacing: -2px;
+  }
+
+  .modernHero__text {
+    max-width: 480px;
+
+    font-size: 13px;
+  }
+
+  .modernHero__searchWrapper {
+    max-width: 510px;
+  }
+
+  .modernHero__card {
+    height: 465px;
+
+    border-radius: 23px;
+  }
+
+  .modernHero__cardContent {
+    left: 21px;
+    right: 21px;
+    bottom: 21px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 36px;
+  }
+
+  .modernHero__statCard {
+    min-width: 95px;
+
+    padding-right: 18px;
+  }
+
+  .modernHero__stats {
+    gap: 18px;
+  }
+}
+
+/* =========================================================
+   900px - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
 
   .modernHero {
     min-height: auto;
 
-    padding: 70px 0;
+    padding:
+      85px
+      0
+      55px;
+  }
+
+  .modernHero::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 13, 27, 0.96) 0%,
+        rgba(6, 13, 27, 0.84) 42%,
+        rgba(6, 13, 27, 0.60) 100%
+      );
   }
 
   .modernHero__container {
-    padding: 30px 20px;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    padding:
+      0
+      30px;
+  }
+
+  .modernHero__left {
+    max-width: 720px;
   }
 
   .modernHero__title {
-    font-size: 58px;
+    font-size: 62px;
   }
 
   .modernHero__text {
-    font-size: 16px;
+    max-width: 600px;
   }
 
-  .modernHero__buttons {
+  .modernHero__searchWrapper {
+    max-width: 650px;
+  }
+
+  .modernHero__right {
+    width: 100%;
+
+    max-width: 590px;
+
+    justify-self: center;
+  }
+
+  .modernHero__card {
+    height: 480px;
+  }
+}
+
+/* =========================================================
+   768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .modernHero {
+    padding:
+      78px
+      0
+      40px;
+  }
+
+  .modernHero__container {
+    display: flex;
+
     flex-direction: column;
-    align-items: stretch;
+
+    gap: 30px;
+
+    padding:
+      0
+      20px;
+  }
+
+  /* Badge */
+
+  .modernHero__badge {
+    padding:
+      7px
+      12px;
+
+    margin-bottom: 15px;
+
+    font-size: 10px;
+  }
+
+  /* Heading */
+
+  .modernHero__title {
+    max-width: 100%;
+
+    margin-bottom: 15px;
+
+    font-size:
+      clamp(42px, 10.5vw, 56px);
+
+    line-height: 1;
+
+    letter-spacing: -1.8px;
+  }
+
+  /* Description */
+
+  .modernHero__text {
+    max-width: 100%;
+
+    margin-bottom: 19px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  /* Search */
+
+  .modernHero__searchWrapper {
+    max-width: none;
+
+    margin-bottom: 12px;
+  }
+
+  .modernSelect__control {
+    height: 57px !important;
+
+    min-height: 57px !important;
+
+    padding-left: 14px !important;
+    padding-right: 60px !important;
+
+    border-radius: 13px !important;
+  }
+
+  .modernSelect__placeholder,
+  .modernSelect__single-value {
+    font-size: 13px !important;
+  }
+
+  .modernHero__searchBtn {
+    top: 7px;
+    right: 7px;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+  }
+
+  /* Buttons */
+
+  .modernHero__buttons {
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
   }
 
   .modernHero__exploreBtn,
   .modernHero__videoBtn {
     width: 100%;
+
+    height: 49px;
+    min-height: 49px;
+
+    padding:
+      0
+      10px;
+
+    border-radius: 12px;
+
+    font-size: 11px;
   }
+
+  .modernHero__play {
+    width: 29px;
+    height: 29px;
+
+    font-size: 9px;
+  }
+
+  /* Stats */
 
   .modernHero__stats {
-    flex-wrap: wrap;
-  }
-
-  .modernHero__statCard {
-    width: calc(50% - 10px);
-
-    height: 150px;
-  }
-
-  .modernHero__card {
-    height: 520px;
-  }
-
-  .modernHero__cardContent h2 {
-    font-size: 44px;
-  }
-
-  .modernHero__videoContent iframe {
-    height: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .modernHero__title {
-    font-size: 46px;
-  }
-
-  .modernHero__statCard {
     width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 0;
   }
 
-  .modernHero__nav {
-    display: none;
+  .modernHero__statCard {
+    min-width: 0;
+
+    padding:
+      0
+      7px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .modernHero__statCard:not(:last-child)::after {
+    top: 0;
+
+    right: 0;
+
+    height: 39px;
+  }
+
+  .modernHero__statCard strong {
+    font-size: 20px;
+
+    margin-bottom: 4px;
+  }
+
+  .modernHero__statCard > span {
+    font-size: 7.5px;
+
+    white-space: normal;
+  }
+
+  .modernHero__rating {
+    justify-content: center;
+
+    font-size: 7.5px;
+  }
+
+  /* Destination card */
+
+  .modernHero__right {
+    width: 100%;
+
+    max-width: none;
   }
 
   .modernHero__card {
-    height: 420px; 
+    width: 100%;
+
+    height: 400px;
+
+    border-radius: 20px;
+  }
+
+  .modernHero__cardTop {
+    top: 14px;
+    left: 14px;
+  }
+
+  .modernHero__cardTop span {
+    padding:
+      6px
+      10px;
+
+    font-size: 8px;
   }
 
   .modernHero__cardContent {
-    left: 24px;
-    right: 24px;
-    bottom: 24px;
+    left: 19px;
+    right: 19px;
+    bottom: 19px;
+  }
+
+  .modernHero__cardContent small {
+    font-size: 8px;
+
+    margin-bottom: 5px;
   }
 
   .modernHero__cardContent h2 {
     font-size: 34px;
+
+    margin-bottom: 6px;
+  }
+
+  .modernHero__cardContent p {
+    font-size: 11px;
+
+    margin-bottom: 12px;
+  }
+
+  .modernHero__cardContent button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+  }
+
+  /* Navigation */
+
+  .modernHero__nav {
+    top: auto;
+
+    right: 12px;
+    bottom: 12px;
+
+    transform: none;
+
+    flex-direction: row;
+
+    gap: 6px;
+  }
+
+  .modernHero__nav button {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+  }
+
+  /* Video */
+
+  .modernHero__videoModal {
+    padding: 15px;
   }
 
   .modernHero__videoContent {
-    border-radius: 20px;
+    border-radius: 15px;
+  }
+
+  .modernHero__videoContent iframe {
+    height: 250px;
+  }
+
+  .modernHero__closeVideo {
+    width: 36px;
+    height: 36px;
+
+    top: 9px;
+    right: 9px;
+  }
+}
+
+/* =========================================================
+   576px
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .modernHero {
+    padding:
+      72px
+      0
+      35px;
+  }
+
+  .modernHero__container {
+    gap: 27px;
+
+    padding:
+      0
+      16px;
+  }
+
+  .modernHero__title {
+    font-size: 45px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .modernHero__text {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .modernHero__buttons {
+    gap: 8px;
+  }
+
+  .modernHero__exploreBtn,
+  .modernHero__videoBtn {
+    font-size: 10.5px;
+  }
+
+  .modernHero__card {
+    height: 370px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 31px;
+  }
+}
+
+/* =========================================================
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .modernHero {
+    padding:
+      68px
+      0
+      32px;
+  }
+
+  .modernHero__container {
+    gap: 25px;
+
+    padding:
+      0
+      14px;
+  }
+
+  .modernHero__badge {
+    font-size: 9px;
+  }
+
+  .modernHero__title {
+    font-size: 40px;
+
+    letter-spacing: -1.3px;
+  }
+
+  .modernHero__text {
+    font-size: 11px;
+  }
+
+  .modernSelect__control {
+    height: 55px !important;
+
+    min-height: 55px !important;
+  }
+
+  .modernHero__searchBtn {
+    width: 41px;
+    height: 41px;
+
+    top: 7px;
+    right: 7px;
+  }
+
+  .modernHero__exploreBtn,
+  .modernHero__videoBtn {
+    height: 47px;
+    min-height: 47px;
+
+    font-size: 10px;
+
+    border-radius: 11px;
+  }
+
+  .modernHero__play {
+    width: 27px;
+    height: 27px;
+  }
+
+  .modernHero__statCard strong {
+    font-size: 18px;
+  }
+
+  .modernHero__statCard > span {
+    font-size: 6.5px;
+  }
+
+  .modernHero__card {
+    height: 350px;
+
+    border-radius: 18px;
+  }
+
+  .modernHero__cardContent {
+    left: 17px;
+    right: 17px;
+    bottom: 17px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 29px;
+  }
+
+  .modernHero__cardContent p {
+    font-size: 10px;
+  }
+
+  .modernHero__cardContent button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .modernHero__nav {
+    right: 9px;
+    bottom: 9px;
+  }
+
+  .modernHero__nav button {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+/* =========================================================
+   360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .modernHero {
+    padding-top: 65px;
+  }
+
+  .modernHero__container {
+    gap: 23px;
+
+    padding:
+      0
+      12px;
+  }
+
+  .modernHero__title {
+    font-size: 36px;
+
+    letter-spacing: -1.1px;
+  }
+
+  .modernHero__text {
+    font-size: 10px;
+  }
+
+  .modernHero__buttons {
+    gap: 6px;
+  }
+
+  .modernHero__exploreBtn,
+  .modernHero__videoBtn {
+    font-size: 9px;
+
+    padding:
+      0
+      7px;
+  }
+
+  .modernHero__statCard {
+    padding:
+      0
+      3px;
+  }
+
+  .modernHero__statCard strong {
+    font-size: 16px;
+  }
+
+  .modernHero__statCard > span {
+    font-size: 5.5px;
+  }
+
+  .modernHero__card {
+    height: 325px;
+  }
+
+  .modernHero__cardContent h2 {
+    font-size: 27px;
+  }
+
+  .modernHero__cardContent p {
+    font-size: 9px;
   }
 }

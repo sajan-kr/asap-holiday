@@ -2,67 +2,89 @@ import React, { useEffect, useState } from "react";
 import "./Hero.css";
 import Select from "react-select";
 import { Country } from "country-state-city";
-import { FaPlay, FaArrowRight, FaChevronLeft, FaChevronRight, FaStar, FaSearch, FaTimes, } from "react-icons/fa";
-import { useNavigate, } from "react-router-dom"
 
-/* =========================  COUNTRIES ========================= */
+import {
+  FaPlay,
+  FaArrowRight,
+  FaChevronLeft,
+  FaChevronRight,
+  FaStar,
+  FaSearch,
+  FaTimes,
+} from "react-icons/fa";
 
-const countryOptions = Country.getAllCountries().map(
-  (country) => ({
-    value: country.name,
-    label: country.name,
-  })
-);
+import { useNavigate } from "react-router-dom";
 
-/* ========================= HERO SLIDES ========================= */
+/* =========================================================
+   COUNTRIES
+========================================================= */
+
+const countryOptions = Country.getAllCountries().map((country) => ({
+  value: country.name,
+  label: country.name,
+}));
+
+/* =========================================================
+   HERO SLIDES
+========================================================= */
 
 const heroSlides = [
   {
     title: "Maldives",
     subtitle: "Private Island Paradise",
-    image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
   },
-
   {
     title: "Dubai",
     subtitle: "Luxury Desert Escape",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
   },
-
   {
     title: "Switzerland",
     subtitle: "Snow Mountain Adventure",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
   },
-
   {
     title: "Bali",
     subtitle: "Tropical Luxury Retreat",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
+/* =========================================================
+   HERO
+========================================================= */
+
 const Hero = () => {
   const navigate = useNavigate();
+
   const [activeSlide, setActiveSlide] = useState(0);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [showVideo, setShowVideo] = useState(false);
 
-  /* =========================  AUTO SLIDER ========================= */
+  const currentSlide = heroSlides[activeSlide];
+
+  /* =======================================================
+     AUTO SLIDER
+  ======================================================= */
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) =>
-        prev === heroSlides.length - 1
-          ? 0
-          : prev + 1
+        prev === heroSlides.length - 1 ? 0 : prev + 1
       );
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  /* ========================= SEARCH  ========================= */
+  /* =======================================================
+     SEARCH
+  ======================================================= */
 
   const handleSearch = () => {
     if (!selectedCountry) {
@@ -77,42 +99,56 @@ const Hero = () => {
     navigate(`/tours/${country}`);
   };
 
-  /* =========================  VIDEO ========================= */
+  /* =======================================================
+     DESTINATION
+  ======================================================= */
 
-  const handleVideo = () => {
-    setShowVideo(true);
+  const handleDestination = () => {
+    const destination = currentSlide.title
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+
+    navigate(`/tours/${destination}`);
   };
 
-  /* ========================= SLIDER ========================= */
+  /* =======================================================
+     SLIDER
+  ======================================================= */
 
   const nextSlide = () => {
     setActiveSlide((prev) =>
-      prev === heroSlides.length - 1
-        ? 0
-        : prev + 1
+      prev === heroSlides.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
     setActiveSlide((prev) =>
-      prev === 0
-        ? heroSlides.length - 1
-        : prev - 1
+      prev === 0 ? heroSlides.length - 1 : prev - 1
     );
   };
 
-  const currentSlide = heroSlides[activeSlide];
+  /* =======================================================
+     RENDER
+  ======================================================= */
 
   return (
     <>
-      <section className="modernHero" style={{ backgroundImage: `url(${currentSlide.image})`, }} >
-        {/* OVERLAY */}
+      <section
+        className="modernHero"
+        style={{
+          backgroundImage: `url(${currentSlide.image})`,
+        }}
+      >
         <div className="modernHero__overlay"></div>
 
-        {/* CONTAINER */}
         <div className="modernHero__container">
-          {/* LEFT */}
+
+          {/* =================================================
+              LEFT
+          ================================================= */}
+
           <div className="modernHero__left">
+
             <div className="modernHero__badge">
               Luxury Travel Collection
             </div>
@@ -124,13 +160,14 @@ const Hero = () => {
             </h1>
 
             <p className="modernHero__text">
-              Experience luxury vacations,
-              premium stays and unforgettable
-              journeys around the world.
+              Experience luxury vacations, premium stays and
+              unforgettable journeys around the world.
             </p>
 
             {/* SEARCH */}
+
             <div className="modernHero__searchWrapper">
+
               <Select
                 options={countryOptions}
                 placeholder="Search destinations..."
@@ -138,6 +175,7 @@ const Hero = () => {
                 onChange={setSelectedCountry}
                 className="modernHero__select"
                 classNamePrefix="modernSelect"
+                isSearchable
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleSearch();
@@ -145,99 +183,157 @@ const Hero = () => {
                 }}
               />
 
-              <button className="modernHero__searchBtn" onClick={handleSearch}>
+              <button
+                type="button"
+                className="modernHero__searchBtn"
+                onClick={handleSearch}
+                aria-label="Search destination"
+              >
                 <FaSearch />
               </button>
+
             </div>
 
             {/* BUTTONS */}
+
             <div className="modernHero__buttons">
-              <button className="modernHero__exploreBtn" onClick={handleSearch}>
-                Explore Tours
+
+              <button
+                type="button"
+                className="modernHero__exploreBtn"
+                onClick={handleSearch}
+              >
+                <span>Explore Tours</span>
+                <FaArrowRight />
               </button>
 
-              <button className="modernHero__videoBtn" onClick={handleVideo}>
-                <div className="modernHero__play">
+              <button
+                type="button"
+                className="modernHero__videoBtn"
+                onClick={() => setShowVideo(true)}
+              >
+                <span className="modernHero__play">
                   <FaPlay />
-                </div>
+                </span>
 
                 <span>Watch Video</span>
               </button>
+
             </div>
 
             {/* STATS */}
+
             <div className="modernHero__stats">
+
               <div className="modernHero__statCard">
-                <h2>25K+</h2>
-                <p>Happy Travelers</p>
+                <strong>25K+</strong>
+                <span>Happy Travelers</span>
               </div>
 
               <div className="modernHero__statCard">
-                <h2>350+</h2>
-                <p>Luxury Tours</p>
+                <strong>350+</strong>
+                <span>Luxury Tours</span>
               </div>
 
               <div className="modernHero__statCard">
-                <h2>4.9</h2>
+                <strong>4.9</strong>
 
                 <div className="modernHero__rating">
                   <FaStar />
                   <span>Ratings</span>
                 </div>
               </div>
+
             </div>
+
           </div>
 
-          {/* RIGHT */}
+          {/* =================================================
+              RIGHT
+          ================================================= */}
+
           <div className="modernHero__right">
+
             <div className="modernHero__card">
-              <img src={currentSlide.image} alt={currentSlide.title}/>
+
+              <img
+                src={currentSlide.image}
+                alt={currentSlide.title}
+              />
+
               <div className="modernHero__cardOverlay"></div>
 
+              <div className="modernHero__cardTop">
+                <span>EXPLORE</span>
+              </div>
+
               <div className="modernHero__cardContent">
-                <span>
-                  Featured Destination
-                </span>
+
+                <small>Featured Destination</small>
 
                 <h2>{currentSlide.title}</h2>
 
                 <p>{currentSlide.subtitle}</p>
 
                 <button
-                  onClick={() =>
-                    navigate(
-                      `/tours/${currentSlide.title
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`
-                    )
-                  }
+                  type="button"
+                  onClick={handleDestination}
+                  aria-label={`Explore ${currentSlide.title}`}
                 >
                   <FaArrowRight />
                 </button>
+
               </div>
+
             </div>
 
             {/* NAVIGATION */}
 
             <div className="modernHero__nav">
-              <button onClick={prevSlide}>
+
+              <button
+                type="button"
+                onClick={prevSlide}
+                aria-label="Previous slide"
+              >
                 <FaChevronLeft />
               </button>
 
-              <button onClick={nextSlide}>
+              <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next slide"
+              >
                 <FaChevronRight />
               </button>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* VIDEO MODAL */}
+      {/* =====================================================
+          VIDEO MODAL
+      ===================================================== */}
 
       {showVideo && (
-        <div className="modernHero__videoModal" onClick={() => setShowVideo(false)}>
-          <div className="modernHero__videoContent" onClick={(e) =>  e.stopPropagation()}>
-            <button className="modernHero__closeVideo" onClick={() => setShowVideo(false)}>
+        <div
+          className="modernHero__videoModal"
+          onClick={() => setShowVideo(false)}
+        >
+          <div
+            className="modernHero__videoContent"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <button
+              type="button"
+              className="modernHero__closeVideo"
+              onClick={() => setShowVideo(false)}
+              aria-label="Close video"
+            >
               <FaTimes />
             </button>
 
@@ -248,6 +344,7 @@ const Hero = () => {
               allow="autoplay; encrypted-media"
               allowFullScreen
             ></iframe>
+
           </div>
         </div>
       )}
