@@ -821,3 +821,526 @@ RESPONSIVE
   }
 
 }
+
+/* =========================================================
+   MOBILE RESPONSIVE ONLY
+   Desktop styles remain unchanged
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* =========================
+     HEADER
+     ========================= */
+
+  .travelerStories .tsHeader {
+    width: 100%;
+    display: block;
+    padding: 0 16px 25px;
+    margin: 0 auto;
+  }
+
+  .travelerStories .tsPolaroids {
+    display: none;
+  }
+
+  .travelerStories .tsHeading {
+    width: 100%;
+    padding: 5px 5px 20px;
+  }
+
+  .travelerStories .tsSubTitle {
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+
+  .travelerStories .tsHeading h2 {
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+  }
+
+  .travelerStories .tsHeading p {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 5px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .travelerStories .headingLine {
+    width: 55px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+
+  /* =========================
+     RATING CARD
+     ========================= */
+
+  .travelerStories .tsRating {
+    width: 100%;
+    max-width: 280px;
+    margin: 5px auto 0;
+    padding: 18px 15px;
+    border-radius: 18px;
+  }
+
+  .travelerStories .ratingStars {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .travelerStories .ratingStars svg {
+    font-size: 14px;
+  }
+
+  .travelerStories .tsRating h3 {
+    font-size: 38px;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .travelerStories .tsRating h3 span {
+    font-size: 18px;
+  }
+
+  .travelerStories .tsRating p {
+    font-size: 13px;
+    margin: 6px 0 2px;
+  }
+
+  .travelerStories .tsRating small {
+    font-size: 11px;
+  }
+
+
+  /* =========================
+     STATS
+     ========================= */
+
+  .travelerStories .tsStats {
+    width: calc(100% - 28px);
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .travelerStories .tsStatItem {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 10px;
+    gap: 9px;
+    justify-content: flex-start;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .travelerStories .tsStatItem:nth-child(2n) {
+    border-right: none;
+  }
+
+  .travelerStories .tsStatItem:nth-child(3),
+  .travelerStories .tsStatItem:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .travelerStories .tsIcon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+  }
+
+  .travelerStories .tsIcon svg {
+    font-size: 19px;
+  }
+
+  .travelerStories .tsContent {
+    min-width: 0;
+  }
+
+  .travelerStories .tsContent h3 {
+    font-size: 21px;
+    line-height: 1.1;
+    margin-bottom: 3px;
+  }
+
+  .travelerStories .tsContent span {
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+
+  /* =========================
+     STORY SLIDER
+     ========================= */
+
+  .travelerStories .tsSlider {
+    width: 100%;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+
+  .travelerStories .swiper {
+    width: 100%;
+    padding: 5px 5px 58px;
+    overflow: visible;
+  }
+
+  .travelerStories .swiper-slide {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  .travelerStories .storyCard {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+  }
+
+  /* Disable desktop hover movement on touch */
+  .travelerStories .storyCard:hover {
+    transform: none;
+  }
+
+
+  /* =========================
+     STORY IMAGE
+     ========================= */
+
+  .travelerStories .storyImage {
+    width: 100%;
+    height: 225px;
+  }
+
+  .travelerStories .storyCard:hover .storyImage {
+    transform: none;
+  }
+
+  .travelerStories .locationTag {
+    left: 12px;
+    top: 12px;
+    max-width: calc(100% - 24px);
+    padding: 7px 11px;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .travelerStories .locationTag span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .travelerStories .featured {
+    right: 12px;
+    top: 12px;
+    padding: 7px 11px;
+    font-size: 10px;
+  }
+
+
+  /* =========================
+     PLAY BUTTON
+     ========================= */
+
+  .travelerStories .playBtn {
+    width: 62px;
+    height: 62px;
+  }
+
+  .travelerStories .playBtn::before {
+    width: 72px;
+    height: 72px;
+  }
+
+  .travelerStories .playBtn svg {
+    font-size: 19px;
+  }
+
+
+  /* =========================
+     STORY CONTENT
+     ========================= */
+
+  .travelerStories .storyContent {
+    padding: 17px 15px 16px;
+  }
+
+  .travelerStories .rating {
+    gap: 3px;
+    margin-bottom: 8px;
+  }
+
+  .travelerStories .rating svg {
+    font-size: 13px;
+  }
+
+  .travelerStories .storyContent h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 7px;
+  }
+
+  .travelerStories .storyContent p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+
+  /* =========================
+     STORY FOOTER
+     ========================= */
+
+  .travelerStories .storyFooter {
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .travelerStories .user {
+    min-width: 0;
+    gap: 9px;
+    align-items: center;
+  }
+
+  .travelerStories .user img {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .travelerStories .user h4 {
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .travelerStories .user span {
+    display: block;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  .travelerStories .storyFooter small {
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+
+
+  /* =========================
+     SWIPER PAGINATION
+     ========================= */
+
+  .travelerStories .swiper-pagination {
+    bottom: 17px !important;
+  }
+
+  .travelerStories .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+  }
+
+  .travelerStories .swiper-pagination-bullet-active {
+    width: 22px;
+  }
+
+
+  /* =========================
+     HIDE NAVIGATION ON MOBILE
+     ========================= */
+
+  .travelerStories .swiper-button-next,
+  .travelerStories .swiper-button-prev {
+    display: none;
+  }
+
+
+  /* =========================
+     VIDEO MODAL
+     ========================= */
+
+  .travelerStories .videoModal {
+    padding: 15px;
+  }
+
+  .travelerStories .videoContainer {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .travelerStories .videoContainer video {
+    width: 100%;
+    height: auto;
+  }
+
+  .travelerStories .closeVideo {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .travelerStories .closeVideo svg {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .travelerStories .tsHeader {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .travelerStories .tsSubTitle {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .travelerStories .tsHeading h2 {
+    font-size: 36px;
+  }
+
+  .travelerStories .tsHeading p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .travelerStories .tsRating {
+    max-width: 250px;
+    padding: 15px 12px;
+  }
+
+  /* Stats become compact 2 x 2 */
+  .travelerStories .tsStats {
+    width: calc(100% - 20px);
+    margin-bottom: 25px;
+  }
+
+  .travelerStories .tsStatItem {
+    padding: 15px 8px;
+    gap: 7px;
+  }
+
+  .travelerStories .tsIcon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .travelerStories .tsIcon svg {
+    font-size: 17px;
+  }
+
+  .travelerStories .tsContent h3 {
+    font-size: 18px;
+  }
+
+  .travelerStories .tsContent span {
+    font-size: 9px;
+  }
+
+
+  /* Story card */
+  .travelerStories .tsSlider {
+    padding: 0 7px;
+  }
+
+  .travelerStories .swiper {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 55px;
+  }
+
+  .travelerStories .storyImage {
+    height: 210px;
+  }
+
+  .travelerStories .storyContent {
+    padding: 15px 13px;
+  }
+
+  .travelerStories .storyContent h3 {
+    font-size: 16px;
+  }
+
+  .travelerStories .storyContent p {
+    font-size: 12px;
+  }
+
+  .travelerStories .user img {
+    width: 37px;
+    height: 37px;
+  }
+
+  .travelerStories .user h4 {
+    font-size: 12px;
+  }
+
+  .travelerStories .user span {
+    font-size: 9px;
+    max-width: 110px;
+  }
+
+  .travelerStories .storyFooter small {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .travelerStories .tsHeading h2 {
+    font-size: 32px;
+  }
+
+  .travelerStories .tsHeading p {
+    font-size: 12px;
+  }
+
+  .travelerStories .tsStatItem {
+    padding: 13px 6px;
+  }
+
+  .travelerStories .tsIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .travelerStories .tsContent h3 {
+    font-size: 16px;
+  }
+
+  .travelerStories .tsContent span {
+    font-size: 8px;
+  }
+
+  .travelerStories .storyImage {
+    height: 195px;
+  }
+
+}
