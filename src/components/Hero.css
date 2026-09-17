@@ -662,9 +662,7 @@
 
   .modernHero__container {
     width: min(100% - 150px, 1280px);
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(350px, 410px);
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 410px);
     gap: 42px;
   }
   
@@ -675,12 +673,7 @@
 
   .modernHero__right {
     max-width: 410px;
-
-    height:
-      min(
-        540px,
-        calc(100vh - 175px)
-      );
+    height: min(540px, calc(100vh - 175px));
   }
 }
 
