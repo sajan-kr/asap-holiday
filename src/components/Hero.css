@@ -662,11 +662,9 @@
 
   .modernHero__container {
     width: min(100% - 150px, 1280px);
-
     grid-template-columns:
       minmax(0, 1fr)
       minmax(350px, 410px);
-
     gap: 42px;
   }
   
@@ -820,12 +818,8 @@
   }
 
   .modernHero__badge {
-    padding:
-      7px
-      12px;
-
+    padding: 7px 12px;
     margin-bottom: 14px;
-
     font-size: 10px;
   }
 
@@ -839,59 +833,42 @@
 
   .modernHero__text {
     max-width: 100%;
-
     margin-bottom: 19px;
-
     font-size: 13px;
-
     line-height: 1.6;
   }
 
   .modernHero__searchWrapper {
     max-width: none;
-
     margin-bottom: 12px;
   }
 
   .modernSelect__control {
     height: 57px !important;
-
     min-height: 57px !important;
   }
 
   .modernHero__searchBtn {
     width: 43px;
     height: 43px;
-
     top: 7px;
     right: 7px;
   }
 
   .modernHero__buttons {
     width: 100%;
-
     display: grid;
-
-    grid-template-columns:
-      1fr
-      1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 9px;
-
     margin-bottom: 22px;
   }
 
   .modernHero__exploreBtn,
   .modernHero__videoBtn {
     width: 100%;
-
     height: 49px;
     min-height: 49px;
-
-    padding:
-      0
-      10px;
-
+    padding: 0 10px;
     font-size: 11px;
   }
 
@@ -902,32 +879,21 @@
 
   .modernHero__stats {
     width: 100%;
-
     display: grid;
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
   }
 
   .modernHero__statCard {
     min-width: 0;
-
-    padding:
-      0
-      7px;
-
+    padding: 0 7px;
     align-items: center;
-
     text-align: center;
   }
 
   .modernHero__statCard:not(:last-child)::after {
     top: 0;
-
     right: 0;
-
     height: 39px;
   }
 
@@ -937,21 +903,17 @@
 
   .modernHero__statCard > span {
     font-size: 7.5px;
-
     white-space: normal;
   }
 
   .modernHero__rating {
     justify-content: center;
-
     font-size: 7.5px;
   }
 
   .modernHero__right {
     width: 100%;
-
     max-width: none;
-
     height: 400px;
   }
 
@@ -980,14 +942,10 @@
 
   .modernHero__nav {
     top: auto;
-
     right: 12px;
     bottom: 12px;
-
     transform: none;
-
     flex-direction: row;
-
     gap: 6px;
   }
 
@@ -1008,22 +966,16 @@
 @media (max-width: 576px) {
 
   .modernHero {
-    padding:
-      70px
-      0
-      35px;
+    padding: 70px 0 35px;
   }
 
   .modernHero__container {
-    width:
-      calc(100% - 30px);
-
+    width: calc(100% - 30px);
     gap: 27px;
   }
 
   .modernHero__title {
     font-size: 44px;
-
     letter-spacing: -1.5px;
   }
 
@@ -1056,16 +1008,11 @@
 @media (max-width: 480px) {
 
   .modernHero {
-    padding:
-      67px
-      0
-      32px;
+    padding: 67px 0 32px;
   }
 
   .modernHero__container {
-    width:
-      calc(100% - 28px);
-
+    width: calc(100% - 28px);
     gap: 25px;
   }
 
@@ -1075,7 +1022,6 @@
 
   .modernHero__title {
     font-size: 40px;
-
     letter-spacing: -1.3px;
   }
 
@@ -1085,7 +1031,6 @@
 
   .modernSelect__control {
     height: 55px !important;
-
     min-height: 55px !important;
   }
 
