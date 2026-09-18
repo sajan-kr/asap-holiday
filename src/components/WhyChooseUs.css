@@ -1,319 +1,1794 @@
-.why-section {
+/* =========================================================
+   ASAP HOLIDAYS
+   WHY CHOOSE US — EDITORIAL DESIGN
+========================================================= */
+
+.asapWhy {
+  --orange: #ff6a1a;
+  --orange-dark: #f35d10;
+  --orange-soft: #fff3eb;
+
+  --black: #07111f;
+  --gray: #687482;
+  --light-gray: #9ba4ad;
+
+  --border: #e6eaee;
+
   position: relative;
-  padding: 60px 7%;
-  background: #fff;
+
+  width: 100%;
+
+  padding:
+    70px 0
+    60px;
+
   overflow: hidden;
+
+  background:
+    #ffffff;
+
+  font-family:
+    "Inter",
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
 }
 
-/* BACKGROUND */
 
-.bg-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.asapWhy__container {
+  width:
+    min(
+      1240px,
+      calc(100% - 50px)
+    );
+
+  margin: 0 auto;
 }
 
-.bg-glow.one {
-  width: 400px;
-  height: 400px;
-  background: rgba(249,115,22,0.14);
-  top: -150px;
-  left: -120px;
-}
 
-.bg-glow.two {
-  width: 350px;
-  height: 350px;
-  background: rgba(251,146,60,0.10);
-  right: -100px;
-  bottom: -100px;
-}
+/* =========================================================
+   HEADER
+========================================================= */
 
-/* TOP */
-
-.why-top {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.section-badge {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 50px;
-  background: rgba(249,115,22,0.10);
-  color: #f97316;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-}
-
-.why-top h2 {
-  font-size: 52px;
-  line-height: 1;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 24px;
-}
-
-.why-top h2 span {
-  color: #f97316;
-}
-
-.why-top p {
-  max-width: 720px;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9;
-  color: #64748b;
-}
-
-/* WRAPPER */
-
-.why-wrapper {
-  position: relative;
-  z-index: 2;
+.asapWhy__header {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 35px;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    420px;
+
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 38px;
 }
 
-/* FEATURES GRID */
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 25px;
-}
+/* =========================================================
+   EYEBROW
+========================================================= */
 
-/* CARD */
-
-.feature-card {
-  position: relative;
-  background: linear-gradient(180deg, #fff7ed, #ffffff);
-  border: 1px solid #fed7aa;
-  border-radius: 34px;
-  padding: 30px;
-  overflow: hidden;
-  transition: 0.4s ease;
-  box-shadow: 0 15px 35px rgba(15,23,42,0.04);
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-}
-
-/* TOP */
-
-.card-top {
+.asapWhy__eyebrow {
   display: flex;
+
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
 
-/* ICON */
-
-.icon-box {
-  width: 72px;
-  height: 72px;
-  border-radius: 24px;
-  background: linear-gradient( 135deg, #f97316, #fb923c);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 15px 30px rgba(249,115,22,0.25);
-}
-
-/* ARROW */
-
-.arrow-icon {
-  color: #f97316;
-}
-
-/* TEXT */
-
-.feature-card h3 {
-  font-size: 52px;
-  line-height: 1;
-  color: #f97316;
-  margin-bottom: 14px;
-}
-
-.feature-card h4 {
-  font-size: 24px;
-  color: #0f172a;
-  margin-bottom: 14px;
-}
-
-.feature-card p {
-  color: #64748b;
-  line-height: 1.8;
-  font-size: 15px;
-}
-
-/* AWARD CARD */
-
-.award-card {
-  position: relative;
-  background: #0f172a;
-  border-radius: 40px;
-  padding: 45px;
-  overflow: hidden;
-}
-
-/* GLOW */
-
-.award-card::before {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: rgba(249,115,22,0.18);
-  filter: blur(120px);
-  top: -150px;
-  right: -100px;
-}
-
-/* BADGE */
-
-.award-badge {
-  position: relative;
-  z-index: 2;
-  width: fit-content;
-  display: flex;
-  align-items: center;
   gap: 10px;
-  padding: 12px 22px;
-  border-radius: 50px;
-  background: rgba(249,115,22,0.14);
-  color: #fb923c;
+
+  margin-bottom: 14px;
+
+  color:
+    var(--orange);
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.asapWhy__eyebrow span {
+  width: 24px;
+  height: 2px;
+
+  background:
+    var(--orange);
+
+  border-radius: 5px;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.asapWhy__heading h2 {
+  margin: 0;
+
+  color:
+    var(--black);
+
+  font-size:
+    clamp(
+      45px,
+      5.2vw,
+      67px
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+  text-align: left;
+}
+
+.asapWhy__heading h2 em {
+  display: block;
+
+  margin-top: 10px;
+
+  color:
+    var(--orange);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    0.72em;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  font-style: italic;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.asapWhy__intro {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 3px;
+}
+
+.asapWhy__intro p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color:
+    var(--gray);
+
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 28px;
+
+  line-height: 1.65;
 }
 
-/* TITLE */
 
-.award-card h2 {
+/* =========================================================
+   TRAVEL MARK
+========================================================= */
+
+.asapWhy__travelMark {
   position: relative;
-  z-index: 2;
-  font-size: 58px;
-  line-height: 1.1;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 24px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  flex-direction: column;
+
+  min-width: 75px;
+
+  color:
+    #747d86;
 }
 
-.award-card h2 span {
-  color: #fb923c;
+.asapWhy__travelMark strong {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 19px;
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  font-style: italic;
 }
 
-/* DESC */
+.asapWhy__travelMark svg {
+  position: absolute;
 
-.award-card p {
-  position: relative;
-  z-index: 2;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.9;
-  margin-bottom: 35px;
+  top: -5px;
+  right: -2px;
+
+  color:
+    var(--orange);
+
+  transform:
+    rotate(
+      25deg
+    );
 }
 
-/* IMAGE */
+.mark-line {
+  width: 42px;
+  height: 1px;
 
-.award-image {
-  position: relative;
-  border-radius: 28px;
+  margin-bottom: 6px;
+
+  background:
+    var(--orange);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.asapWhy__navigation {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.asapWhy__tabs {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.asapWhy__tabs button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  height: 34px;
+
+  padding:
+    0 12px;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius: 30px;
+
+  background:
+    transparent;
+
+  color:
+    #687380;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+.asapWhy__tabs button small {
+  color:
+    #a4adb5;
+
+  font-size: 6px;
+
+  font-weight: 900;
+}
+
+.asapWhy__tabs button:hover {
+  color:
+    var(--orange);
+
+  background:
+    var(--orange-soft);
+}
+
+.asapWhy__tabs button.active {
+  color:
+    var(--orange);
+
+  border-color:
+    #ffd4c0;
+
+  background:
+    #fff7f2;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.asapWhy__controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.asapWhy__controls button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    #e1e6ea;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+
+  color:
+    #66727e;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+.asapWhy__controls button:hover {
+  color:
+    var(--orange);
+
+  border-color:
+    #ffd0b8;
+
+  background:
+    var(--orange-soft);
+}
+
+.asapWhy__controls .pauseBtn {
+  color:
+    var(--orange);
+
+  border-color:
+    #ffd0b8;
+
+  background:
+    #fff7f2;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.asapWhy__main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 68%)
+    minmax(0, 32%);
+
+  height: 430px;
+
   overflow: hidden;
-  height: 300px;
+
+  border-radius: 23px;
+
+  background:
+    #f8f7f5;
+
+  box-shadow:
+    0 22px 55px
+    rgba(
+      14,
+      26,
+      39,
+      0.07
+    );
 }
 
-.award-image img {
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.asapWhy__image {
+  position: relative;
+
+  min-width: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.asapWhy__image > img {
+  display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
+  animation:
+    whyImageIn
+    0.7s
+    ease both;
+
+  transition:
+    transform
+    6s
+    ease;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
 }
 
-/* OVERLAY */
+.asapWhy__main:hover
+.asapWhy__image > img {
+  transform:
+    scale(1.025);
+}
 
-.image-overlay {
+@keyframes whyImageIn {
+  from {
+    opacity: 0;
+    transform:
+      scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.asapWhy__imageOverlay {
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        0,
+        0,
+        0,
+        0.02
+      ) 35%,
+      rgba(
+        0,
+        0,
+        0,
+        0.72
+      ) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.asapWhy__location {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
   display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  height: 33px;
+
+  padding:
+    0 13px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+
+  color:
+    #27313c;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  box-shadow:
+    0 7px 20px
+    rgba(
+      0,
+      0,
+      0,
+      0.1
+    );
+}
+
+.asapWhy__location svg {
+  color:
+    var(--orange);
+}
+
+
+/* =========================================================
+   IMAGE COUNTER
+========================================================= */
+
+.asapWhy__imageCounter {
+  position: absolute;
+
+  top: 19px;
+  right: 20px;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 3px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+}
+
+.asapWhy__imageCounter strong {
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+.asapWhy__imageCounter span {
+  font-size: 7px;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   IMAGE CONTENT
+========================================================= */
+
+.asapWhy__imageContent {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  max-width: 530px;
+}
+
+.asapWhy__imageContent > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.asapWhy__imageContent h3 {
+  margin: 0 0 9px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      29px,
+      3.1vw,
+      45px
+    );
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+
+  font-weight: 900;
+}
+
+.asapWhy__imageContent p {
+  max-width: 470px;
+
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   TRAVELER NUMBER
+========================================================= */
+
+.asapWhy__travellers {
+  position: absolute;
+
+  right: 22px;
+  bottom: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
   align-items: flex-end;
-  padding: 25px;
+
+  gap: 4px;
 }
 
-/* BOX */
+.asapWhy__travellers strong {
+  color:
+    #ffffff;
 
-.overlay-box {
-  background: rgba(255,255,255,0.14);
-  backdrop-filter: blur(14px);
-  padding: 18px 24px;
-  border-radius: 22px;
-  color: white;
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
 }
 
-.overlay-box h3 {
-  font-size: 34px;
-  margin-bottom: 6px;
+.asapWhy__travellers span {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  font-size: 7px;
 }
 
-.overlay-box span {
-  font-size: 14px;
-  color: rgba(255,255,255,0.8);
+
+/* =========================================================
+   CONTENT PANEL
+========================================================= */
+
+.asapWhy__content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-width: 0;
+
+  padding:
+    36px
+    30px
+    27px;
+
+  background:
+    #ffffff;
 }
 
-/* TABLET */
 
-@media(max-width:1100px) {
-  .why-wrapper {
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.asapWhy__category {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color:
+    var(--orange);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.asapWhy__category > span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 10px;
+
+  background:
+    var(--orange-soft);
+
+  color:
+    var(--orange);
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.asapWhy__benefits {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  margin-top: 38px;
+}
+
+.asapWhy__benefit {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.asapWhy__benefit > span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 23px;
+  height: 23px;
+
+  border-radius: 50%;
+
+  background:
+    var(--orange-soft);
+
+  color:
+    var(--orange);
+}
+
+.asapWhy__benefit p {
+  margin: 0;
+
+  color:
+    #44515f;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.asapWhy__quote {
+  position: relative;
+
+  margin-top: auto;
+
+  padding:
+    26px
+    0
+    25px
+    28px;
+
+  border-left:
+    1px solid
+    #e6eaed;
+}
+
+.quoteMark {
+  position: absolute;
+
+  top: 3px;
+  left: 0;
+
+  color:
+    #e2e5e8;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 54px;
+
+  line-height: 1;
+}
+
+.asapWhy__quote p {
+  max-width: 160px;
+
+  margin: 0;
+
+  color:
+    #64717e;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-style: italic;
+}
+
+.quoteLine {
+  display: block;
+
+  width: 35px;
+  height: 2px;
+
+  margin-top: 13px;
+
+  background:
+    var(--orange);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.asapWhy__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  align-self: flex-start;
+
+  gap: 10px;
+
+  height: 43px;
+
+  padding:
+    0 18px;
+
+  border: 0;
+
+  border-radius: 30px;
+
+  background:
+    var(--orange);
+
+  color:
+    #ffffff;
+
+  font-family: inherit;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px
+    rgba(
+      255,
+      106,
+      26,
+      0.18
+    );
+
+  transition:
+    all 0.22s ease;
+}
+
+.asapWhy__cta:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--orange-dark);
+}
+
+
+/* =========================================================
+   DESTINATION STRIP
+========================================================= */
+
+.asapWhy__destinations {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   DESTINATION CARD
+========================================================= */
+
+.destination {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  height: 91px;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius: 12px;
+
+  background:
+    #eef0f1;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.destination:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #ffd0ba;
+}
+
+.destination.active {
+  border:
+    2px solid
+    var(--orange);
+}
+
+
+/* =========================================================
+   DESTINATION IMAGE
+========================================================= */
+
+.destination__image {
+  position: absolute;
+
+  inset: 0;
+}
+
+.destination__image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.destination:hover
+.destination__image img {
+  transform:
+    scale(1.06);
+}
+
+.destination__image > div {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        0,
+        0,
+        0,
+        0.02
+      ),
+      rgba(
+        0,
+        0,
+        0,
+        0.72
+      )
+    );
+}
+
+
+/* =========================================================
+   DESTINATION TEXT
+========================================================= */
+
+.destination__text {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 9px;
+
+  padding:
+    12px;
+}
+
+.destination__text > small {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.destination__text > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.destination__text strong {
+  color:
+    #ffffff;
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  font-weight: 850;
+}
+
+.destination__text span {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   DESTINATION ARROW
+========================================================= */
+
+.destination__arrow {
+  position: absolute;
+
+  right: 10px;
+  bottom: 10px;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-radius: 50%;
+
+  color:
+    #ffffff;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.12
+    );
+
+  transition:
+    all 0.2s ease;
+}
+
+.destination:hover
+.destination__arrow {
+  color:
+    var(--orange);
+
+  background:
+    #ffffff;
+
+  border-color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.asapWhy__stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  height: 88px;
+
+  margin-top: 12px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 14px;
+
+  background:
+    #ffffff;
+}
+
+.asapWhy__stat {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  border-right:
+    1px solid
+    #edf0f2;
+}
+
+.asapWhy__stat:last-child {
+  border-right: 0;
+}
+
+.statIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  color:
+    var(--orange);
+
+  background:
+    var(--orange-soft);
+}
+
+.asapWhy__stat div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.asapWhy__stat strong {
+  color:
+    var(--black);
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.asapWhy__stat span {
+  color:
+    #929ba5;
+
+  font-size: 7px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .asapWhy__container {
+    width:
+      calc(100% - 38px);
+  }
+
+  .asapWhy__header {
+    grid-template-columns:
+      1fr
+      330px;
+
+    gap: 35px;
+  }
+
+  .asapWhy__main {
+    grid-template-columns:
+      63%
+      37%;
+
+    height: 410px;
+  }
+
+  .asapWhy__content {
+    padding:
+      28px
+      23px
+      22px;
+  }
+
+  .asapWhy__benefits {
+    margin-top: 28px;
+  }
+
+  .asapWhy__quote p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .asapWhy {
+    padding:
+      52px 0
+      45px;
+  }
+
+  .asapWhy__header {
     grid-template-columns: 1fr;
-  }
-  .why-top h2 {
-    font-size: 52px;
+
+    gap: 16px;
   }
 
+  .asapWhy__intro {
+    max-width: 600px;
+  }
+
+  .asapWhy__main {
+    grid-template-columns:
+      58%
+      42%;
+
+    height: 390px;
+  }
+
+  .asapWhy__content {
+    padding:
+      25px
+      19px
+      18px;
+  }
+
+  .asapWhy__benefits {
+    margin-top: 24px;
+
+    gap: 10px;
+  }
+
+  .asapWhy__quote {
+    padding-left: 21px;
+  }
+
+  .asapWhy__quote p {
+    font-size: 14px;
+  }
+
+  .destination {
+    height: 82px;
+  }
+
+  .asapWhy__stat {
+    gap: 8px;
+  }
+
+  .statIcon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .asapWhy__stat strong {
+    font-size: 18px;
+  }
 }
 
-/* MOBILE */
 
-@media(max-width:768px) {
-  .why-section {
-    padding: 90px 20px;
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .asapWhy {
+    padding:
+      42px 0
+      32px;
   }
-  .why-top h2 {
-    font-size: 40px;
+
+  .asapWhy__container {
+    width:
+      calc(100% - 20px);
   }
-  .why-top p {
-    font-size: 16px;
+
+
+  /* header */
+
+  .asapWhy__eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
   }
-  .features-grid {
+
+  .asapWhy__heading h2 {
+    font-size: 35px;
+
+    letter-spacing: -2px;
+
+    line-height: 0.94;
+  }
+
+  .asapWhy__heading h2 em {
+    font-size: 0.8em;
+
+    margin-top: 5px;
+  }
+
+  .asapWhy__intro {
+    display: block;
+  }
+
+  .asapWhy__intro p {
+    max-width: 100%;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+  }
+
+  .asapWhy__travelMark {
+    display: none;
+  }
+
+
+  /* navigation */
+
+  .asapWhy__navigation {
+    margin-top: 17px;
+  }
+
+  .asapWhy__tabs {
+    max-width:
+      calc(100% - 94px);
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .asapWhy__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .asapWhy__tabs button {
+    height: 29px;
+
+    padding:
+      0 8px;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+  }
+
+  .asapWhy__controls {
+    gap: 4px;
+  }
+
+  .asapWhy__controls button {
+    width: 27px;
+    height: 27px;
+  }
+
+
+  /* main */
+
+  .asapWhy__main {
     grid-template-columns: 1fr;
-  }
-  .feature-card {
-    padding: 24px;
-  }
-  .feature-card h3 {
-    font-size: 42px;
-  }
-  .feature-card h4 {
-    font-size: 22px;
-  }
-  .award-card {
-    padding: 30px 24px;
-  }
-  .award-card h2 {
-    font-size: 40px;
-  }
-  .award-image {
-    height: 220px;
+
+    height: auto;
+
+    border-radius: 17px;
   }
 
+
+  /* image */
+
+  .asapWhy__image {
+    height: 280px;
+  }
+
+  .asapWhy__location {
+    top: 13px;
+    left: 13px;
+
+    height: 28px;
+
+    padding:
+      0 10px;
+
+    font-size: 7px;
+  }
+
+  .asapWhy__imageCounter {
+    top: 16px;
+    right: 14px;
+  }
+
+  .asapWhy__imageContent {
+    left: 14px;
+    bottom: 16px;
+
+    max-width:
+      calc(100% - 28px);
+  }
+
+  .asapWhy__imageContent > span {
+    margin-bottom: 5px;
+
+    font-size: 6px;
+  }
+
+  .asapWhy__imageContent h3 {
+    margin-bottom: 6px;
+
+    font-size: 26px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .asapWhy__imageContent p {
+    font-size: 8px;
+  }
+
+  .asapWhy__travellers {
+    display: none;
+  }
+
+
+  /* content */
+
+  .asapWhy__content {
+    min-height: 310px;
+
+    padding:
+      21px
+      17px
+      17px;
+  }
+
+  .asapWhy__category {
+    font-size: 7px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .asapWhy__category > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .asapWhy__benefits {
+    margin-top: 22px;
+
+    gap: 9px;
+  }
+
+  .asapWhy__benefit > span {
+    width: 20px;
+    height: 20px;
+  }
+
+  .asapWhy__benefit p {
+    font-size: 8px;
+  }
+
+  .asapWhy__quote {
+    display: none;
+  }
+
+  .asapWhy__cta {
+    height: 39px;
+
+    padding:
+      0 15px;
+
+    font-size: 7px;
+  }
+
+
+  /* destinations */
+
+  .asapWhy__destinations {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 7px;
+
+    margin-top: 8px;
+  }
+
+  .destination {
+    height: 78px;
+
+    border-radius: 9px;
+  }
+
+  .destination__text {
+    padding: 9px;
+
+    gap: 6px;
+  }
+
+  .destination__text strong {
+    font-size: 8px;
+  }
+
+  .destination__text span {
+    font-size: 5.5px;
+  }
+
+  .destination__arrow {
+    width: 24px;
+    height: 24px;
+
+    right: 7px;
+    bottom: 7px;
+  }
+
+
+  /* stats */
+
+  .asapWhy__stats {
+    grid-template-columns:
+      1fr 1fr;
+
+    height: auto;
+
+    padding: 4px;
+
+    border-radius: 11px;
+  }
+
+  .asapWhy__stat {
+    min-height: 58px;
+
+    gap: 7px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      #edf0f2;
+  }
+
+  .asapWhy__stat:nth-child(2),
+  .asapWhy__stat:nth-child(4) {
+    border-left:
+      1px solid
+      #edf0f2;
+  }
+
+  .asapWhy__stat:nth-child(3),
+  .asapWhy__stat:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .statIcon {
+    display: none;
+  }
+
+  .asapWhy__stat strong {
+    font-size: 17px;
+  }
+
+  .asapWhy__stat span {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .asapWhy__heading h2 {
+    font-size: 32px;
+  }
+
+  .asapWhy__image {
+    height: 245px;
+  }
+
+  .asapWhy__imageContent h3 {
+    font-size: 23px;
+  }
+
+  .asapWhy__content {
+    min-height: 290px;
+  }
+
+  .destination {
+    height: 70px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.asapWhy button:focus-visible {
+  outline:
+    2px solid
+    var(--orange);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .asapWhy *,
+  .asapWhy *::before,
+  .asapWhy *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
