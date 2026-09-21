@@ -263,7 +263,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 16px;
 }
 
 .voices-progress {
@@ -323,7 +323,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-top: 24px;
+  margin-top: 14px;
   padding-top: 25px;
   border-top: 1px solid #eef1f4;
 }
