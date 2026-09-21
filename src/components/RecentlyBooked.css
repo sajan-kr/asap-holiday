@@ -321,7 +321,7 @@ SLIDER
   gap:24px;
   overflow-x:auto;
   scroll-behavior:smooth;
-  padding-bottom:20px;
+  padding-bottom:0px;
 }
 
 .cards-slider::-webkit-scrollbar{
