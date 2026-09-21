@@ -56,7 +56,7 @@ const heroSlides = [
 ];
 
 /* =========================================================
-   HERO
+   HERO COMPONENT
 ========================================================= */
 
 const Hero = () => {
@@ -144,7 +144,7 @@ const Hero = () => {
         <div className="modernHero__container">
 
           {/* =================================================
-              LEFT
+              LEFT CONTENT
           ================================================= */}
 
           <div className="modernHero__left">
@@ -198,6 +198,8 @@ const Hero = () => {
 
             <div className="modernHero__buttons">
 
+              {/* EXPLORE TOURS */}
+
               <button
                 type="button"
                 className="modernHero__exploreBtn"
@@ -206,6 +208,8 @@ const Hero = () => {
                 <span>Explore Tours</span>
                 <FaArrowRight />
               </button>
+
+              {/* WATCH VIDEO */}
 
               <button
                 type="button"
@@ -249,7 +253,7 @@ const Hero = () => {
           </div>
 
           {/* =================================================
-              RIGHT
+              RIGHT CONTENT
           ================================================= */}
 
           <div className="modernHero__right">
@@ -315,7 +319,7 @@ const Hero = () => {
       </section>
 
       {/* =====================================================
-          VIDEO MODAL
+          LOCAL VIDEO MODAL
       ===================================================== */}
 
       {showVideo && (
@@ -323,10 +327,13 @@ const Hero = () => {
           className="modernHero__videoModal"
           onClick={() => setShowVideo(false)}
         >
+
           <div
             className="modernHero__videoContent"
             onClick={(e) => e.stopPropagation()}
           >
+
+            {/* CLOSE BUTTON */}
 
             <button
               type="button"
@@ -337,15 +344,20 @@ const Hero = () => {
               <FaTimes />
             </button>
 
-            <iframe
-              src="https://www.youtube.com/embed/Scxs7L0vhZ4?autoplay=1"
-              title="Travel Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
+            {/* LOCAL VIDEO */}
+
+            <video
+              className="modernHero__localVideo"
+              src="/video/asap-family-video.mp4"
+              controls
+              autoPlay
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
 
           </div>
+
         </div>
       )}
     </>

@@ -1379,3 +1379,68 @@
     calc(100vh - 175px)
   );
 }
+
+.modernHero__localVideo {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+  object-fit: contain;
+  background: #000;
+  border-radius: 14px;
+}
+
+.modernHero__videoContent {
+  position: relative;
+  width: min(900px, 92vw);
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.modernHero__videoModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modernHero__closeVideo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.modernHero__closeVideo:hover {
+  background: #ff7a00;
+}
+
+@media (max-width: 768px) {
+  .modernHero__videoContent {
+    width: 95vw;
+  }
+
+  .modernHero__localVideo {
+    max-height: 70vh;
+  }
+}
