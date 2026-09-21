@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Star,
-  Quote,
-  ChevronLeft,
-  ChevronRight,
-  MapPin,
-} from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight, MapPin, } from "lucide-react";
 import "./Testimonials.css";
 
 const testimonials = [
@@ -13,37 +7,29 @@ const testimonials = [
     name: "Rahul Sharma",
     role: "Honeymoon Traveler",
     destination: "Maldives",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
-    review:
-      "Everything was beautifully organized. The resort, transfers and experiences were absolutely perfect.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+    review: "Everything was beautifully organized. The resort, transfers and experiences were absolutely perfect.",
   },
   {
     name: "Sneha Kapoor",
     role: "International Traveler",
     destination: "Switzerland",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop",
-    review:
-      "The entire Switzerland itinerary was seamless. We could simply relax and enjoy every part of the journey.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop",
+    review: "The entire Switzerland itinerary was seamless. We could simply relax and enjoy every part of the journey.",
   },
   {
     name: "Aman Verma",
     role: "Luxury Traveler",
     destination: "Bali",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
-    review:
-      "From premium hotels to unique experiences, everything felt personal and exceeded our expectations.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
+    review: "From premium hotels to unique experiences, everything felt personal and exceeded our expectations.",
   },
   {
     name: "Priya Mehta",
     role: "Family Traveler",
     destination: "Dubai",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
-    review:
-      "Planning a family vacation can be stressful, but ASAP Holidays made everything incredibly simple.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+    review: "Planning a family vacation can be stressful, but ASAP Holidays made everything incredibly simple.",
   },
 ];
 
