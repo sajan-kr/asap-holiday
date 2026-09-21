@@ -320,13 +320,6 @@ export default function Header() {
       <div className="ah-topbar">
         <div className="ah-container ah-topbar-inner">
           <div className="ah-top-left">
-            <span className="ah-country"><Icon name="globe" size={13} /> India</span>
-            <select value={currency} onChange={changeCurrency} aria-label="Currency">
-              <option value="INR">INR ₹</option>
-              <option value="USD">USD $</option>
-              <option value="AED">AED د.إ</option>
-              <option value="EUR">EUR €</option>
-            </select>
             <span className="ah-divider" />
             <a href="tel:+919205129996"><Icon name="phone" size={12} /> +91 92051 29996</a>
             <span className="ah-divider" />
