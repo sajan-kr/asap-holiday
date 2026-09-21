@@ -468,73 +468,60 @@ const WhyChooseUs = () => {
           {/* CONTENT */}
 
           <div className="asapWhy__content">
+            <div className="asapWhy__category">
+              <span>
+                <CurrentIcon size={17} />
+              </span>
+              {current.category}
+            </div>
 
-            <div className="asapWhy__contentTop">
+            <div className="asapWhy__contentInner">
+              <div className="asapWhy__contentTop">
+                <div className="asapWhy__benefits">
 
-              <div className="asapWhy__category">
+                  {current.benefits.map(
+                    (benefit) => (
+                      <div
+                        className="asapWhy__benefit"
+                        key={benefit}
+                      >
 
-                <span>
-                  <CurrentIcon size={17} />
+                        <span>
+                          <Check size={11} />
+                        </span>
+
+                        <p>
+                          {benefit}
+                        </p>
+
+                      </div>
+                    )
+                  )}
+
+                </div>
+
+              </div>
+
+              <div className="asapWhy__quote">
+
+                <span className="quoteMark">
+                  “
                 </span>
 
-                {current.category}
+                <p>
+                  Not just destinations,
+                  but a better version
+                  of your journey.
+                </p>
+
+                <span className="quoteLine" />
 
               </div>
-
-
-              <div className="asapWhy__benefits">
-
-                {current.benefits.map(
-                  (benefit) => (
-                    <div
-                      className="asapWhy__benefit"
-                      key={benefit}
-                    >
-
-                      <span>
-                        <Check size={11} />
-                      </span>
-
-                      <p>
-                        {benefit}
-                      </p>
-
-                    </div>
-                  )
-                )}
-
-              </div>
-
             </div>
-
-
-            <div className="asapWhy__quote">
-
-              <span className="quoteMark">
-                “
-              </span>
-
-              <p>
-                Not just destinations,
-                but a better version
-                of your journey.
-              </p>
-
-              <span className="quoteLine" />
-
-            </div>
-
-
-            <button
-              type="button"
-              className="asapWhy__cta"
-              onClick={handleExplore}
-            >
+            <button type="button" className="asapWhy__cta" onClick={handleExplore}>
               Explore journey
-
               <ArrowUpRight size={16} />
             </button>
-
           </div>
 
         </div>
