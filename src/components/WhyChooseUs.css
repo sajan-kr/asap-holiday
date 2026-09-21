@@ -583,8 +583,8 @@
   background: var(--orange);
   color: #ffffff;
   font-family: inherit;
-  font-size: 8px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 9px 22px rgba(255, 106, 26, 0.18);
   transition: all 0.22s ease;
