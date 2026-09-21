@@ -1,321 +1,539 @@
-.testimonial-section {
-  padding: 90px 7%;
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+/* =========================================================
+   TRAVELER VOICES
+========================================================= */
+
+.traveler-voices {
+  position: relative;
+  padding: 0px 6% 60px;
+  background: #ffffff;
   overflow: hidden;
 }
 
-/* TOP */
-
-.section-top {
-  text-align: center;
-  margin-bottom: 45px;
+.voices-container {
+  position: relative;
+  max-width: 1380px;
+  margin: auto;
+  z-index: 2;
 }
 
-/* BADGE */
+/* =========================================================
+   BACKGROUND WORD
+========================================================= */
 
-.section-badge {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: rgba(249,115,22,0.10);
+.voices-background-text {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(249, 115, 22, 0.035);
+  font-size: clamp(120px, 17vw, 250px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -10px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.voices-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+
+.voices-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #f97316;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
   margin-bottom: 20px;
 }
 
-/* TITLE */
-
-.section-top h2 {
-  font-size: 52px;
-  line-height: 1.05;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 18px;
+.voices-eyebrow i {
+  width: 30px;
+  height: 2px;
+  border-radius: 10px;
+  background: #f97316;
 }
 
-.section-top h2 span {
+.voices-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(44px, 5vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.voices-header h2 span {
   color: #f97316;
 }
 
-/* DESC */
-
-.section-top p {
-  font-size: 17px;
+.voices-header > p {
+  max-width: 360px;
+  margin: 0 0 5px;
   color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: left;
 }
 
-/* WRAPPER */
+/* =========================================================
+   CAROUSEL
+========================================================= */
 
-.testimonial-wrapper {
-  background: white;
-  border-radius: 36px;
-  overflow: hidden;
+.voices-carousel {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  border: 1px solid #f1f5f9;
-  box-shadow: 0 20px 50px rgba(15,23,42,0.05);
-  margin-bottom: 35px;
+  grid-template-columns: 0.8fr 1.25fr 0.8fr;
+  align-items: center;
+  gap: 22px;
 }
 
-/* LEFT */
+/* =========================================================
+   CARD
+========================================================= */
 
-.image-side {
+.voice-card {
   position: relative;
-  height: 480px;
+  border-radius: 28px;
+  transition: all 0.5s ease;
 }
 
-.image-side img {
-  width: 100%;
-  height: 100%;
+.voice-card-side {
+  min-height: 310px;
+  padding: 30px;
+  background: #fff8f3;
+  border: 1px solid #ffeadb;
+  opacity: 0.72;
+  transform: scale(0.92);
+}
+
+.voice-card-center {
+  min-height: 400px;
+  padding: 45px 45px 35px;
+  background: #ffffff;
+  border: 1px solid #f0f2f5;
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.1),
+    0 5px 20px rgba(15, 23, 42, 0.03);
+  z-index: 2;
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.voice-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.voice-destination {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f97316;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.voice-verified {
+  padding: 6px 10px;
+  border-radius: 30px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BIG QUOTE
+========================================================= */
+
+.voice-big-quote {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 23px;
+  border-radius: 17px;
+  background: #f97316;
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(249, 115, 22, 0.2);
+}
+
+/* =========================================================
+   REVIEW
+========================================================= */
+
+.voice-review {
+  margin: 30px 0;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.voice-card-center .voice-review {
+  margin-top: 0;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #172033;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+/* =========================================================
+   AUTHOR
+========================================================= */
+
+.voice-author {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.voice-author img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* OVERLAY */
-
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(2,6,23,0.75), transparent);
-}
-
-/* FLOATING */
-
-.floating-box {
-  position: absolute;
-  left: 25px;
-  bottom: 25px;
-  background: rgba(255,255,255,0.14);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 20px;
-  padding: 14px 20px;
-  color: white;
-}
-
-.mini-stars {
+.voice-author div {
   display: flex;
-  gap: 4px;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.floating-box span {
+.voice-author strong {
+  color: #172033;
   font-size: 13px;
 }
 
-/* RIGHT */
-
-.content-side {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.voice-author span {
+  color: #94a3b8;
+  font-size: 10px;
 }
 
-/* QUOTE */
+/* =========================================================
+   RATING
+========================================================= */
 
-.quote-box {
-  width: 65px;
-  height: 65px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f97316, #fb923c);
+.voice-card-rating {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  margin-bottom: 25px;
-  box-shadow: 0 12px 24px rgba(249,115,22,0.20);
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
 }
 
-/* REVIEW */
-
-.review {
-  font-size: 22px;
-  line-height: 1.7;
-  color: #334155;
-  margin-bottom: 35px;
+.voice-stars {
+  display: flex;
+  gap: 2px;
+  color: #f59e0b;
 }
 
-/* USER */
-
-.user-info h3 {
-  font-size: 22px;
-  color: #0f172a;
-  margin-bottom: 8px;
+.voice-card-rating > span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
 }
 
-.user-info span {
-  color: #f97316;
-  font-size: 15px;
-  font-weight: 600;
-}
+/* =========================================================
+   CONTROLS
+========================================================= */
 
-/* BOTTOM */
-
-.bottom-row {
-  margin-top: 35px;
+.voices-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
-/* DOTS */
-
-.dots {
+.voices-progress {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #cbd5e1;
-  cursor: pointer;
-  transition: 0.3s ease;
+.voices-progress-line {
+  width: 150px;
+  height: 2px;
+  overflow: hidden;
+  background: #e2e8f0;
 }
 
-.dot.active {
-  width: 32px;
-  border-radius: 20px;
+.voices-progress-line span {
+  display: block;
+  height: 100%;
   background: #f97316;
+  transition: width 0.4s ease;
 }
 
-/* BUTTONS */
-
-.slider-buttons {
+.voices-arrows {
   display: flex;
+  gap: 8px;
+}
+
+.voices-arrows button {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.voices-arrows button:hover {
+  color: #ffffff;
+  border-color: #f97316;
+  background: #f97316;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.voices-trust {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid #eef1f4;
+}
+
+.voices-trust-rating {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.slider-buttons button {
-  width: 52px;
-  height: 52px;
-  border: none;
-  border-radius: 50%;
-  background: #f8fafc;
+.voices-trust-rating strong {
+  color: #172033;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.voices-trust-rating > div {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.3s ease;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.slider-buttons button:hover {
-  background: #f97316;
-  color: white;
+.voices-trust-rating span {
+  color: #94a3b8;
+  font-size: 10px;
 }
 
-/* CTA */
-
-.cta-box {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 32px;
-  padding: 28px 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.voices-trust-line {
+  width: 1px;
+  height: 32px;
+  background: #e2e8f0;
 }
 
-/* CTA TEXT */
-
-.cta-box h3 {
-  font-size: 30px;
-  color: white;
-  margin-bottom: 8px;
+.voices-trust > span {
+  color: #64748b;
+  font-size: 11px;
 }
 
-.cta-box p {
-  color: rgba(255,255,255,0.72);
-  font-size: 15px;
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .traveler-voices {
+    padding: 90px 5%;
+  }
+
+  .voices-header {
+    margin-bottom: 50px;
+  }
+
+  .voices-carousel {
+    grid-template-columns: 0.65fr 1.3fr 0.65fr;
+    gap: 12px;
+  }
+
+  .voice-card-side {
+    padding: 22px;
+  }
+
+  .voice-card-center {
+    padding: 35px;
+  }
+
+  .voice-card-center .voice-review {
+    font-size: 19px;
+  }
+
 }
 
-/* BUTTON */
+/* =========================================================
+   TABLET / SMALL
+========================================================= */
 
-.cta-box button {
-  border: none;
-  outline: none;
-  background: linear-gradient(135deg, #f97316, #fb923c);
-  color: white;
-  padding: 16px 28px;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
+@media (max-width: 800px) {
 
-.cta-box button:hover {
-  transform: translateY(-3px);
-}
+  .voices-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
 
-/* TABLET */
+  .voices-header > p {
+    max-width: 520px;
+  }
 
-@media(max-width:1100px) {
-
-  .testimonial-wrapper {
+  .voices-carousel {
     grid-template-columns: 1fr;
   }
 
-  .section-top h2 {
-    font-size: 48px;
+  .voice-card-side {
+    display: none;
   }
 
-  .image-side {
-    height: 350px;
-  }
-
-  .cta-box {
-    flex-direction: column;
-    text-align: center;
+  .voice-card-center {
+    min-height: 390px;
   }
 
 }
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media(max-width:768px) {
+@media (max-width: 600px) {
 
-  .testimonial-section {
-    padding: 30px 20px 50px;
+  .traveler-voices {
+    padding: 70px 17px;
   }
 
-  .section-top h2 {
-    font-size: 38px;
+  .voices-background-text {
+    top: 90px;
+    font-size: 100px;
   }
 
-  .section-top p {
-    font-size: 15px;
+  .voices-header {
+    margin-bottom: 38px;
   }
 
-  .content-side {
-    padding: 35px 24px;
+  .voices-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
-  .review {
+  .voices-header h2 {
+    font-size: 39px;
+    line-height: 1.03;
+    letter-spacing: -2px;
+  }
+
+  .voices-header > p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .voice-card-center {
+    min-height: auto;
+    padding: 30px 24px 25px;
+    border-radius: 23px;
+  }
+
+  .voice-big-quote {
+    width: 48px;
+    height: 48px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+  }
+
+  .voice-card-center .voice-review {
     font-size: 18px;
+    line-height: 1.65;
   }
 
-  .image-side {
-    height: 280px;
+  .voice-author {
+    margin-top: 25px;
   }
 
-  .bottom-row {
-    flex-direction: column;
-    gap: 20px;
+  .voices-controls {
+    margin-top: 28px;
   }
 
-  .cta-box {
-    padding: 28px 24px;
+  .voices-progress-line {
+    width: 100px;
   }
 
-  .cta-box h3 {
-    font-size: 24px;
+  .voices-arrows button {
+    width: 41px;
+    height: 41px;
+  }
+
+  .voices-trust {
+    margin-top: 40px;
+    padding-top: 22px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .voices-trust-line {
+    display: none;
+  }
+
+  .voices-trust > span {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .traveler-voices {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .voices-header h2 {
+    font-size: 34px;
+  }
+
+  .voice-card-center {
+    padding: 27px 20px 23px;
+  }
+
+  .voice-card-center .voice-review {
+    font-size: 17px;
   }
 
 }
