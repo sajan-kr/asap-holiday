@@ -76,22 +76,13 @@
 
 .asapWhy__eyebrow {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin-bottom: 14px;
-
-  color:
-    var(--orange);
-
-  font-size: 9px;
-
-  font-weight: 850;
-
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 1.8px;
-
   text-transform: uppercase;
 }
 
@@ -115,8 +106,8 @@
   color: var(--black);
   font-size: clamp(45px, 5.2vw, 52px);
   line-height: 0.9;
-  letter-spacing: -4px;
-  font-weight: 900;
+  letter-spacing: 0px;
+  font-weight: 800;
   text-align: left;
 } 
 
