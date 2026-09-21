@@ -572,13 +572,11 @@
 
 .asapWhy__imageCounter strong {
   font-size: 11px;
-
   font-weight: 900;
 }
 
 .asapWhy__imageCounter span {
-  font-size: 7px;
-
+  font-size: 8px;
   opacity: 0.7;
 }
 
@@ -589,70 +587,36 @@
 
 .asapWhy__imageContent {
   position: absolute;
-
   left: 25px;
   bottom: 25px;
-
   max-width: 530px;
 }
 
 .asapWhy__imageContent > span {
   display: block;
-
   margin-bottom: 8px;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.72
-    );
-
+  color: rgba(255, 255, 255, 0.72);
   font-size: 8px;
-
   font-weight: 850;
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
 }
 
 .asapWhy__imageContent h3 {
   margin: 0 0 9px;
-
-  color:
-    #ffffff;
-
+  color: #ffffff;
   font-size:
-    clamp(
-      29px,
-      3.1vw,
-      45px
-    );
-
+  clamp(29px, 3.1vw, 45px);
   line-height: 0.98;
-
   letter-spacing: -2px;
-
   font-weight: 900;
 }
 
 .asapWhy__imageContent p {
   max-width: 470px;
-
   margin: 0;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.78
-    );
-
+  color: rgba(255, 255, 255, 0.78);
   font-size: 10px;
-
   line-height: 1.55;
 }
 
@@ -663,42 +627,25 @@
 
 .asapWhy__travellers {
   position: absolute;
-
   right: 22px;
   bottom: 22px;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
-
   gap: 4px;
 }
 
 .asapWhy__travellers strong {
-  color:
-    #ffffff;
-
+  color: #ffffff;
   font-size: 27px;
-
   line-height: 1;
-
   font-weight: 900;
-
   letter-spacing: -1px;
 }
 
 .asapWhy__travellers span {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.7
-    );
-
-  font-size: 7px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 8px;
 }
 
 
@@ -728,40 +675,24 @@
 
 .asapWhy__category {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
-
-  color:
-    var(--orange);
-
+  color: var(--orange);
   font-size: 8px;
-
   font-weight: 900;
-
   letter-spacing: 1.8px;
-
   text-transform: uppercase;
 }
 
 .asapWhy__category > span {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 32px;
   height: 32px;
-
   border-radius: 10px;
-
-  background:
-    var(--orange-soft);
-
-  color:
-    var(--orange);
+  background: var(--orange-soft);
+  color: var(--orange);
 }
 
 
