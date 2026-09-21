@@ -105,7 +105,7 @@ LEFT SIDE
 .heading-wrapper{
   position:relative;
 }
-
+/* 
 .green-circle{
   position:absolute;
   width:118px;
@@ -114,7 +114,7 @@ LEFT SIDE
   border-radius:50%;
   top: -5px;
   left: 40px;
-}
+} */
 
 .heading-wrapper h2{
   font-size:52px;
@@ -122,6 +122,7 @@ LEFT SIDE
   letter-spacing:-4px;
   font-weight:700;
   color:var(--primary);
+  text-align:left;
 }
 
 /* DESCRIPTION */
@@ -132,6 +133,7 @@ LEFT SIDE
   line-height:1.9;
   color:var(--text);
   max-width:260px;
+  text-align:left;
 }
 
 /* BADGE */
@@ -154,6 +156,12 @@ LEFT SIDE
   color:var(--primary);
 }
 
+.trip-badge span{
+  font-size:12px;
+  color:var(--text);
+  font-weight:500;
+  text-align:left;
+}
 /* ====================================
 RIGHT SIDE
 ==================================== */
@@ -167,7 +175,6 @@ TOP BAR
 ==================================== */
 
 .top-bar{
-
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -349,27 +356,27 @@ USER BAR
 ==================================== */
 
 .user-bar{
-  height:60px;
+  height:40px;
   background: linear-gradient( 90deg, var(--primary-dark), var(--primary));
   display:flex;
   align-items:center;
   gap:10px;
   padding:0 18px;
   color:white;
-  font-size:14px;
+  font-size:11px;
   font-weight:600;
 }
 
 .avatar{
-  width:34px;
-  height:34px;
+  width:24px;
+  height:24px;
   border-radius:50%;
   background: linear-gradient(135deg, #ffb347, var(--secondary));
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:13px;
-  font-weight:800;
+  font-size:12px;
+  font-weight:600;
 }
 
 /* ====================================
@@ -413,8 +420,8 @@ IMAGE
 /* EXPLORE BUTTON */
 
 .explore-btn{
-  height:48px;
-  padding:0 20px;
+  height:32px;
+  padding:0 12px;
   border:none;
   border-radius:16px;
   background: rgba(255,255,255,.94);
@@ -424,7 +431,7 @@ IMAGE
   gap:8px;
   color:var(--primary);
   font-size:14px;
-  font-weight:800;
+  font-weight:700;
   cursor:pointer;
   transition:.35s;
 }
@@ -437,23 +444,24 @@ BODY
 ==================================== */
 
 .card-body{
-  padding:24px;
+  padding:16px;
 }
 
 .card-body h3{
-  font-size:28px;
+  font-size:22px;
   line-height:1.1;
   letter-spacing:-2px;
   color:var(--primary);
   font-weight:600;
   margin-bottom:14px;
+  text-align:left;
 }
 
 .location{
   display:flex;
   align-items:center;
   gap:7px;
-  margin-bottom:18px;
+  margin-bottom: 8px;
   color:var(--text);
   font-size:14px;
 }
@@ -476,7 +484,7 @@ FOOTER
 ==================================== */
 
 .card-footer{
-  padding:22px 24px;
+  padding:16px;
   border-top:1px solid var(--border);
   display:flex;
   align-items:center;
@@ -485,11 +493,12 @@ FOOTER
 }
 
 .card-footer h4{
-  font-size:24px;
+  font-size:18px;
   line-height:1;
-  letter-spacing:-1px;
+  letter-spacing: 0px;
   color:#101828;
-  font-weight:600;
+  font-weight:700;
+  text-align:left;
 }
 
 .card-footer p{
@@ -499,15 +508,15 @@ FOOTER
 }
 
 .card-footer button{
-  min-width:130px;
-  height:54px;
-  padding:0 22px;
+  min-width:120px;
+  height:50px;
+  padding:0 16px;
   border:none;
   border-radius:16px;
   background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
   color:white;
-  font-size:14px;
-  font-weight:800;
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
   transition:.35s;
   flex-shrink:0;
