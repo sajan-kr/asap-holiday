@@ -1,12 +1,6 @@
 .testimonial-section {
   padding: 90px 7%;
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff,
-      #f8fafc
-    );
-
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
   overflow: hidden;
 }
 
@@ -14,7 +8,6 @@
 
 .section-top {
   text-align: center;
-
   margin-bottom: 45px;
 }
 
@@ -22,19 +15,13 @@
 
 .section-badge {
   display: inline-block;
-
   padding: 10px 20px;
-
   border-radius: 50px;
-
   background: rgba(249,115,22,0.10);
-
   color: #f97316;
-
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
-
   margin-bottom: 20px;
 }
 
@@ -44,9 +31,7 @@
   font-size: 52px;
   line-height: 1.05;
   font-weight: 800;
-
   color: #0f172a;
-
   margin-bottom: 18px;
 }
 
@@ -65,19 +50,12 @@
 
 .testimonial-wrapper {
   background: white;
-
   border-radius: 36px;
-
   overflow: hidden;
-
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-
   border: 1px solid #f1f5f9;
-
-  box-shadow:
-    0 20px 50px rgba(15,23,42,0.05);
-
+  box-shadow: 0 20px 50px rgba(15,23,42,0.05);
   margin-bottom: 35px;
 }
 
@@ -85,14 +63,12 @@
 
 .image-side {
   position: relative;
-
   height: 480px;
 }
 
 .image-side img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
 
@@ -101,40 +77,26 @@
 .image-overlay {
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(2,6,23,0.75),
-      transparent
-    );
+  background: linear-gradient(to top, rgba(2,6,23,0.75), transparent);
 }
 
 /* FLOATING */
 
 .floating-box {
   position: absolute;
-
   left: 25px;
   bottom: 25px;
-
   background: rgba(255,255,255,0.14);
-
   backdrop-filter: blur(16px);
-
   border: 1px solid rgba(255,255,255,0.18);
-
   border-radius: 20px;
-
   padding: 14px 20px;
-
   color: white;
 }
 
 .mini-stars {
   display: flex;
   gap: 4px;
-
   margin-bottom: 8px;
 }
 
@@ -146,7 +108,6 @@
 
 .content-side {
   padding: 50px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,26 +118,14 @@
 .quote-box {
   width: 65px;
   height: 65px;
-
   border-radius: 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f97316,
-      #fb923c
-    );
-
+  background: linear-gradient(135deg, #f97316, #fb923c);
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: white;
-
   margin-bottom: 25px;
-
-  box-shadow:
-    0 12px 24px rgba(249,115,22,0.20);
+  box-shadow: 0 12px 24px rgba(249,115,22,0.20);
 }
 
 /* REVIEW */
@@ -184,9 +133,7 @@
 .review {
   font-size: 22px;
   line-height: 1.7;
-
   color: #334155;
-
   margin-bottom: 35px;
 }
 
@@ -194,15 +141,12 @@
 
 .user-info h3 {
   font-size: 22px;
-
   color: #0f172a;
-
   margin-bottom: 8px;
 }
 
 .user-info span {
   color: #f97316;
-
   font-size: 15px;
   font-weight: 600;
 }
@@ -211,7 +155,6 @@
 
 .bottom-row {
   margin-top: 35px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -227,21 +170,15 @@
 .dot {
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
   background: #cbd5e1;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .dot.active {
   width: 32px;
-
   border-radius: 20px;
-
   background: #f97316;
 }
 
@@ -255,19 +192,13 @@
 .slider-buttons button {
   width: 52px;
   height: 52px;
-
   border: none;
-
   border-radius: 50%;
-
   background: #f8fafc;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
@@ -279,21 +210,12 @@
 /* CTA */
 
 .cta-box {
-  background:
-    linear-gradient(
-      135deg,
-      #0f172a,
-      #1e293b
-    );
-
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   border-radius: 32px;
-
   padding: 28px 36px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 }
 
@@ -301,15 +223,12 @@
 
 .cta-box h3 {
   font-size: 30px;
-
   color: white;
-
   margin-bottom: 8px;
 }
 
 .cta-box p {
   color: rgba(255,255,255,0.72);
-
   font-size: 15px;
 }
 
@@ -318,29 +237,16 @@
 .cta-box button {
   border: none;
   outline: none;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f97316,
-      #fb923c
-    );
-
+  background: linear-gradient(135deg, #f97316, #fb923c);
   color: white;
-
   padding: 16px 28px;
-
   border-radius: 50px;
-
   font-size: 15px;
   font-weight: 600;
-
   display: flex;
   align-items: center;
   gap: 10px;
-
   cursor: pointer;
-
   transition: 0.4s ease;
 }
 
