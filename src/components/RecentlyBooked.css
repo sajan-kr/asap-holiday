@@ -30,7 +30,7 @@ SECTION
 .recently-booked{
   position:relative;
   overflow:hidden;
-  padding:90px 40px;
+  padding:60px 40px;
   background:
   radial-gradient(circle at top left,
   rgba(255,123,0,.08),
