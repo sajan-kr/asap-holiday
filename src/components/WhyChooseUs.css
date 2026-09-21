@@ -7,32 +7,16 @@
   --orange: #ff6a1a;
   --orange-dark: #f35d10;
   --orange-soft: #fff3eb;
-
   --black: #07111f;
   --gray: #687482;
   --light-gray: #9ba4ad;
-
   --border: #e6eaee;
-
   position: relative;
-
   width: 100%;
-
-  padding:
-    70px 0
-    60px;
-
+  padding: 70px 0 60px;
   overflow: hidden;
-
-  background:
-    #ffffff;
-
-  font-family:
-    "Inter",
-    "Poppins",
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  background: #ffffff;
+  font-family: "Inter", "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
 
@@ -41,12 +25,7 @@
 ========================================================= */
 
 .asapWhy__container {
-  width:
-    min(
-      1240px,
-      calc(100% - 50px)
-    );
-
+  width: min(1240px, calc(100% - 50px));
   margin: 0 auto;
 }
 
@@ -57,15 +36,9 @@
 
 .asapWhy__header {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    420px;
-
+  grid-template-columns: minmax(0, 1fr) 420px;
   align-items: end;
-
   gap: 70px;
-
   margin-bottom: 38px;
 }
 
@@ -89,10 +62,7 @@
 .asapWhy__eyebrow span {
   width: 24px;
   height: 2px;
-
-  background:
-    var(--orange);
-
+  background: var(--orange);
   border-radius: 5px;
 }
 
@@ -113,26 +83,13 @@
 
 .asapWhy__heading h2 em {
   display: block;
-
   margin-top: 10px;
-
-  color:
-    var(--orange);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    0.72em;
-
+  color: var(--orange);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72em;
   font-weight: 400;
-
   line-height: 1;
-
   font-style: italic;
-
   letter-spacing: -1px;
 }
 
@@ -143,13 +100,9 @@
 
 .asapWhy__intro {
   display: flex;
-
   align-items: flex-start;
-
   justify-content: space-between;
-
   gap: 30px;
-
   padding-bottom: 3px;
 }
 
@@ -169,56 +122,35 @@
 
 .asapWhy__travelMark {
   position: relative;
-
   display: flex;
-
   align-items: flex-start;
-
   flex-direction: column;
-
   min-width: 75px;
-
-  color:
-    #747d86;
+  color: #747d86;
 }
 
 .asapWhy__travelMark strong {
-  font-family:
-    Georgia,
-    serif;
-
+  font-family: Georgia,
+   serif;
   font-size: 19px;
-
   line-height: 0.9;
-
   font-weight: 400;
-
   font-style: italic;
 }
 
 .asapWhy__travelMark svg {
   position: absolute;
-
   top: -5px;
   right: -2px;
-
-  color:
-    var(--orange);
-
-  transform:
-    rotate(
-      25deg
-    );
+  color: var(--orange);
+  transform: rotate(25deg);
 }
 
 .mark-line {
   width: 42px;
   height: 1px;
-
   margin-bottom: 6px;
-
-  background:
-    var(--orange);
+  background: var(--orange);
 }
 
 
@@ -228,11 +160,8 @@
 
 .asapWhy__navigation {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   margin-bottom: 10px;
 }
 
@@ -243,9 +172,7 @@
 
 .asapWhy__tabs {
   display: flex;
-
   align-items: center;
-
   gap: 5px;
 }
 
@@ -262,39 +189,25 @@
   font-family: inherit;
   font-size: 12px;
   font-weight: 750;
-
   cursor: pointer;
-
-  transition:
-    all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .asapWhy__tabs button small {
-  color:
-    #a4adb5;
-
+  color: #a4adb5;
   font-size: 6px;
-
   font-weight: 900;
 }
 
 .asapWhy__tabs button:hover {
-  color:
-    var(--orange);
-
-  background:
-    var(--orange-soft);
+  color: var(--orange);
+  background: var(--orange-soft);
 }
 
 .asapWhy__tabs button.active {
-  color:
-    var(--orange);
-
-  border-color:
-    #ffd4c0;
-
-  background:
-    #fff7f2;
+  color: var(--orange);
+  border-color: #ffd4c0;
+  background: #fff7f2;
 }
 
 
@@ -304,62 +217,35 @@
 
 .asapWhy__controls {
   display: flex;
-
   align-items: center;
-
   gap: 6px;
 }
 
 .asapWhy__controls button {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 34px;
   height: 34px;
-
   padding: 0;
-
-  border:
-    1px solid
-    #e1e6ea;
-
+  border: 1px solid #e1e6ea;
   border-radius: 50%;
-
-  background:
-    #ffffff;
-
-  color:
-    #66727e;
-
+  background: #ffffff;
+  color: #66727e;
   cursor: pointer;
-
-  transition:
-    all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .asapWhy__controls button:hover {
-  color:
-    var(--orange);
-
-  border-color:
-    #ffd0b8;
-
-  background:
-    var(--orange-soft);
+  color: var(--orange);
+  border-color: #ffd0b8;
+  background: var(--orange-soft);
 }
 
 .asapWhy__controls .pauseBtn {
-  color:
-    var(--orange);
-
-  border-color:
-    #ffd0b8;
-
-  background:
-    #fff7f2;
+  color: var(--orange);
+  border-color: #ffd0b8;
+  background: #fff7f2;
 }
 
 
@@ -369,28 +255,12 @@
 
 .asapWhy__main {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 68%)
-    minmax(0, 32%);
-
+  grid-template-columns: minmax(0, 68%) minmax(0, 32%);
   height: 430px;
-
   overflow: hidden;
-
   border-radius: 23px;
-
-  background:
-    #f8f7f5;
-
-  box-shadow:
-    0 22px 55px
-    rgba(
-      14,
-      26,
-      39,
-      0.07
-    );
+  background: #f8f7f5;
+  box-shadow: 0 22px 55px rgba( 14, 26, 39, 0.07);
 }
 
 
@@ -400,54 +270,36 @@
 
 .asapWhy__image {
   position: relative;
-
   min-width: 0;
-
   height: 100%;
-
   overflow: hidden;
 }
 
 .asapWhy__image > img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  animation:
-    whyImageIn
-    0.7s
-    ease both;
-
-  transition:
-    transform
-    6s
-    ease;
-
+  animation: whyImageIn 0.7s ease both;
+  transition: transform 6s ease;
   user-select: none;
-
   -webkit-user-drag: none;
 }
 
 .asapWhy__main:hover
 .asapWhy__image > img {
-  transform:
-    scale(1.025);
+  transform: scale(1.025);
 }
 
 @keyframes whyImageIn {
   from {
     opacity: 0;
-    transform:
-      scale(1.025);
+    transform: scale(1.025);
   }
 
   to {
     opacity: 1;
-    transform:
-      scale(1);
+    transform: scale(1);
   }
 }
 
@@ -458,26 +310,8 @@
 
 .asapWhy__imageOverlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(
-        0,
-        0,
-        0,
-        0.02
-      ) 35%,
-      rgba(
-        0,
-        0,
-        0,
-        0.72
-      ) 100%
-    );
-
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 35%, rgba(0, 0, 0, 0.72) 100%);
   pointer-events: none;
 }
 
@@ -488,51 +322,23 @@
 
 .asapWhy__location {
   position: absolute;
-
   top: 18px;
   left: 18px;
-
   display: flex;
-
   align-items: center;
-
   gap: 6px;
-
   height: 33px;
-
-  padding:
-    0 13px;
-
+  padding: 0 13px;
   border-radius: 30px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.96
-    );
-
-  color:
-    #27313c;
-
+  background: rgba(255, 255, 255, 0.96);
+  color: #27313c;
   font-size: 8px;
-
   font-weight: 850;
-
-  box-shadow:
-    0 7px 20px
-    rgba(
-      0,
-      0,
-      0,
-      0.1
-    );
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
 }
 
 .asapWhy__location svg {
-  color:
-    var(--orange);
+  color: var(--orange);
 }
 
 
@@ -542,23 +348,12 @@
 
 .asapWhy__imageCounter {
   position: absolute;
-
   top: 19px;
   right: 20px;
-
   display: flex;
-
   align-items: baseline;
-
   gap: 3px;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.9
-    );
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .asapWhy__imageCounter strong {
