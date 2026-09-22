@@ -17,6 +17,10 @@ import Destinations from "./components/Destinations";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 
+/* NEW */
+import HolidayMemories from "./components/HolidayMemories";
+
+
 /* PAGES */
 
 import PackageDetails from "./pages/PackageDetails";
@@ -50,7 +54,12 @@ function HomePage() {
 
       <WhyChooseUs />
 
+      {/* HOLIDAY MEMORIES - NEW VIDEO SECTION */}
+      <HolidayMemories />
+
       <Testimonials />
+
+      
 
     </>
 

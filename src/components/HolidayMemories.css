@@ -1,0 +1,2122 @@
+/* =========================================================
+   ASAP HOLIDAYS
+   HOLIDAY MEMORIES
+   PREMIUM CLEAN LIGHT DESIGN
+========================================================= */
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.holidayMemoriesSection {
+  position: relative;
+  width: 100%;
+
+  padding: 40px 0 85px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 0% 45%,
+      rgba(255, 122, 0, 0.055),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 55%,
+      rgba(255, 122, 0, 0.045),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 50%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   REMOVE BACKGROUND PATTERN
+========================================================= */
+
+.holidayMemoriesSection::before {
+  display: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.holidayMemoriesContainer {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1240px,
+    calc(100% - 80px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACKGROUND SHAPES
+========================================================= */
+
+.holidayMemoryShape {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  z-index: 0;
+}
+
+
+/* TOP LEFT */
+
+.holidayMemoryShapeOne {
+  width: 380px;
+  height: 380px;
+
+  top: -240px;
+  left: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 122, 0, 0.07) 0%,
+      rgba(255, 122, 0, 0.025) 45%,
+      transparent 72%
+    );
+
+  filter: blur(5px);
+}
+
+
+/* BOTTOM RIGHT */
+
+.holidayMemoryShapeTwo {
+  width: 420px;
+  height: 420px;
+
+  right: -220px;
+  bottom: -260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 122, 0, 0.055) 0%,
+      rgba(255, 122, 0, 0.02) 45%,
+      transparent 72%
+    );
+
+  filter: blur(8px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.holidayMemoriesHeader {
+  text-align: center;
+
+  margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.holidayMemoriesEyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-bottom: 14px;
+
+  color: #ff6a00;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+}
+
+.holidayMemoriesEyebrow::before,
+.holidayMemoriesEyebrow::after {
+  content: "";
+
+  width: 55px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #ff7a00;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.holidayMemoriesHeader h2 {
+  margin: 0;
+
+  color: #172b4d;
+
+  font-size: clamp(
+    40px,
+    4vw,
+    52px
+  );
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -2px;
+}
+
+.holidayMemoriesHeader h2 span {
+  color: #ff6a00;
+}
+
+
+/* =========================================================
+   HEADER HEART
+========================================================= */
+
+.holidayMemoriesHeart {
+  margin-left: 12px;
+
+  color: #ff405c;
+
+  font-size: 0.62em;
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.holidayMemoriesHeader > p {
+  max-width: 650px;
+
+  margin: 18px auto 28px;
+
+  color: #697586;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.holidayReviews {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+.holidayReview {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* REVIEW ICON */
+
+.holidayReviewIcon {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 19px;
+}
+
+
+/* GOOGLE */
+
+.holidayReviewIcon.google {
+  color: #4285f4;
+
+  background: #f4f7ff;
+}
+
+
+/* FACEBOOK */
+
+.holidayReviewIcon.facebook {
+  color: #ffffff;
+
+  background: #1877f2;
+}
+
+
+/* REVIEW TEXT */
+
+.holidayReviewText {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.holidayReviewText strong {
+  color: #172b4d;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+}
+
+.holidayReviewText strong span {
+  color: #fdbb30;
+}
+
+.holidayReviewText small {
+  margin-top: 3px;
+
+  color: #7b8794;
+
+  font-size: 12px;
+}
+
+
+/* DIVIDER */
+
+.holidayReviewDivider {
+  width: 1px;
+
+  height: 40px;
+
+  background: #dfe4ea;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.holidayMemoriesSliderWrapper {
+  position: relative;
+
+  width: 100%;
+
+  padding: 8px 0 2px;
+}
+
+
+/* =========================================================
+   SUBTLE PREMIUM SURFACE
+========================================================= */
+
+.holidayMemoriesSliderWrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -35px -25px;
+
+  z-index: -1;
+
+  border-radius: 40px;
+
+  background:
+    rgba(255, 255, 255, 0.58);
+
+  box-shadow:
+    0 20px 60px
+    rgba(20, 35, 55, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.holidayMemoriesSlider {
+  display: flex;
+
+  gap: 22px;
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  padding: 8px 5px 20px;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+}
+
+.holidayMemoriesSlider::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.holidayMemoryCard {
+  position: relative;
+
+  flex: 0 0 calc(
+    (100% - 88px) / 5
+  );
+
+  min-width: 220px;
+
+  height: 400px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #e9edf2;
+
+  scroll-snap-align: start;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 35px
+    rgba(23, 43, 77, 0.13);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* CARD HOVER */
+
+.holidayMemoryCard:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 24px 48px
+    rgba(23, 43, 77, 0.19);
+}
+
+
+/* CARD PRESS */
+
+.holidayMemoryCard:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CARD MEDIA
+========================================================= */
+
+.holidayMemoryMedia {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD VIDEO
+========================================================= */
+
+.holidayMemoryVideo {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.7s ease;
+}
+
+.holidayMemoryCard:hover
+.holidayMemoryVideo {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   CARD DARK GRADIENT
+========================================================= */
+
+.holidayMemoryGradient {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 20, 42, 0.95) 0%,
+      rgba(5, 20, 42, 0.68) 25%,
+      rgba(5, 20, 42, 0.18) 58%,
+      transparent 80%
+    );
+}
+
+
+/* =========================================================
+   CARD PLAY BUTTON
+========================================================= */
+
+.holidayMemoryPlay {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: #ff6a00;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.holidayMemoryPlay span {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 3px;
+
+  font-size: 17px;
+}
+
+.holidayMemoryCard:hover
+.holidayMemoryPlay {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   CARD HEART
+========================================================= */
+
+.holidayMemoryHeart {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 20;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    rgba(15, 15, 15, 0.30);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  font-size: 16px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* HEART HOVER */
+
+.holidayMemoryHeart:hover {
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  color: #ff6a00;
+
+  border-color: #ffffff;
+
+  transform: scale(1.08);
+}
+
+
+/* ACTIVE HEART */
+
+.holidayMemoryHeart.active {
+  background: #ff6a00;
+
+  color: #ffffff;
+
+  border-color: #ff6a00;
+
+  box-shadow:
+    0 8px 25px
+    rgba(255, 106, 0, 0.38);
+
+  animation:
+    holidayHeartPop 0.35s ease;
+}
+
+.holidayMemoryHeart.active:hover {
+  background: #ff5c00;
+
+  color: #ffffff;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   HEART ANIMATION
+========================================================= */
+
+@keyframes holidayHeartPop {
+
+  0% {
+    transform: scale(0.75);
+  }
+
+  55% {
+    transform: scale(1.18);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.holidayMemoryContent {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 5;
+
+  padding: 25px 20px 20px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.holidayMemoryLocation {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.holidayMemoryLocation svg {
+  color: #ff8a00;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.holidayMemoryContent h3 {
+  margin: 0 0 5px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD SUBTITLE
+========================================================= */
+
+.holidayMemoryContent p {
+  margin: 0 0 14px;
+
+  color:
+    rgba(255, 255, 255, 0.86);
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DESTINATION TAG
+========================================================= */
+
+.holidayMemoryTag {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px 15px;
+
+  border-radius: 30px;
+
+  background: #ff7a00;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SLIDER ARROWS
+========================================================= */
+
+.holidayMemoryArrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 30;
+
+  width: 50px;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #172b4d;
+
+  cursor: pointer;
+
+  transform:
+    translateY(-50%);
+
+  box-shadow:
+    0 8px 25px
+    rgba(23, 43, 77, 0.17);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.holidayMemoryArrow:hover {
+  background: #ff7a00;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  box-shadow:
+    0 12px 28px
+    rgba(255, 122, 0, 0.25);
+}
+
+.holidayMemoryArrowLeft {
+  left: -25px;
+}
+
+.holidayMemoryArrowRight {
+  right: -25px;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.holidayMemoryDots {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 24px;
+}
+
+.holidayMemoryDot {
+  width: 7px;
+
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #d5dbe3;
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.holidayMemoryDot:hover {
+  transform: scale(1.2);
+
+  background: #ffb47a;
+}
+
+.holidayMemoryDot.active {
+  width: 25px;
+
+  border-radius: 20px;
+
+  background: #ff7a00;
+}
+
+
+/* =========================================================
+   FAVOURITE TOAST
+========================================================= */
+
+.holidayFavouriteToast {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 30px;
+
+  z-index: 100000;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(23, 43, 77, 0.94);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.20);
+
+  transform:
+    translateX(-50%);
+
+  animation:
+    holidayToastIn 0.3s ease;
+}
+
+.holidayFavouriteToast svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   TOAST ANIMATION
+========================================================= */
+
+@keyframes holidayToastIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   VIDEO POPUP OVERLAY
+========================================================= */
+
+.holidayVideoModal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    rgba(0, 0, 0, 0.90);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  animation:
+    holidayModalFade 0.25s ease;
+}
+
+
+/* =========================================================
+   POPUP INNER
+========================================================= */
+
+.holidayVideoModalInner {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(340px, 1fr)
+    minmax(360px, 0.85fr);
+
+  width: min(
+    1100px,
+    100%
+  );
+
+  max-height: 90vh;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #292929;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.60);
+
+  animation:
+    holidayModalScale 0.3s ease;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.holidayVideoClose {
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  z-index: 50;
+
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.holidayVideoClose:hover {
+  background: #ff6a00;
+
+  transform:
+    rotate(90deg)
+    scale(1.05);
+}
+
+
+/* =========================================================
+   POPUP VIDEO BOX
+========================================================= */
+
+.holidayPopupVideoBox {
+  position: relative;
+
+  min-height: 610px;
+
+  overflow: hidden;
+
+  background: #080808;
+}
+
+
+/* =========================================================
+   POPUP VIDEO
+========================================================= */
+
+.holidayPopupVideo {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   POPUP DESTINATION BADGE
+========================================================= */
+
+.holidayPopupVideoDestination {
+  position: absolute;
+
+  top: 18px;
+
+  left: 18px;
+
+  z-index: 8;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.holidayPopupVideoDestination svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   POPUP PREVIOUS / NEXT
+========================================================= */
+
+.holidayPopupNav {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 15;
+
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transform:
+    translateY(-50%);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.holidayPopupNav:hover {
+  background: #ff7a00;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.holidayPopupNavLeft {
+  left: 16px;
+}
+
+.holidayPopupNavRight {
+  right: 16px;
+}
+
+
+/* =========================================================
+   POPUP CONTROLS
+========================================================= */
+
+.holidayPopupControls {
+  position: absolute;
+
+  right: 18px;
+
+  bottom: 65px;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.holidayPopupControls button {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  background:
+    rgba(10, 10, 10, 0.72);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.holidayPopupControls button:hover {
+  background: #ff6a00;
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   ACTIVE AUDIO
+========================================================= */
+
+.holidayPopupControls button.audioActive {
+  background: #ff7a00;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(255, 122, 0, 0.16);
+}
+
+
+/* =========================================================
+   VIEW PACKAGES BUTTON
+========================================================= */
+
+.holidayViewPackages {
+  position: absolute;
+
+  left: 8px;
+
+  right: 8px;
+
+  bottom: 8px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 0;
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7a00,
+      #ff5b00
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(255, 106, 0, 0.25);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.holidayViewPackages:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #ff8a00,
+      #ff6200
+    );
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(255, 106, 0, 0.35);
+}
+
+.holidayViewPackages svg {
+  font-size: 11px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.holidayViewPackages:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   POPUP DETAILS
+========================================================= */
+
+.holidayPopupDetails {
+  position: relative;
+
+  padding: 30px;
+
+  overflow-y: auto;
+
+  color: #ffffff;
+
+  background: #292929;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #ff7a00
+    #3b3b3b;
+}
+
+.holidayPopupDetails::-webkit-scrollbar {
+  width: 5px;
+}
+
+.holidayPopupDetails::-webkit-scrollbar-track {
+  background: #3b3b3b;
+}
+
+.holidayPopupDetails::-webkit-scrollbar-thumb {
+  background: #ff7a00;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   POPUP DESTINATION
+========================================================= */
+
+.holidayPopupDestination {
+  display: inline-flex;
+
+  padding: 7px 13px;
+
+  margin-bottom: 14px;
+
+  border-radius: 20px;
+
+  background: #151515;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   POPUP TITLE
+========================================================= */
+
+.holidayPopupDetails h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  line-height: 1.35;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   POPUP DIVIDER
+========================================================= */
+
+.holidayPopupLine {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 18px 0;
+
+  background: #555555;
+}
+
+
+/* =========================================================
+   POPUP DESCRIPTION
+========================================================= */
+
+.holidayPopupDetails p {
+  margin: 0;
+
+  color: #eeeeee;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   POPUP PACKAGE CTA
+========================================================= */
+
+.holidayPopupPackageButton {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 14px 18px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7a00,
+      #ff5c00
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(255, 106, 0, 0.20);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.holidayPopupPackageButton:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #ff8a00,
+      #ff6200
+    );
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(255, 106, 0, 0.30);
+}
+
+.holidayPopupPackageButton svg {
+  transition:
+    transform 0.25s ease;
+}
+
+.holidayPopupPackageButton:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   MODAL ANIMATIONS
+========================================================= */
+
+@keyframes holidayModalFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes holidayModalScale {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.94)
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .holidayMemoriesContainer {
+    width: min(
+      1100px,
+      calc(100% - 60px)
+    );
+  }
+
+  .holidayMemoryCard {
+    flex: 0 0 calc(
+      (100% - 44px) / 3
+    );
+  }
+
+}
+
+
+/* =========================================================
+   992px
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .holidayMemoriesSection {
+    padding: 75px 0;
+  }
+
+  .holidayMemoryCard {
+    flex: 0 0 calc(
+      (100% - 22px) / 2
+    );
+
+    height: 470px;
+  }
+
+  .holidayMemoriesHeader h2 {
+    font-size: 48px;
+  }
+
+  .holidayVideoModalInner {
+    grid-template-columns:
+      1fr 0.85fr;
+  }
+
+  .holidayPopupVideoBox {
+    min-height: 520px;
+  }
+
+}
+
+
+/* =========================================================
+   768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .holidayMemoriesSection {
+    padding: 65px 0;
+  }
+
+  .holidayMemoriesContainer {
+    width: calc(100% - 32px);
+  }
+
+  .holidayMemoriesHeader {
+    margin-bottom: 35px;
+  }
+
+  .holidayMemoriesHeader h2 {
+    font-size: 40px;
+
+    letter-spacing: -1px;
+  }
+
+  .holidayMemoriesHeader > p {
+    font-size: 15px;
+  }
+
+  .holidayMemoryCard {
+    flex: 0 0 300px;
+
+    height: 455px;
+  }
+
+  .holidayMemoryArrow {
+    width: 43px;
+
+    height: 43px;
+  }
+
+  .holidayMemoryArrowLeft {
+    left: -10px;
+  }
+
+  .holidayMemoryArrowRight {
+    right: -10px;
+  }
+
+}
+
+
+/* =========================================================
+   700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .holidayVideoModal {
+    align-items: center;
+
+    padding: 12px;
+  }
+
+  .holidayVideoModalInner {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    max-height: 94vh;
+
+    border-radius: 14px;
+  }
+
+  .holidayPopupVideoBox {
+    height: 60vh;
+
+    min-height: 360px;
+  }
+
+  .holidayPopupDetails {
+    max-height: 34vh;
+
+    padding: 20px;
+  }
+
+  .holidayPopupDetails h2 {
+    font-size: 18px;
+  }
+
+  .holidayPopupDetails p {
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+  .holidayVideoClose {
+    top: 10px;
+
+    right: 10px;
+
+    width: 38px;
+
+    height: 38px;
+
+    background:
+      rgba(0, 0, 0, 0.70);
+
+    font-size: 15px;
+  }
+
+  .holidayPopupNav {
+    width: 38px;
+
+    height: 38px;
+
+    font-size: 13px;
+  }
+
+  .holidayPopupNavLeft {
+    left: 10px;
+  }
+
+  .holidayPopupNavRight {
+    right: 10px;
+  }
+
+  .holidayPopupVideoDestination {
+    top: 12px;
+
+    left: 12px;
+
+    padding: 7px 11px;
+
+    font-size: 11px;
+  }
+
+  .holidayPopupControls {
+    right: 10px;
+
+    bottom: 62px;
+
+    gap: 8px;
+  }
+
+  .holidayPopupControls button {
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 14px;
+  }
+
+  .holidayViewPackages {
+    left: 8px;
+
+    right: 8px;
+
+    bottom: 8px;
+
+    height: 42px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   576px
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .holidayMemoriesSection {
+    padding: 55px 0 60px;
+  }
+
+  .holidayMemoriesContainer {
+    width: calc(100% - 24px);
+  }
+
+  .holidayMemoriesHeader {
+    margin-bottom: 30px;
+  }
+
+  .holidayMemoriesEyebrow {
+    gap: 9px;
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .holidayMemoriesEyebrow::before,
+  .holidayMemoriesEyebrow::after {
+    width: 30px;
+  }
+
+  .holidayMemoriesHeader h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .holidayMemoriesHeart {
+    margin-left: 5px;
+  }
+
+  .holidayMemoriesHeader > p {
+    max-width: 320px;
+
+    margin: 14px auto 22px;
+
+    font-size: 14px;
+  }
+
+  .holidayReviews {
+    gap: 15px;
+  }
+
+  .holidayReviewIcon {
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 16px;
+  }
+
+  .holidayReviewText strong {
+    font-size: 13px;
+  }
+
+  .holidayReviewText small {
+    font-size: 10px;
+  }
+
+  .holidayReviewDivider {
+    height: 32px;
+  }
+
+  .holidayMemoriesSlider {
+    gap: 14px;
+
+    padding-left: 2px;
+
+    padding-right: 2px;
+  }
+
+  .holidayMemoryCard {
+    flex: 0 0 82vw;
+
+    height: 430px;
+
+    border-radius: 22px;
+  }
+
+  .holidayMemoryArrow {
+    display: none;
+  }
+
+  .holidayMemoryContent {
+    padding: 20px 18px 18px;
+  }
+
+  .holidayMemoryContent h3 {
+    font-size: 17px;
+  }
+
+  .holidayMemoryHeart {
+    top: 14px;
+
+    right: 14px;
+
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .holidayPopupVideoBox {
+    height: 55vh;
+
+    min-height: 330px;
+  }
+
+  .holidayPopupDetails {
+    max-height: 38vh;
+
+    padding: 17px;
+  }
+
+  .holidayPopupDetails h2 {
+    font-size: 16px;
+  }
+
+  .holidayPopupDetails p {
+    font-size: 12px;
+  }
+
+  .holidayPopupControls {
+    bottom: 62px;
+  }
+
+  .holidayPopupControls button {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 12px;
+  }
+
+  .holidayFavouriteToast {
+    bottom: 20px;
+
+    max-width: calc(100% - 30px);
+
+    white-space: nowrap;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .holidayPopupVideoDestination {
+    max-width: 150px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+  }
+
+  .holidayPopupNav {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .holidayPopupControls {
+    bottom: 62px;
+  }
+
+  .holidayPopupControls button {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .holidayMemoriesHeader h2 {
+    font-size: 28px;
+  }
+
+  .holidayMemoryCard {
+    flex-basis: 86vw;
+
+    height: 410px;
+  }
+
+  .holidayMemoryHeart {
+    width: 36px;
+
+    height: 36px;
+
+    top: 12px;
+
+    right: 12px;
+  }
+
+  .holidayPopupVideoBox {
+    min-height: 310px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.holidayMemoryHeart:focus-visible,
+.holidayMemoryArrow:focus-visible,
+.holidayMemoryDot:focus-visible,
+.holidayVideoClose:focus-visible,
+.holidayPopupNav:focus-visible,
+.holidayPopupControls button:focus-visible,
+.holidayViewPackages:focus-visible,
+.holidayPopupPackageButton:focus-visible {
+  outline: 3px solid
+    rgba(255, 122, 0, 0.35);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .holidayMemoryCard,
+  .holidayMemoryVideo,
+  .holidayMemoryPlay,
+  .holidayMemoryHeart,
+  .holidayMemoryArrow,
+  .holidayPopupNav,
+  .holidayPopupControls button,
+  .holidayViewPackages,
+  .holidayPopupPackageButton {
+    transition: none;
+  }
+
+  .holidayMemoryHeart.active,
+  .holidayFavouriteToast,
+  .holidayVideoModal,
+  .holidayVideoModalInner {
+    animation: none;
+  }
+
+}
