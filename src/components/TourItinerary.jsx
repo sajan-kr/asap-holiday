@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./TourItinerary.css";
 
+/* =========================================================
+   ICON
+========================================================= */
+
 const Icon = ({ type }) => {
   const icons = {
     clock: (
@@ -36,28 +40,19 @@ const Icon = ({ type }) => {
       </>
     ),
 
-    car: (
-      <>
-        <path d="M5 16l1-6h12l1 6" />
-        <path d="M3 16h18v3H3z" />
-        <circle cx="7" cy="19" r="1.5" />
-        <circle cx="17" cy="19" r="1.5" />
-      </>
-    ),
-
-    camera: (
-      <>
-        <path d="M4 7h4l2-2h4l2 2h4v12H4z" />
-        <circle cx="12" cy="13" r="4" />
-      </>
-    ),
-
     play: <path d="m9 6 10 6-10 6V6Z" />,
 
     pause: (
       <>
         <path d="M8 5v14" />
         <path d="M16 5v14" />
+      </>
+    ),
+
+    copy: (
+      <>
+        <rect x="8" y="8" width="11" height="11" rx="2" />
+        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
       </>
     ),
 
@@ -71,13 +66,6 @@ const Icon = ({ type }) => {
       </>
     ),
 
-    copy: (
-      <>
-        <rect x="8" y="8" width="11" height="11" rx="2" />
-        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
-      </>
-    ),
-
     print: (
       <>
         <path d="M6 9V4h12v5" />
@@ -86,22 +74,34 @@ const Icon = ({ type }) => {
       </>
     ),
 
-    arrow: (
+    arrowRight: (
       <>
         <path d="M5 12h14" />
         <path d="m13 6 6 6-6 6" />
       </>
     ),
 
-    chevron: <path d="m6 9 6 6 6-6" />,
+    arrowLeft: (
+      <>
+        <path d="M19 12H5" />
+        <path d="m11 18-6-6 6-6" />
+      </>
+    ),
 
-    check: <path d="m5 12 4 4L19 6" />
+    check: <path d="m5 12 4 4L19 6" />,
+
+    chevron: <path d="m6 9 6 6 6-6" />,
   };
 
   return (
     <svg
-      className="tourSvg"
+      className="itineraryIcon"
       viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
       {icons[type]}
@@ -109,6 +109,39 @@ const Icon = ({ type }) => {
   );
 };
 
+
+/* =========================================================
+   INFO ITEM
+========================================================= */
+
+const InfoItem = ({ icon, label, value }) => {
+  return (
+    <div className="itineraryInfoItem">
+
+      <div className="itineraryInfoIcon">
+        <Icon type={icon} />
+      </div>
+
+      <div className="itineraryInfoContent">
+
+        <span className="itineraryInfoLabel">
+          {label}
+        </span>
+
+        <strong className="itineraryInfoValue">
+          {value}
+        </strong>
+
+      </div>
+
+    </div>
+  );
+};
+
+
+/* =========================================================
+   TOUR ITINERARY
+========================================================= */
 
 const TourItinerary = ({ tour }) => {
 
@@ -123,38 +156,45 @@ const TourItinerary = ({ tour }) => {
   const touchEnd = useRef(null);
 
 
-  /* =========================================
-     LOAD DAY FROM URL
-  ========================================= */
+  /* =======================================================
+     URL DAY
+  ======================================================= */
 
   useEffect(() => {
+    if (!itinerary.length) return;
 
     const hash = window.location.hash;
 
-    if (hash.startsWith("#day-")) {
+    if (!hash.startsWith("#day-")) return;
 
-      const dayNumber =
-        parseInt(hash.replace("#day-", ""), 10) - 1;
+    const number = parseInt(
+      hash.replace("#day-", ""),
+      10
+    );
 
-      if (
-        !Number.isNaN(dayNumber) &&
-        dayNumber >= 0 &&
-        dayNumber < itinerary.length
-      ) {
-        setActiveDay(dayNumber);
-      }
+    const index = number - 1;
+
+    if (
+      !Number.isNaN(index) &&
+      index >= 0 &&
+      index < itinerary.length
+    ) {
+      setActiveDay(index);
     }
-
   }, [itinerary.length]);
 
 
-  /* =========================================
+  /* =======================================================
      CHANGE DAY
-  ========================================= */
+  ======================================================= */
 
   const changeDay = (index) => {
-
-    if (index < 0 || index >= itinerary.length) return;
+    if (
+      index < 0 ||
+      index >= itinerary.length
+    ) {
+      return;
+    }
 
     setActiveDay(index);
 
@@ -163,54 +203,79 @@ const TourItinerary = ({ tour }) => {
       "",
       `#day-${index + 1}`
     );
-
   };
 
 
-  /* =========================================
-     NEXT / PREVIOUS
-  ========================================= */
+  /* =======================================================
+     NEXT
+  ======================================================= */
 
   const nextDay = () => {
+    if (!itinerary.length) return;
 
-    if (activeDay < itinerary.length - 1) {
-      changeDay(activeDay + 1);
-    } else {
-      changeDay(0);
-    }
+    const next =
+      activeDay < itinerary.length - 1
+        ? activeDay + 1
+        : 0;
 
+    changeDay(next);
   };
 
 
-  const previousDay = () => {
+  /* =======================================================
+     PREVIOUS
+  ======================================================= */
 
+  const previousDay = () => {
     if (activeDay > 0) {
       changeDay(activeDay - 1);
     }
-
   };
 
 
-  /* =========================================
-     AUTO PLAY
-  ========================================= */
+  /* =======================================================
+     AUTOPLAY
+  ======================================================= */
 
   useEffect(() => {
-
-    if (!autoPlay || itinerary.length <= 1) return;
+    if (
+      !autoPlay ||
+      itinerary.length <= 1
+    ) {
+      return;
+    }
 
     const timer = setInterval(() => {
-      nextDay();
+
+      setActiveDay((current) => {
+
+        const next =
+          current < itinerary.length - 1
+            ? current + 1
+            : 0;
+
+        window.history.replaceState(
+          null,
+          "",
+          `#day-${next + 1}`
+        );
+
+        return next;
+      });
+
     }, 5000);
 
     return () => clearInterval(timer);
 
-  }, [autoPlay, activeDay, itinerary.length]);
+  }, [
+    autoPlay,
+    itinerary.length,
+  ]);
 
 
-  /* =========================================
+  /* =======================================================
      KEYBOARD
-  ========================================= */
+  ======================================================= */
 
   useEffect(() => {
 
@@ -227,7 +292,6 @@ const TourItinerary = ({ tour }) => {
       if (event.key === "Escape") {
         setExpanded(false);
       }
-
     };
 
     window.addEventListener(
@@ -242,15 +306,16 @@ const TourItinerary = ({ tour }) => {
       );
     };
 
-  }, [activeDay, itinerary.length]);
+  });
 
 
-  /* =========================================
-     SWIPE
-  ========================================= */
+  /* =======================================================
+     TOUCH
+  ======================================================= */
 
   const handleTouchStart = (event) => {
-    touchStart.current = event.touches[0].clientX;
+    touchStart.current =
+      event.touches[0].clientX;
   };
 
 
@@ -267,7 +332,8 @@ const TourItinerary = ({ tour }) => {
     }
 
     const distance =
-      touchStart.current - touchEnd.current;
+      touchStart.current -
+      touchEnd.current;
 
     if (Math.abs(distance) > 60) {
 
@@ -281,26 +347,46 @@ const TourItinerary = ({ tour }) => {
 
     touchStart.current = null;
     touchEnd.current = null;
-
   };
 
 
-  /* =========================================
+  /* =======================================================
      COPY
-  ========================================= */
+  ======================================================= */
 
   const copyItinerary = async () => {
 
     const text = itinerary
-      .map(
-        (day, index) =>
-          `Day ${index + 1}: ${day.title}\n${day.description}`
-      )
+      .map((day, index) => {
+
+        const schedule =
+          day.schedule || [];
+
+        const scheduleText =
+          schedule
+            .map(
+              (item) =>
+                `${item.time}: ${item.title}`
+            )
+            .join("\n");
+
+        return `
+Day ${index + 1}: ${day.title || ""}
+
+${day.description || ""}
+
+${scheduleText}
+        `.trim();
+
+      })
       .join("\n\n");
+
 
     try {
 
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(
+        text
+      );
 
       setCopied(true);
 
@@ -309,20 +395,14 @@ const TourItinerary = ({ tour }) => {
       }, 2000);
 
     } catch (error) {
-
-      console.error(
-        "Unable to copy itinerary",
-        error
-      );
-
+      console.error(error);
     }
-
   };
 
 
-  /* =========================================
+  /* =======================================================
      SHARE
-  ========================================= */
+  ======================================================= */
 
   const shareItinerary = async () => {
 
@@ -332,16 +412,20 @@ const TourItinerary = ({ tour }) => {
         "Tour Itinerary",
 
       text:
-        "Check out this amazing travel itinerary.",
+        "Check out this travel itinerary.",
 
-      url: window.location.href
+      url:
+        window.location.href,
     };
+
 
     try {
 
       if (navigator.share) {
 
-        await navigator.share(shareData);
+        await navigator.share(
+          shareData
+        );
 
       } else {
 
@@ -351,27 +435,46 @@ const TourItinerary = ({ tour }) => {
 
     } catch (error) {
 
-      if (error?.name !== "AbortError") {
+      if (
+        error?.name !==
+        "AbortError"
+      ) {
         console.error(error);
       }
 
     }
-
   };
 
 
-  /* =========================================
+  /* =======================================================
      PRINT
-  ========================================= */
+  ======================================================= */
 
   const printItinerary = () => {
     window.print();
   };
 
 
-  if (!itinerary.length) return null;
+  /* =======================================================
+     EMPTY
+  ======================================================= */
 
-  const day = itinerary[activeDay];
+  if (!itinerary.length) {
+    return null;
+  }
+
+
+  /* =======================================================
+     CURRENT DAY
+  ======================================================= */
+
+  const day =
+    itinerary[activeDay];
+
+
+  /* =======================================================
+     IMAGE
+  ======================================================= */
 
   const image =
     day.image ||
@@ -379,16 +482,24 @@ const TourItinerary = ({ tour }) => {
     day.imageUrl ||
     tour?.image ||
     tour?.bannerImage ||
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85";
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=85";
 
+
+  /* =======================================================
+     HIGHLIGHTS
+  ======================================================= */
 
   const highlights =
     day.highlights || [
       "Sightseeing",
       "Local Experiences",
-      "Photography"
+      "Photography",
     ];
 
+
+  /* =======================================================
+     SCHEDULE
+  ======================================================= */
 
   const schedule =
     day.schedule || [
@@ -396,126 +507,166 @@ const TourItinerary = ({ tour }) => {
         time: "Morning",
         title: "Explore & Discover",
         description:
-          "Begin your day with planned sightseeing and memorable experiences."
+          "Begin your day with planned sightseeing and memorable experiences.",
       },
+
       {
         time: "Afternoon",
         title: "Local Experience",
         description:
-          "Enjoy the destination and experience its local charm."
+          "Enjoy the destination and experience its local charm.",
       },
+
       {
         time: "Evening",
         title: "Relax & Unwind",
         description:
-          "End your day at leisure and enjoy your surroundings."
-      }
+          "End your day at leisure and enjoy your surroundings.",
+      },
     ];
 
 
+  /* =======================================================
+     RENDER
+  ======================================================= */
+
   return (
+
     <section
-      className="interactiveItinerary"
+      className="premiumItinerary"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
 
-      {/* ==========================================
+      {/* =================================================
           HEADER
-      ========================================== */}
+      ================================================= */}
 
-      <div className="interactiveHeader">
+      <header className="itineraryHeader">
 
-        <div className="headerEyebrow">
-          <span />
-          YOUR JOURNEY
-          <span />
+        <div className="itineraryHeaderLeft">
+
+          <span className="itineraryEyebrow">
+            ITINERARY
+          </span>
+
+          <h2>
+            Your Journey
+          </h2>
+
         </div>
 
-        <h2>
-          Experience Every
-          <em> Moment</em>
-        </h2>
-
-        <p>
-          Explore your complete journey, one unforgettable
-          day at a time.
+        <p className="itineraryHeaderText">
+          Explore your trip day by day.
         </p>
 
-      </div>
+      </header>
 
 
-      {/* ==========================================
-          TOOLBAR
-      ========================================== */}
+      {/* =================================================
+          NAVIGATION
+      ================================================= */}
 
       <div className="itineraryToolbar">
 
-        <div className="toolbarLeft">
+        <nav className="itineraryDays">
 
-          <span className="journeyLength">
-            {itinerary.length} DAYS
-          </span>
+          {itinerary.map(
+            (item, index) => {
 
-          <span className="toolbarDivider" />
+              const isActive =
+                activeDay === index;
 
-          <span>
-            Interactive Itinerary
-          </span>
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  className={
+                    isActive
+                      ? "itineraryDay active"
+                      : "itineraryDay"
+                  }
+                  onClick={() =>
+                    changeDay(index)
+                  }
+                >
 
-        </div>
+                  <strong>
+                    {String(
+                      index + 1
+                    ).padStart(2, "0")}
+                  </strong>
+
+                  <span>
+                    {item.day ||
+                      `Day ${
+                        index + 1
+                      }`}
+                  </span>
+
+                </button>
+              );
+            }
+          )}
+
+        </nav>
 
 
-        <div className="toolbarActions">
+        <div className="itineraryTools">
 
           <button
-            onClick={() => setAutoPlay(!autoPlay)}
-            className={autoPlay ? "toolActive" : ""}
+            type="button"
             title={
               autoPlay
-                ? "Pause itinerary"
-                : "Play itinerary"
+                ? "Pause"
+                : "Auto play"
+            }
+            onClick={() =>
+              setAutoPlay(
+                !autoPlay
+              )
             }
           >
             <Icon
-              type={autoPlay ? "pause" : "play"}
+              type={
+                autoPlay
+                  ? "pause"
+                  : "play"
+              }
             />
-
-            <span>
-              {autoPlay ? "Pause" : "Play"}
-            </span>
           </button>
 
 
           <button
-            onClick={copyItinerary}
+            type="button"
             title="Copy itinerary"
+            onClick={
+              copyItinerary
+            }
           >
             <Icon type="copy" />
-
-            <span>
-              {copied ? "Copied!" : "Copy"}
-            </span>
           </button>
 
 
           <button
-            onClick={shareItinerary}
+            type="button"
             title="Share itinerary"
+            onClick={
+              shareItinerary
+            }
           >
             <Icon type="share" />
-
-            <span>Share</span>
           </button>
 
 
           <button
-            onClick={printItinerary}
+            type="button"
             title="Print itinerary"
+            onClick={
+              printItinerary
+            }
           >
             <Icon type="print" />
-
-            <span>Print</span>
           </button>
 
         </div>
@@ -523,73 +674,51 @@ const TourItinerary = ({ tour }) => {
       </div>
 
 
-      {/* ==========================================
-          DAY NAVIGATION
-      ========================================== */}
+      {/* =================================================
+          MAIN EXPERIENCE
+      ================================================= */}
 
-      <div className="dayRail">
-
-        {itinerary.map((item, index) => (
-
-          <button
-            key={index}
-            onClick={() => changeDay(index)}
-            className={
-              activeDay === index
-                ? "railDay active"
-                : "railDay"
-            }
-          >
-
-            <span>
-              {String(index + 1).padStart(2, "0")}
-            </span>
-
-            <small>
-              {item.day || `Day ${index + 1}`}
-            </small>
-
-          </button>
-
-        ))}
-
-      </div>
+      <div className="itineraryExperience">
 
 
-      {/* ==========================================
-          MAIN
-      ========================================== */}
+        {/* =================================================
+            IMAGE
+        ================================================= */}
 
-      <div className="itineraryMain">
-
-
-        {/* IMAGE */}
-
-        <div className="itineraryHeroImage">
+        <div className="itineraryVisual">
 
           <img
             key={image}
             src={image}
-            alt={day.title}
+            alt={
+              day.title ||
+              "Travel itinerary"
+            }
           />
 
-          <div className="imageShade" />
+          <div className="visualOverlay" />
 
-          <div className="imageDayBadge">
 
-            <small>DAY</small>
+          <div className="visualDay">
+
+            <span>DAY</span>
 
             <strong>
-              {String(activeDay + 1).padStart(2, "0")}
+              {String(
+                activeDay + 1
+              ).padStart(2, "0")}
             </strong>
 
           </div>
 
 
-          <div className="imageInformation">
+          <div className="visualCaption">
 
             <span>
-              {day.day || `Day ${activeDay + 1}`}
+              {day.day ||
+                `Day ${
+                  activeDay + 1
+                }`}
             </span>
 
             <h3>
@@ -601,16 +730,24 @@ const TourItinerary = ({ tour }) => {
         </div>
 
 
-        {/* CONTENT */}
+        {/* =================================================
+            DETAILS
+        ================================================= */}
 
-        <div className="itineraryContent">
+        <div className="itineraryDetails">
 
-          <div className="contentHeading">
+
+          {/* TITLE */}
+
+          <div className="detailsHeading">
 
             <div>
 
-              <span className="contentEyebrow">
-                DAY {String(activeDay + 1).padStart(2, "0")}
+              <span className="detailsEyebrow">
+                DAY{" "}
+                {String(
+                  activeDay + 1
+                ).padStart(2, "0")}
               </span>
 
               <h3>
@@ -619,74 +756,101 @@ const TourItinerary = ({ tour }) => {
 
             </div>
 
-            <strong className="backgroundNumber">
-              {String(activeDay + 1).padStart(2, "0")}
-            </strong>
 
-          </div>
+            <div className="dayNumber">
 
-
-          {/* Description */}
-
-          <div className="dayDescription">
-
-            <p>
-              {day.description}
-            </p>
-
-          </div>
-
-
-          {/* Info */}
-
-          <div className="dayInfo">
-
-            <Info
-              icon="clock"
-              label="Duration"
-              value={day.duration || "Full Day"}
-            />
-
-            <Info
-              icon="location"
-              label="Location"
-              value={day.location || "As Per Itinerary"}
-            />
-
-            <Info
-              icon="meal"
-              label="Meals"
-              value={day.meals || "As Per Plan"}
-            />
-
-            <Info
-              icon="hotel"
-              label="Stay"
-              value={day.stay || "As Per Package"}
-            />
-
-          </div>
-
-
-          {/* Schedule */}
-
-          <div className="scheduleSection">
-
-            <div className="sectionHeading">
+              <strong>
+                {String(
+                  activeDay + 1
+                ).padStart(2, "0")}
+              </strong>
 
               <span>
-                DAY SCHEDULE
+                /{String(
+                  itinerary.length
+                ).padStart(2, "0")}
               </span>
 
+            </div>
+
+          </div>
+
+
+          {/* DESCRIPTION */}
+
+          {day.description && (
+            <p className="dayDescription">
+              {day.description}
+            </p>
+          )}
+
+
+          {/* INFO */}
+
+          <div className="infoStrip">
+
+            <InfoItem
+              icon="clock"
+              label="Duration"
+              value={
+                day.duration ||
+                "Full Day"
+              }
+            />
+
+            <InfoItem
+              icon="location"
+              label="Location"
+              value={
+                day.location ||
+                "As Per Itinerary"
+              }
+            />
+
+            <InfoItem
+              icon="meal"
+              label="Meals"
+              value={
+                day.meals ||
+                "As Per Plan"
+              }
+            />
+
+            <InfoItem
+              icon="hotel"
+              label="Stay"
+              value={
+                day.stay ||
+                "As Per Package"
+              }
+            />
+
+          </div>
+
+
+          {/* PLAN */}
+
+          <div className="dayPlan">
+
+            <div className="planHeading">
+
+              <span>
+                TODAY'S PLAN
+              </span>
+
+              <div />
+
               <button
+                type="button"
                 onClick={() =>
-                  setExpanded(!expanded)
+                  setExpanded(
+                    !expanded
+                  )
                 }
               >
-
                 {expanded
-                  ? "Collapse"
-                  : "View Schedule"}
+                  ? "Hide"
+                  : "Show"}
 
                 <Icon type="chevron" />
 
@@ -697,36 +861,47 @@ const TourItinerary = ({ tour }) => {
 
             {expanded && (
 
-              <div className="scheduleList">
+              <div className="planItems">
 
-                {schedule.map((item, index) => (
+                {schedule
+                  .slice(0, 3)
+                  .map(
+                    (
+                      item,
+                      index
+                    ) => (
 
-                  <div
-                    className="scheduleItem"
-                    key={index}
-                  >
+                      <article
+                        className="planItem"
+                        key={index}
+                      >
 
-                    <div className="scheduleTime">
-                      {item.time}
-                    </div>
+                        <div className="planItemNumber">
+                          0{index + 1}
+                        </div>
 
-                    <div className="scheduleDot" />
+                        <div className="planItemContent">
 
-                    <div className="scheduleText">
+                          <span>
+                            {item.time}
+                          </span>
 
-                      <h4>
-                        {item.title}
-                      </h4>
+                          <h4>
+                            {item.title}
+                          </h4>
 
-                      <p>
-                        {item.description}
-                      </p>
+                          <p>
+                            {
+                              item.description
+                            }
+                          </p>
 
-                    </div>
+                        </div>
 
-                  </div>
+                      </article>
 
-                ))}
+                    )
+                  )}
 
               </div>
 
@@ -735,104 +910,106 @@ const TourItinerary = ({ tour }) => {
           </div>
 
 
-          {/* Highlights */}
+          {/* HIGHLIGHTS */}
 
-          <div className="highlightSection">
+          <div className="highlightRow">
 
-            <span className="sectionHeadingText">
+            <span className="highlightTitle">
               HIGHLIGHTS
             </span>
 
-            <div className="highlightTags">
+            <div className="highlightList">
 
-              {highlights.map((item, index) => (
+              {highlights
+                .slice(0, 5)
+                .map(
+                  (
+                    item,
+                    index
+                  ) => (
 
-                <span key={index}>
+                    <span
+                      key={index}
+                      className="highlightTag"
+                    >
 
-                  <Icon type="check" />
+                      <Icon type="check" />
 
-                  {item}
+                      {item}
 
-                </span>
+                    </span>
 
-              ))}
+                  )
+                )}
 
             </div>
 
           </div>
 
 
-          {/* Footer */}
+          {/* FOOTER */}
 
-          <div className="itineraryNavigation">
+          <div className="itineraryFooter">
 
             <button
-              onClick={previousDay}
-              disabled={activeDay === 0}
-              className="previousDay"
+              type="button"
+              disabled={
+                activeDay === 0
+              }
+              onClick={
+                previousDay
+              }
+              className="previousButton"
             >
-              ←
-              <span>Previous</span>
+
+              <Icon type="arrowLeft" />
+
+              Previous
+
             </button>
 
 
-            <div className="dayCounter">
+            <div className="progressLine">
 
-              <strong>
-                {String(activeDay + 1).padStart(2, "0")}
-              </strong>
-
-              <span>
-                /
-                {String(itinerary.length).padStart(2, "0")}
-              </span>
+              <span
+                style={{
+                  width: `${
+                    ((activeDay + 1) /
+                      itinerary.length) *
+                    100
+                  }%`,
+                }}
+              />
 
             </div>
 
 
             <button
-              onClick={nextDay}
-              disabled={itinerary.length === 1}
-              className="nextDay"
+              type="button"
+              onClick={
+                nextDay
+              }
+              className="nextButton"
             >
 
-              <span>Next Day</span>
+              {activeDay ===
+              itinerary.length - 1
+                ? "Start Again"
+                : "Next Day"}
 
-              <Icon type="arrow" />
+              <Icon type="arrowRight" />
 
             </button>
 
           </div>
 
-        </div>
 
-      </div>
+          {copied && (
+            <div className="copyMessage">
+              Itinerary copied
+            </div>
+          )}
 
-
-      {/* ==========================================
-          FOOTER STATS
-      ========================================== */}
-
-      <div className="itineraryStats">
-
-        <div>
-          <strong>{itinerary.length}</strong>
-          <span>Days</span>
-        </div>
-
-        <div>
-          <strong>{highlights.length}+</strong>
-          <span>Experiences</span>
-        </div>
-
-        <div>
-          <strong>24/7</strong>
-          <span>Travel Support</span>
-        </div>
-
-        <div>
-          <strong>∞</strong>
-          <span>Memories</span>
         </div>
 
       </div>
@@ -840,24 +1017,6 @@ const TourItinerary = ({ tour }) => {
     </section>
   );
 };
-
-
-const Info = ({ icon, label, value }) => (
-
-  <div className="infoBox">
-
-    <div className="infoIcon">
-      <Icon type={icon} />
-    </div>
-
-    <div>
-      <small>{label}</small>
-      <strong>{value}</strong>
-    </div>
-
-  </div>
-
-);
 
 
 export default TourItinerary;

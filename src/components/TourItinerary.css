@@ -1,11 +1,63 @@
-
 /* =========================================================
-   INTERACTIVE ITINERARY
+   PREMIUM TRAVEL ITINERARY
+   V4 - COMPLETE CSS
 ========================================================= */
 
-.interactiveItinerary {
-    width: min(92%, 1320px);
-    margin: 120px auto;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+.premiumItinerary {
+  --orange: #ff7a00;
+  --orange-dark: #e96c00;
+  --orange-soft: #fff4e9;
+
+  --black: #171717;
+  --heading: #202020;
+  --text: #444444;
+  --muted: #777777;
+  --light: #999999;
+
+  --white: #ffffff;
+  --cream: #fbfaf8;
+
+  --border: #e4dfd8;
+  --border-light: #eee9e3;
+
+  width: min(94%, 1380px);
+
+  margin: 65px auto;
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESET INSIDE COMPONENT
+========================================================= */
+
+.premiumItinerary *,
+.premiumItinerary *::before,
+.premiumItinerary *::after {
+  box-sizing: border-box;
+}
+
+.premiumItinerary button,
+.premiumItinerary input,
+.premiumItinerary textarea {
+  font-family: inherit;
 }
 
 
@@ -13,48 +65,69 @@
    HEADER
 ========================================================= */
 
-.interactiveHeader {
-    text-align: center;
-    max-width: 760px;
-    margin: 0 auto 55px;
+.itineraryHeader {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 27px;
 }
 
-.headerEyebrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-
-    color: #fc8222;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 3px;
+.itineraryHeaderLeft {
+  min-width: 0;
 }
 
-.headerEyebrow span {
-    width: 30px;
-    height: 1px;
-    background: #fc8222;
+.itineraryEyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--orange);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
 }
 
-.interactiveHeader h2 {
-    margin: 18px 0 14px;
+.itineraryHeader h2 {
+  margin: 0;
 
-    color: #191919;
-    font-size: clamp(40px, 5vw, 60px);
-    line-height: 1.04;
-    letter-spacing: -2.5px;
+  color: var(--heading);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -1.2px;
 }
 
-.interactiveHeader h2 em {
-    color: #fc8222;
-    font-style: normal;
-}
+.itineraryHeaderText {
+  margin: 0 2px 5px 20px;
 
-.interactiveHeader p {
-    color: #777;
-    font-size: 15px;
-    line-height: 1.8;
+  color: #777;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
 }
 
 
@@ -63,183 +136,203 @@
 ========================================================= */
 
 .itineraryToolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
 
-    padding: 15px 18px;
+  align-items: center;
 
-    margin-bottom: 15px;
+  justify-content: space-between;
 
-    border: 1px solid #ededed;
-    border-radius: 12px;
+  min-height: 61px;
 
-    background: #fff;
-}
+  border-top: 1px solid var(--border);
 
-.toolbarLeft {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  border-bottom: 1px solid var(--border);
 
-    color: #999;
-
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.journeyLength {
-    color: #fc8222;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.toolbarDivider {
-    width: 1px;
-    height: 14px;
-    background: #ddd;
-}
-
-.toolbarActions {
-    display: flex;
-    gap: 5px;
-}
-
-.toolbarActions button {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    padding: 8px 11px;
-
-    border: 0;
-    border-radius: 7px;
-
-    background: transparent;
-
-    color: #777;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: .25s ease;
-}
-
-.toolbarActions button:hover,
-.toolbarActions button.toolActive {
-    color: #fc8222;
-    background: #fff5ed;
+  margin-bottom: 13px;
 }
 
 
 /* =========================================================
-   SVG
+   DAYS
 ========================================================= */
 
-.tourSvg {
-    width: 15px;
-    height: 15px;
+.itineraryDays {
+  display: flex;
 
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
+  align-items: stretch;
 
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  height: 61px;
+
+  max-width:
+    calc(100% - 185px);
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.itineraryDays::-webkit-scrollbar {
+  display: none;
+}
+
+.itineraryDay {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 88px;
+
+  height: 61px;
+
+  padding: 0 17px;
+
+  border: 0;
+
+  border-bottom: 2px solid transparent;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #999;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.itineraryDay:first-child {
+  padding-left: 0;
+}
+
+.itineraryDay strong {
+  color: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.itineraryDay span {
+  color: inherit;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.itineraryDay:hover {
+  color: var(--orange);
+}
+
+.itineraryDay.active {
+  color: var(--orange);
+
+  border-bottom-color: var(--orange);
 }
 
 
 /* =========================================================
-   DAY RAIL
+   TOOL BUTTONS
 ========================================================= */
 
-.dayRail {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.itineraryTools {
+  display: flex;
 
-    padding: 7px;
+  align-items: center;
 
-    margin-bottom: 30px;
+  gap: 4px;
 
-    background: #f7f7f7;
+  padding-left: 18px;
 
-    border-radius: 13px;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
+  background: #fff;
 }
 
-.dayRail::-webkit-scrollbar {
-    display: none;
+.itineraryTools button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 38px;
+
+  height: 38px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #777;
+
+  cursor: pointer;
+
+  transition:
+    color .2s ease,
+    background .2s ease;
 }
 
-.railDay {
-    flex: 1;
-    min-width: 105px;
+.itineraryTools button:hover {
+  color: var(--orange);
 
-    padding: 12px 15px;
-
-    border: 0;
-    border-radius: 9px;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    transition: .3s ease;
-}
-
-.railDay span {
-    display: block;
-
-    margin-bottom: 4px;
-
-    color: #aaa;
-
-    font-size: 10px;
-    font-weight: 800;
-}
-
-.railDay small {
-    color: #777;
-
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.railDay:hover {
-    background: #fff;
-}
-
-.railDay.active {
-    background: #fff;
-
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, .07);
-}
-
-.railDay.active span,
-.railDay.active small {
-    color: #fc8222;
+  background: var(--orange-soft);
 }
 
 
 /* =========================================================
-   MAIN
+   ICON
 ========================================================= */
 
-.itineraryMain {
-    display: grid;
+.itineraryIcon {
+  width: 17px;
 
-    grid-template-columns:
-        minmax(430px, .92fr)
-        minmax(500px, 1.08fr);
+  height: 17px;
 
-    min-height: 650px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN EXPERIENCE
+========================================================= */
+
+.itineraryExperience {
+  display: grid;
+
+  grid-template-columns:
+    40% 60%;
+
+  min-height: 410px;
+
+  border: 1px solid var(--border);
+
+  background: #fff;
+
+  box-shadow:
+    0 18px 50px rgba(
+      28,
+      23,
+      18,
+      .065
+    );
+
+  overflow: hidden;
 }
 
 
@@ -247,197 +340,274 @@
    IMAGE
 ========================================================= */
 
-.itineraryHeroImage {
-    position: relative;
+.itineraryVisual {
+  position: relative;
 
-    min-height: 650px;
+  min-height: 410px;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    border-radius: 28px;
-
-    background: #ddd;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, .14);
+  background: #222;
 }
 
-.itineraryHeroImage img {
-    position: absolute;
+.itineraryVisual img {
+  display: block;
 
-    inset: 0;
+  width: 100%;
 
-    width: 100%;
-    height: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    animation: itineraryImage .55s ease;
+  transition:
+    transform .9s cubic-bezier(
+      .2,
+      .65,
+      .25,
+      1
+    );
 }
 
-@keyframes itineraryImage {
-
-    from {
-        opacity: .4;
-        transform: scale(1.05);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.itineraryExperience:hover
+.itineraryVisual img {
+  transform: scale(1.035);
 }
 
-.imageShade {
-    position: absolute;
-    inset: 0;
+.visualOverlay {
+  position: absolute;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(0, 0, 0, .78),
-            rgba(0, 0, 0, .05) 65%
-        );
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.05) 0%,
+      rgba(0,0,0,.03) 35%,
+      rgba(0,0,0,.76) 100%
+    );
 }
 
 
 /* =========================================================
-   DAY BADGE
+   IMAGE DAY NUMBER
 ========================================================= */
 
-.imageDayBadge {
-    position: absolute;
+.visualDay {
+  position: absolute;
 
-    top: 25px;
-    left: 25px;
+  top: 28px;
 
-    width: 72px;
-    height: 72px;
+  left: 29px;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
+  align-items: baseline;
 
-    background: #fc8222;
+  gap: 9px;
 
-    color: #fff;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, .22);
+  color: #fff;
 }
 
-.imageDayBadge small {
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 2px;
+.visualDay span {
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  line-height: 1;
+
+  opacity: .85;
 }
 
-.imageDayBadge strong {
-    font-size: 25px;
-    line-height: 1;
+.visualDay strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 43px;
+
+  font-weight: 400;
+
+  line-height: 1;
 }
 
 
 /* =========================================================
-   IMAGE INFORMATION
+   IMAGE CAPTION
 ========================================================= */
 
-.imageInformation {
-    position: absolute;
+.visualCaption {
+  position: absolute;
 
-    left: 32px;
-    right: 32px;
-    bottom: 30px;
+  right: 30px;
+
+  bottom: 28px;
+
+  left: 30px;
+
+  color: #fff;
 }
 
-.imageInformation span {
-    color: rgba(255,255,255,.7);
+.visualCaption span {
+  display: block;
 
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 2px;
+  margin-bottom: 7px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .72
+    );
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
 }
 
-.imageInformation h3 {
-    margin: 8px 0 0;
+.visualCaption h3 {
+  margin: 0;
 
-    color: #fff;
+  color: #fff;
 
-    font-size: 30px;
-    line-height: 1.2;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 40px;
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -.6px;
 }
 
 
 /* =========================================================
-   CONTENT
+   DETAILS PANEL
 ========================================================= */
 
-.itineraryContent {
-    align-self: center;
+.itineraryDetails {
+  position: relative;
 
-    position: relative;
-    z-index: 3;
+  min-width: 0;
 
-    margin-left: -65px;
+  padding: 27px 35px 21px;
 
-    padding: 42px;
-
-    background: #fff;
-
-    border: 1px solid #ededed;
-
-    border-radius: 27px;
-
-    box-shadow:
-        0 25px 75px rgba(0, 0, 0, .10);
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #ffffff 75%,
+      #fdf9f4 100%
+    );
 }
 
 
 /* =========================================================
-   CONTENT HEADING
+   TITLE
 ========================================================= */
 
-.contentHeading {
-    display: flex;
+.detailsHeading {
+  display: flex;
 
-    justify-content: space-between;
-    align-items: flex-start;
+  align-items: flex-start;
 
-    padding-bottom: 22px;
+  justify-content: space-between;
 
-    border-bottom: 1px solid #eee;
+  padding-bottom: 13px;
+
+  border-bottom: 1px solid var(--border);
 }
 
-.contentEyebrow {
-    color: #fc8222;
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
+.detailsHeading > div:first-child {
+  min-width: 0;
 }
 
-.contentHeading h3 {
-    max-width: 500px;
+.detailsEyebrow {
+  display: block;
 
-    margin: 8px 0 0;
+  margin-bottom: 7px;
 
-    color: #1b1b1b;
+  color: var(--orange);
 
-    font-size: 30px;
+  font-size: 10px;
 
-    line-height: 1.25;
+  font-weight: 800;
+
+  letter-spacing: 2.2px;
+
+  line-height: 1;
 }
 
-.backgroundNumber {
-    color: #f1f1f1;
+.detailsHeading h3 {
+  margin: 0;
 
-    font-size: 65px;
-    line-height: .8;
+  color: var(--heading);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  letter-spacing: -.5px;
+}
+
+
+/* =========================================================
+   DAY COUNTER
+========================================================= */
+
+.dayNumber {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 3px;
+
+  flex-shrink: 0;
+
+  margin-left: 18px;
+}
+
+.dayNumber strong {
+  color: var(--heading);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.dayNumber span {
+  color: #aaa;
+
+  font-size: 11px;
+
+  font-weight: 400;
 }
 
 
@@ -446,235 +616,375 @@
 ========================================================= */
 
 .dayDescription {
-    padding: 23px 0;
-}
+  max-width: 720px;
 
-.dayDescription p {
-    margin: 0;
+  margin: 13px auto 15px;
 
-    color: #666;
+  color: #666;
 
-    font-size: 14px;
+  font-size: 13px;
 
-    line-height: 1.85;
-}
+  font-weight: 400;
 
+  line-height: 1.6;
 
-/* =========================================================
-   INFO GRID
-========================================================= */
+  text-align: center;
 
-.dayInfo {
-    display: grid;
+  display: -webkit-box;
 
-    grid-template-columns: repeat(2, 1fr);
+  -webkit-line-clamp: 1;
 
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
+  -webkit-box-orient: vertical;
 
-.infoBox {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 15px 6px;
-
-    border-bottom: 1px solid #eee;
-}
-
-.infoBox:nth-child(odd) {
-    border-right: 1px solid #eee;
-}
-
-.infoBox:nth-child(3),
-.infoBox:nth-child(4) {
-    border-bottom: 0;
-}
-
-.infoIcon {
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 9px;
-
-    background: #fff4eb;
-
-    color: #fc8222;
-}
-
-.infoIcon .tourSvg {
-    width: 15px;
-    height: 15px;
-}
-
-.infoBox small {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: #aaa;
-
-    font-size: 7px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-.infoBox strong {
-    display: block;
-
-    color: #444;
-
-    font-size: 10px;
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   SCHEDULE
+   INFO STRIP
 ========================================================= */
 
-.scheduleSection {
-    padding-top: 23px;
+.infoStrip {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-bottom: 16px;
+
+  border-top: 1px solid var(--border);
+
+  border-bottom: 1px solid var(--border);
 }
 
-.sectionHeading {
-    display: flex;
+.itineraryInfoItem {
+  display: flex;
 
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
 
-    margin-bottom: 16px;
+  gap: 9px;
+
+  min-width: 0;
+
+  min-height: 65px;
+
+  padding: 8px 10px;
+
+  border-right: 1px solid var(--border);
 }
 
-.sectionHeading > span {
-    color: #aaa;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.7px;
-}
-
-.sectionHeading button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    border: 0;
-    background: none;
-
-    color: #fc8222;
-
-    font-size: 9px;
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-.sectionHeading button .tourSvg {
-    width: 12px;
-    height: 12px;
-
-    transition: transform .3s ease;
+.itineraryInfoItem:last-child {
+  border-right: 0;
 }
 
 
 /* =========================================================
-   SCHEDULE LIST
+   INFO ICON
 ========================================================= */
 
-.scheduleList {
-    position: relative;
+.itineraryInfoIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+
+  height: 34px;
+
+  flex: 0 0 34px;
+
+  border-radius: 50%;
+
+  color: var(--orange);
+
+  background: var(--orange-soft);
 }
 
-.scheduleList::before {
-    content: "";
+.itineraryInfoIcon .itineraryIcon {
+  width: 16px;
 
-    position: absolute;
-
-    left: 61px;
-
-    top: 10px;
-    bottom: 10px;
-
-    width: 1px;
-
-    background: #eee;
+  height: 16px;
 }
 
-.scheduleItem {
-    display: grid;
 
-    grid-template-columns: 55px 13px 1fr;
+/* =========================================================
+   INFO CONTENT
+========================================================= */
 
-    gap: 8px;
-
-    position: relative;
-
-    padding-bottom: 17px;
+.itineraryInfoContent {
+  min-width: 0;
 }
 
-.scheduleItem:last-child {
-    padding-bottom: 0;
+.itineraryInfoLabel {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #999;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
 }
 
-.scheduleTime {
-    color: #fc8222;
+.itineraryInfoValue {
+  display: block;
 
-    font-size: 9px;
+  max-width: 125px;
 
-    font-weight: 800;
+  overflow: hidden;
 
-    text-transform: uppercase;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #333;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
 }
 
-.scheduleDot {
-    width: 8px;
-    height: 8px;
 
-    margin-top: 3px;
+/* =========================================================
+   PLAN HEADER
+========================================================= */
 
-    border-radius: 50%;
-
-    background: #fc8222;
-
-    border: 2px solid #fff;
-
-    box-shadow:
-        0 0 0 1px #fc8222;
-
-    z-index: 2;
+.dayPlan {
+  padding-top: 0;
 }
 
-.scheduleText h4 {
-    margin: 0 0 3px;
+.planHeading {
+  display: flex;
 
-    color: #444;
+  align-items: center;
 
-    font-size: 11px;
+  gap: 12px;
+
+  margin-bottom: 10px;
 }
 
-.scheduleText p {
-    margin: 0;
+.planHeading > span {
+  flex-shrink: 0;
 
-    color: #888;
+  color: #888;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    line-height: 1.55;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  line-height: 1;
+}
+
+.planHeading > div {
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--border);
+}
+
+.planHeading button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--orange);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.planHeading button .itineraryIcon {
+  width: 11px;
+
+  height: 11px;
+}
+
+
+/* =========================================================
+   PLAN ITEMS
+========================================================= */
+
+.planItems {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 9px;
+}
+
+.planItem {
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+
+  min-height: 100px;
+
+  padding: 13px 13px 12px;
+
+  border: 1px solid var(--border-light);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fcfbf9,
+      #f9f7f4
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.planItem::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: var(--orange);
+}
+
+.planItem:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(
+      30,
+      25,
+      20,
+      .055
+    );
+}
+
+
+/* =========================================================
+   PLAN NUMBER
+========================================================= */
+
+.planItemNumber {
+  width: 28px;
+
+  flex: 0 0 28px;
+
+  padding-top: 2px;
+
+  color: #d7d0c8;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PLAN CONTENT
+========================================================= */
+
+.planItemContent {
+  min-width: 0;
+}
+
+.planItemContent > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--orange);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.planItemContent h4 {
+  margin: 0 0 6px;
+
+  color: var(--heading);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.planItemContent p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
 }
 
 
@@ -682,188 +992,267 @@
    HIGHLIGHTS
 ========================================================= */
 
-.highlightSection {
-    padding-top: 20px;
+.highlightRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 13px;
 }
 
-.sectionHeadingText {
-    display: block;
+.highlightTitle {
+  flex-shrink: 0;
 
-    margin-bottom: 10px;
+  color: #888;
 
-    color: #aaa;
+  font-size: 9px;
 
-    font-size: 9px;
+  font-weight: 800;
 
-    font-weight: 800;
+  letter-spacing: 1.6px;
 
-    letter-spacing: 1.7px;
+  line-height: 1;
 }
 
-.highlightTags {
-    display: flex;
+.highlightList {
+  display: flex;
 
-    flex-wrap: wrap;
+  align-items: center;
 
-    gap: 6px;
+  flex-wrap: wrap;
+
+  gap: 6px;
 }
 
-.highlightTags span {
-    display: inline-flex;
+.highlightTag {
+  display: inline-flex;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 5px;
+  gap: 5px;
 
-    padding: 7px 10px;
+  padding: 6px 10px;
 
-    border: 1px solid #eee;
+  border: 1px solid #e8e1da;
 
-    border-radius: 30px;
+  border-radius: 30px;
 
-    color: #777;
+  background: #fff;
 
-    font-size: 9px;
+  color: #5e5e5e;
 
-    font-weight: 600;
+  font-size: 10px;
+
+  font-weight: 500;
+
+  line-height: 1;
 }
 
-.highlightTags .tourSvg {
-    width: 10px;
-    height: 10px;
+.highlightTag .itineraryIcon {
+  width: 11px;
 
-    color: #fc8222;
-}
+  height: 11px;
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.itineraryNavigation {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-top: 21px;
-
-    padding-top: 19px;
-
-    border-top: 1px solid #eee;
-}
-
-.previousDay,
-.nextDay {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    border: 0;
-
-    background: transparent;
-
-    color: #555;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-.previousDay:hover:not(:disabled),
-.nextDay:hover:not(:disabled) {
-    color: #fc8222;
-}
-
-.previousDay:disabled,
-.nextDay:disabled {
-    opacity: .25;
-
-    cursor: not-allowed;
-}
-
-.nextDay .tourSvg {
-    width: 14px;
-}
-
-.dayCounter {
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 3px;
-}
-
-.dayCounter strong {
-    color: #fc8222;
-
-    font-size: 20px;
-}
-
-.dayCounter span {
-    color: #aaa;
-
-    font-size: 10px;
+  color: var(--orange);
 }
 
 
 /* =========================================================
-   STATS
+   FOOTER
 ========================================================= */
 
-.itineraryStats {
-    max-width: 900px;
+.itineraryFooter {
+  display: grid;
 
-    display: grid;
+  grid-template-columns:
+    auto 1fr auto;
 
-    grid-template-columns: repeat(4, 1fr);
+  align-items: center;
 
-    margin: 60px auto 0;
+  gap: 15px;
 
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+  margin-top: 12px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid var(--border);
 }
 
-.itineraryStats div {
-    min-height: 90px;
+.itineraryFooter button {
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    flex-direction: column;
+  gap: 6px;
 
-    justify-content: center;
-    align-items: center;
+  padding: 0;
 
-    gap: 4px;
+  border: 0;
 
-    border-right: 1px solid #eee;
+  background: transparent;
+
+  color: #555;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color .2s ease;
 }
 
-.itineraryStats div:last-child {
-    border-right: 0;
+.itineraryFooter button:hover {
+  color: var(--orange);
 }
 
-.itineraryStats strong {
-    color: #222;
+.itineraryFooter button:disabled {
+  color: #ccc;
 
-    font-size: 23px;
+  cursor: not-allowed;
 }
 
-.itineraryStats span {
-    color: #aaa;
+.itineraryFooter .itineraryIcon {
+  width: 14px;
 
+  height: 14px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progressLine {
+  width: 100%;
+
+  height: 2px;
+
+  background: #e8e2db;
+}
+
+.progressLine span {
+  display: block;
+
+  height: 100%;
+
+  background: var(--orange);
+
+  transition:
+    width .4s ease;
+}
+
+
+/* =========================================================
+   COPY MESSAGE
+========================================================= */
+
+.copyMessage {
+  position: absolute;
+
+  right: 25px;
+
+  bottom: 17px;
+
+  padding: 7px 12px;
+
+  border-radius: 4px;
+
+  background: #222;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+
+  animation:
+    itineraryFadeIn .2s ease;
+}
+
+@keyframes itineraryFadeIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .premiumItinerary {
+    width: 94%;
+  }
+
+  .itineraryExperience {
+    grid-template-columns:
+      38% 62%;
+  }
+
+  .itineraryDetails {
+    padding:
+      25px 25px 20px;
+  }
+
+  .detailsHeading h3 {
+    font-size: 31px;
+  }
+
+  .visualCaption h3 {
+    font-size: 35px;
+  }
+
+  .itineraryInfoItem {
+    padding:
+      8px 7px;
+
+    gap: 7px;
+  }
+
+  .itineraryInfoLabel {
     font-size: 8px;
+  }
 
-    font-weight: 700;
+  .itineraryInfoValue {
+    font-size: 11px;
+  }
 
-    letter-spacing: 1px;
+  .planItem {
+    padding:
+      12px 10px;
+  }
 
-    text-transform: uppercase;
+  .planItemNumber {
+    width: 23px;
+
+    flex-basis: 23px;
+  }
+
+  .planItemContent h4 {
+    font-size: 15px;
+  }
+
 }
 
 
@@ -871,21 +1260,72 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
 
-    .itineraryMain {
-        grid-template-columns: 1fr;
-    }
+  .itineraryHeader h2 {
+    font-size: 40px;
+  }
 
-    .itineraryHeroImage {
-        min-height: 520px;
-    }
+  .itineraryExperience {
+    grid-template-columns:
+      36% 64%;
+  }
 
-    .itineraryContent {
-        margin: -70px 35px 0;
+  .itineraryDetails {
+    padding:
+      23px 20px 19px;
+  }
 
-        padding: 35px;
-    }
+  .detailsHeading h3 {
+    font-size: 28px;
+  }
+
+  .dayNumber strong {
+    font-size: 30px;
+  }
+
+  .dayDescription {
+    font-size: 12px;
+  }
+
+  .itineraryInfoItem {
+    min-height: 62px;
+  }
+
+  .itineraryInfoIcon {
+    width: 30px;
+    height: 30px;
+
+    flex-basis: 30px;
+  }
+
+  .itineraryInfoValue {
+    font-size: 10px;
+  }
+
+  .planItems {
+    gap: 6px;
+  }
+
+  .planItem {
+    min-height: 95px;
+
+    padding:
+      12px 9px;
+  }
+
+  .planItemNumber {
+    display: none;
+  }
+
+  .planItemContent h4 {
+    font-size: 14px;
+  }
+
+  .planItemContent p {
+    font-size: 9px;
+  }
+
 }
 
 
@@ -893,166 +1333,409 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
 
-    .interactiveItinerary {
-        width: 92%;
-        margin: 75px auto;
-    }
+  .premiumItinerary {
+    width: 94%;
 
-    .interactiveHeader {
-        margin-bottom: 38px;
-    }
-
-    .interactiveHeader h2 {
-        font-size: 34px;
-        letter-spacing: -1px;
-    }
-
-    .interactiveHeader p {
-        font-size: 13px;
-    }
+    margin:
+      45px auto;
+  }
 
 
-    /* Toolbar */
+  /* HEADER */
 
-    .itineraryToolbar {
-        align-items: flex-start;
+  .itineraryHeader {
+    flex-direction: column;
 
-        flex-direction: column;
+    align-items: flex-start;
 
-        gap: 12px;
-    }
+    gap: 8px;
 
-    .toolbarActions {
-        width: 100%;
+    margin-bottom: 20px;
+  }
 
-        overflow-x: auto;
-    }
+  .itineraryEyebrow {
+    font-size: 10px;
+  }
 
-    .toolbarActions button {
-        flex-shrink: 0;
-    }
+  .itineraryHeader h2 {
+    font-size: 36px;
+  }
 
-    .toolbarActions button span {
-        display: none;
-    }
+  .itineraryHeaderText {
+    margin:
+      0;
 
-
-    /* Days */
-
-    .dayRail {
-        margin-bottom: 20px;
-    }
-
-    .railDay {
-        min-width: 82px;
-    }
+    font-size: 12px;
+  }
 
 
-    /* Image */
+  /* TOOLBAR */
 
-    .itineraryHeroImage {
-        min-height: 400px;
+  .itineraryToolbar {
+    min-height: 54px;
+  }
 
-        border-radius: 20px;
-    }
+  .itineraryDays {
+    height: 54px;
 
-    .imageDayBadge {
-        top: 18px;
-        left: 18px;
+    max-width:
+      calc(100% - 145px);
+  }
 
-        width: 60px;
-        height: 60px;
+  .itineraryDay {
+    min-width: 68px;
 
-        border-radius: 13px;
-    }
+    height: 54px;
 
-    .imageDayBadge strong {
-        font-size: 21px;
-    }
+    padding:
+      0 11px;
+  }
 
-    .imageInformation {
-        left: 20px;
-        right: 20px;
-        bottom: 21px;
-    }
+  .itineraryDay:first-child {
+    padding-left: 0;
+  }
 
-    .imageInformation h3 {
-        font-size: 23px;
-    }
+  .itineraryDay span {
+    display: none;
+  }
 
+  .itineraryDay strong {
+    font-size: 13px;
+  }
 
-    /* Content */
+  .itineraryTools {
+    gap: 1px;
 
-    .itineraryContent {
-        margin: -45px 10px 0;
+    padding-left: 4px;
+  }
 
-        padding: 22px;
+  .itineraryTools button {
+    width: 31px;
+    height: 31px;
+  }
 
-        border-radius: 20px;
-    }
-
-    .contentHeading h3 {
-        font-size: 22px;
-    }
-
-    .backgroundNumber {
-        font-size: 40px;
-    }
-
-
-    /* Info */
-
-    .dayInfo {
-        grid-template-columns: 1fr;
-    }
-
-    .infoBox,
-    .infoBox:nth-child(odd),
-    .infoBox:nth-child(3),
-    .infoBox:nth-child(4) {
-        border-right: 0;
-
-        border-bottom: 1px solid #eee;
-    }
-
-    .infoBox:last-child {
-        border-bottom: 0;
-    }
+  .itineraryTools .itineraryIcon {
+    width: 15px;
+    height: 15px;
+  }
 
 
-    /* Schedule */
+  /* MAIN */
 
-    .scheduleList::before {
-        left: 59px;
-    }
+  .itineraryExperience {
+    display: block;
 
-
-    /* Navigation */
-
-    .previousDay span,
-    .nextDay span {
-        display: none;
-    }
+    min-height: auto;
+  }
 
 
-    /* Stats */
+  /* IMAGE */
 
-    .itineraryStats {
-        grid-template-columns: repeat(2, 1fr);
+  .itineraryVisual {
+    height: 280px;
 
-        margin-top: 40px;
-    }
+    min-height: 280px;
+  }
 
-    .itineraryStats div:nth-child(2) {
-        border-right: 0;
-    }
+  .visualDay {
+    top: 20px;
 
-    .itineraryStats div:nth-child(1),
-    .itineraryStats div:nth-child(2) {
-        border-bottom: 1px solid #eee;
-    }
+    left: 20px;
+  }
+
+  .visualDay strong {
+    font-size: 37px;
+  }
+
+  .visualCaption {
+    right: 20px;
+
+    bottom: 21px;
+
+    left: 20px;
+  }
+
+  .visualCaption h3 {
+    font-size: 31px;
+  }
+
+
+  /* DETAILS */
+
+  .itineraryDetails {
+    padding:
+      24px 18px 20px;
+  }
+
+  .detailsHeading h3 {
+    font-size: 27px;
+  }
+
+  .dayNumber strong {
+    font-size: 28px;
+  }
+
+  .dayDescription {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  /* INFO */
+
+  .infoStrip {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .itineraryInfoItem {
+    min-height: 62px;
+
+    padding:
+      8px 7px;
+  }
+
+  .itineraryInfoItem:nth-child(2) {
+    border-right: 0;
+  }
+
+  .itineraryInfoItem:nth-child(-n + 2) {
+    border-bottom:
+      1px solid var(--border);
+  }
+
+  .itineraryInfoIcon {
+    width: 30px;
+    height: 30px;
+
+    flex-basis: 30px;
+  }
+
+  .itineraryInfoLabel {
+    font-size: 8px;
+  }
+
+  .itineraryInfoValue {
+    font-size: 11px;
+  }
+
+
+  /* PLAN */
+
+  .planItems {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .planItem {
+    min-height: auto;
+
+    padding:
+      13px;
+  }
+
+  .planItemNumber {
+    display: block;
+
+    width: 30px;
+
+    flex-basis: 30px;
+  }
+
+  .planItemContent h4 {
+    font-size: 17px;
+  }
+
+  .planItemContent p {
+    font-size: 10px;
+  }
+
+
+  /* HIGHLIGHTS */
+
+  .highlightRow {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 8px;
+  }
+
+
+  /* FOOTER */
+
+  .itineraryFooter {
+    gap: 9px;
+  }
+
+  .itineraryFooter button {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .premiumItinerary {
+    width: 95%;
+
+    margin:
+      38px auto;
+  }
+
+  .itineraryHeader h2 {
+    font-size: 32px;
+  }
+
+  .itineraryVisual {
+    height: 235px;
+
+    min-height: 235px;
+  }
+
+  .visualDay {
+    top: 18px;
+
+    left: 18px;
+  }
+
+  .visualDay strong {
+    font-size: 34px;
+  }
+
+  .visualCaption {
+    right: 18px;
+
+    bottom: 18px;
+
+    left: 18px;
+  }
+
+  .visualCaption h3 {
+    font-size: 27px;
+  }
+
+  .itineraryDetails {
+    padding:
+      20px 15px;
+  }
+
+  .detailsHeading h3 {
+    font-size: 24px;
+  }
+
+  .dayNumber strong {
+    font-size: 26px;
+  }
+
+  .dayDescription {
+    font-size: 12px;
+  }
+
+  .itineraryInfoItem {
+    min-height: 59px;
+
+    gap: 6px;
+
+    padding:
+      7px 5px;
+  }
+
+  .itineraryInfoIcon {
+    width: 28px;
+    height: 28px;
+
+    flex-basis: 28px;
+  }
+
+  .itineraryInfoIcon .itineraryIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .itineraryInfoLabel {
+    font-size: 7px;
+
+    letter-spacing: .8px;
+  }
+
+  .itineraryInfoValue {
+    max-width: 95px;
+
+    font-size: 9px;
+  }
+
+  .planHeading > span {
+    font-size: 8px;
+  }
+
+  .planItemContent h4 {
+    font-size: 16px;
+  }
+
+  .planItemContent p {
+    font-size: 10px;
+  }
+
+  .highlightTag {
+    padding:
+      5px 8px;
+
+    font-size: 9px;
+  }
+
+  .itineraryFooter button {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .itineraryHeader h2 {
+    font-size: 29px;
+  }
+
+  .itineraryTools button {
+    width: 28px;
+
+    height: 28px;
+  }
+
+  .itineraryVisual {
+    height: 220px;
+
+    min-height: 220px;
+  }
+
+  .visualCaption h3 {
+    font-size: 24px;
+  }
+
+  .detailsHeading h3 {
+    font-size: 22px;
+  }
+
+  .dayDescription {
+    font-size: 11px;
+  }
+
 }
 
 
@@ -1062,36 +1745,45 @@
 
 @media print {
 
-    body * {
-        visibility: hidden;
-    }
+  .premiumItinerary {
+    width: 100%;
 
-    .interactiveItinerary,
-    .interactiveItinerary * {
-        visibility: visible;
-    }
+    margin: 0;
+  }
 
-    .interactiveItinerary {
-        width: 100%;
-        margin: 0;
-    }
+  .itineraryToolbar {
+    display: none;
+  }
 
-    .itineraryToolbar,
-    .dayRail,
-    .itineraryNavigation {
-        display: none;
-    }
+  .itineraryExperience {
+    box-shadow: none;
 
-    .itineraryMain {
-        display: block;
-    }
+    border:
+      1px solid #ddd;
+  }
 
-    .itineraryHeroImage {
-        min-height: 350px;
-    }
+  .itineraryVisual img {
+    print-color-adjust: exact;
 
-    .itineraryContent {
-        margin: 20px 0 0;
-        box-shadow: none;
-    }
+    -webkit-print-color-adjust: exact;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  .itineraryVisual img,
+  .planItem,
+  .progressLine span,
+  .itineraryDay {
+    transition: none;
+  }
+
 }
