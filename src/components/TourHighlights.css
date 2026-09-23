@@ -1,6 +1,4 @@
-/* =========================================================
-   TOUR HIGHLIGHTS
-========================================================= */
+/* ========== TOUR HIGHLIGHTS ======== */
 
 .tourHighlights {
     width: 92%;
@@ -11,10 +9,7 @@
     padding: 5px 5px 10px;
 }
 
-
-/* =========================================================
-   BACKGROUND DECORATION
-========================================================= */
+/* ============== BACKGROUND DECORATION =========== */
 
 .th-bg-circle {
     position: absolute;
@@ -40,9 +35,7 @@
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* ============== HEADER ============ */
 
 .th-header {
     display: flex;
@@ -52,15 +45,11 @@
     margin-bottom: 55px;
 }
 
-
 .th-header-left {
     max-width: 720px;
 }
 
-
-/* =========================================================
-   LABEL
-========================================================= */
+/* ============= LABEL =========== */
 
 .th-label {
     display: flex;
@@ -73,7 +62,6 @@
     letter-spacing: 2px;
 }
 
-
 .th-label span {
     width: 32px;
     height: 2px;
@@ -81,10 +69,7 @@
     border-radius: 10px;
 }
 
-
-/* =========================================================
-   HEADING
-========================================================= */
+/* =========== HEADING ========= */
 
 .th-header-left h2 {
     margin: 0;
@@ -112,17 +97,13 @@
     text-align: left;
 }
 
-
-/* =========================================================
-   HEADER RIGHT
-========================================================= */
+/* =========== HEADER RIGHT ============ */
 
 .th-header-right {
     display: flex;
     align-items: center;
     gap: 25px;
 }
-
 
 .th-total {
     display: flex;
@@ -135,19 +116,16 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-
 .th-total strong {
     color: #fc8222;
     font-size: 36px;
     line-height: 1;
 }
 
-
 .th-total span,
 .th-total small {
     display: block;
 }
-
 
 .th-total span {
     color: #222;
@@ -157,13 +135,11 @@
     letter-spacing: 1px;
 }
 
-
 .th-total small {
     margin-top: 3px;
     color: #888;
     font-size: 10px;
 }
-
 
 .th-rating {
     display: flex;
@@ -172,7 +148,6 @@
     gap: 6px;
 }
 
-
 .th-stars {
     display: flex;
     gap: 3px;
@@ -180,17 +155,13 @@
     font-size: 13px;
 }
 
-
 .th-rating span {
     color: #777;
     font-size: 11px;
     font-weight: 600;
 }
 
-
-/* =========================================================
-   GRID
-========================================================= */
+/* =========== GRID ========== */
 
 .th-grid {
     display: grid;
@@ -198,10 +169,7 @@
     gap: 18px;
 }
 
-
-/* =========================================================
-   CARD
-========================================================= */
+/* ============ CARD ========= */
 
 .th-card {
     position: relative;
@@ -213,10 +181,7 @@
     border: 1px solid #ededed;
     border-radius: 23px;
     background: #ffffff;
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 
@@ -233,7 +198,6 @@
     transition: transform 0.45s ease;
 }
 
-
 .th-card::after {
     content: "";
     position: absolute;
@@ -247,54 +211,39 @@
     z-index: 0;
 }
 
-
 .th-card:hover {
     transform: translateY(-10px);
     border-color: #ffd9be;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.09);
 }
 
-
 .th-card:hover::before {
     transform: scaleX(1);
 }
-
 
 .th-card:hover::after {
     transform: scale(1.5);
 }
 
-
-/* =========================================================
-   FEATURED CARD
-========================================================= */
+/* =========== FEATURED CARD =========== */
 
 .th-featured {
     grid-column: span 2;
     min-height: 310px;
-    background:
-        linear-gradient(145deg,
-            #ffffff 0%,
-            #fffaf6 100%);
+    background: linear-gradient(145deg, #ffffff 0%, #fffaf6 100%);
 }
-
 
 .th-featured .th-card-content {
     max-width: 500px;
 }
 
-
 .th-featured .th-icon {
     width: 70px;
     height: 70px;
-
     font-size: 26px;
 }
 
-
-/* =========================================================
-   FEATURED LABEL
-========================================================= */
+/* =========== FEATURED LABEL ========== */
 
 .th-featured-label {
     position: absolute;
@@ -313,15 +262,11 @@
     z-index: 3;
 }
 
-
 .th-featured-label svg {
     font-size: 9px;
 }
 
-
-/* =========================================================
-   CARD NUMBER
-========================================================= */
+/* ========== CARD NUMBER ========== */
 
 .th-card-number {
     position: absolute;
@@ -335,16 +280,12 @@
     transition: 0.4s ease;
 }
 
-
 .th-card:hover .th-card-number {
     color: #ffede1;
     transform: translateY(-5px);
 }
 
-
-/* =========================================================
-   ICON
-========================================================= */
+/* ============== ICON ============ */
 
 .th-icon {
     width: 60px;
@@ -359,12 +300,8 @@
     font-size: 22px;
     position: relative;
     z-index: 2;
-    transition:
-        transform 0.4s ease,
-        background 0.4s ease,
-        color 0.4s ease;
+    transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
 }
-
 
 .th-card:hover .th-icon {
     background: #fc8222;
@@ -372,17 +309,13 @@
     transform: rotate(-6deg) scale(1.06);
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* ========= CONTENT ======== */
 
 .th-card-content {
     position: relative;
     z-index: 2;
     flex: 1;
 }
-
 
 .th-included {
     display: block;
@@ -394,7 +327,6 @@
     text-align: left;
 }
 
-
 .th-card-content h3 {
     margin: 0;
     max-width: 90%;
@@ -405,7 +337,6 @@
     text-align: left;
 }
 
-
 .th-line {
     width: 32px;
     height: 2px;
@@ -415,11 +346,9 @@
     transition: width 0.4s ease;
 }
 
-
 .th-card:hover .th-line {
     width: 60px;
 }
-
 
 .th-card-content p {
     max-width: 350px;
@@ -430,10 +359,7 @@
     text-align: left;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ========= FOOTER ========= */
 
 .th-card-footer {
     position: relative;
@@ -450,7 +376,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 
 .th-check {
     width: 20px;
@@ -580,7 +505,6 @@
         margin: 75px auto;
     }
 
-
     .th-header {
         flex-direction: column;
         align-items: flex-start;
@@ -588,35 +512,29 @@
         margin-bottom: 35px;
     }
 
-
     .th-header-left h2 {
         font-size: 39px;
         letter-spacing: -1.5px;
     }
-
 
     .th-header-right {
         width: 100%;
         justify-content: space-between;
     }
 
-
     .th-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
 
     .th-featured {
         grid-column: span 1;
         min-height: 290px;
     }
 
-
     .th-card {
         min-height: 275px;
     }
-
 
     .th-bottom {
         flex-direction: column;
@@ -636,33 +554,27 @@
         width: 94%;
     }
 
-
     .th-header-left h2 {
         font-size: 32px;
     }
 
-
     .th-header-left p {
         font-size: 14px;
     }
-
 
     .th-header-right {
         align-items: flex-start;
         flex-direction: column;
     }
 
-
     .th-card {
         padding: 24px 21px;
         min-height: 260px;
     }
 
-
     .th-featured {
         min-height: 275px;
     }
-
 
     .th-icon {
         width: 55px;
@@ -670,14 +582,10 @@
         font-size: 20px;
     }
 
-
     .th-card-content h3 {
         font-size: 17px;
     }
-
-
     .th-card-number {
         font-size: 42px;
     }
-
 }
