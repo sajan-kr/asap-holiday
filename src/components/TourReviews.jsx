@@ -29,7 +29,7 @@ const reviews = [
             "The entire Bali experience was beautifully planned. From airport transfers to sightseeing, everything was smooth and stress-free. Truly an unforgettable holiday.",
     },
     {
-        name: "Amit Singh",
+        name: "Pooja Singh",
         location: "Bangalore, India",
         image: "/avatars/avatar3.jpg",
         rating: 4,
