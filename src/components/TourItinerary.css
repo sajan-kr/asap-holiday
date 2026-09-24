@@ -67,11 +67,8 @@
 
 .itineraryHeader {
   display: flex;
-
   align-items: flex-end;
-
   justify-content: space-between;
-
   margin-bottom: 27px;
 }
 
@@ -81,52 +78,34 @@
 
 .itineraryEyebrow {
   display: block;
-
   margin-bottom: 10px;
-
   color: var(--orange);
-
   font-size: 11px;
-
   font-weight: 800;
-
   letter-spacing: 3px;
-
   line-height: 1;
-
   text-transform: uppercase;
 }
 
 .itineraryHeader h2 {
   margin: 0;
-
   color: var(--heading);
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 46px;
-
   font-weight: 400;
-
   line-height: 1;
-
   letter-spacing: -1.2px;
 }
 
 .itineraryHeaderText {
   margin: 0 2px 5px 20px;
-
   color: #777;
-
   font-size: 13px;
-
   font-weight: 400;
-
   line-height: 1.5;
-
   white-space: nowrap;
 }
 
@@ -137,17 +116,11 @@
 
 .itineraryToolbar {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   min-height: 61px;
-
   border-top: 1px solid var(--border);
-
   border-bottom: 1px solid var(--border);
-
   margin-bottom: 13px;
 }
 
@@ -158,16 +131,10 @@
 
 .itineraryDays {
   display: flex;
-
   align-items: stretch;
-
   height: 61px;
-
-  max-width:
-    calc(100% - 185px);
-
+  max-width: calc(100% - 185px);
   overflow-x: auto;
-
   scrollbar-width: none;
 }
 
@@ -177,36 +144,20 @@
 
 .itineraryDay {
   position: relative;
-
   display: flex;
-
   align-items: center;
-
-  gap: 9px;
-
+  gap: 8px;
   min-width: 88px;
-
   height: 61px;
-
-  padding: 0 17px;
-
+  padding: 0 16px;
   border: 0;
-
   border-bottom: 2px solid transparent;
-
   outline: none;
-
   background: transparent;
-
   color: #999;
-
   cursor: pointer;
-
   white-space: nowrap;
-
-  transition:
-    color .25s ease,
-    border-color .25s ease;
+  transition: color .25s ease, border-color .25s ease;
 }
 
 .itineraryDay:first-child {
@@ -215,21 +166,15 @@
 
 .itineraryDay strong {
   color: inherit;
-
   font-size: 14px;
-
   font-weight: 700;
-
   line-height: 1;
 }
 
 .itineraryDay span {
   color: inherit;
-
   font-size: 12px;
-
   font-weight: 500;
-
   line-height: 1;
 }
 
@@ -250,47 +195,29 @@
 
 .itineraryTools {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
-
   padding-left: 18px;
-
   background: #fff;
 }
 
 .itineraryTools button {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 38px;
-
   height: 38px;
-
   padding: 0;
-
   border: 0;
-
   border-radius: 50%;
-
   background: transparent;
-
   color: #777;
-
   cursor: pointer;
-
-  transition:
-    color .2s ease,
-    background .2s ease;
+  transition: color .2s ease, background .2s ease;
 }
 
 .itineraryTools button:hover {
   color: var(--orange);
-
   background: var(--orange-soft);
 }
 
@@ -301,9 +228,7 @@
 
 .itineraryIcon {
   width: 17px;
-
   height: 17px;
-
   flex-shrink: 0;
 }
 
@@ -314,24 +239,11 @@
 
 .itineraryExperience {
   display: grid;
-
-  grid-template-columns:
-    40% 60%;
-
+  grid-template-columns: 40% 60%;
   min-height: 410px;
-
   border: 1px solid var(--border);
-
   background: #fff;
-
-  box-shadow:
-    0 18px 50px rgba(
-      28,
-      23,
-      18,
-      .065
-    );
-
+  box-shadow: 0 18px 50px rgba(28, 23, 18, .065);
   overflow: hidden;
 }
 
@@ -342,30 +254,17 @@
 
 .itineraryVisual {
   position: relative;
-
   min-height: 410px;
-
   overflow: hidden;
-
   background: #222;
 }
 
 .itineraryVisual img {
   display: block;
-
   width: 100%;
-
   height: 100%;
-
   object-fit: cover;
-
-  transition:
-    transform .9s cubic-bezier(
-      .2,
-      .65,
-      .25,
-      1
-    );
+  transition: transform .9s cubic-bezier(.2, .65, .25, 1);
 }
 
 .itineraryExperience:hover
@@ -375,16 +274,8 @@
 
 .visualOverlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.05) 0%,
-      rgba(0,0,0,.03) 35%,
-      rgba(0,0,0,.76) 100%
-    );
+  background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.03) 35%, rgba(0,0,0,.76) 100%);
 }
 
 
@@ -394,29 +285,19 @@
 
 .visualDay {
   position: absolute;
-
   top: 28px;
-
   left: 29px;
-
   display: flex;
-
   align-items: baseline;
-
   gap: 9px;
-
   color: #fff;
 }
 
 .visualDay span {
   font-size: 10px;
-
   font-weight: 800;
-
   letter-spacing: 2.5px;
-
   line-height: 1;
-
   opacity: .85;
 }
 
@@ -425,11 +306,8 @@
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 43px;
-
   font-weight: 400;
-
   line-height: 1;
 }
 
@@ -440,21 +318,15 @@
 
 .visualCaption {
   position: absolute;
-
   right: 30px;
-
   bottom: 28px;
-
   left: 30px;
-
   color: #fff;
 }
 
 .visualCaption span {
   display: block;
-
   margin-bottom: 7px;
-
   color:
     rgba(
       255,
@@ -462,34 +334,23 @@
       255,
       .72
     );
-
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
-
   line-height: 1;
-
   text-transform: uppercase;
 }
 
 .visualCaption h3 {
   margin: 0;
-
   color: #fff;
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 40px;
-
   font-weight: 400;
-
   line-height: 1.05;
-
   letter-spacing: -.6px;
 }
 
@@ -500,18 +361,9 @@
 
 .itineraryDetails {
   position: relative;
-
   min-width: 0;
-
   padding: 27px 35px 21px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #ffffff 75%,
-      #fdf9f4 100%
-    );
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 75%, #fdf9f4 100%);
 }
 
 
@@ -521,13 +373,9 @@
 
 .detailsHeading {
   display: flex;
-
   align-items: flex-start;
-
   justify-content: space-between;
-
   padding-bottom: 13px;
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -537,36 +385,24 @@
 
 .detailsEyebrow {
   display: block;
-
   margin-bottom: 7px;
-
   color: var(--orange);
-
   font-size: 10px;
-
   font-weight: 800;
-
   letter-spacing: 2.2px;
-
   line-height: 1;
 }
 
 .detailsHeading h3 {
   margin: 0;
-
   color: var(--heading);
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 35px;
-
   font-weight: 400;
-
   line-height: 1.1;
-
   letter-spacing: -.5px;
 }
 
@@ -577,36 +413,26 @@
 
 .dayNumber {
   display: flex;
-
   align-items: baseline;
-
   gap: 3px;
-
   flex-shrink: 0;
-
   margin-left: 18px;
 }
 
 .dayNumber strong {
   color: var(--heading);
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: 35px;
-
   font-weight: 400;
-
   line-height: 1;
 }
 
 .dayNumber span {
   color: #aaa;
-
   font-size: 11px;
-
   font-weight: 400;
 }
 
@@ -617,25 +443,15 @@
 
 .dayDescription {
   max-width: 720px;
-
   margin: 13px auto 15px;
-
   color: #666;
-
   font-size: 13px;
-
   font-weight: 400;
-
   line-height: 1.6;
-
   text-align: center;
-
   display: -webkit-box;
-
   -webkit-line-clamp: 1;
-
   -webkit-box-orient: vertical;
-
   overflow: hidden;
 }
 
@@ -646,30 +462,19 @@
 
 .infoStrip {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, 1fr);
   margin-bottom: 16px;
-
   border-top: 1px solid var(--border);
-
   border-bottom: 1px solid var(--border);
 }
 
 .itineraryInfoItem {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
-
   min-width: 0;
-
   min-height: 65px;
-
   padding: 8px 10px;
-
   border-right: 1px solid var(--border);
 }
 
@@ -684,27 +489,18 @@
 
 .itineraryInfoIcon {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 34px;
-
   height: 34px;
-
   flex: 0 0 34px;
-
   border-radius: 50%;
-
   color: var(--orange);
-
   background: var(--orange-soft);
 }
 
 .itineraryInfoIcon .itineraryIcon {
   width: 16px;
-
   height: 16px;
 }
 
@@ -719,39 +515,24 @@
 
 .itineraryInfoLabel {
   display: block;
-
   margin-bottom: 4px;
-
   color: #999;
-
   font-size: 9px;
-
   font-weight: 800;
-
   letter-spacing: 1.3px;
-
   line-height: 1;
-
   text-transform: uppercase;
 }
 
 .itineraryInfoValue {
   display: block;
-
   max-width: 125px;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
-
   white-space: nowrap;
-
   color: #333;
-
   font-size: 12px;
-
   font-weight: 600;
-
   line-height: 1.3;
 }
 
@@ -766,61 +547,41 @@
 
 .planHeading {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   margin-bottom: 10px;
 }
 
 .planHeading > span {
   flex-shrink: 0;
-
   color: #888;
-
   font-size: 10px;
-
   font-weight: 800;
-
   letter-spacing: 1.8px;
-
   line-height: 1;
 }
 
 .planHeading > div {
   flex: 1;
-
   height: 1px;
-
   background: var(--border);
 }
 
 .planHeading button {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
-
   padding: 0;
-
   border: 0;
-
   background: transparent;
-
   color: var(--orange);
-
   font-size: 10px;
-
   font-weight: 600;
-
   cursor: pointer;
 }
 
 .planHeading button .itineraryIcon {
   width: 11px;
-
   height: 11px;
 }
 
