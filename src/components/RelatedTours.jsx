@@ -1,95 +1,128 @@
+
 import React from "react";
 import "./RelatedTours.css";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaClock, FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaStar, FaArrowRight } from "react-icons/fa";
 
 const tours = [
-    {
-        slug: "maldives-luxury-escape",
-        title: "Maldives Luxury Escape",
-        image: "/images/maldives.jpg",
-        location: "Maldives",
-        duration: "6 Days / 5 Nights",
-        price: "₹1,89,000",
-        rating: 4.9,
-    },
-    {
-        slug: "bali-luxury-retreat",
-        title: "Bali Luxury Retreat",
-        image: "/images/bali.jpg",
-        location: "Bali",
-        duration: "5 Days / 4 Nights",
-        price: "₹98,000",
-        rating: 4.8,
-    },
-    {
-        slug: "switzerland-alps-tour",
-        title: "Switzerland Alps Tour",
-        image: "/images/switzerland.jpg",
-        location: "Switzerland",
-        duration: "8 Days / 7 Nights",
-        price: "₹2,45,000",
-        rating: 5.0,
-    },
+  {
+    title: "Maldives Luxury Escape",
+    image: "/images/maldives.jpg",
+    location: "Maldives",
+    duration: "6 Days / 5 Nights",
+    price: "₹1,89,000",
+    rating: "4.9",
+    reviews: "128 Reviews",
+    slug: "maldives-luxury-escape",
+    tag: "Luxury Pick",
+  },
+  {
+    title: "Bali Luxury Retreat",
+    image: "/images/bali.jpg",
+    location: "Bali, Indonesia",
+    duration: "5 Days / 4 Nights",
+    price: "₹98,000",
+    rating: "4.8",
+    reviews: "96 Reviews",
+    slug: "bali-luxury-retreat",
+    tag: "Best Seller",
+  },
+  {
+    title: "Switzerland Alps Tour",
+    image: "/images/switzerland.jpg",
+    location: "Switzerland",
+    duration: "8 Days / 7 Nights",
+    price: "₹2,45,000",
+    rating: "5.0",
+    reviews: "84 Reviews",
+    slug: "switzerland-alps-tour",
+    tag: "Premium",
+  },
 ];
 
 const RelatedTours = () => {
-    return (
-        <section className="relatedTours">
+  return (
+    <section className="relatedTours">
+      <div className="relatedToursContainer">
 
-            <div className="relatedHeading">
-                <span>YOU MAY ALSO LIKE</span>
-                <h2>Related Tours</h2>
-                <p>
-                    Explore more exciting destinations and holiday packages.
-                </p>
-            </div>
+        {/* Section Header */}
+        <div className="relatedToursHeader">
+          <div>
+            <span className="relatedEyebrow">MORE TO EXPLORE</span>
 
-            <div className="relatedGrid">
+            <h2>
+              Continue Your <span>Journey</span>
+            </h2>
 
-                {tours.map((tour) => (
-                    <div className="relatedCard" key={tour.slug}>
+            <p>
+              Discover more handpicked holiday experiences designed for
+              unforgettable moments.
+            </p>
+          </div>
 
-                        <img src={tour.image} alt={tour.title} />
+          <Link to="/tours" className="viewAllTours">
+            View All Tours
+            <FaArrowRight />
+          </Link>
+        </div>
 
-                        <div className="relatedContent">
+        {/* Tours */}
+        <div className="relatedToursGrid">
+          {tours.map((tour) => (
+            <article className="tourCard" key={tour.slug}>
 
-                            <div className="rating">
-                                <FaStar />
-                                {tour.rating}
-                            </div>
+              {/* Image */}
+              <div className="tourCardImage">
+                <img src={tour.image} alt={tour.title} />
 
-                            <h3>{tour.title}</h3>
+                <span className="tourTag">{tour.tag}</span>
 
-                            <p>
-                                <FaMapMarkerAlt />
-                                {tour.location}
-                            </p>
+                <div className="tourLocation">
+                  <FaMapMarkerAlt />
+                  <span>{tour.location}</span>
+                </div>
 
-                            <p>
-                                <FaClock />
-                                {tour.duration}
-                            </p>
+                <div className="tourRating">
+                  <FaStar />
+                  <strong>{tour.rating}</strong>
+                </div>
+              </div>
 
-                            <div className="bottomRow">
+              {/* Content */}
+              <div className="tourCardContent">
 
-                                <h4>{tour.price}</h4>
+                <div className="tourDuration">
+                  <FaClock />
+                  <span>{tour.duration}</span>
+                </div>
 
-                                <Link to={`/tour/${tour.slug}`}>
-                                    View Details
-                                </Link>
+                <h3>{tour.title}</h3>
 
-                            </div>
+                <div className="tourCardBottom">
 
-                        </div>
+                  <div className="tourPrice">
+                    <small>Starting from</small>
+                    <strong>{tour.price}</strong>
+                  </div>
 
-                    </div>
-                ))}
+                  <Link
+                    to={`/tours/${tour.slug}`}
+                    className="tourExploreBtn"
+                  >
+                    Explore
+                    <FaArrowRight />
+                  </Link>
 
-            </div>
+                </div>
 
-        </section>
-    );
+              </div>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default RelatedTours;
