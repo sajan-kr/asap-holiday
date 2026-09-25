@@ -3,61 +3,43 @@ import "./Hero.css";
 import Select from "react-select";
 import { Country } from "country-state-city";
 
-import {
-  FaPlay,
-  FaArrowRight,
-  FaChevronLeft,
-  FaChevronRight,
-  FaStar,
-  FaSearch,
-  FaTimes,
-} from "react-icons/fa";
+import { FaPlay, FaArrowRight, FaChevronLeft, FaChevronRight, FaStar, FaSearch, FaTimes, } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 
-/* =========================================================
-   COUNTRIES
-========================================================= */
+/* ========= COUNTRIES ========= */
 
 const countryOptions = Country.getAllCountries().map((country) => ({
   value: country.name,
   label: country.name,
 }));
 
-/* =========================================================
-   HERO SLIDES
-========================================================= */
+/* ======= HERO SLIDES ======== */
 
 const heroSlides = [
   {
     title: "Maldives",
     subtitle: "Private Island Paradise",
-    image:
-      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Dubai",
     subtitle: "Luxury Desert Escape",
-    image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Switzerland",
     subtitle: "Snow Mountain Adventure",
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Bali",
     subtitle: "Tropical Luxury Retreat",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
-/* =========================================================
-   HERO COMPONENT
-========================================================= */
+/* ========= HERO COMPONENT ========= */
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -68,9 +50,7 @@ const Hero = () => {
 
   const currentSlide = heroSlides[activeSlide];
 
-  /* =======================================================
-     AUTO SLIDER
-  ======================================================= */
+  /* ======== AUTO SLIDER ======== */
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -82,9 +62,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  /* =======================================================
-     SEARCH
-  ======================================================= */
+  /* ======== SEARCH ======= */
 
   const handleSearch = () => {
     if (!selectedCountry) {
@@ -99,9 +77,7 @@ const Hero = () => {
     navigate(`/tours/${country}`);
   };
 
-  /* =======================================================
-     DESTINATION
-  ======================================================= */
+  /* ======== DESTINATION ======= */
 
   const handleDestination = () => {
     const destination = currentSlide.title
@@ -111,9 +87,7 @@ const Hero = () => {
     navigate(`/tours/${destination}`);
   };
 
-  /* =======================================================
-     SLIDER
-  ======================================================= */
+  /* ======= SLIDER ====== */
 
   const nextSlide = () => {
     setActiveSlide((prev) =>
@@ -127,9 +101,7 @@ const Hero = () => {
     );
   };
 
-  /* =======================================================
-     RENDER
-  ======================================================= */
+  /* ======== RENDER ======== */
 
   return (
     <>
@@ -161,15 +133,8 @@ const Hero = () => {
 
             <div className="modernHero__searchWrapper">
 
-              <Select
-                options={countryOptions}
-                placeholder="Search destinations..."
-                value={selectedCountry}
-                onChange={setSelectedCountry}
-                className="modernHero__select"
-                classNamePrefix="modernSelect"
-                isSearchable
-                onKeyDown={(e) => {
+              <Select options={countryOptions} placeholder="Search destinations..." value={selectedCountry} onChange={setSelectedCountry}
+                className="modernHero__select" classNamePrefix="modernSelect" isSearchable onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleSearch();
                   }
@@ -238,7 +203,7 @@ const Hero = () => {
 
             <div className="modernHero__card">
 
-              <img src={currentSlide.image} alt={currentSlide.title}/>
+              <img src={currentSlide.image} alt={currentSlide.title} />
 
               <div className="modernHero__cardOverlay"></div>
 
@@ -279,9 +244,7 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* =====================================================
-          LOCAL VIDEO MODAL
-      ===================================================== */}
+      {/* ======== LOCAL VIDEO MODAL ======= */}
 
       {showVideo && (
         <div className="modernHero__videoModal" onClick={() => setShowVideo(false)}>
