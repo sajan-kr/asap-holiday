@@ -133,19 +133,12 @@ const Hero = () => {
 
   return (
     <>
-      <section
-        className="modernHero"
-        style={{
-          backgroundImage: `url(${currentSlide.image})`,
-        }}
-      >
+      <section className="modernHero" style={{backgroundImage: `url(${currentSlide.image})`,}}>
         <div className="modernHero__overlay"></div>
 
         <div className="modernHero__container">
 
-          {/* =================================================
-              LEFT CONTENT
-          ================================================= */}
+          {/* ======= LEFT CONTENT ===== */}
 
           <div className="modernHero__left">
 
