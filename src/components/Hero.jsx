@@ -133,7 +133,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="modernHero" style={{backgroundImage: `url(${currentSlide.image})`,}}>
+      <section className="modernHero" style={{ backgroundImage: `url(${currentSlide.image})`, }}>
         <div className="modernHero__overlay"></div>
 
         <div className="modernHero__container">
@@ -176,12 +176,7 @@ const Hero = () => {
                 }}
               />
 
-              <button
-                type="button"
-                className="modernHero__searchBtn"
-                onClick={handleSearch}
-                aria-label="Search destination"
-              >
+              <button type="button" className="modernHero__searchBtn" onClick={handleSearch} aria-label="Search destination">
                 <FaSearch />
               </button>
 
@@ -193,22 +188,14 @@ const Hero = () => {
 
               {/* EXPLORE TOURS */}
 
-              <button
-                type="button"
-                className="modernHero__exploreBtn"
-                onClick={handleSearch}
-              >
+              <button type="button" className="modernHero__exploreBtn" onClick={handleSearch}>
                 <span>Explore Tours</span>
                 <FaArrowRight />
               </button>
 
               {/* WATCH VIDEO */}
 
-              <button
-                type="button"
-                className="modernHero__videoBtn"
-                onClick={() => setShowVideo(true)}
-              >
+              <button type="button" className="modernHero__videoBtn" onClick={() => setShowVideo(true)}>
                 <span className="modernHero__play">
                   <FaPlay />
                 </span>
@@ -245,18 +232,13 @@ const Hero = () => {
 
           </div>
 
-          {/* =================================================
-              RIGHT CONTENT
-          ================================================= */}
+          {/* ======== RIGHT CONTENT ======= */}
 
           <div className="modernHero__right">
 
             <div className="modernHero__card">
 
-              <img
-                src={currentSlide.image}
-                alt={currentSlide.title}
-              />
+              <img src={currentSlide.image} alt={currentSlide.title}/>
 
               <div className="modernHero__cardOverlay"></div>
 
@@ -267,16 +249,10 @@ const Hero = () => {
               <div className="modernHero__cardContent">
 
                 <small>Featured Destination</small>
-
                 <h2>{currentSlide.title}</h2>
-
                 <p>{currentSlide.subtitle}</p>
 
-                <button
-                  type="button"
-                  onClick={handleDestination}
-                  aria-label={`Explore ${currentSlide.title}`}
-                >
+                <button type="button" onClick={handleDestination} aria-label={`Explore ${currentSlide.title}`}>
                   <FaArrowRight />
                 </button>
 
@@ -288,19 +264,11 @@ const Hero = () => {
 
             <div className="modernHero__nav">
 
-              <button
-                type="button"
-                onClick={prevSlide}
-                aria-label="Previous slide"
-              >
+              <button type="button" onClick={prevSlide} aria-label="Previous slide">
                 <FaChevronLeft />
               </button>
 
-              <button
-                type="button"
-                onClick={nextSlide}
-                aria-label="Next slide"
-              >
+              <button type="button" onClick={nextSlide} aria-label="Next slide">
                 <FaChevronRight />
               </button>
 
@@ -316,36 +284,19 @@ const Hero = () => {
       ===================================================== */}
 
       {showVideo && (
-        <div
-          className="modernHero__videoModal"
-          onClick={() => setShowVideo(false)}
-        >
+        <div className="modernHero__videoModal" onClick={() => setShowVideo(false)}>
 
-          <div
-            className="modernHero__videoContent"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="modernHero__videoContent" onClick={(e) => e.stopPropagation()}>
 
             {/* CLOSE BUTTON */}
 
-            <button
-              type="button"
-              className="modernHero__closeVideo"
-              onClick={() => setShowVideo(false)}
-              aria-label="Close video"
-            >
+            <button type="button" className="modernHero__closeVideo" onClick={() => setShowVideo(false)} aria-label="Close video">
               <FaTimes />
             </button>
 
             {/* LOCAL VIDEO */}
 
-            <video
-              className="modernHero__localVideo"
-              src="/video/asap-family-video.mp4"
-              controls
-              autoPlay
-              playsInline
-            >
+            <video className="modernHero__localVideo" src="/video/asap-family-video.mp4" controls autoPlay playsInline>
               Your browser does not support the video tag.
             </video>
 
