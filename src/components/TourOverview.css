@@ -57,9 +57,9 @@
 .overviewHeading h2 {
   margin: 0;
   color: #172033;
-  font-size: clamp(32px, 4vw, 50px);
+  font-size: clamp(32px, 4vw, 48px);
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -1.2px;
 }
 

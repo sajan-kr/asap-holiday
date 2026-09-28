@@ -242,6 +242,7 @@
   font-weight: 700;
   letter-spacing: -0.3px;
   transition: color 0.3s ease;
+  text-align: left;
 }
 
 .tourCard:hover .tourCardContent h3 {
