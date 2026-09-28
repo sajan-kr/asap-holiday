@@ -1,11 +1,9 @@
 
-/* ================================
-   RELATED TOURS
-================================ */
+/* ======= RELATED TOURS ======= */
 
 .relatedTours {
   width: 100%;
-  padding: 95px 0 100px;
+  padding: 80px 0 100px;
   background: #fffaf6;
 }
 
@@ -14,10 +12,7 @@
   margin: 0 auto;
 }
 
-
-/* ================================
-   HEADER
-================================ */
+/* ======= HEADER ======= */
 
 .relatedToursHeader {
   display: flex;
@@ -28,22 +23,23 @@
 }
 
 .relatedEyebrow {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: #fc8222;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    display: block;
+    margin-bottom: 14px;
+    color: #fc8222;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-align: left;
 }
 
 .relatedToursHeader h2 {
   margin: 0;
   color: #202020;
-  font-size: clamp(32px, 4vw, 46px);
+  font-size: clamp(32px, 4vw, 48px);
   line-height: 1.08;
   font-weight: 700;
   letter-spacing: -1.5px;
+  text-align: left;
 }
 
 .relatedToursHeader h2 span {
@@ -56,12 +52,11 @@
   color: #777;
   font-size: 15px;
   line-height: 1.7;
+  text-align: left;
 }
 
 
-/* ================================
-   VIEW ALL
-================================ */
+/* ======= VIEW ALL ====== */
 
 .viewAllTours {
   flex-shrink: 0;
