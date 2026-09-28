@@ -1,7 +1,4 @@
-
-/* =====================================================
-   TOUR OVERVIEW
-===================================================== */
+/* ====== TOUR OVERVIEW ====== */
 
 .tourOverview {
   width: 100%;
@@ -12,7 +9,6 @@
   background: #ffffff;
   color: #172033;
 }
-
 
 /* ======== HEADER ======== */
 
@@ -32,25 +28,18 @@
   display: flex;
   align-items: center;
   gap: 9px;
-
   margin-bottom: 13px;
-
   color: #fc8222;
-
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 2px;
 }
 
 .overviewEyebrow span {
   width: 32px;
   height: 2px;
-
   display: block;
-
   background: #fc8222;
-
   border-radius: 20px;
 }
 
@@ -86,7 +75,6 @@
   border-radius: 50%;
 }
 
-
 /* ======== SHARE ======== */
 
 .overviewShare {
@@ -103,11 +91,7 @@
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .overviewShare svg {
@@ -120,7 +104,6 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(252, 130, 34, 0.12);
 }
-
 
 /* ======== DESCRIPTION ======== */
 
@@ -136,7 +119,6 @@
   line-height: 1.85;
   text-align: left;
 }
-
 
 /* ======== SNAPSHOT ======== */
 
@@ -276,10 +258,7 @@
   background: linear-gradient( 90deg, #fff8f1, #fffdfb);
   border: 1px solid #f1dfcf;
   border-radius: 17px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .overviewOffer:hover {
@@ -369,7 +348,6 @@
   transform: translateX(4px);
 }
 
-
 /* ========= HIGHLIGHTS ========= */
 
 .highlightsSection {
@@ -437,7 +415,6 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-
 
 /* ======== HIGHLIGHT GRID ======== */
 
@@ -520,7 +497,6 @@
   text-align: left;
 }
 
-
 /* ========= SHOW MORE ======== */
 
 .showHighlights {
@@ -561,7 +537,7 @@
 }
 
 
-/* ========== TRUST BAR ======== */
+/* ======== TRUST BAR ======== */
 
 .overviewTrustBar {
   display: grid;
@@ -594,10 +570,7 @@
   font-size: 9px;
 }
 
-
-/* =====================================================
-   TABLET
-===================================================== */
+/* ======= TABLET ======= */
 
 @media (max-width: 1050px) {
 
@@ -619,10 +592,7 @@
 
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ======== MOBILE ======= */
 
 @media (max-width: 700px) {
 
@@ -645,7 +615,6 @@
 
   .tourSnapshot {
     grid-template-columns: 1fr;
-
     border-radius: 18px;
   }
 
@@ -695,7 +664,6 @@
   }
 
 }
-
 
 /* ========== SMALL MOBILE  ======== */
 
