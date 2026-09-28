@@ -30,7 +30,6 @@
 .relatedEyebrow {
   display: inline-block;
   margin-bottom: 12px;
-
   color: #fc8222;
   font-size: 12px;
   font-weight: 800;
@@ -54,7 +53,6 @@
 .relatedToursHeader p {
   max-width: 560px;
   margin: 15px 0 0;
-
   color: #777;
   font-size: 15px;
   line-height: 1.7;
@@ -67,23 +65,17 @@
 
 .viewAllTours {
   flex-shrink: 0;
-
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 13px 20px;
-
   border: 1px solid #e7ddd6;
   border-radius: 8px;
-
   background: #fff;
   color: #292929;
-
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-
   transition: all 0.3s ease;
 }
 
@@ -102,9 +94,7 @@
 }
 
 
-/* ================================
-   GRID
-================================ */
+/* ====== GRID ===== */
 
 .relatedToursGrid {
   display: grid;
@@ -113,35 +103,24 @@
 }
 
 
-/* ================================
-   CARD
-================================ */
+/* ======== CARD ====== */
 
 .tourCard {
   overflow: hidden;
-
   background: #fff;
   border: 1px solid #eee5df;
   border-radius: 16px;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .tourCard:hover {
   transform: translateY(-7px);
-
   border-color: #f2d8c5;
-
   box-shadow: 0 18px 45px rgba(60, 40, 25, 0.10);
 }
 
 
-/* ================================
-   IMAGE
-================================ */
+/* ====== IMAGE ===== */
 
 .tourCardImage {
   position: relative;
@@ -153,25 +132,15 @@
   content: "";
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.55),
-      transparent 45%
-    );
-
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 45%);
   pointer-events: none;
 }
 
 .tourCardImage img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   transition: transform 0.6s ease;
 }
 
@@ -180,48 +149,36 @@
 }
 
 
-/* ================================
-   TAG
-================================ */
+/* ======= TAG ====== */
 
 .tourTag {
   position: absolute;
   top: 16px;
   left: 16px;
   z-index: 2;
-
   padding: 7px 11px;
-
   border-radius: 5px;
-
   background: #fff;
   color: #333;
-
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 
-/* ================================
-   LOCATION
-================================ */
+/* ======== LOCATION ======= */
 
 .tourLocation {
   position: absolute;
   left: 17px;
   bottom: 17px;
   z-index: 2;
-
   display: flex;
   align-items: center;
   gap: 7px;
-
   color: #fff;
-
   font-size: 13px;
   font-weight: 600;
 }
@@ -232,28 +189,20 @@
 }
 
 
-/* ================================
-   RATING
-================================ */
+/* ======= RATING ====== */
 
 .tourRating {
   position: absolute;
   right: 16px;
   bottom: 15px;
   z-index: 2;
-
   display: flex;
   align-items: center;
   gap: 5px;
-
   padding: 7px 10px;
-
   border-radius: 6px;
-
   background: rgba(255, 255, 255, 0.96);
-
   color: #222;
-
   font-size: 12px;
 }
 
@@ -263,9 +212,7 @@
 }
 
 
-/* ================================
-   CONTENT
-================================ */
+/* ======== CONTENT ======= */
 
 .tourCardContent {
   padding: 22px 22px 21px;
@@ -278,11 +225,8 @@
   display: flex;
   align-items: center;
   gap: 7px;
-
   margin-bottom: 11px;
-
   color: #929292;
-
   font-size: 12px;
   font-weight: 600;
 }
@@ -297,14 +241,11 @@
 
 .tourCardContent h3 {
   margin: 0 0 24px;
-
   color: #202020;
-
   font-size: 21px;
   line-height: 1.3;
   font-weight: 700;
   letter-spacing: -0.3px;
-
   transition: color 0.3s ease;
 }
 
@@ -312,22 +253,16 @@
   color: #fc8222;
 }
 
-
-/* ================================
-   BOTTOM
-================================ */
+/* ======= BOTTOM ======= */
 
 .tourCardBottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 15px;
-
   padding-top: 17px;
-
   border-top: 1px solid #eee8e3;
 }
-
 
 /* Price */
 
@@ -339,14 +274,12 @@
 
 .tourPrice small {
   color: #999;
-
   font-size: 10px;
   font-weight: 600;
 }
 
 .tourPrice strong {
   color: #222;
-
   font-size: 20px;
   line-height: 1.2;
   font-weight: 800;
@@ -359,19 +292,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 11px 15px;
-
   border-radius: 7px;
-
   background: #fc8222;
   color: #fff;
-
   font-size: 12px;
   font-weight: 700;
-
   text-decoration: none;
-
   transition: all 0.3s ease;
 }
 
@@ -389,10 +316,7 @@
   transform: translateX(3px);
 }
 
-
-/* ================================
-   TABLET
-================================ */
+/* ======= TABLET ====== */
 
 @media (max-width: 1024px) {
   .relatedTours {
@@ -410,9 +334,7 @@
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+/* ======= MOBILE ====== */
 
 @media (max-width: 700px) {
   .relatedTours {
@@ -464,9 +386,7 @@
 }
 
 
-/* ================================
-   SMALL MOBILE
-================================ */
+/* ======= SMALL MOBILE ======= */
 
 @media (max-width: 420px) {
   .relatedToursHeader h2 {
