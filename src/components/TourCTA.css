@@ -1,125 +1,848 @@
-.tourCTA {
-    width: 92%;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 22px 30px;
-    background: #fff;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
-    border: 2px solid #fff4eb;
+/* =========================================================
+   PREMIUM EDITORIAL TOUR CTA
+========================================================= */
+
+.tourCtaPremium {
     position: relative;
-    overflow: hidden;
+    width: min(1240px, calc(100% - 40px));
+    min-height: 650px;
+    margin: 110px auto 100px;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
 }
 
-.tourCTA::before {
-    content: "";
+/* IMAGE */
+
+.tourCtaPremium__image {
     position: absolute;
-    left: -60px;
-    top: -60px;
-    width: 150px;
-    height: 150px;
-    background: #ff7a00;
-    opacity: .08;
-    border-radius: 50%;
+    inset: 0 17% 0 0;
+    overflow: hidden;
+    background: #222;
 }
 
-.offer {
-    display: inline-block;
-    background: #ff7a00;
+.tourCtaPremium__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1s ease;
+}
+
+.tourCtaPremium:hover .tourCtaPremium__image img {
+    transform: scale(1.025);
+}
+
+.tourCtaPremium__shade {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 12, 14, 0.12) 0%,
+            rgba(8, 12, 14, 0.05) 45%,
+            rgba(8, 12, 14, 0.42) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8, 12, 14, 0.7) 0%,
+            transparent 42%
+        );
+}
+
+.tourCtaPremium__top {
+    position: absolute;
+    top: 34px;
+    left: 38px;
+    right: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     color: #fff;
-    padding: 6px 14px;
-    border-radius: 30px;
+}
+
+.tourCtaPremium__top span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+}
+
+.tourCtaPremium__top b {
+    padding: 9px 14px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(12px);
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.tourCtaPremium__caption {
+    position: absolute;
+    left: 42px;
+    bottom: 45px;
+    color: #fff;
+}
+
+.tourCtaPremium__caption span {
+    display: block;
+    margin-bottom: 13px;
     font-size: 13px;
     font-weight: 600;
-    margin-bottom: 10px;
+    letter-spacing: .06em;
 }
 
-.ctaLeft h3 {
-    margin: 5px 0;
-    font-size: 28px;
-    color: #222;
-}
-
-.ctaLeft p {
+.tourCtaPremium__caption h2 {
     margin: 0;
-    color: #666;
-    font-size: 15px;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: .94;
+    font-weight: 500;
+    letter-spacing: -.055em;
 }
 
-.ctaRight {
+/* WHITE CARD */
+
+.tourCtaPremium__card {
+    position: relative;
+    z-index: 3;
+
+    width: 49%;
+    margin-left: auto;
+    margin-right: 0;
+
+    padding: 48px 48px 40px;
+
+    background: #fff;
+
+    box-shadow: 0 30px 80px rgba(24, 28, 30, .16);
+}
+
+.tourCtaPremium__cardHead {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 13px;
+    margin-bottom: 18px;
 }
 
-.bookBtn {
+.tourCtaPremium__cardHead span {
+    color: #ff6f00;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    white-space: nowrap;
+}
+
+.tourCtaPremium__line {
+    width: 38px;
+    height: 1px;
+    background: #ff6f00;
+}
+
+.tourCtaPremium__card h3 {
+    margin: 0;
+    color: #171717;
+    font-size: clamp(31px, 3vw, 43px);
+    line-height: 1.04;
+    font-weight: 600;
+    letter-spacing: -.045em;
+}
+
+.tourCtaPremium__description {
+    margin: 17px 0 0;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.tourCtaPremium__meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 31px;
+    padding: 20px 0;
+    border-top: 1px solid #ebe8e3;
+    border-bottom: 1px solid #ebe8e3;
+}
+
+.tourCtaPremium__meta div {
+    padding: 0 13px;
+    border-right: 1px solid #ebe8e3;
+}
+
+.tourCtaPremium__meta div:first-child {
+    padding-left: 0;
+}
+
+.tourCtaPremium__meta div:last-child {
+    border-right: 0;
+}
+
+.tourCtaPremium__meta small {
+    display: block;
+    margin-bottom: 6px;
+    color: #999;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.tourCtaPremium__meta strong {
+    color: #222;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.tourCtaPremium__meta div:nth-child(2) strong {
+    color: #ff6f00;
+    font-size: 16px;
+}
+
+.tourCtaPremium__highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px 18px;
+    margin-top: 25px;
+}
+
+.tourCtaPremium__highlights span {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    color: #555;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.tourCtaPremium__highlights svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #ff6f00;
+    font-size: 8px;
+}
+
+.tourCtaPremium__actions {
+    display: flex;
+    gap: 9px;
+    margin-top: 31px;
+}
+
+.tourCtaPremium__actions button {
+    flex: 1;
+    min-height: 55px;
+
+    border: 0;
+    background: #171717;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .25s ease;
+}
+
+.tourCtaPremium__actions button:hover {
+    background: #ff6f00;
+}
+
+.tourCtaPremium__actions button svg {
+    transition: transform .25s ease;
+}
+
+.tourCtaPremium__actions button:hover svg {
+    transform: translateX(5px);
+}
+
+.tourCtaPremium__actions a {
+    width: 55px;
+    min-width: 55px;
+
+    background: #25d366;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.tourCtaPremium__note {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    color: #aaa;
+    font-size: 9px;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.tourCtaModal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.tourCtaModal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 12, 14, .72);
+    backdrop-filter: blur(8px);
+}
+
+.tourCtaModal__box {
+    position: relative;
+    z-index: 2;
+    width: min(560px, 100%);
+    max-height: calc(100vh - 36px);
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 35px 100px rgba(0,0,0,.3);
+}
+
+.tourCtaModal__close {
+    position: absolute;
+    z-index: 5;
+    top: 17px;
+    right: 17px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f2f1ee;
+    color: #333;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tourCtaModal__close:hover {
+    background: #ff6f00;
+    color: #fff;
+}
+
+.tourCtaModal__intro {
+    padding: 39px 42px 27px;
+    border-bottom: 1px solid #eee;
+}
+
+.tourCtaModal__intro > span {
+    color: #ff6f00;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+.tourCtaModal__steps {
+    display: flex;
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.tourCtaModal__steps i {
+    width: 30px;
+    height: 3px;
+    background: #e4e1dc;
+}
+
+.tourCtaModal__steps i.active {
+    background: #ff6f00;
+}
+
+.tourCtaModal__intro h3 {
+    margin: 23px 0 8px;
+    color: #171717;
+    font-size: 28px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -.035em;
+}
+
+.tourCtaModal__intro p {
+    margin: 0;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.tourCtaModal__body {
+    padding: 27px 42px 34px;
+}
+
+.tourCtaModal__tour {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 21px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.tourCtaModal__tour img {
+    width: 62px;
+    height: 52px;
+    object-fit: cover;
+}
+
+.tourCtaModal__tour div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tourCtaModal__tour small {
+    color: #999;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.tourCtaModal__tour strong {
+    color: #222;
+    font-size: 13px;
+}
+
+.tourCtaModal__label,
+.tourCtaModal__field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.tourCtaModal__label svg {
+    margin-right: 6px;
+    color: #ff6f00;
+}
+
+.tourCtaModal__input,
+.tourCtaModal__field input,
+.tourCtaModal__field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ddd9d2;
+    background: #fff;
+    color: #222;
+    outline: none;
+    padding: 13px 14px;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.tourCtaModal__field textarea {
+    resize: vertical;
+}
+
+.tourCtaModal__input:focus,
+.tourCtaModal__field input:focus,
+.tourCtaModal__field textarea:focus {
+    border-color: #ff6f00;
+    box-shadow: 0 0 0 3px rgba(255,111,0,.08);
+}
+
+.tourCtaModal__input:disabled {
+    background: #f3f1ee;
+}
+
+.tourCtaModal__check {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 28px;
-    background: #ff7a00;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
+    margin-top: 9px;
+    color: #777;
+    font-size: 10px;
     cursor: pointer;
-    transition: .3s;
 }
 
-.bookBtn:hover {
-    transform: translateY(-3px);
-    background: #ff6500;
+.tourCtaModal__check input {
+    accent-color: #ff6f00;
 }
 
-.iconBtn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
+.tourCtaModal__travellers {
+    min-height: 60px;
+    margin-top: 17px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-decoration: none;
-    font-size: 20px;
-    transition: .3s;
+    justify-content: space-between;
 }
 
-.callBtn {
-    background: #f5f5f5;
+.tourCtaModal__travellers + .tourCtaModal__travellers {
+    border-top: 0;
+    margin-top: 0;
+}
+
+.tourCtaModal__travellers > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.tourCtaModal__travellers > div:first-child > svg {
+    color: #ff6f00;
+}
+
+.tourCtaModal__travellers strong,
+.tourCtaModal__travellers small {
+    display: block;
+}
+
+.tourCtaModal__travellers strong {
     color: #333;
+    font-size: 11px;
 }
 
-.whatsappBtn {
-    background: #25D366;
+.tourCtaModal__travellers small {
+    margin-top: 3px;
+    color: #aaa;
+    font-size: 9px;
+}
+
+.tourCtaModal__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tourCtaModal__counter button {
+    width: 29px;
+    height: 29px;
+    border: 1px solid #ddd9d2;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tourCtaModal__counter button:hover {
+    color: #ff6f00;
+    border-color: #ff6f00;
+}
+
+.tourCtaModal__counter button svg {
+    font-size: 8px;
+}
+
+.tourCtaModal__counter b {
+    min-width: 16px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.tourCtaModal__counter span {
+    color: #999;
+    font-size: 9px;
+}
+
+.tourCtaModal__next {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 26px;
+
+    border: 0;
+    background: #171717;
     color: #fff;
+
+    cursor: pointer;
+    padding: 0 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
 }
 
-.iconBtn:hover {
-    transform: scale(1.1);
+.tourCtaModal__next:hover {
+    background: #ff6f00;
 }
 
-@media(max-width:768px) {
+.tourCtaModal__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
 
-    .tourCTA {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 20px;
+.tourCtaModal__field {
+    margin-bottom: 17px;
+}
+
+.tourCtaModal__formActions {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 9px;
+    margin-top: 7px;
+}
+
+.tourCtaModal__back,
+.tourCtaModal__submit {
+    min-height: 51px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tourCtaModal__back {
+    background: #f1efeb;
+    color: #555;
+}
+
+.tourCtaModal__submit {
+    background: #25d366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tourCtaModal__submit:hover {
+    background: #1db954;
+}
+
+/* SUCCESS */
+
+.tourCtaModal__success {
+    padding: 65px 40px;
+    text-align: center;
+}
+
+.tourCtaModal__successIcon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 21px;
+    border-radius: 50%;
+    background: #fff1e7;
+    color: #ff6f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tourCtaModal__success > span {
+    color: #ff6f00;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+.tourCtaModal__success h3 {
+    margin: 14px 0 9px;
+    color: #171717;
+    font-size: 29px;
+    letter-spacing: -.04em;
+}
+
+.tourCtaModal__success p {
+    max-width: 380px;
+    margin: auto;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.tourCtaModal__success > a {
+    width: min(300px, 100%);
+    min-height: 48px;
+    margin: 27px auto 10px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tourCtaModal__success > button {
+    border: 0;
+    background: transparent;
+    color: #999;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+    .tourCtaPremium {
+        min-height: 700px;
     }
 
-    .ctaLeft h3 {
-        font-size: 22px;
+    .tourCtaPremium__image {
+        inset: 0 10% 0 0;
     }
 
-    .ctaRight {
-        margin-top: 15px;
+    .tourCtaPremium__card {
+        width: 53%;
+        padding: 40px 36px;
+    }
+}
+
+@media (max-width: 800px) {
+    .tourCtaPremium {
+        width: calc(100% - 28px);
+        min-height: auto;
+        display: block;
+        margin-top: 75px;
     }
 
-    .bookBtn {
-        padding: 12px 22px;
+    .tourCtaPremium__image {
+        position: relative;
+        inset: auto;
+        height: 500px;
     }
 
+    .tourCtaPremium__card {
+        width: calc(100% - 30px);
+        margin: -70px auto 0;
+        padding: 34px 27px;
+    }
+
+    .tourCtaPremium__caption {
+        left: 28px;
+        bottom: 35px;
+    }
+
+    .tourCtaPremium__caption h2 {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tourCtaPremium {
+        width: calc(100% - 20px);
+    }
+
+    .tourCtaPremium__image {
+        height: 430px;
+    }
+
+    .tourCtaPremium__top {
+        top: 22px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .tourCtaPremium__top span {
+        font-size: 8px;
+    }
+
+    .tourCtaPremium__caption {
+        left: 20px;
+        bottom: 27px;
+    }
+
+    .tourCtaPremium__caption span {
+        font-size: 11px;
+    }
+
+    .tourCtaPremium__caption h2 {
+        font-size: 46px;
+    }
+
+    .tourCtaPremium__card {
+        width: calc(100% - 20px);
+        padding: 29px 20px 25px;
+    }
+
+    .tourCtaPremium__card h3 {
+        font-size: 29px;
+    }
+
+    .tourCtaPremium__meta {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .tourCtaPremium__meta div {
+        padding: 0 0 13px;
+        border-right: 0;
+        border-bottom: 1px solid #ebe8e3;
+    }
+
+    .tourCtaPremium__meta div:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .tourCtaPremium__highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .tourCtaPremium__actions button {
+        min-height: 51px;
+    }
+
+    .tourCtaModal__intro {
+        padding: 32px 23px 24px;
+    }
+
+    .tourCtaModal__intro h3 {
+        font-size: 24px;
+    }
+
+    .tourCtaModal__body {
+        padding: 23px 23px 28px;
+    }
+
+    .tourCtaModal__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .tourCtaModal__success {
+        padding: 55px 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .tourCtaPremium__caption h2 {
+        font-size: 40px;
+    }
+
+    .tourCtaPremium__card {
+        width: calc(100% - 12px);
+    }
+
+    .tourCtaModal {
+        padding: 8px;
+    }
+
+    .tourCtaModal__formActions {
+        grid-template-columns: 80px 1fr;
+    }
 }

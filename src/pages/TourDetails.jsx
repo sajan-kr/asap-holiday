@@ -72,7 +72,11 @@ const TourDetails = () => {
             <RelatedTours currentSlug={tour.slug} />
 
             {/* CTA */}
-            <TourCTA />
+            {/* <TourCTA /> */}
+
+            {/* ====== FINAL CTA ====== */}
+            
+            <TourCTA tour={tour} />
 
         </div>
     );
