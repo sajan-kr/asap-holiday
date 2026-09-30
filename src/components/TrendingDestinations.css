@@ -292,3 +292,79 @@
     display: flex;
     gap: 8px;
 }
+
+/* ================================
+   SWIPER ARROW - FINAL FIX
+   Orange button + WHITE icon
+================================ */
+
+.destination-swiper .swiper-button-prev,
+.destination-swiper .swiper-button-next {
+    color: #222 !important;
+}
+
+/* Remove Swiper default icon */
+.destination-swiper .swiper-button-prev::after,
+.destination-swiper .swiper-button-next::after {
+    content: "" !important;
+
+    width: 10px !important;
+    height: 10px !important;
+
+    display: block !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    box-sizing: border-box !important;
+
+    transition: all 0.2s ease !important;
+}
+
+/* Previous icon */
+.destination-swiper .swiper-button-prev::after {
+    border-left: 2px solid #ff6a1a !important;
+    border-bottom: 2px solid #ff6a1a !important;
+
+    transform: translate(-35%, -50%) rotate(45deg) !important;
+}
+
+/* Next icon */
+.destination-swiper .swiper-button-next::after {
+    border-right: 2px solid #ff6a1a !important;
+    border-top: 2px solid #ff6a1a !important;
+    transform: translate(-65%, -50%) rotate(45deg) !important;
+}
+
+/* ================================
+   HOVER
+================================ */
+
+.destination-swiper .swiper-button-prev:hover,
+.destination-swiper .swiper-button-next:hover {
+    background: #fc8222 !important;
+    color: #fff !important;
+}
+
+/* WHITE PREVIOUS ICON */
+.destination-swiper .swiper-button-prev:hover::after {
+    border-left-color: #fff !important;
+    border-bottom-color: #fff !important;
+    transform: translate(-35%, -50%) rotate(45deg) !important;
+}
+
+/* WHITE NEXT ICON */
+.destination-swiper .swiper-button-next:hover::after {
+    border-right-color: #fff !important;
+    border-top-color: #fff !important;
+    transform: translate(-65%, -50%) rotate(45deg) !important;
+}
