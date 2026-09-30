@@ -12,6 +12,14 @@
 .holidayMemoriesSection {
   position: relative;
   width: 100%;
+  padding: 80px 0 85px;
+  overflow: hidden;
+  background: #20242f;
+}
+
+/* .holidayMemoriesSection {
+  position: relative;
+  width: 100%;
   padding: 40px 0 85px;
   overflow: hidden;
   background:
@@ -31,7 +39,7 @@
       #f8fafc 50%,
       #ffffff 100%
     );
-}
+} */
 
 
 /* =========================================================
@@ -139,7 +147,7 @@
 
 .holidayMemoriesHeader h2 {
   margin: 0;
-  color: #172b4d;
+  color: #ffffff;
   font-size: clamp(
     40px,
     4vw,
@@ -174,7 +182,7 @@
 .holidayMemoriesHeader > p {
   max-width: 650px;
   margin: 18px auto 28px;
-  color: #697586;
+  color: #94979b;
   font-size: 17px;
   line-height: 1.6;
   font-weight: 500;
@@ -237,7 +245,7 @@
 }
 
 .holidayReviewText strong {
-  color: #172b4d;
+  color: #94979b;
   font-size: 16px;
   line-height: 1.2;
 }
@@ -288,8 +296,8 @@
 
   border-radius: 40px;
 
-  background:
-    rgba(255, 255, 255, 0.58);
+  /* background:
+    rgba(255, 255, 255, 0.58); */
 
   box-shadow:
     0 20px 60px
