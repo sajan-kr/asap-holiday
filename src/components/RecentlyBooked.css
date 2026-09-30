@@ -27,7 +27,7 @@ body{
 SECTION
 ==================================== */
 
-.recently-booked{
+/* .recently-booked{
   position:relative;
   overflow:hidden;
   padding:60px 40px;
@@ -44,6 +44,22 @@ SECTION
     #eef4fb 100%
   );
 
+} */
+ .recently-booked {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 40px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 247, 239, 0.15)
+    ),
+    url("/images/bg-asap.png");
+
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
 /* ====================================
