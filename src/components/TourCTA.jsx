@@ -280,11 +280,10 @@ Duration: ${tour.duration}
 Starting price: ${tour.price}
 
 TRAVEL
-Date: ${
-            form.flexible
+Date: ${form.flexible
                 ? "Flexible dates"
                 : formatDate(form.date)
-        }
+            }
 Adults: ${form.adults}
 Children: ${form.children}
 Total guests: ${totalGuests}
@@ -720,7 +719,7 @@ Please share the best package options and next steps.`;
                                         <div
                                             className={
                                                 step >=
-                                                1
+                                                    1
                                                     ? "active"
                                                     : ""
                                             }
@@ -737,7 +736,7 @@ Please share the best package options and next steps.`;
                                         <div
                                             className={
                                                 step >=
-                                                2
+                                                    2
                                                     ? "active"
                                                     : ""
                                             }
@@ -754,7 +753,7 @@ Please share the best package options and next steps.`;
                                         <div
                                             className={
                                                 step >=
-                                                3
+                                                    3
                                                     ? "active"
                                                     : ""
                                             }
@@ -868,7 +867,7 @@ Please share the best package options and next steps.`;
 
                                             <strong>
                                                 {step ===
-                                                1
+                                                    1
                                                     ? "When are you travelling?"
                                                     : step ===
                                                         2
@@ -946,10 +945,10 @@ Please share the best package options and next steps.`;
                                                             type="button"
                                                             className={
                                                                 !form.flexible &&
-                                                                form.date ===
-                                                                addDays(
-                                                                    7
-                                                                )
+                                                                    form.date ===
+                                                                    addDays(
+                                                                        7
+                                                                    )
                                                                     ? "active"
                                                                     : ""
                                                             }
@@ -973,10 +972,10 @@ Please share the best package options and next steps.`;
                                                             type="button"
                                                             className={
                                                                 !form.flexible &&
-                                                                form.date ===
-                                                                addDays(
-                                                                    30
-                                                                )
+                                                                    form.date ===
+                                                                    addDays(
+                                                                        30
+                                                                    )
                                                                     ? "active"
                                                                     : ""
                                                             }
@@ -1334,7 +1333,7 @@ Please share the best package options and next steps.`;
                                                                         }
                                                                         className={
                                                                             form.style ===
-                                                                            item
+                                                                                item
                                                                                 ? "active"
                                                                                 : ""
                                                                         }
@@ -1405,7 +1404,7 @@ Please share the best package options and next steps.`;
                                                                         }
                                                                         className={
                                                                             form.hotel ===
-                                                                            item
+                                                                                item
                                                                                 ? "active"
                                                                                 : ""
                                                                         }
