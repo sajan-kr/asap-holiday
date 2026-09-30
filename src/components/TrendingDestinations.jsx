@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import "./TrendingDestinations.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import {
-  Navigation,
-} from "swiper/modules";
-
+import { Navigation, } from "swiper/modules";
 import { Link } from "react-router-dom";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
-/* =========================
-   INDIA DATA
-========================= */
+/* ======== INDIA DATA ======= */
 
 const indiaData = [
   {
@@ -23,8 +15,7 @@ const indiaData = [
     title: "Himachal\nPradesh",
     location: "India",
     price: "₹64,000",
-    image:
-      "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -33,8 +24,7 @@ const indiaData = [
     title: "Ladakh",
     location: "India",
     price: "₹58,000",
-    image:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -43,8 +33,7 @@ const indiaData = [
     title: "Nepal",
     location: "Nepal",
     price: "₹73,500",
-    image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -53,8 +42,7 @@ const indiaData = [
     title: "Sikkim",
     location: "India",
     price: "₹73,500",
-    image:
-      "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
 
   {
@@ -63,8 +51,7 @@ const indiaData = [
     title: "Kailash\nMansarovar",
     location: "Tibet",
     price: "₹64,000",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -73,8 +60,7 @@ const indiaData = [
     title: "Bhutan",
     location: "Bhutan",
     price: "₹55,000",
-    image:
-      "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -83,8 +69,7 @@ const indiaData = [
     title: "Goa",
     location: "India",
     price: "₹42,000",
-    image:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -93,8 +78,7 @@ const indiaData = [
     title: "Kerala",
     location: "India",
     price: "₹68,000",
-    image:
-      "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -103,8 +87,7 @@ const indiaData = [
     title: "Kashmir",
     location: "India",
     price: "₹92,000",
-    image:
-      "https://images.pexels.com/photos/5205097/pexels-photo-5205097.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.pexels.com/photos/5205097/pexels-photo-5205097.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
 
   {
@@ -113,14 +96,11 @@ const indiaData = [
     title: "Andaman",
     location: "India",
     price: "₹88,000",
-    image:
-      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
-/* =========================
-   INTERNATIONAL DATA
-========================= */
+/* ======= INTERNATIONAL DATA ====== */
 
 const internationalData = [
   {
@@ -129,8 +109,7 @@ const internationalData = [
     title: "Bali",
     location: "Indonesia",
     price: "₹89,000",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -139,8 +118,7 @@ const internationalData = [
     title: "Dubai",
     location: "UAE",
     price: "₹1,20,000",
-    image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -149,8 +127,7 @@ const internationalData = [
     title: "Maldives",
     location: "Maldives",
     price: "₹1,50,000",
-    image:
-      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -159,8 +136,7 @@ const internationalData = [
     title: "Thailand",
     location: "Thailand",
     price: "₹78,000",
-    image:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -169,8 +145,7 @@ const internationalData = [
     title: "Switzerland",
     location: "Europe",
     price: "₹2,10,000",
-    image:
-      "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -179,8 +154,7 @@ const internationalData = [
     title: "Singapore",
     location: "Singapore",
     price: "₹95,000",
-    image:
-      "https://images.unsplash.com/photo-1496939376851-89342e90adcd?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1496939376851-89342e90adcd?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -189,8 +163,7 @@ const internationalData = [
     title: "Paris",
     location: "France",
     price: "₹1,85,000",
-    image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -199,8 +172,7 @@ const internationalData = [
     title: "Turkey",
     location: "Turkey",
     price: "₹1,10,000",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -209,8 +181,7 @@ const internationalData = [
     title: "Vietnam",
     location: "Vietnam",
     price: "₹82,000",
-    image:
-      "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
@@ -219,8 +190,7 @@ const internationalData = [
     title: "Japan",
     location: "Japan",
     price: "₹2,40,000",
-    image:
-      "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -237,9 +207,7 @@ const TrendingDestinations = () => {
   return (
 
     <section className="trending-section">
-
       <div className="container">
-
         <div className="trending-top">
 
           <h2>
@@ -248,8 +216,7 @@ const TrendingDestinations = () => {
 
           <div className="tabs">
 
-            <button
-              className={
+            <button className={
                 activeTab === "india"
                   ? "active"
                   : ""
@@ -264,7 +231,7 @@ const TrendingDestinations = () => {
             <button
               className={
                 activeTab ===
-                "international"
+                  "international"
                   ? "active"
                   : ""
               }
@@ -357,9 +324,7 @@ const TrendingDestinations = () => {
                               line,
                               index
                             ) => (
-                              <span
-                                key={index}
-                              >
+                              <span key={index} >
                                 {line}
                                 <br />
                               </span>
@@ -375,41 +340,26 @@ const TrendingDestinations = () => {
                     </div>
 
                     <div className="hover-content">
-
                       <div className="price-content">
-
                         <span>
                           Starting From
                         </span>
-
                         <h4>
                           {item.price}
                         </h4>
-
                       </div>
-
                       <button>
                         ↗
                       </button>
-
                     </div>
-
                   </div>
-
                 </div>
-
               </Link>
-
             </SwiperSlide>
-
           ))}
-
         </Swiper>
-
       </div>
-
     </section>
-
   );
 };
 
