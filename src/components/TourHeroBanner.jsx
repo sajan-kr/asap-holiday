@@ -1,291 +1,669 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./TourHeroBanner.css";
 
 import TourBookingCard from "./TourBookingCard";
-import TourFeatureBar from "./TourFeatureBar";
 
-import { FaStar, FaMapMarkerAlt, FaClock, FaDownload, FaPlay, FaUsers, FaChevronRight, FaTimes, FaCheckCircle, } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaChevronRight,
+  FaClock,
+  FaDownload,
+  FaHeart,
+  FaHotel,
+  FaMapMarkerAlt,
+  FaPlay,
+  FaRegHeart,
+  FaShareAlt,
+  FaStar,
+  FaTimes,
+  FaUsers,
+  FaUtensils,
+} from "react-icons/fa";
+
 import { generateBrochure } from "../utils/generateBrochure";
 
 const TourHeroBanner = ({ tour }) => {
+  const [liked, setLiked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
+  const [shared, setShared] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+
+  if (!tour) return null;
+
+  const {
+    title = "Discover Your Next Adventure",
+    image = "",
+    video = "",
+    price = "₹0",
+    description = "",
+    rating = "4.8",
+    reviews = "120+",
+    location = "International Destination",
+    duration = "6 Days / 5 Nights",
+    groupSize = "2 - 20 People",
+    category = "International Tour",
+    badge = "Popular Choice",
+    hotel = "5 Star",
+    meals = "Included",
+  } = tour;
+
+  /* =========================================================
+     BOOKING
+  ========================================================= */
+
+  const openBooking = () => {
+    const booking =
+      document.getElementById("bookingSidebar") ||
+      document.getElementById("tour-booking-area");
+
+    if (booking) {
+      booking.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    } else {
+      setShowBooking(true);
+    }
+  };
+
+  /* =========================================================
+     SHARE
+  ========================================================= */
+
+  const handleShare = async () => {
+    const url = window.location.href;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title,
+          text: `Explore ${title}`,
+          url,
+        });
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(url);
+
+        setShared(true);
+
+        setTimeout(() => {
+          setShared(false);
+        }, 1800);
+      }
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        console.error("Share error:", error);
+      }
+    }
+  };
+
+  /* =========================================================
+     BROCHURE
+  ========================================================= */
+
+  const handleBrochure = async () => {
+    if (downloading) return;
+
+    try {
+      setDownloading(true);
+
+      await Promise.resolve(
+        generateBrochure(tour)
+      );
+    } catch (error) {
+      console.error("Brochure error:", error);
+    } finally {
+      setDownloading(false);
+    }
+  };
+
+  /* =========================================================
+     ESCAPE KEY
+  ========================================================= */
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setShowVideo(false);
+        setShowBooking(false);
+      }
+    };
+
+    window.addEventListener(
+      "keydown",
+      handleEscape
+    );
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        handleEscape
+      );
+    };
+  }, []);
+
+  /* =========================================================
+     BODY SCROLL LOCK
+  ========================================================= */
+
+  useEffect(() => {
+    const locked =
+      showVideo || showBooking;
+
+    document.body.style.overflow =
+      locked ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showVideo, showBooking]);
+
+  /* =========================================================
+     TOUR FACTS
+  ========================================================= */
+
+  const tourFacts = [
+    {
+      icon: <FaClock />,
+      label: "Duration",
+      value: duration,
+    },
+    {
+      icon: <FaUsers />,
+      label: "Group Size",
+      value: groupSize,
+    },
+    {
+      icon: <FaHotel />,
+      label: "Stay",
+      value: hotel,
+    },
+    {
+      icon: <FaUtensils />,
+      label: "Meals",
+      value: meals,
+    },
+  ];
 
   return (
     <>
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section
-        className="tourHeroBanner"
+        className="asapTourHero"
         style={{
-          backgroundImage: `url(${tour.image})`,
+          "--tour-image": `url("${image}")`,
         }}
       >
-        <div className="tourHeroOverlay">
 
-          <div className="tourHeroContent">
+        {/* Background */}
 
-            <div className="tourHeroGrid">
+        <div className="asapHeroImage" />
 
-              {/* LEFT CONTENT */}
+        <div className="asapHeroOverlay" />
 
-              <div className="tourHeroLeft">
 
-                {/* Breadcrumb */}
+        {/* ===================================================
+            HERO HEADER
+        =================================================== */}
 
-                <div className="tourBreadcrumbHero">
+        <header className="asapHeroHeader">
 
-                  <Link to="/">
-                    Home
-                  </Link>
+          <div className="asapHeroContainer">
 
-                  <FaChevronRight />
+            <div className="asapBreadcrumb">
 
-                  <Link to="/tours">
-                    International Tours
-                  </Link>
+              <Link to="/">
+                Home
+              </Link>
 
-                  <FaChevronRight />
+              <FaChevronRight />
 
-                  <Link to={`/tours/${tour.slug}`}>
-                    {tour.location}
-                  </Link>
+              <Link to="/tours">
+                Tours
+              </Link>
 
-                  <FaChevronRight />
+              <FaChevronRight />
 
-                  <span className="activeBreadcrumb">
-                    {tour.title}
+              <span>
+                {location}
+              </span>
+
+            </div>
+
+
+            <div className="asapHeroHeaderActions">
+
+              {/* Wishlist */}
+
+              <button
+                type="button"
+                className={`heroIconButton ${
+                  liked ? "is-liked" : ""
+                }`}
+                onClick={() =>
+                  setLiked((value) => !value)
+                }
+                aria-label="Add to wishlist"
+              >
+
+                {liked ? (
+                  <FaHeart />
+                ) : (
+                  <FaRegHeart />
+                )}
+
+              </button>
+
+
+              {/* Share */}
+
+              <button
+                type="button"
+                className="heroIconButton"
+                onClick={handleShare}
+                aria-label="Share tour"
+              >
+
+                {shared ? (
+                  <span className="shareSuccess">
+                    ✓
+                  </span>
+                ) : (
+                  <FaShareAlt />
+                )}
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </header>
+
+
+        {/* ===================================================
+            HERO MAIN
+        =================================================== */}
+
+        <div className="asapHeroContainer">
+
+          <div className="asapHeroMain">
+
+
+            {/* =================================================
+                LEFT CONTENT
+            ================================================= */}
+
+            <div className="asapHeroContent">
+
+              <div className="heroCategory">
+
+                <span className="categoryLine" />
+
+                <span>
+                  {category}
+                </span>
+
+                {badge && (
+                  <b>
+                    {badge}
+                  </b>
+                )}
+
+              </div>
+
+
+              <h1>
+                {title}
+              </h1>
+
+
+              <div className="heroLocation">
+
+                <span className="locationIcon">
+                  <FaMapMarkerAlt />
+                </span>
+
+                <span>
+                  {location}
+                </span>
+
+              </div>
+
+
+              <p className="heroDescription">
+
+                {description ||
+                  "Discover remarkable places, memorable experiences and carefully selected stays with a holiday planned around the way you want to travel."}
+
+              </p>
+
+
+              {/* Rating */}
+
+              <div className="heroReview">
+
+                <span className="heroReviewStar">
+                  <FaStar />
+                </span>
+
+                <strong>
+                  {rating}
+                </strong>
+
+                <span>
+                  {reviews} reviews
+                </span>
+
+              </div>
+
+
+              {/* CTA Buttons */}
+
+              <div className="heroButtons">
+
+                <button
+                  type="button"
+                  className="heroMainButton"
+                  onClick={openBooking}
+                >
+
+                  <span>
+                    Check Availability
                   </span>
 
-                </div>
+                  <FaArrowRight />
 
-                {/* Badge */}
+                </button>
 
-                <div className="tourTopBadge">
 
-                  <span className="tourBadge">
+                {video && (
+                  <button
+                    type="button"
+                    className="heroWatchButton"
+                    onClick={() =>
+                      setShowVideo(true)
+                    }
+                  >
 
-                    ⭐ Best Seller
+                    <span className="watchIcon">
+                      <FaPlay />
+                    </span>
 
-                  </span>
+                    <span>
+                      Watch Experience
+                    </span>
 
-                </div>
+                  </button>
+                )}
 
-                {/* Heading */}
+              </div>
 
-                <h1 className="tourHeroTitle">
 
-                  {tour.title}
+              {/* Brochure */}
 
-                </h1>
+              <button
+                type="button"
+                className="heroDownload"
+                onClick={handleBrochure}
+                disabled={downloading}
+              >
 
-                {/* Price */}
+                <FaDownload />
 
-                <div className="tourPriceRow">
+                <span>
+                  {downloading
+                    ? "Preparing..."
+                    : "Download itinerary"}
+                </span>
 
-                  <span className="priceLabel">
+                <i />
 
-                    Starting From
+                <small>
+                  {duration}
+                </small>
 
+              </button>
+
+            </div>
+
+
+            {/* =================================================
+                BOOKING CARD
+            ================================================= */}
+
+            <aside className="heroBookingCard">
+
+              <div className="heroBookingTop">
+
+                <div>
+
+                  <span>
+                    PLAN YOUR TRIP
                   </span>
 
                   <h2>
-
-                    {tour.price}
-
+                    Make it yours
                   </h2>
 
-                  <small>
-
-                    Per Person
-
-                  </small>
-
                 </div>
 
-                {/* Description */}
 
-                <p className="tourDescription">
+                <div className="heroBookingRating">
 
-                  {tour.description}
+                  <FaStar />
 
-                </p>
-
-                {/* Information Cards */}
-
-                <div className="tourInfoCards">
-
-                  <div className="infoCard">
-
-                    <FaStar />
-
-                    <div>
-
-                      <strong>
-
-                        {tour.rating}
-
-                      </strong>
-
-                      <span>
-
-                        {tour.reviews} Reviews
-
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                  <div className="infoCard">
-
-                    <FaMapMarkerAlt />
-
-                    <div>
-
-                      <strong>
-
-                        Destination
-
-                      </strong>
-
-                      <span>
-
-                        {tour.location}
-
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                  <div className="infoCard">
-
-                    <FaClock />
-
-                    <div>
-
-                      <strong>
-
-                        Duration
-
-                      </strong>
-
-                      <span>
-
-                        {tour.duration}
-
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                  <div className="infoCard">
-
-                    <FaUsers />
-
-                    <div>
-
-                      <strong>
-
-                        Group Size
-
-                      </strong>
-
-                      <span>
-
-                        {tour.groupSize || "2 - 20 People"}
-
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                {/* Trust Row */}
-
-                <div className="tourTrustRow">
-
-                  <div className="trustItem">
-
-                    <FaCheckCircle />
-
-                    <span>Best Price Guarantee</span>
-
-                  </div>
-
-                  <div className="trustItem">
-
-                    <FaCheckCircle />
-
-                    <span>Instant Confirmation</span>
-
-                  </div>
-
-                  <div className="trustItem">
-
-                    <FaCheckCircle />
-
-                    <span>24×7 Travel Support</span>
-
-                  </div>
-
-                </div>
-
-                {/* Buttons */}
-
-                <div className="heroButtons">
-
-                  <button
-                    className="primaryBtn"
-                    onClick={() => {
-                      const booking = document.getElementById("bookingSidebar");
-
-                      if (booking) {
-                        booking.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
-                      }
-                    }}
-                  >
-                    Book Now
-                  </button>
-
-                  <button
-                    className="secondaryBtn"
-                    onClick={() => generateBrochure(tour)}
-                  >
-                    <FaDownload />
-                    Download Brochure
-                  </button>
-
-                  <button
-                    className="videoBtn"
-                    onClick={() => {
-                      console.log("Watch Video clicked");
-                      console.log("Video Path:", tour.video);
-                      setShowVideo(true);
-                    }}
-                  >
-                    <FaPlay />
-                    Watch Video
-                  </button>
+                  <strong>
+                    {rating}
+                  </strong>
 
                 </div>
 
               </div>
 
-              {/* RIGHT SIDE */}
 
-              <div className="tourHeroRight">
+              <div className="heroBookingImage">
 
-                <TourBookingCard
-                  tour={tour}
+                <img
+                  src={image}
+                  alt={title}
                 />
 
+                <div className="heroBookingImageOverlay" />
+
+
+                {video && (
+                  <button
+                    type="button"
+                    className="heroBookingPlay"
+                    onClick={() =>
+                      setShowVideo(true)
+                    }
+                    aria-label="Watch video"
+                  >
+
+                    <FaPlay />
+
+                  </button>
+                )}
+
+
+                <div className="heroBookingPlace">
+
+                  <FaMapMarkerAlt />
+
+                  <span>
+                    {location}
+                  </span>
+
+                </div>
+
               </div>
+
+
+              <div className="heroBookingBody">
+
+                <div className="heroPrice">
+
+                  <span>
+                    Starting from
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      {price}
+                    </strong>
+
+                    <small>
+                      / person
+                    </small>
+
+                  </div>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  className="heroBookingButton"
+                  onClick={openBooking}
+                >
+
+                  <span>
+                    Start Planning
+                  </span>
+
+                  <FaArrowRight />
+
+                </button>
+
+
+                <p>
+                  No payment required to check availability
+                </p>
+
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          PREMIUM FACTS RAIL
+      ===================================================== */}
+
+      <section className="tourFactsSection">
+
+        <div className="asapHeroContainer">
+
+          <div className="tourFactsRail">
+
+            {tourFacts.map((fact) => (
+
+              <div
+                className="tourFact"
+                key={fact.label}
+              >
+
+                <div className="tourFactIcon">
+                  {fact.icon}
+                </div>
+
+
+                <div className="tourFactContent">
+
+                  <span>
+                    {fact.label}
+                  </span>
+
+                  <strong>
+                    {fact.value}
+                  </strong>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          BOOKING MODAL
+      ===================================================== */}
+
+      {showBooking && (
+
+        <div
+          className="heroModalBackdrop"
+          onClick={() =>
+            setShowBooking(false)
+          }
+        >
+
+          <div
+            className="heroBookingDrawer"
+            onClick={(event) =>
+              event.stopPropagation()
+            }
+          >
+
+            <div className="drawerHandle" />
+
+
+            <div className="drawerHeader">
+
+              <div>
+
+                <span>
+                  ASAP HOLIDAYS
+                </span>
+
+                <h2>
+                  Plan your trip
+                </h2>
+
+              </div>
+
+
+              <button
+                type="button"
+                onClick={() =>
+                  setShowBooking(false)
+                }
+                aria-label="Close"
+              >
+
+                <FaTimes />
+
+              </button>
+
+            </div>
+
+
+            <div
+              className="drawerContent"
+              id="tour-booking-area"
+            >
+
+              <TourBookingCard
+                tour={tour}
+              />
 
             </div>
 
@@ -293,43 +671,48 @@ const TourHeroBanner = ({ tour }) => {
 
         </div>
 
-        {/* Floating Feature Bar */}
+      )}
 
-        <TourFeatureBar
-          tour={tour}
-        />
 
-      </section>
-
-      {/* ===========================
+      {/* =====================================================
           VIDEO MODAL
-      =========================== */}
+      ===================================================== */}
 
-      {showVideo && (
+      {showVideo && video && (
 
         <div
-          className="videoModal"
-          onClick={() => setShowVideo(false)}
+          className="heroVideoBackdrop"
+          onClick={() =>
+            setShowVideo(false)
+          }
         >
 
           <div
-            className="videoBox"
-            onClick={(e) => e.stopPropagation()}
+            className="heroVideoModal"
+            onClick={(event) =>
+              event.stopPropagation()
+            }
           >
 
             <button
-              className="closeVideo"
-              onClick={() => setShowVideo(false)}
+              type="button"
+              className="videoCloseButton"
+              onClick={() =>
+                setShowVideo(false)
+              }
+              aria-label="Close video"
             >
 
               <FaTimes />
 
             </button>
 
+
             <video
-              src={tour.video}
+              src={video}
               controls
               autoPlay
+              playsInline
             />
 
           </div>
@@ -337,6 +720,41 @@ const TourHeroBanner = ({ tour }) => {
         </div>
 
       )}
+
+
+      {/* =====================================================
+          MOBILE STICKY CTA
+      ===================================================== */}
+
+      <div className="mobileHeroCTA">
+
+        <div>
+
+          <span>
+            Starting from
+          </span>
+
+          <strong>
+            {price}
+          </strong>
+
+        </div>
+
+
+        <button
+          type="button"
+          onClick={() =>
+            setShowBooking(true)
+          }
+        >
+
+          Check Availability
+
+          <FaArrowRight />
+
+        </button>
+
+      </div>
 
     </>
   );
