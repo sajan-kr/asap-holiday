@@ -227,13 +227,11 @@ const TourHeroBanner = ({ tour }) => {
                 <span>
                   {category}
                 </span>
-
                 {badge && (
                   <b>
                     {badge}
                   </b>
                 )}
-
               </div>
 
               <h1>
@@ -244,12 +242,10 @@ const TourHeroBanner = ({ tour }) => {
                 <span className="locationIcon">
                   <FaMapMarkerAlt />
                 </span>
-
                 <span>
                   {location}
                 </span>
               </div>
-
               <p className="heroDescription">
                 {description ||
                   "Discover remarkable places, memorable experiences and carefully selected stays with a holiday planned around the way you want to travel."}
@@ -261,11 +257,9 @@ const TourHeroBanner = ({ tour }) => {
                 <span className="heroReviewStar">
                   <FaStar />
                 </span>
-
                 <strong>
                   {rating}
                 </strong>
-
                 <span>
                   {reviews} reviews
                 </span>
@@ -274,11 +268,9 @@ const TourHeroBanner = ({ tour }) => {
               {/* CTA Buttons */}
 
               <div className="heroButtons">
-
                 <button type="button" className="heroMainButton" onClick={openBooking}>
                   <span> Check Availability </span> <FaArrowRight />
                 </button>
-
                 {video && (
                   <button type="button" className="heroWatchButton" onClick={() => setShowVideo(true)}>
                     <span className="watchIcon">
@@ -289,7 +281,6 @@ const TourHeroBanner = ({ tour }) => {
                     </span>
                   </button>
                 )}
-
               </div>
 
               {/* Brochure */}
@@ -316,7 +307,6 @@ const TourHeroBanner = ({ tour }) => {
                     Make it yours
                   </h2>
                 </div>
-
                 <div className="heroBookingRating">
                   <FaStar />
                   <strong>
@@ -324,17 +314,14 @@ const TourHeroBanner = ({ tour }) => {
                   </strong>
                 </div>
               </div>
-
               <div className="heroBookingImage">
                 <img src={image} alt={title} />
                 <div className="heroBookingImageOverlay" />
-
                 {video && (
                   <button type="button" className="heroBookingPlay" onClick={() => setShowVideo(true)} aria-label="Watch video">
                     <FaPlay />
                   </button>
                 )}
-
                 <div className="heroBookingPlace">
                   <FaMapMarkerAlt />
                   <span>
@@ -342,7 +329,6 @@ const TourHeroBanner = ({ tour }) => {
                   </span>
                 </div>
               </div>
-
               <div className="heroBookingBody">
                 <div className="heroPrice">
                   <span>
@@ -380,7 +366,6 @@ const TourHeroBanner = ({ tour }) => {
                 <div className="tourFactIcon">
                   {fact.icon}
                 </div>
-
                 <div className="tourFactContent">
                   <span>
                     {fact.label}
@@ -410,12 +395,10 @@ const TourHeroBanner = ({ tour }) => {
                   Plan your trip
                 </h2>
               </div>
-
               <button type="button" onClick={() => setShowBooking(false)} aria-label="Close">
                 <FaTimes />
               </button>
             </div>
-
             <div className="drawerContent" id="tour-booking-area">
               <TourBookingCard tour={tour} />
             </div>
