@@ -1,26 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./TourHeroBanner.css";
-
 import TourBookingCard from "./TourBookingCard";
-
 import {
-  FaArrowRight,
-  FaChevronRight,
-  FaClock,
-  FaDownload,
-  FaHeart,
-  FaHotel,
-  FaMapMarkerAlt,
-  FaPlay,
-  FaRegHeart,
-  FaShareAlt,
-  FaStar,
-  FaTimes,
-  FaUsers,
-  FaUtensils,
+  FaArrowRight, FaChevronRight, FaClock, FaDownload, FaHeart, FaHotel, FaMapMarkerAlt, FaPlay, FaRegHeart,
+  FaShareAlt, FaStar, FaTimes, FaUsers, FaUtensils,
 } from "react-icons/fa";
-
 import { generateBrochure } from "../utils/generateBrochure";
 
 const TourHeroBanner = ({ tour }) => {
@@ -49,9 +34,7 @@ const TourHeroBanner = ({ tour }) => {
     meals = "Included",
   } = tour;
 
-  /* =========================================================
-     BOOKING
-  ========================================================= */
+  /* ========== BOOKING ========= */
 
   const openBooking = () => {
     const booking =
@@ -68,9 +51,7 @@ const TourHeroBanner = ({ tour }) => {
     }
   };
 
-  /* =========================================================
-     SHARE
-  ========================================================= */
+  /* ========== SHARE ========= */
 
   const handleShare = async () => {
     const url = window.location.href;
@@ -98,9 +79,7 @@ const TourHeroBanner = ({ tour }) => {
     }
   };
 
-  /* =========================================================
-     BROCHURE
-  ========================================================= */
+  /* ========== BROCHURE ========= */
 
   const handleBrochure = async () => {
     if (downloading) return;
@@ -118,9 +97,7 @@ const TourHeroBanner = ({ tour }) => {
     }
   };
 
-  /* =========================================================
-     ESCAPE KEY
-  ========================================================= */
+  /* ======== ESCAPE KEY ========== */
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -143,9 +120,7 @@ const TourHeroBanner = ({ tour }) => {
     };
   }, []);
 
-  /* =========================================================
-     BODY SCROLL LOCK
-  ========================================================= */
+  /* ========== BODY SCROLL LOCK =========== */
 
   useEffect(() => {
     const locked =
@@ -159,9 +134,7 @@ const TourHeroBanner = ({ tour }) => {
     };
   }, [showVideo, showBooking]);
 
-  /* =========================================================
-     TOUR FACTS
-  ========================================================= */
+  /* ======== TOUR FACTS ======= */
 
   const tourFacts = [
     {
@@ -188,34 +161,20 @@ const TourHeroBanner = ({ tour }) => {
 
   return (
     <>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* ========== HERO ========= */}
 
-      <section
-        className="asapTourHero"
-        style={{
-          "--tour-image": `url("${image}")`,
-        }}
-      >
+      <section className="asapTourHero" style={{ "--tour-image": `url("${image}")`, }}>
 
         {/* Background */}
 
         <div className="asapHeroImage" />
-
         <div className="asapHeroOverlay" />
 
-
-        {/* ===================================================
-            HERO HEADER
-        =================================================== */}
+        {/* ========= HERO HEADER ======== */}
 
         <header className="asapHeroHeader">
-
           <div className="asapHeroContainer">
-
             <div className="asapBreadcrumb">
-
               <Link to="/">
                 Home
               </Link>
@@ -231,24 +190,17 @@ const TourHeroBanner = ({ tour }) => {
               <span>
                 {location}
               </span>
-
             </div>
-
 
             <div className="asapHeroHeaderActions">
 
               {/* Wishlist */}
 
-              <button
-                type="button"
-                className={`heroIconButton ${
-                  liked ? "is-liked" : ""
-                }`}
+              <button type="button" className={`heroIconButton ${liked ? "is-liked" : ""}`}
                 onClick={() =>
                   setLiked((value) => !value)
                 }
-                aria-label="Add to wishlist"
-              >
+                aria-label="Add to wishlist">
 
                 {liked ? (
                   <FaHeart />
@@ -258,16 +210,9 @@ const TourHeroBanner = ({ tour }) => {
 
               </button>
 
-
               {/* Share */}
 
-              <button
-                type="button"
-                className="heroIconButton"
-                onClick={handleShare}
-                aria-label="Share tour"
-              >
-
+              <button type="button" className="heroIconButton" onClick={handleShare} aria-label="Share tour">
                 {shared ? (
                   <span className="shareSuccess">
                     ✓
@@ -275,35 +220,21 @@ const TourHeroBanner = ({ tour }) => {
                 ) : (
                   <FaShareAlt />
                 )}
-
               </button>
-
             </div>
-
           </div>
-
         </header>
 
-
-        {/* ===================================================
-            HERO MAIN
-        =================================================== */}
+        {/* ========= HERO MAIN ========== */}
 
         <div className="asapHeroContainer">
-
           <div className="asapHeroMain">
 
-
-            {/* =================================================
-                LEFT CONTENT
-            ================================================= */}
+            {/* ========= LEFT CONTENT ======== */}
 
             <div className="asapHeroContent">
-
               <div className="heroCategory">
-
                 <span className="categoryLine" />
-
                 <span>
                   {category}
                 </span>
@@ -316,14 +247,11 @@ const TourHeroBanner = ({ tour }) => {
 
               </div>
 
-
               <h1>
                 {title}
               </h1>
 
-
               <div className="heroLocation">
-
                 <span className="locationIcon">
                   <FaMapMarkerAlt />
                 </span>
@@ -331,22 +259,16 @@ const TourHeroBanner = ({ tour }) => {
                 <span>
                   {location}
                 </span>
-
               </div>
 
-
               <p className="heroDescription">
-
                 {description ||
                   "Discover remarkable places, memorable experiences and carefully selected stays with a holiday planned around the way you want to travel."}
-
               </p>
-
 
               {/* Rating */}
 
               <div className="heroReview">
-
                 <span className="heroReviewStar">
                   <FaStar />
                 </span>
@@ -358,38 +280,18 @@ const TourHeroBanner = ({ tour }) => {
                 <span>
                   {reviews} reviews
                 </span>
-
               </div>
-
 
               {/* CTA Buttons */}
 
               <div className="heroButtons">
 
-                <button
-                  type="button"
-                  className="heroMainButton"
-                  onClick={openBooking}
-                >
-
-                  <span>
-                    Check Availability
-                  </span>
-
-                  <FaArrowRight />
-
+                <button type="button" className="heroMainButton" onClick={openBooking}>
+                  <span> Check Availability </span> <FaArrowRight />
                 </button>
 
-
                 {video && (
-                  <button
-                    type="button"
-                    className="heroWatchButton"
-                    onClick={() =>
-                      setShowVideo(true)
-                    }
-                  >
-
+                  <button type="button" className="heroWatchButton" onClick={() => setShowVideo(true)}>
                     <span className="watchIcon">
                       <FaPlay />
                     </span>
@@ -397,239 +299,123 @@ const TourHeroBanner = ({ tour }) => {
                     <span>
                       Watch Experience
                     </span>
-
                   </button>
                 )}
 
               </div>
-
 
               {/* Brochure */}
 
-              <button
-                type="button"
-                className="heroDownload"
-                onClick={handleBrochure}
-                disabled={downloading}
-              >
-
+              <button type="button" className="heroDownload" onClick={handleBrochure} disabled={downloading}>
                 <FaDownload />
-
-                <span>
-                  {downloading
-                    ? "Preparing..."
-                    : "Download itinerary"}
-                </span>
-
+                <span> {downloading ? "Preparing..." : "Download itinerary"} </span>
                 <i />
-
                 <small>
                   {duration}
                 </small>
-
               </button>
-
             </div>
 
-
-            {/* =================================================
-                BOOKING CARD
-            ================================================= */}
+            {/* ======= BOOKING CARD ======= */}
 
             <aside className="heroBookingCard">
-
               <div className="heroBookingTop">
-
                 <div>
-
                   <span>
                     PLAN YOUR TRIP
                   </span>
-
                   <h2>
                     Make it yours
                   </h2>
-
                 </div>
 
-
                 <div className="heroBookingRating">
-
                   <FaStar />
-
                   <strong>
                     {rating}
                   </strong>
-
                 </div>
-
               </div>
 
-
               <div className="heroBookingImage">
-
-                <img
-                  src={image}
-                  alt={title}
-                />
-
+                <img src={image} alt={title} />
                 <div className="heroBookingImageOverlay" />
 
-
                 {video && (
-                  <button
-                    type="button"
-                    className="heroBookingPlay"
-                    onClick={() =>
-                      setShowVideo(true)
-                    }
-                    aria-label="Watch video"
-                  >
-
+                  <button type="button" className="heroBookingPlay" onClick={() => setShowVideo(true)} aria-label="Watch video">
                     <FaPlay />
-
                   </button>
                 )}
 
-
                 <div className="heroBookingPlace">
-
                   <FaMapMarkerAlt />
-
                   <span>
                     {location}
                   </span>
-
                 </div>
-
               </div>
 
-
               <div className="heroBookingBody">
-
                 <div className="heroPrice">
-
                   <span>
                     Starting from
                   </span>
-
                   <div>
-
                     <strong>
                       {price}
                     </strong>
-
                     <small>
                       / person
                     </small>
-
                   </div>
-
                 </div>
 
-
-                <button
-                  type="button"
-                  className="heroBookingButton"
-                  onClick={openBooking}
-                >
-
-                  <span>
-                    Start Planning
-                  </span>
-
-                  <FaArrowRight />
-
+                <button type="button" className="heroBookingButton" onClick={openBooking}>
+                  <span> Start Planning </span> <FaArrowRight />
                 </button>
-
 
                 <p>
                   No payment required to check availability
                 </p>
-
               </div>
-
             </aside>
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =====================================================
-          PREMIUM FACTS RAIL
-      ===================================================== */}
+      {/* ======== PREMIUM FACTS RAIL ======= */}
 
       <section className="tourFactsSection">
-
         <div className="asapHeroContainer">
-
           <div className="tourFactsRail">
-
             {tourFacts.map((fact) => (
-
-              <div
-                className="tourFact"
-                key={fact.label}
-              >
-
+              <div className="tourFact" key={fact.label}>
                 <div className="tourFactIcon">
                   {fact.icon}
                 </div>
 
-
                 <div className="tourFactContent">
-
                   <span>
                     {fact.label}
                   </span>
-
                   <strong>
                     {fact.value}
                   </strong>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =====================================================
-          BOOKING MODAL
-      ===================================================== */}
+      {/* ======== BOOKING MODAL ======== */}
 
       {showBooking && (
-
-        <div
-          className="heroModalBackdrop"
-          onClick={() =>
-            setShowBooking(false)
-          }
-        >
-
-          <div
-            className="heroBookingDrawer"
-            onClick={(event) =>
-              event.stopPropagation()
-            }
-          >
-
+        <div className="heroModalBackdrop" onClick={() => setShowBooking(false)}>
+          <div className="heroBookingDrawer" onClick={(event) => event.stopPropagation()}>
             <div className="drawerHandle" />
-
-
             <div className="drawerHeader">
-
               <div>
-
                 <span>
                   ASAP HOLIDAYS
                 </span>
@@ -637,99 +423,39 @@ const TourHeroBanner = ({ tour }) => {
                 <h2>
                   Plan your trip
                 </h2>
-
               </div>
 
-
-              <button
-                type="button"
-                onClick={() =>
-                  setShowBooking(false)
-                }
-                aria-label="Close"
-              >
-
+              <button type="button" onClick={() => setShowBooking(false)} aria-label="Close">
                 <FaTimes />
-
               </button>
-
             </div>
 
-
-            <div
-              className="drawerContent"
-              id="tour-booking-area"
-            >
-
-              <TourBookingCard
-                tour={tour}
-              />
-
+            <div className="drawerContent" id="tour-booking-area">
+              <TourBookingCard tour={tour}/>
             </div>
-
           </div>
-
         </div>
-
       )}
 
-
-      {/* =====================================================
-          VIDEO MODAL
-      ===================================================== */}
+      {/* ======== VIDEO MODAL ======= */}
 
       {showVideo && video && (
 
-        <div
-          className="heroVideoBackdrop"
-          onClick={() =>
-            setShowVideo(false)
-          }
-        >
-
-          <div
-            className="heroVideoModal"
-            onClick={(event) =>
-              event.stopPropagation()
-            }
-          >
-
-            <button
-              type="button"
-              className="videoCloseButton"
-              onClick={() =>
-                setShowVideo(false)
-              }
-              aria-label="Close video"
-            >
-
+        <div className="heroVideoBackdrop" onClick={() => setShowVideo(false)}>
+          <div className="heroVideoModal" onClick={(event) => event.stopPropagation()}>
+            <button type="button" className="videoCloseButton" onClick={() => setShowVideo(false)} aria-label="Close video">
               <FaTimes />
-
             </button>
-
-
-            <video
-              src={video}
-              controls
-              autoPlay
-              playsInline
-            />
-
+            <video src={video} controls autoPlay playsInline/>
           </div>
-
         </div>
-
       )}
 
-
-      {/* =====================================================
-          MOBILE STICKY CTA
-      ===================================================== */}
+      {/* ======== MOBILE STICKY CTA ======== */}
 
       <div className="mobileHeroCTA">
 
         <div>
-
           <span>
             Starting from
           </span>
@@ -737,25 +463,13 @@ const TourHeroBanner = ({ tour }) => {
           <strong>
             {price}
           </strong>
-
         </div>
 
-
-        <button
-          type="button"
-          onClick={() =>
-            setShowBooking(true)
-          }
-        >
-
+        <button type="button" onClick={() => setShowBooking(true)}>
           Check Availability
-
           <FaArrowRight />
-
         </button>
-
       </div>
-
     </>
   );
 };
