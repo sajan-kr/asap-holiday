@@ -31,7 +31,6 @@ const TrendingPackages = () => {
       <div className="container">
         <h2 className="section-title">Trending Packages</h2>
         <p className="section-subtitle">Most loved escapes...</p>
-
         <div className="packages-grid">
           {packages.map((pkg) => (
             <div key={pkg.id} className="package-card">
