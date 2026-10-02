@@ -343,7 +343,6 @@ const TourHeroBanner = ({ tour }) => {
                     </small>
                   </div>
                 </div>
-
                 <button type="button" className="heroBookingButton" onClick={openBooking}>
                   <span> Start Planning </span> <FaArrowRight />
                 </button>
