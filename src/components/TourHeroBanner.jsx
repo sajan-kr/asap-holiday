@@ -178,36 +178,25 @@ const TourHeroBanner = ({ tour }) => {
               <Link to="/">
                 Home
               </Link>
-
               <FaChevronRight />
-
               <Link to="/tours">
                 Tours
               </Link>
-
               <FaChevronRight />
-
               <span>
                 {location}
               </span>
             </div>
 
             <div className="asapHeroHeaderActions">
-
               {/* Wishlist */}
-
               <button type="button" className={`heroIconButton ${liked ? "is-liked" : ""}`}
-                onClick={() =>
-                  setLiked((value) => !value)
-                }
-                aria-label="Add to wishlist">
-
+                onClick={() => setLiked((value) => !value)} aria-label="Add to wishlist">
                 {liked ? (
                   <FaHeart />
                 ) : (
                   <FaRegHeart />
                 )}
-
               </button>
 
               {/* Share */}
@@ -295,7 +284,6 @@ const TourHeroBanner = ({ tour }) => {
                     <span className="watchIcon">
                       <FaPlay />
                     </span>
-
                     <span>
                       Watch Experience
                     </span>
@@ -373,7 +361,6 @@ const TourHeroBanner = ({ tour }) => {
                 <button type="button" className="heroBookingButton" onClick={openBooking}>
                   <span> Start Planning </span> <FaArrowRight />
                 </button>
-
                 <p>
                   No payment required to check availability
                 </p>
@@ -419,7 +406,6 @@ const TourHeroBanner = ({ tour }) => {
                 <span>
                   ASAP HOLIDAYS
                 </span>
-
                 <h2>
                   Plan your trip
                 </h2>
@@ -457,7 +443,6 @@ const TourHeroBanner = ({ tour }) => {
           <span>
             Starting from
           </span>
-
           <strong>
             {price}
           </strong>
