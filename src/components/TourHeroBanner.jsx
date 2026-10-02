@@ -431,7 +431,7 @@ const TourHeroBanner = ({ tour }) => {
             </div>
 
             <div className="drawerContent" id="tour-booking-area">
-              <TourBookingCard tour={tour}/>
+              <TourBookingCard tour={tour} />
             </div>
           </div>
         </div>
@@ -440,13 +440,12 @@ const TourHeroBanner = ({ tour }) => {
       {/* ======== VIDEO MODAL ======= */}
 
       {showVideo && video && (
-
         <div className="heroVideoBackdrop" onClick={() => setShowVideo(false)}>
           <div className="heroVideoModal" onClick={(event) => event.stopPropagation()}>
             <button type="button" className="videoCloseButton" onClick={() => setShowVideo(false)} aria-label="Close video">
               <FaTimes />
             </button>
-            <video src={video} controls autoPlay playsInline/>
+            <video src={video} controls autoPlay playsInline />
           </div>
         </div>
       )}
@@ -454,7 +453,6 @@ const TourHeroBanner = ({ tour }) => {
       {/* ======== MOBILE STICKY CTA ======== */}
 
       <div className="mobileHeroCTA">
-
         <div>
           <span>
             Starting from
@@ -464,7 +462,6 @@ const TourHeroBanner = ({ tour }) => {
             {price}
           </strong>
         </div>
-
         <button type="button" onClick={() => setShowBooking(true)}>
           Check Availability
           <FaArrowRight />
