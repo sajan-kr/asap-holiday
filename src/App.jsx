@@ -1,10 +1,18 @@
 import React from "react";
 
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 /* LAYOUT */
 
 import Layout from "./components/Layout";
+
+/* GLOBAL WHATSAPP EXPERT */
+
+import WhatsAppExpert from "./components/WhatsAppExpert";
 
 /* HOME COMPONENTS */
 
@@ -18,8 +26,8 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 
 /* NEW */
-import HolidayMemories from "./components/HolidayMemories";
 
+import HolidayMemories from "./components/HolidayMemories";
 
 /* PAGES */
 
@@ -30,16 +38,14 @@ import DestinationDetails from "./pages/DestinationDetails";
 
 import "./App.css";
 
+
 /* =========================
    HOME PAGE
 ========================= */
 
 function HomePage() {
-
   return (
-
     <>
-
       <Hero />
 
       <Partners />
@@ -54,59 +60,94 @@ function HomePage() {
 
       <WhyChooseUs />
 
-      {/* HOLIDAY MEMORIES - NEW VIDEO SECTION */}
+      {/* HOLIDAY MEMORIES */}
       <HolidayMemories />
 
       <Testimonials />
-
-      
-
     </>
-
   );
-
 }
 
-/* =========================  APP ========================= */
+
+/* =========================
+   APP
+========================= */
 
 function App() {
-
   return (
-
     <BrowserRouter>
+
+      {/* =================================
+          MAIN WEBSITE LAYOUT
+      ================================= */}
 
       <Layout>
 
         <Routes>
 
-          {/* HOME */}
+          {/* =========================
+              HOME
+          ========================= */}
 
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={<HomePage />}
+          />
 
-          {/* PACKAGE DETAILS */}
 
-          <Route path="/package/:slug" element={<PackageDetails />} />
+          {/* =========================
+              PACKAGE DETAILS
+          ========================= */}
 
-          {/* TOURS */}
+          <Route
+            path="/package/:slug"
+            element={<PackageDetails />}
+          />
 
-          <Route path="/tours" element={<Tours />} />
 
-          <Route path="/tours/:country" element={<Tours />} />
+          {/* =========================
+              TOURS
+          ========================= */}
 
-          <Route path="/tour/:slug" element={<TourDetails />} />
+          <Route
+            path="/tours"
+            element={<Tours />}
+          />
 
-          {/* DESTINATION DETAILS */}
+          <Route
+            path="/tours/:country"
+            element={<Tours />}
+          />
 
-          <Route path="/destination/:slug" element={<DestinationDetails />} />
+          <Route
+            path="/tour/:slug"
+            element={<TourDetails />}
+          />
+
+
+          {/* =========================
+              DESTINATION DETAILS
+          ========================= */}
+
+          <Route
+            path="/destination/:slug"
+            element={<DestinationDetails />}
+          />
 
         </Routes>
 
       </Layout>
 
+
+      {/* =================================
+          GLOBAL WHATSAPP TRAVEL EXPERT
+          Shows on ALL PAGES
+      ================================= */}
+
+      <WhatsAppExpert />
+
     </BrowserRouter>
-
   );
-
 }
 
 export default App;
