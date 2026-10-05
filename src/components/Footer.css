@@ -1,538 +1,289 @@
-/* =========================================================
-   ASAP HOLIDAYS
-   PREMIUM TRAVEL FOOTER
-========================================================= */
+/* ======== ASAP HOLIDAYS PREMIUM TRAVEL FOOTER ======== */
 
 .footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-
   color: #ffffff;
-
-  background:
-    radial-gradient(
-      circle at 90% 5%,
-      rgba(255, 126, 20, 0.10),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 5% 80%,
-      rgba(0, 126, 255, 0.06),
-      transparent 25%
-    ),
-    linear-gradient(
-      180deg,
-      #06131f 0%,
-      #04101a 48%,
-      #020a11 100%
-    );
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  background: radial-gradient(circle at 90% 5%, rgba(255, 126, 20, 0.10), transparent 25%),
+    radial-gradient(circle at 5% 80%, rgba(0, 126, 255, 0.06), transparent 25%),
+    linear-gradient(180deg, #06131f 0%, #04101a 48%, #020a11 100%);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* =========================================================
-   GLOBAL SVG FIX
-========================================================= */
+/* ======= GLOBAL SVG FIX ====== */
 
 .footer svg {
   display: inline-block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   overflow: visible !important;
-
   flex-shrink: 0;
-
   vertical-align: middle;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* ========= CONTAINER ======== */
 
 .footer .container {
-  width:
-    min(
-      1360px,
-      calc(100% - 60px)
-    );
-
+  width: min(1360px, calc(100% - 60px));
   margin: 0 auto;
-
   position: relative;
-
   z-index: 2;
 }
 
-
-/* =========================================================
-   TOP CTA
-========================================================= */
+/* ===== TOP CTA ===== */
 
 .footer-cta {
   position: relative;
-
   margin-top: 28px;
-
   padding: 25px 32px;
-
   border-radius: 18px;
-
   overflow: hidden;
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(255, 132, 20, 0.13),
-      rgba(8, 35, 57, 0.96) 38%,
-      rgba(5, 22, 36, 0.98)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,0.08);
-
-  box-shadow:
-    0 16px 35px
-    rgba(0,0,0,0.18);
+  background: linear-gradient(110deg, rgba(255, 132, 20, 0.13), rgba(8, 35, 57, 0.96) 38%, rgba(5, 22, 36, 0.98));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.18);
 }
 
 .footer-cta::before {
   content: "";
-
   position: absolute;
-
   width: 250px;
   height: 250px;
-
   top: -140px;
   right: -50px;
-
   border-radius: 50%;
-
-  background:
-    rgba(255,132,24,0.12);
-
-  filter:
-    blur(60px);
-
+  background: rgba(255,132,24,0.12);
+  filter: blur(60px);
   pointer-events: none;
 }
 
 .footer-cta-content {
   position: relative;
-
   z-index: 2;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 30px;
 }
 
-
-/* =========================================================
-   CTA TEXT
-========================================================= */
+/* ======= CTA TEXT ====== */
 
 .footer-cta-label {
   display: block;
-
   margin-bottom: 7px;
-
   color: #ff9b38;
-
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 1.8px;
   text-align: left;
 }
 
 .footer-cta h2 {
   margin: 0 0 5px;
-
   color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 27px;
-
   line-height: 1.2;
-
   font-weight: 700;
   text-align: left;
 }
 
 .footer-cta p {
   margin: 0;
-
-  color:
-    rgba(255,255,255,0.62);
-
+  color: rgba(255,255,255,0.62);
   font-size: 14px;
-
   line-height: 1.5;
   text-align: left;
 }
 
-
-/* =========================================================
-   CTA BUTTON
-========================================================= */
+/* ======== CTA BUTTON ======= */
 
 .footer-expert-btn {
   flex-shrink: 0;
-
   min-height: 46px;
-
   padding: 0 18px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 9px;
-
   border-radius: 8px;
-
   color: #ffffff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff921b,
-      #ff6900
-    );
-
+  background: linear-gradient(135deg, #ff921b, #ff6900);
   text-decoration: none;
-
   font-size: 14px;
-
   font-weight: 700;
-
-  box-shadow:
-    0 9px 20px
-    rgba(255,105,0,0.22);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 9px 20px rgba(255,105,0,0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer-expert-btn svg {
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   fill: currentColor;
 }
 
 .footer-expert-btn .footer-icon {
   width: 14px !important;
   height: 14px !important;
-
   color: #ffffff;
 }
 
 .footer-expert-btn .expert-arrow {
   width: 11px !important;
   height: 11px !important;
-
   color: #ffffff;
-
-  transition:
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .footer-expert-btn:hover {
   color: #ffffff;
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 13px 25px
-    rgba(255,105,0,0.30);
+  transform: translateY(-2px);
+  box-shadow: 0 13px 25px rgba(255,105,0,0.30);
 }
 
 .footer-expert-btn:hover .expert-arrow {
-  transform:
-    translateX(3px);
+  transform: translateX(3px);
 }
 
-
-/* =========================================================
-   MAIN FOOTER
-========================================================= */
+/* ========= MAIN FOOTER ======== */
 
 .footer-main {
   display: grid;
-
-  grid-template-columns:
-    1.35fr
-    0.8fr
-    1fr
-    1.45fr;
-
+  grid-template-columns: 1.35fr 0.8fr 1fr 1.45fr;
   gap: 0;
-
-  padding:
-    40px 0 34px;
+  padding: 40px 0 34px;
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
+/* ========= BRAND ======== */
 
 .footer-brand {
   padding-right: 55px;
-
-  border-right:
-    1px solid
-    rgba(255,255,255,0.07);
+  border-right: 1px solid rgba(255,255,255,0.07);
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
+/* ======= LOGO ====== */
 
 .footer-logo-wrapper {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 16px 10px;
-
   margin-bottom: 13px;
-
   border-radius: 9px;
-
   background: #ffffff;
-
-  box-shadow:
-    0 8px 22px
-    rgba(0,0,0,0.18);
-
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
   text-decoration: none;
-
-  transition:
-    transform 0.3s ease;
-    width: fit-content;
+  transition: transform 0.3s ease;
+  width: fit-content;
 }
 
 .footer-logo-wrapper:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .footer-logo {
   display: block;
-
   width: 155px;
-
   height: auto;
-
   max-height: 50px;
-
   object-fit: contain;
 }
 
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+/* ======== DESCRIPTION ======= */
 
 .footer-desc {
   max-width: 310px;
-
-  margin:
-    0 0 20px;
-
-  color:
-    rgba(255,255,255,0.58);
-
+  margin: 0 0 20px;
+  color: rgba(255,255,255,0.58);
   font-size: 14px;
-
   line-height: 1.5;
   text-align: left;
 }
 
-
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
+/* ========= SOCIAL ICONS ======== */
 
 .footer-socials {
   display: flex;
-
   align-items: center;
-
   gap: 8px;
 }
 
 .footer-socials a {
   width: 32px;
   height: 32px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 8px;
-
-  color:
-    rgba(255,255,255,0.85);
-
-  background:
-    rgba(255,255,255,0.055);
-
-  border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.07);
   font-size: 12px;
-
   text-decoration: none;
-
-  transition:
-    all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .footer-socials a svg {
   width: 13px !important;
   height: 13px !important;
-
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   fill: currentColor;
-
   color: currentColor;
 }
 
 .footer-socials a:hover {
   color: #ffffff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff941f,
-      #ff6800
-    );
-
-  border-color:
-    transparent;
-
-  transform:
-    translateY(-3px);
+  background: linear-gradient(135deg, #ff941f, #ff6800);
+  border-color: transparent;
+  transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   LINKS
-========================================================= */
+/* ======= LINKS ======= */
 
 .footer-links {
-  padding:
-    0 32px;
-
-  border-right:
-    1px solid
-    rgba(255,255,255,0.07);
+  padding: 0 32px;
+  border-right: 1px solid rgba(255,255,255,0.07);
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
+/* ======== CONTACT ======= */
 
 .footer-contact {
   padding-left: 32px;
 }
 
-
-/* =========================================================
-   HEADINGS
-========================================================= */
+/* ======== HEADINGS ======== */
 
 .footer-heading {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
-
   margin-bottom: 21px;
 }
 
 .heading-line {
   width: 24px;
-
   height: 2px;
-
   flex-shrink: 0;
-
   border-radius: 10px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ff941f,
-      #ff6b00
-    );
+  background: linear-gradient(90deg, #ff941f, #ff6b00);
 }
 
 .footer-heading h3 {
   margin: 0;
-
   color: #ffffff;
-
   font-size: 16px;
-
   font-weight: 700;
-
   line-height: 1.3;
 }
 
-
-/* =========================================================
-   LINKS LIST
-========================================================= */
+/* ======== LINKS LIST ======== */
 
 .footer-links ul {
   list-style: none;
-
   padding: 0;
-
   margin: 0;
 }
 
@@ -547,92 +298,53 @@
 
 .footer-links a {
   display: inline-flex;
-
   align-items: center;
-
   gap: 7px;
-
-  color:
-    rgba(255,255,255,0.68);
-
+  color: rgba(255,255,255,0.68);
   font-size: 14px;
-
   line-height: 1.4;
-
   text-decoration: none;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
-
 
 /* IMPORTANT: ARROW ALWAYS VISIBLE */
 
 .footer-links a svg {
   width: 10px !important;
   height: 10px !important;
-
   min-width: 8px;
-
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   color: #ff8618;
-
   fill: currentColor;
-
-  transform:
-    translateX(0);
-
-  transition:
-    transform 0.25s ease,
-    color 0.25s ease;
+  transform: translateX(0);
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .footer-links a:hover {
   color: #ffffff;
-
-  transform:
-    translateX(3px);
+  transform: translateX(3px);
 }
 
 .footer-links a:hover svg {
   color: #ffae55;
-
-  transform:
-    translateX(2px);
+  transform: translateX(2px);
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
+/* ======== CONTACT ======== */
 
 .contact-item {
   display: flex;
-
   align-items: flex-start;
-
   gap: 9px;
-
   margin-bottom: 12px;
-
-  color:
-    rgba(255,255,255,0.66);
-
+  color: rgba(255,255,255,0.66);
   font-size: 14px;
-
   line-height: 1.55;
-
   text-decoration: none;
-
-  transition:
-    color 0.25s ease;
-    text-align: left;
+  transition: color 0.25s ease;
+  text-align: left;
 }
 
 .contact-item:last-child {
@@ -643,41 +355,27 @@
   color: #ffffff;
 }
 
-
 /* IMPORTANT: CONTACT ICON */
 
 .contact-icon {
   width: 17px;
-
   min-width: 17px;
-
   height: 18px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   margin-top: 1px;
-
   color: #ff8618;
-
   font-size: 11px;
 }
 
 .contact-icon svg {
   width: 13px !important;
   height: 13px !important;
-
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   color: #ff8618;
-
   fill: currentColor;
 }
 
@@ -685,151 +383,85 @@
   max-width: 310px;
 }
 
-
-/* =========================================================
-   NEWSLETTER
-========================================================= */
+/* ======== NEWSLETTER ======= */
 
 .newsletter-box {
   position: relative;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 35px;
-
-  padding:
-    22px 25px;
-
+  padding: 22px 25px;
   margin-bottom: 27px;
-
   border-radius: 15px;
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(255,132,24,0.09),
-      rgba(255,255,255,0.035)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,0.07);
-
+  background: linear-gradient(110deg, rgba(255,132,24,0.09), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255,255,255,0.07);
   overflow: hidden;
 }
 
 .newsletter-box::after {
   content: "";
-
   position: absolute;
-
   width: 180px;
   height: 180px;
-
   right: -90px;
   bottom: -100px;
-
   border-radius: 50%;
-
-  background:
-    rgba(255,132,24,0.10);
-
-  filter:
-    blur(45px);
-
+  background: rgba(255,132,24,0.10);
+  filter: blur(45px);
   pointer-events: none;
 }
 
-
-/* =========================================================
-   NEWSLETTER INFO
-========================================================= */
+/* ======== NEWSLETTER INFO ======== */
 
 .newsletter-info {
   position: relative;
-
   z-index: 2;
-
   display: flex;
-
   align-items: center;
-
   gap: 14px;
-
   min-width: 0;
 }
 
 .newsletter-icon {
   width: 42px;
   height: 42px;
-
   min-width: 42px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 11px;
-
   color: #ff8a18;
-
-  background:
-    rgba(255,132,24,0.10);
-
-  border:
-    1px solid
-    rgba(255,132,24,0.16);
-
+  background: rgba(255,132,24,0.10);
+  border: 1px solid rgba(255,132,24,0.16);
   font-size: 15px;
 }
 
 .newsletter-icon svg {
   width: 15px !important;
   height: 15px !important;
-
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   color: #ff8a18;
-
   fill: currentColor;
 }
 
 .newsletter-label {
   display: block;
-
   margin-bottom: 3px;
-
-  color:
-    #ff9b38;
-
+  color: #ff9b38;
   font-size: 9px;
-
   font-weight: 700;
-
   letter-spacing: 1.5px;
   text-align: left;
 }
 
 .newsletter-info h3 {
-  margin:
-    0 0 3px;
-
+  margin: 0 0 3px;
   color: #ffffff;
-
   font-size: 17px;
-
   line-height: 1.3;
-
   font-weight: 700;
   text-align: left;
 }
@@ -837,312 +469,183 @@
 .newsletter-info p {
   margin: 0;
   text-align: left;
-
-  color:
-    rgba(255,255,255,0.52);
-
+  color: rgba(255,255,255,0.52);
   font-size: 14px;
-
   line-height: 1.5;
 }
 
-
-/* =========================================================
-   NEWSLETTER FORM
-========================================================= */
+/* ======== NEWSLETTER FORM ======= */
 
 .newsletter-form {
   position: relative;
-
   z-index: 2;
-
-  width:
-    min(450px, 100%);
-
+  width: min(450px, 100%);
   height: 46px;
-
   display: flex;
-
   align-items: center;
-
   padding: 4px;
-
   border-radius: 9px;
-
-  background:
-    rgba(255,255,255,0.96);
-
-  box-shadow:
-    0 7px 20px
-    rgba(0,0,0,0.14);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.14);
 }
 
 .newsletter-form input {
   flex: 1;
-
   min-width: 0;
-
   height: 100%;
-
-  padding:
-    0 14px;
-
+  padding: 0 14px;
   border: none;
-
   outline: none;
-
   background: transparent;
-
-  color:
-    #17212b;
-
+  color: #17212b;
   font-size: 11px;
 }
 
 .newsletter-form input::placeholder {
-  color:
-    #9299a1;
+  color: #9299a1;
 }
 
 .newsletter-form button {
   height: 38px;
-
-  padding:
-    0 15px;
-
+  padding: 0 15px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 7px;
-
   border: none;
-
   border-radius: 7px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff941f,
-      #ff6900
-    );
-
+  background: linear-gradient(135deg, #ff941f, #ff6900);
   color: #ffffff;
-
   font-size: 11px;
-
   font-weight: 700;
-
   cursor: pointer;
-
   white-space: nowrap;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .newsletter-form button svg {
   width: 10px !important;
   height: 10px !important;
-
   display: block !important;
-
   visibility: visible !important;
-
   opacity: 1 !important;
-
   color: #ffffff;
-
   fill: currentColor;
 }
 
 .newsletter-form button:hover {
-  transform:
-    translateY(-1px);
-
-  box-shadow:
-    0 5px 13px
-    rgba(255,105,0,0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 13px rgba(255,105,0,0.25);
 }
 
-
-/* =========================================================
-   PAYMENT
-========================================================= */
+/* ======== PAYMENT ======= */
 
 .payment-section {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 25px;
-
-  padding:
-    18px 0;
-
-  border-top:
-    1px solid
-    rgba(255,255,255,0.06);
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .payment-left {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
 }
 
 .payment-small {
-  color:
-    rgba(255,255,255,0.38);
-
+  color: rgba(255,255,255,0.38);
   font-size: 10px;
-
   letter-spacing: 1.2px;
-
   font-weight: 700;
 }
 
 .payment-title {
-  color:
-    rgba(255,255,255,0.72);
-
+  color: rgba(255,255,255,0.72);
   font-size: 12px;
-
   font-weight: 600;
 }
 
 .payment-methods {
   display: flex;
-
   align-items: center;
-
   gap: 6px;
 }
 
 .payment-card {
   width: 42px;
   height: 26px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 5px;
-
   background: #ffffff;
-
   overflow: hidden;
-
-  transition:
-    transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .payment-card:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .payment-card img {
   display: block;
-
   width: auto;
-
   height: 18px;
-
   max-width: 35px;
-
   object-fit: contain;
 }
 
-
-/* =========================================================
-   BOTTOM
-========================================================= */
+/* ======= BOTTOM ======= */
 
 .footer-bottom {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 20px;
-
   min-height: 50px;
-
-  border-top:
-    1px solid
-    rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .footer-bottom p {
   margin: 0;
-
-  color:
-    rgba(255,255,255,0.38);
-
+  color: rgba(255,255,255,0.38);
   font-size: 12px;
-
   line-height: 1.5;
 }
 
 .bottom-links {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
 }
 
 .bottom-links a {
-  color:
-    rgba(255,255,255,0.45);
-
+  color: rgba(255,255,255,0.45);
   text-decoration: none;
-
   font-size: 10px;
-
-  transition:
-    color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .bottom-links a:hover {
-  color:
-    #ff8a18;
+  color: #ff8a18;
 }
 
 .bottom-links span {
   width: 3px;
   height: 3px;
-
   border-radius: 50%;
-
-  background:
-    rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.25);
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* ======== TABLET ======= */
 
 @media (max-width: 1100px) {
 
   .footer-main {
-    grid-template-columns:
-      1.2fr
-      0.9fr
-      0.9fr
-      1.3fr;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr 1.3fr;
   }
 
   .footer-brand {
@@ -1150,8 +653,7 @@
   }
 
   .footer-links {
-    padding:
-      0 22px;
+    padding: 0 22px;
   }
 
   .footer-contact {
@@ -1164,37 +666,24 @@
 
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* ====== TABLET ====== */
 
 @media (max-width: 900px) {
 
   .footer .container {
-    width:
-      calc(100% - 40px);
+    width: calc(100% - 40px);
   }
 
   .footer-main {
-    grid-template-columns:
-      1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     row-gap: 35px;
   }
 
   .footer-brand {
-    grid-column:
-      span 2;
-
-    padding:
-      0 0 25px;
-
+    grid-column: span 2;
+    padding: 0 0 25px;
     border-right: none;
-
-    border-bottom:
-      1px solid
-      rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
 
   .footer-links {
@@ -1227,9 +716,7 @@
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* ======== MOBILE ======= */
 
 @media (max-width: 650px) {
 
@@ -1398,9 +885,7 @@
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* ======== SMALL MOBILE ======== */
 
 @media (max-width: 420px) {
 
