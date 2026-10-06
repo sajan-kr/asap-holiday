@@ -1,234 +1,613 @@
-/* ======= GLOBAL WHATSAPP TRAVEL EXPERT ======= */
+/* =========================================================
+   ASAP HOLIDAYS
+   MODERN FLOATING TRAVEL EXPERT
+========================================================= */
 
 .whatsapp-expert {
+  --green: #12a93b;
+  --green-dark: #07882c;
+  --white: #ffffff;
+
   position: fixed;
+
   right: 24px;
   bottom: 24px;
+
+  width: 60px;
+  height: 60px;
+
   z-index: 999999;
-  width: 224px;
-  min-height: 64px;
+
+  display: block;
+
+  text-decoration: none;
+
+  border-radius: 19px;
+
+  outline: none;
+
+  transition:
+    width 0.52s cubic-bezier(.22, 1, .36, 1),
+    transform 0.35s cubic-bezier(.22, 1, .36, 1),
+    border-radius 0.4s ease;
+
+  filter:
+    drop-shadow(
+      0 12px 25px rgba(0, 89, 29, .22)
+    );
+}
+
+
+/* =========================================================
+   EXPANDED
+========================================================= */
+
+.whatsapp-expert.expanded {
+  width: 278px;
+
+  transform: translateY(-4px);
+
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   AMBIENT GLOW
+========================================================= */
+
+.wa-ambient {
+  position: absolute;
+
+  inset: -8px;
+
+  border-radius: 25px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(18, 169, 59, .26),
+      transparent 68%
+    );
+
+  opacity: .65;
+
+  filter: blur(9px);
+
+  pointer-events: none;
+
+  animation:
+    ambientPulse 3.2s ease-in-out infinite;
+}
+
+
+@keyframes ambientPulse {
+
+  0%,
+  100% {
+    opacity: .45;
+    transform: scale(.96);
+  }
+
+  50% {
+    opacity: .75;
+    transform: scale(1.04);
+  }
+}
+
+
+/* =========================================================
+   MAIN SURFACE
+========================================================= */
+
+.wa-surface {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
-  gap: 11px;
-  padding: 8px 11px 8px 9px;
-  border-radius: 16px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0aad2c 0%, #078b20 100%);
-  border: 1px solid rgba(255,255,255,0.16);
-  text-decoration: none;
-  box-shadow: 0 14px 35px rgba(0, 105, 22, 0.28), 0 5px 14px rgba(0, 0, 0, 0.15);
+
+  padding: 7px;
+
+  box-sizing: border-box;
+
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      145deg,
+      #17b944 0%,
+      #0da438 52%,
+      #078c2e 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, .20);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(0,0,0,.10),
+    0 8px 20px rgba(0,90,25,.18);
 }
 
-/* Shine */
 
-.whatsapp-expert::before {
-  content: "";
+/* =========================================================
+   TOP GLOSS
+========================================================= */
+
+.wa-gloss {
   position: absolute;
+
   top: 0;
-  left: -120%;
-  width: 70%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.7s ease;
+  left: 0;
+
+  width: 100%;
+  height: 45%;
+
   pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.13),
+      transparent
+    );
+
+  opacity: .8;
 }
 
-.whatsapp-expert:hover::before {
-  left: 140%;
-}
 
-/* Hover */
+/* =========================================================
+   ICON
+========================================================= */
 
-.whatsapp-expert:hover {
-  color: #ffffff;
-  transform: translateY(-4px);
-  box-shadow: 0 18px 42px rgba(0, 105, 22, 0.35), 0 6px 16px rgba(0, 0, 0, 0.17);
-}
-
-/* ======== ICON ======= */
-
-.whatsapp-expert-icon {
+.wa-icon-box {
   position: relative;
-  z-index: 2;
-  width: 43px;
-  height: 43px;
-  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 13px;
-  background: #ffffff;
-  color: #07952a;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f7faf8
+    );
+
+  color: #079d34;
+
+  box-shadow:
+    0 5px 14px rgba(0,0,0,.14),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+  z-index: 4;
+
+  transition:
+    transform .4s cubic-bezier(.22,1,.36,1),
+    border-radius .3s ease;
 }
 
-.whatsapp-expert-icon svg {
+
+.whatsapp-expert.expanded .wa-icon-box {
+  transform: scale(1.03);
+}
+
+
+.wa-icon-box svg {
   width: 25px;
   height: 25px;
+
   display: block;
 }
 
-/* ========= PULSE ======== */
 
-.whatsapp-pulse {
+/* =========================================================
+   ONLINE DOT
+========================================================= */
+
+.wa-online {
   position: absolute;
-  left: 9px;
-  top: 8px;
-  width: 43px;
-  height: 43px;
-  border-radius: 13px;
-  border: 2px solid rgba(255,255,255,0.55);
-  pointer-events: none;
-  animation: whatsappPulse 2.3s infinite;
+
+  right: -2px;
+  top: -2px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #27db61;
+
+  border: 2px solid #ffffff;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 0 0 3px rgba(39,219,97,.12);
+
+  animation:
+    onlinePulse 2.4s infinite;
 }
 
-@keyframes whatsappPulse {
 
-  0% {
-    transform: scale(1);
-    opacity: 0.65;
-  }
+@keyframes onlinePulse {
 
-  70% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-
+  0%,
   100% {
-    transform: scale(1.35);
-    opacity: 0;
+    box-shadow:
+      0 0 0 2px rgba(39,219,97,.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(39,219,97,0);
   }
 }
 
-/* ========= TEXT ======== */
-.whatsapp-expert-content {
-  position: relative;
-  z-index: 2;
-  flex: 1;
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.wa-info {
   min-width: 0;
+
   display: flex;
   flex-direction: column;
+
   justify-content: center;
-}
 
-.whatsapp-expert-content small {
-  display: block;
-  margin-bottom: 2px;
-  color: rgba(255,255,255,0.72);
-  font-size: 10px;
-  line-height: 1.2;
-  font-weight: 500;
-}
+  margin-left: 11px;
 
-.whatsapp-expert-content strong {
-  display: block;
-  color: #ffffff;
-  font-size: 14px;
-  line-height: 1.25;
-  font-weight: 700;
+  opacity: 0;
+
+  transform: translateX(18px);
+
+  pointer-events: none;
+
   white-space: nowrap;
+
+  transition:
+    opacity .2s ease,
+    transform .42s cubic-bezier(.22,1,.36,1);
 }
 
-/* ========= ARROW ======== */
 
-.whatsapp-expert-arrow {
-  position: relative;
-  z-index: 2;
-  width: 27px;
-  height: 27px;
-  flex-shrink: 0;
+.whatsapp-expert.expanded .wa-info {
+  opacity: 1;
+
+  transform: translateX(0);
+
+  transition-delay: .12s;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.wa-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 3px;
+
+  color: rgba(255,255,255,.72);
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: .15px;
+}
+
+
+.wa-live {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #8dffad;
+
+  box-shadow:
+    0 0 0 3px rgba(141,255,173,.10);
+
+  animation:
+    livePulse 1.8s infinite;
+}
+
+
+@keyframes livePulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .45;
+  }
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.wa-title {
+  display: block;
+
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -.2px;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.wa-action {
+  width: 30px;
+  height: 30px;
+
+  min-width: 30px;
+
+  margin-left: auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,.12);
+
   color: #ffffff;
-  font-size: 15px;
-  transition: transform 0.3s ease, background 0.3s ease;
+
+  opacity: 0;
+
+  transform: translateX(10px);
+
+  transition:
+    opacity .2s ease,
+    transform .35s ease,
+    background .25s ease;
 }
 
-.whatsapp-expert:hover .whatsapp-expert-arrow {
+
+.whatsapp-expert.expanded .wa-action {
+  opacity: 1;
+
+  transform: translateX(0);
+
+  transition-delay: .18s;
+}
+
+
+.wa-action svg {
+  width: 17px;
+  height: 17px;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.whatsapp-expert:hover .wa-action {
+  background:
+    rgba(255,255,255,.21);
+}
+
+
+.whatsapp-expert:hover .wa-action svg {
   transform: translateX(3px);
-  background: rgba(255,255,255,0.20);
 }
 
-/* ======= TABLET ====== */
+
+/* =========================================================
+   SHINE
+========================================================= */
+
+.wa-shine {
+  position: absolute;
+
+  top: -20%;
+
+  left: -110%;
+
+  width: 45%;
+  height: 140%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255,255,255,.18),
+      transparent
+    );
+
+  transform: skewX(-22deg);
+}
+
+
+.whatsapp-expert.expanded .wa-shine {
+  animation:
+    shine 1s cubic-bezier(.22,1,.36,1);
+}
+
+
+@keyframes shine {
+
+  from {
+    left: -110%;
+  }
+
+  to {
+    left: 140%;
+  }
+}
+
+
+/* =========================================================
+   IDLE FLOAT
+========================================================= */
+
+.whatsapp-expert:not(.expanded) {
+  animation:
+    subtleFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes subtleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 768px) {
 
   .whatsapp-expert {
     right: 18px;
     bottom: 18px;
-    width: 195px;
-    min-height: 58px;
-    border-radius: 14px;
+
+    width: 58px;
+    height: 58px;
   }
 
-  .whatsapp-expert-icon {
-    width: 39px;
-    height: 39px;
-    border-radius: 11px;
+  .whatsapp-expert.expanded {
+    width: 250px;
+
+    border-radius: 17px;
   }
 
-  .whatsapp-expert-icon svg {
-    width: 23px;
-    height: 23px;
+  .wa-icon-box {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
   }
 
-  .whatsapp-pulse {
-    width: 39px;
-    height: 39px;
-    left: 9px;
-    top: 8px;
-    border-radius: 11px;
-  }
-
-  .whatsapp-expert-content strong {
+  .wa-title {
     font-size: 13px;
   }
 }
 
 
-/* ======= MOBILE ====== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 480px) {
 
   .whatsapp-expert {
     right: 15px;
     bottom: 15px;
+
     width: 58px;
     height: 58px;
-    min-width: 58px;
-    min-height: 58px;
-    padding: 7px;
-    gap: 0;
+
     border-radius: 50%;
   }
 
-  .whatsapp-expert-icon {
+  .whatsapp-expert.expanded {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    transform: none;
+  }
+
+  .wa-surface {
+    padding: 7px;
+
+    border-radius: 50%;
+  }
+
+  .wa-icon-box {
     width: 44px;
     height: 44px;
+
+    min-width: 44px;
+
     border-radius: 50%;
   }
 
-  .whatsapp-expert-icon svg {
+  .wa-icon-box svg {
     width: 25px;
     height: 25px;
   }
 
-  .whatsapp-pulse {
-    left: 7px;
-    top: 7px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+  .wa-info,
+  .wa-action {
+    display: none;
   }
 
-  .whatsapp-expert-content,
-  .whatsapp-expert-arrow {
-    display: none;
+  .wa-ambient {
+    inset: -5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .whatsapp-expert,
+  .whatsapp-expert *,
+  .wa-ambient,
+  .wa-online,
+  .wa-live {
+    animation: none !important;
+
+    transition: none !important;
   }
 }
