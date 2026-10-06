@@ -1,0 +1,282 @@
+/* =========================================================
+   DESTINATION GALLERY
+========================================================= */
+
+.destination-gallery {
+  padding: 105px 0;
+
+  background: #f7f9fc;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.destination-gallery__wrapper {
+  width: min(1100px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.destination-gallery__main {
+  position: relative;
+
+  height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #e9edf2;
+
+  box-shadow:
+    0 25px 60px rgba(16, 35, 63, 0.12);
+}
+
+.destination-gallery__main img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.destination-gallery__counter {
+  position: absolute;
+
+  right: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 10px 15px;
+
+  border-radius: 100px;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+
+  font-size: 12px;
+}
+
+.destination-gallery__counter strong {
+  color: #ff8a00;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.destination-gallery__nav {
+  position: absolute;
+
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: #10233f;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.destination-gallery__nav:hover {
+  background: #ff7a00;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%)
+    scale(1.06);
+}
+
+.destination-gallery__prev {
+  left: 20px;
+}
+
+.destination-gallery__next {
+  right: 20px;
+}
+
+
+/* =========================================================
+   THUMBNAILS
+========================================================= */
+
+.destination-gallery__thumbs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.destination-gallery__thumb {
+  height: 95px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 2px solid transparent;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  opacity: 0.6;
+
+  transition:
+    opacity 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.destination-gallery__thumb:hover {
+  opacity: 1;
+
+  transform: translateY(-2px);
+}
+
+.destination-gallery__thumb.is-active {
+  border-color: #ff7a00;
+
+  opacity: 1;
+}
+
+.destination-gallery__thumb img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .destination-gallery__main {
+    height: 450px;
+  }
+
+  .destination-gallery__thumbs {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .destination-gallery {
+    padding: 75px 0;
+  }
+
+  .destination-gallery__main {
+    height: 360px;
+
+    border-radius: 18px;
+  }
+
+  .destination-gallery__nav {
+    width: 42px;
+    height: 42px;
+  }
+
+  .destination-gallery__prev {
+    left: 12px;
+  }
+
+  .destination-gallery__next {
+    right: 12px;
+  }
+
+  .destination-gallery__thumbs {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 7px;
+  }
+
+  .destination-gallery__thumb {
+    height: 70px;
+  }
+
+  .destination-gallery__counter {
+    right: 15px;
+    bottom: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .destination-gallery__main {
+    height: 300px;
+  }
+
+  .destination-gallery__thumb {
+    height: 62px;
+  }
+
+}

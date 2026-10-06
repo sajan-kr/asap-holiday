@@ -1,0 +1,417 @@
+/* =========================================================
+   DESTINATION FAQ
+========================================================= */
+
+.destination-faq {
+  position: relative;
+
+  padding: 105px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   FAQ LAYOUT
+========================================================= */
+
+.destination-faq__layout {
+  display: grid;
+
+  grid-template-columns:
+    0.75fr 1.25fr;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT INTRO
+========================================================= */
+
+.destination-faq__intro {
+  position: sticky;
+
+  top: 110px;
+}
+
+.destination-faq__intro-badge {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 15px;
+
+  background: #fff3e8;
+
+  color: #ff7a00;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.destination-faq__intro h3 {
+  margin: 0 0 14px;
+
+  color: #10233f;
+
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.destination-faq__intro > p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SUPPORT CARD
+========================================================= */
+
+.destination-faq__support {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 30px;
+
+  padding: 20px;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 15px;
+
+  background: #f8fafc;
+}
+
+.destination-faq__support span {
+  color: #718096;
+
+  font-size: 11px;
+}
+
+.destination-faq__support a {
+  width: fit-content;
+
+  color: #ff7a00;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease;
+}
+
+.destination-faq__support a:hover {
+  color: #10233f;
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.destination-faq__list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.destination-faq__item {
+  overflow: hidden;
+
+  border: 1px solid #e8edf3;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-faq__item:hover {
+  border-color: rgba(255, 122, 0, 0.2);
+}
+
+.destination-faq__item.is-active {
+  border-color: rgba(255, 122, 0, 0.3);
+
+  box-shadow:
+    0 12px 35px rgba(16, 35, 63, 0.07);
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.destination-faq__question {
+  width: 100%;
+
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    42px 1fr 35px;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px 20px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #10233f;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+/* Number */
+
+.destination-faq__number {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #f5f7fa;
+
+  color: #8a94a4;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.destination-faq__item.is-active
+.destination-faq__number {
+  background: #ff7a00;
+
+  color: #ffffff;
+}
+
+
+/* Question text */
+
+.destination-faq__question-text {
+  padding-right: 10px;
+
+  color: #10233f;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+/* Arrow */
+
+.destination-faq__icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f6f8fa;
+
+  color: #718096;
+
+  font-size: 11px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.destination-faq__item.is-active
+.destination-faq__icon {
+  background: #fff3e8;
+
+  color: #ff7a00;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.destination-faq__answer-wrapper {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows 0.35s ease;
+}
+
+.destination-faq__item.is-active
+.destination-faq__answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.destination-faq__answer {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.destination-faq__answer p {
+  margin: 0;
+
+  padding: 0 70px 22px 77px;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .destination-faq__layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .destination-faq__intro {
+    position: static;
+  }
+
+  .destination-faq__intro > p {
+    max-width: 650px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .destination-faq {
+    padding: 75px 0;
+  }
+
+  .destination-faq__question {
+    grid-template-columns:
+      34px 1fr 30px;
+
+    gap: 10px;
+
+    min-height: 70px;
+
+    padding: 12px 14px;
+  }
+
+  .destination-faq__number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .destination-faq__question-text {
+    font-size: 12px;
+  }
+
+  .destination-faq__icon {
+    width: 30px;
+    height: 30px;
+
+    font-size: 9px;
+  }
+
+  .destination-faq__answer p {
+    padding:
+      0
+      20px
+      20px
+      56px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .destination-faq__question {
+    grid-template-columns:
+      30px 1fr 28px;
+
+    gap: 8px;
+  }
+
+  .destination-faq__number {
+    width: 29px;
+    height: 29px;
+
+    font-size: 9px;
+  }
+
+  .destination-faq__question-text {
+    font-size: 11px;
+  }
+
+  .destination-faq__answer p {
+    padding-left: 48px;
+  }
+
+}

@@ -1,0 +1,381 @@
+/* =========================================================
+   DESTINATION TESTIMONIALS
+========================================================= */
+
+.destination-testimonials {
+  position: relative;
+
+  padding: 105px 0;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 122, 0, 0.06),
+      transparent 30%
+    ),
+    #f7f9fc;
+}
+
+
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
+
+.destination-testimonials__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.destination-testimonial-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 350px;
+
+  padding: 32px;
+
+  border: 1px solid #e9edf2;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 40px rgba(16, 35, 63, 0.055);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.destination-testimonial-card:hover {
+  border-color: rgba(255, 122, 0, 0.25);
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 60px rgba(16, 35, 63, 0.11);
+}
+
+
+/* =========================================================
+   QUOTE ICON
+========================================================= */
+
+.destination-testimonial-card__quote {
+  position: absolute;
+
+  top: 25px;
+  right: 25px;
+
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #fff3e8;
+
+  color: #ff7a00;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.destination-testimonial-card__rating {
+  display: flex;
+
+  gap: 4px;
+
+  margin-bottom: 22px;
+}
+
+.destination-testimonial-card__rating svg {
+  color: #ffb21c;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   REVIEW
+========================================================= */
+
+.destination-testimonial-card__text {
+  margin: 0;
+
+  color: #4f5d70;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   TRAVELER
+========================================================= */
+
+.destination-testimonial-card__traveler {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: auto;
+
+  padding-top: 28px;
+}
+
+
+/* Avatar */
+
+.destination-testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7a00,
+      #ff9d42
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* Details */
+
+.destination-testimonial-card__details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.destination-testimonial-card__details strong {
+  color: #10233f;
+
+  font-size: 14px;
+}
+
+.destination-testimonial-card__details span {
+  color: #8a94a4;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TRUST BAR
+========================================================= */
+
+.destination-testimonials__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 45px;
+
+  margin-top: 55px;
+
+  padding: 24px 30px;
+
+  border: 1px solid #e9edf2;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(16, 35, 63, 0.04);
+}
+
+
+/* Rating */
+
+.destination-testimonials__trust-rating {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.destination-testimonials__trust-rating > strong {
+  color: #10233f;
+
+  font-size: 30px;
+  line-height: 1;
+}
+
+.destination-testimonials__trust-rating > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.destination-testimonials__trust-stars {
+  display: flex;
+
+  gap: 3px;
+}
+
+.destination-testimonials__trust-stars svg {
+  color: #ffb21c;
+
+  font-size: 12px;
+}
+
+.destination-testimonials__trust-rating span {
+  color: #8a94a4;
+
+  font-size: 10px;
+}
+
+
+/* Divider */
+
+.destination-testimonials__trust-divider {
+  width: 1px;
+  height: 40px;
+
+  background: #e6eaf0;
+}
+
+
+/* Trust numbers */
+
+.destination-testimonials__trust-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.destination-testimonials__trust-text strong {
+  color: #10233f;
+
+  font-size: 20px;
+}
+
+.destination-testimonials__trust-text span {
+  color: #8a94a4;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .destination-testimonials__grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .destination-testimonial-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .destination-testimonials {
+    padding: 75px 0;
+  }
+
+  .destination-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-testimonial-card:last-child {
+    grid-column: auto;
+  }
+
+  .destination-testimonial-card {
+    min-height: 320px;
+
+    padding: 27px;
+  }
+
+
+  /* Trust bar becomes vertical */
+
+  .destination-testimonials__trust {
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 25px;
+  }
+
+  .destination-testimonials__trust-divider {
+    width: 80px;
+    height: 1px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .destination-testimonial-card {
+    padding: 23px;
+  }
+
+  .destination-testimonial-card__quote {
+    width: 40px;
+    height: 40px;
+
+    top: 20px;
+    right: 20px;
+  }
+
+  .destination-testimonial-card__text {
+    font-size: 13px;
+  }
+
+}

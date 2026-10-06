@@ -1,0 +1,505 @@
+/* =========================================================
+   DESTINATION GUIDE
+========================================================= */
+
+.destination-guide {
+  position: relative;
+
+  padding: 105px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   GUIDE WRAPPER
+========================================================= */
+
+.destination-guide__wrapper {
+  width: min(1050px, 100%);
+
+  margin: 0 auto;
+
+  border: 1px solid #e8edf3;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 60px rgba(16, 35, 63, 0.07);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.destination-guide__tabs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-bottom: 1px solid #e8edf3;
+
+  background: #f8fafc;
+}
+
+.destination-guide__tab {
+  position: relative;
+
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #718096;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.destination-guide__tab:hover {
+  color: #10233f;
+
+  background: #ffffff;
+}
+
+.destination-guide__tab.is-active {
+  background: #ffffff;
+
+  color: #ff7a00;
+}
+
+
+/* Active line */
+
+.destination-guide__tab.is-active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18%;
+  right: 18%;
+
+  bottom: 0;
+
+  height: 3px;
+
+  border-radius: 10px 10px 0 0;
+
+  background: #ff7a00;
+}
+
+
+/* Tab icon */
+
+.destination-guide__tab-icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #ff7a00;
+
+  box-shadow:
+    0 5px 15px rgba(16, 35, 63, 0.06);
+}
+
+.destination-guide__tab.is-active
+.destination-guide__tab-icon {
+  background: #fff3e8;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.destination-guide__content {
+  padding: 45px;
+}
+
+.destination-guide__panel {
+  animation:
+    destinationGuideFade
+    0.35s ease;
+}
+
+@keyframes destinationGuideFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   PANEL HEADING
+========================================================= */
+
+.destination-guide__panel-heading {
+  max-width: 700px;
+
+  margin-bottom: 30px;
+}
+
+.destination-guide__panel-heading > span {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #ff7a00;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.destination-guide__panel-heading h3 {
+  margin: 0 0 10px;
+
+  color: #10233f;
+
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.destination-guide__panel-heading p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.destination-guide__info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.destination-guide__info-card {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 15px;
+
+  background: #fafbfc;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.destination-guide__info-card:hover {
+  border-color: rgba(255, 122, 0, 0.25);
+
+  background: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+
+/* Icon */
+
+.destination-guide__info-icon {
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #fff3e8;
+
+  color: #ff7a00;
+
+  font-size: 17px;
+}
+
+
+/* Text */
+
+.destination-guide__info-card div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.destination-guide__info-card span {
+  margin-bottom: 4px;
+
+  color: #8a94a4;
+
+  font-size: 11px;
+}
+
+.destination-guide__info-card strong {
+  color: #10233f;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.destination-guide__options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.destination-guide__option {
+  padding: 22px;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 15px;
+
+  background: #fafbfc;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.destination-guide__option:hover {
+  border-color: rgba(255, 122, 0, 0.25);
+
+  background: #ffffff;
+
+  transform: translateY(-4px);
+}
+
+.destination-guide__option-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  background: #fff3e8;
+
+  color: #ff7a00;
+}
+
+.destination-guide__option h4 {
+  margin: 0 0 8px;
+
+  color: #10233f;
+
+  font-size: 16px;
+}
+
+.destination-guide__option p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TRAVEL TIPS
+========================================================= */
+
+.destination-guide__tips {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.destination-guide__tip {
+  display: flex;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 15px;
+
+  background: #fafbfc;
+}
+
+.destination-guide__tip > span {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #10233f;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.destination-guide__tip h4 {
+  margin: 0 0 7px;
+
+  color: #10233f;
+
+  font-size: 14px;
+}
+
+.destination-guide__tip p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .destination-guide__options {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .destination-guide {
+    padding: 75px 0;
+  }
+
+  .destination-guide__tabs {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .destination-guide__tab {
+    min-height: 65px;
+
+    font-size: 11px;
+  }
+
+  .destination-guide__content {
+    padding: 25px 20px;
+  }
+
+  .destination-guide__panel-heading h3 {
+    font-size: 23px;
+  }
+
+  .destination-guide__info-grid,
+  .destination-guide__options,
+  .destination-guide__tips {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .destination-guide__tab {
+    gap: 6px;
+
+    padding: 10px 6px;
+
+    font-size: 10px;
+  }
+
+  .destination-guide__tab-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .destination-guide__content {
+    padding: 22px 15px;
+  }
+
+}

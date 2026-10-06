@@ -1,0 +1,1186 @@
+/* =========================================================
+   DESTINATION HERO
+========================================================= */
+
+.destination-hero {
+  position: relative;
+  width: 100%;
+  min-height: 780px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #07182d;
+  color: #fff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.destination-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  overflow: hidden;
+}
+
+.destination-hero__image,
+.destination-hero__video-background,
+.destination-hero__fallback {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.destination-hero__image {
+  background-position: center;
+  background-size: cover;
+
+  animation:
+    destinationHeroZoom
+    12s ease-in-out infinite alternate;
+}
+
+.destination-hero__video-background {
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   FALLBACK
+========================================================= */
+
+.destination-hero__fallback {
+  background:
+    linear-gradient(
+      135deg,
+      #0b2947,
+      #173c5d
+    );
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.destination-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 18, 37, 0.94) 0%,
+      rgba(4, 18, 37, 0.80) 35%,
+      rgba(4, 18, 37, 0.48) 68%,
+      rgba(4, 18, 37, 0.60) 100%
+    );
+}
+
+.destination-hero__bottom-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 300px;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 16, 32, 0.92),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.destination-hero__container {
+  position: relative;
+
+  min-height: 780px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    410px;
+
+  align-items: center;
+
+  gap: 80px;
+
+  padding-top: 80px;
+  padding-bottom: 140px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.destination-hero__content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 730px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.destination-hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  padding: 9px 15px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.22);
+
+  border-radius: 50px;
+
+  background:
+    rgba(255,255,255,0.09);
+
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.destination-hero__location svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.destination-hero__content h1 {
+  margin: 0;
+
+  font-size:
+    clamp(48px, 6vw, 82px);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+
+  color: #fff;
+}
+
+.destination-hero__content h1 span {
+  display: block;
+
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.destination-hero__description {
+  max-width: 610px;
+
+  margin: 27px 0 0;
+
+  color:
+    rgba(255,255,255,0.82);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   QUICK INFO
+========================================================= */
+
+.destination-hero__quick-info {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 20px;
+}
+
+.destination-hero__quick-info div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.destination-hero__quick-info svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.destination-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-top: 32px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.destination-hero__primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 56px;
+
+  padding: 0 24px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7a00,
+      #ff5c00
+    );
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px
+    rgba(255,122,0,0.28);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.destination-hero__primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 40px
+    rgba(255,122,0,0.38);
+}
+
+.destination-hero__primary-btn svg {
+  transition:
+    transform .3s ease;
+}
+
+.destination-hero__primary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   VIDEO BUTTON
+========================================================= */
+
+.destination-hero__video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 56px;
+
+  padding: 0 19px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.28);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    .3s ease;
+}
+
+.destination-hero__video-btn:hover {
+  background:
+    rgba(255,255,255,0.17);
+
+  transform:
+    translateY(-3px);
+}
+
+.destination-hero__play {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  color: #ff7a00;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.destination-hero__stats {
+  display: flex;
+
+  margin-top: 42px;
+}
+
+.destination-hero__stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-right: 25px;
+  margin-right: 25px;
+
+  border-right:
+    1px solid
+    rgba(255,255,255,0.18);
+}
+
+.destination-hero__stat:last-child {
+  border-right: 0;
+}
+
+.destination-hero__stat-icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(255,122,0,0.14);
+
+  color: #ff8a20;
+
+  font-size: 13px;
+}
+
+.destination-hero__stat strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.destination-hero__stat small {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    rgba(255,255,255,0.58);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   BOOKING CARD
+========================================================= */
+
+.destination-hero__booking {
+  position: relative;
+  z-index: 5;
+
+  padding: 30px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.18);
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.97);
+
+  color: #10233f;
+
+  box-shadow:
+    0 30px 70px
+    rgba(0,0,0,0.25);
+
+  animation:
+    destinationBookingFloat
+    5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BOOKING TOP
+========================================================= */
+
+.destination-hero__booking-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.destination-hero__booking-top > span {
+  color: #ff7a00;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.destination-hero__live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #4c8a68;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.destination-hero__live span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #35b86b;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(53,184,107,0.1);
+}
+
+
+/* =========================================================
+   BOOKING TITLE
+========================================================= */
+
+.destination-hero__booking h2 {
+  margin: 0;
+
+  color: #10233f;
+
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.destination-hero__booking-description {
+  margin: 8px 0 0;
+
+  color: #687386;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.destination-hero__price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 22px;
+  padding-bottom: 19px;
+
+  border-bottom:
+    1px solid
+    #edf0f4;
+}
+
+.destination-hero__price > div:first-child span {
+  display: block;
+
+  color: #7d8794;
+
+  font-size: 10px;
+}
+
+.destination-hero__price strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ff7a00;
+
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.destination-hero__price-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #7d8794;
+
+  font-size: 9px;
+}
+
+.destination-hero__price-duration svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.destination-hero__features {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 21px;
+}
+
+.destination-hero__feature {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.destination-hero__feature-icon {
+  flex: 0 0 auto;
+
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: #fff3e8;
+
+  color: #ff7a00;
+
+  font-size: 12px;
+}
+
+.destination-hero__feature strong {
+  display: block;
+
+  color: #263750;
+
+  font-size: 10px;
+}
+
+.destination-hero__feature span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8a93a0;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   BOOKING BUTTON
+========================================================= */
+
+.destination-hero__booking-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  margin-top: 23px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7a00,
+      #ff5c00
+    );
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 25px
+    rgba(255,122,0,0.22);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.destination-hero__booking-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 17px 32px
+    rgba(255,122,0,0.3);
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.destination-hero__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 13px;
+
+  color: #7d8794;
+
+  font-size: 9px;
+}
+
+.destination-hero__trust svg {
+  color: #ff7a00;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS BAR
+========================================================= */
+
+.destination-hero__highlights {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 5;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(4,18,37,0.48);
+
+  backdrop-filter: blur(12px);
+}
+
+.destination-hero__highlights-inner {
+  width:
+    min(1200px, calc(100% - 40px));
+
+  min-height: 72px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+.destination-hero__highlight {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 0 22px;
+
+  border-right:
+    1px solid
+    rgba(255,255,255,0.1);
+}
+
+.destination-hero__highlight:last-child {
+  border-right: 0;
+}
+
+.destination-hero__highlight span {
+  color: #ff7a00;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.destination-hero__highlight strong {
+  color: #fff;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
+.destination-hero__scroll {
+  position: absolute;
+
+  right: 25px;
+  top: 50%;
+
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: rgba(255,255,255,0.65);
+
+  cursor: pointer;
+}
+
+.destination-hero__scroll span {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.25);
+
+  border-radius: 50%;
+
+  animation:
+    destinationScrollBounce
+    1.8s infinite;
+}
+
+.destination-hero__scroll span svg {
+  color: #ff7a00;
+  font-size: 11px;
+}
+
+.destination-hero__scroll small {
+  writing-mode: vertical-rl;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   VIDEO MODAL
+========================================================= */
+
+.destination-video-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: grid;
+  place-items: center;
+
+  padding: 25px;
+
+  background:
+    rgba(2,10,22,0.92);
+
+  backdrop-filter: blur(10px);
+
+  animation:
+    destinationModalFade
+    .25s ease;
+}
+
+.destination-video-modal__content {
+  position: relative;
+
+  width:
+    min(1000px, 100%);
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #000;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0,0,0,0.55);
+}
+
+.destination-video-modal__content video {
+  display: block;
+
+  width: 100%;
+
+  max-height: 80vh;
+
+  background: #000;
+}
+
+.destination-video-modal__close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 5;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0,0,0,0.65);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition:
+    .3s ease;
+}
+
+.destination-video-modal__close:hover {
+  background: #ff7a00;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes destinationHeroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes destinationBookingFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes destinationScrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes destinationModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+  .destination-hero__container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      360px;
+
+    gap: 45px;
+  }
+
+  .destination-hero__content h1 {
+    font-size: 62px;
+  }
+
+  .destination-hero__scroll {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+  .destination-hero {
+    min-height: auto;
+  }
+
+  .destination-hero__container {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-top: 110px;
+    padding-bottom: 155px;
+  }
+
+  .destination-hero__content {
+    max-width: 720px;
+  }
+
+  .destination-hero__booking {
+    width: min(100%, 500px);
+  }
+
+  .destination-hero__highlights-inner {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .destination-hero__highlight {
+    min-height: 58px;
+  }
+}
+
+
+/* =========================================================
+   768px
+========================================================= */
+
+@media (max-width: 768px) {
+  .destination-hero__container {
+    width:
+      min(100% - 30px, 620px);
+
+    padding-top: 95px;
+    padding-bottom: 175px;
+  }
+
+  .destination-hero__content h1 {
+    font-size: 50px;
+
+    letter-spacing: -2px;
+  }
+
+  .destination-hero__description {
+    font-size: 14px;
+  }
+
+  .destination-hero__stats {
+    margin-top: 32px;
+  }
+
+  .destination-hero__stat {
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+
+  .destination-hero__highlights-inner {
+    width:
+      min(100% - 30px, 620px);
+  }
+}
+
+
+/* =========================================================
+   560px
+========================================================= */
+
+@media (max-width: 560px) {
+  .destination-hero__container {
+    padding-top: 85px;
+    padding-bottom: 210px;
+  }
+
+  .destination-hero__content h1 {
+    font-size: 43px;
+  }
+
+  .destination-hero__actions {
+    flex-direction: column;
+  }
+
+  .destination-hero__primary-btn,
+  .destination-hero__video-btn {
+    width: 100%;
+  }
+
+  .destination-hero__stats {
+    justify-content: space-between;
+  }
+
+  .destination-hero__stat {
+    gap: 7px;
+
+    padding-right: 8px;
+    margin-right: 8px;
+  }
+
+  .destination-hero__stat-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .destination-hero__booking {
+    padding: 24px;
+  }
+
+  .destination-hero__features {
+    gap: 13px;
+  }
+
+  .destination-hero__highlights {
+    position: absolute;
+  }
+
+  .destination-hero__highlights-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .destination-hero__highlight {
+    padding: 0 12px;
+  }
+
+  .destination-hero__highlight strong {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   400px
+========================================================= */
+
+@media (max-width: 400px) {
+  .destination-hero__content h1 {
+    font-size: 38px;
+  }
+
+  .destination-hero__features {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-hero__highlights-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .destination-hero__highlight {
+    gap: 7px;
+  }
+}
