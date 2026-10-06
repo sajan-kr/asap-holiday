@@ -1,84 +1,43 @@
-/* =========================================================
-   ASAP HOLIDAYS
-   MODERN FLOATING TRAVEL EXPERT
-========================================================= */
+/* ======== ASAP HOLIDAYS MODERN FLOATING TRAVEL EXPERT ======= */
 
 .whatsapp-expert {
   --green: #12a93b;
   --green-dark: #07882c;
   --white: #ffffff;
-
   position: fixed;
-
   right: 24px;
   bottom: 24px;
-
   width: 60px;
   height: 60px;
-
   z-index: 999999;
-
   display: block;
-
   text-decoration: none;
-
   border-radius: 19px;
-
   outline: none;
-
-  transition:
-    width 0.52s cubic-bezier(.22, 1, .36, 1),
-    transform 0.35s cubic-bezier(.22, 1, .36, 1),
-    border-radius 0.4s ease;
-
-  filter:
-    drop-shadow(
-      0 12px 25px rgba(0, 89, 29, .22)
-    );
+  transition: width 0.52s cubic-bezier(.22, 1, .36, 1), transform 0.35s cubic-bezier(.22, 1, .36, 1), border-radius 0.4s ease;
+  filter: drop-shadow(0 12px 25px rgba(0, 89, 29, .22));
 }
 
-
-/* =========================================================
-   EXPANDED
-========================================================= */
+/* ========= EXPANDED ======== */
 
 .whatsapp-expert.expanded {
   width: 278px;
-
   transform: translateY(-4px);
-
   border-radius: 18px;
 }
 
-
-/* =========================================================
-   AMBIENT GLOW
-========================================================= */
+/* ========== AMBIENT GLOW ========== */
 
 .wa-ambient {
   position: absolute;
-
   inset: -8px;
-
   border-radius: 25px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(18, 169, 59, .26),
-      transparent 68%
-    );
-
+  background: radial-gradient(circle, rgba(18, 169, 59, .26), transparent 68%);
   opacity: .65;
-
   filter: blur(9px);
-
   pointer-events: none;
-
-  animation:
-    ambientPulse 3.2s ease-in-out infinite;
+  animation: ambientPulse 3.2s ease-in-out infinite;
 }
-
 
 @keyframes ambientPulse {
 
@@ -94,248 +53,136 @@
   }
 }
 
-
-/* =========================================================
-   MAIN SURFACE
-========================================================= */
+/* ========= MAIN SURFACE ========= */
 
 .wa-surface {
   position: relative;
-
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
-
   padding: 7px;
-
   box-sizing: border-box;
-
   overflow: hidden;
-
   border-radius: inherit;
-
-  background:
-    linear-gradient(
-      145deg,
-      #17b944 0%,
-      #0da438 52%,
-      #078c2e 100%
-    );
-
+  background: linear-gradient(145deg, #17b944 0%, #0da438 52%, #078c2e 100%);
   border: 1px solid rgba(255, 255, 255, .20);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.22),
-    inset 0 -1px 0 rgba(0,0,0,.10),
-    0 8px 20px rgba(0,90,25,.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.10), 0 8px 20px rgba(0,90,25,.18);
 }
 
-
-/* =========================================================
-   TOP GLOSS
-========================================================= */
+/* ========= TOP GLOSS ======== */
 
 .wa-gloss {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 45%;
-
   pointer-events: none;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.13),
-      transparent
-    );
-
+  background: linear-gradient(180deg, rgba(255,255,255,.13), transparent);
   opacity: .8;
 }
 
-
-/* =========================================================
-   ICON
-========================================================= */
+/* ======= ICON ======= */
 
 .wa-icon-box {
   position: relative;
-
   width: 44px;
   height: 44px;
-
   min-width: 44px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 14px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff,
-      #f7faf8
-    );
-
+  background: linear-gradient(145deg, #ffffff, #f7faf8);
   color: #079d34;
-
-  box-shadow:
-    0 5px 14px rgba(0,0,0,.14),
-    inset 0 1px 0 rgba(255,255,255,.9);
-
+  box-shadow: 0 5px 14px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.9);
   z-index: 4;
-
-  transition:
-    transform .4s cubic-bezier(.22,1,.36,1),
-    border-radius .3s ease;
+  transition: transform .4s cubic-bezier(.22,1,.36,1), border-radius .3s ease;
 }
-
 
 .whatsapp-expert.expanded .wa-icon-box {
   transform: scale(1.03);
 }
 
-
 .wa-icon-box svg {
   width: 25px;
   height: 25px;
-
   display: block;
 }
 
-
-/* =========================================================
-   ONLINE DOT
-========================================================= */
+/* ======= ONLINE DOT ====== */
 
 .wa-online {
   position: absolute;
-
   right: -2px;
   top: -2px;
-
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
   background: #27db61;
-
   border: 2px solid #ffffff;
-
   box-sizing: border-box;
-
-  box-shadow:
-    0 0 0 3px rgba(39,219,97,.12);
-
-  animation:
-    onlinePulse 2.4s infinite;
+  box-shadow: 0 0 0 3px rgba(39,219,97,.12);
+  animation: onlinePulse 2.4s infinite;
 }
-
 
 @keyframes onlinePulse {
 
   0%,
   100% {
-    box-shadow:
-      0 0 0 2px rgba(39,219,97,.15);
+    box-shadow: 0 0 0 2px rgba(39,219,97,.15);
   }
 
   50% {
-    box-shadow:
-      0 0 0 6px rgba(39,219,97,0);
+    box-shadow: 0 0 0 6px rgba(39,219,97,0);
   }
 }
 
-
-/* =========================================================
-   INFORMATION
-========================================================= */
+/* ========== INFORMATION ========= */
 
 .wa-info {
   min-width: 0;
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-
   margin-left: 11px;
-
   opacity: 0;
-
   transform: translateX(18px);
-
   pointer-events: none;
-
   white-space: nowrap;
-
-  transition:
-    opacity .2s ease,
-    transform .42s cubic-bezier(.22,1,.36,1);
+  transition: opacity .2s ease, transform .42s cubic-bezier(.22,1,.36,1);
 }
-
 
 .whatsapp-expert.expanded .wa-info {
   opacity: 1;
-
   transform: translateX(0);
-
   transition-delay: .12s;
 }
 
-
-/* =========================================================
-   EYEBROW
-========================================================= */
+/* ======= EYEBROW ======= */
 
 .wa-eyebrow {
   display: flex;
   align-items: center;
-
   gap: 5px;
-
   margin-bottom: 3px;
-
   color: rgba(255,255,255,.72);
-
-  font-family:
-    Inter,
-    Arial,
-    sans-serif;
-
+  font-family: Inter, Arial, sans-serif;
   font-size: 9px;
-
   line-height: 1;
-
   font-weight: 500;
-
   letter-spacing: .15px;
 }
-
 
 .wa-live {
   width: 5px;
   height: 5px;
-
   border-radius: 50%;
-
   background: #8dffad;
-
-  box-shadow:
-    0 0 0 3px rgba(141,255,173,.10);
-
-  animation:
-    livePulse 1.8s infinite;
+  box-shadow: 0 0 0 3px rgba(141,255,173,.10);
+  animation: livePulse 1.8s infinite;
 }
-
 
 @keyframes livePulse {
 
@@ -349,127 +196,72 @@
   }
 }
 
-
-/* =========================================================
-   TITLE
-========================================================= */
+/* ======= TITLE ====== */
 
 .wa-title {
   display: block;
-
   color: #ffffff;
-
-  font-family:
-    Inter,
-    Arial,
-    sans-serif;
-
+  font-family: Inter, Arial, sans-serif;
   font-size: 14px;
-
   line-height: 1.2;
-
   font-weight: 700;
-
   letter-spacing: -.2px;
 }
 
-
-/* =========================================================
-   ACTION
-========================================================= */
+/* ======= ACTION ======= */
 
 .wa-action {
   width: 30px;
   height: 30px;
-
   min-width: 30px;
-
   margin-left: auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
-  background:
-    rgba(255,255,255,.12);
-
+  background: rgba(255,255,255,.12);
   color: #ffffff;
-
   opacity: 0;
-
   transform: translateX(10px);
-
-  transition:
-    opacity .2s ease,
-    transform .35s ease,
-    background .25s ease;
+  transition: opacity .2s ease, transform .35s ease, background .25s ease;
 }
-
 
 .whatsapp-expert.expanded .wa-action {
   opacity: 1;
-
   transform: translateX(0);
-
   transition-delay: .18s;
 }
-
 
 .wa-action svg {
   width: 17px;
   height: 17px;
-
-  transition:
-    transform .3s ease;
+  transition: transform .3s ease;
 }
-
 
 .whatsapp-expert:hover .wa-action {
-  background:
-    rgba(255,255,255,.21);
+  background: rgba(255,255,255,.21);
 }
-
 
 .whatsapp-expert:hover .wa-action svg {
   transform: translateX(3px);
 }
 
-
-/* =========================================================
-   SHINE
-========================================================= */
+/* ======= SHINE ======= */
 
 .wa-shine {
   position: absolute;
-
   top: -20%;
-
   left: -110%;
-
   width: 45%;
   height: 140%;
-
   pointer-events: none;
-
-  background:
-    linear-gradient(
-      100deg,
-      transparent,
-      rgba(255,255,255,.18),
-      transparent
-    );
-
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.18), transparent);
   transform: skewX(-22deg);
 }
 
-
 .whatsapp-expert.expanded .wa-shine {
-  animation:
-    shine 1s cubic-bezier(.22,1,.36,1);
+  animation: shine 1s cubic-bezier(.22,1,.36,1);
 }
-
 
 @keyframes shine {
 
@@ -482,16 +274,11 @@
   }
 }
 
-
-/* =========================================================
-   IDLE FLOAT
-========================================================= */
+/* ======= IDLE FLOAT ======= */
 
 .whatsapp-expert:not(.expanded) {
-  animation:
-    subtleFloat 5s ease-in-out infinite;
+  animation: subtleFloat 5s ease-in-out infinite;
 }
-
 
 @keyframes subtleFloat {
 
@@ -505,31 +292,25 @@
   }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* ======== TABLET ======= */
 
 @media (max-width: 768px) {
 
   .whatsapp-expert {
     right: 18px;
     bottom: 18px;
-
     width: 58px;
     height: 58px;
   }
 
   .whatsapp-expert.expanded {
     width: 250px;
-
     border-radius: 17px;
   }
 
   .wa-icon-box {
     width: 42px;
     height: 42px;
-
     min-width: 42px;
   }
 
@@ -538,29 +319,22 @@
   }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* ====== MOBILE ====== */
 
 @media (max-width: 480px) {
 
   .whatsapp-expert {
     right: 15px;
     bottom: 15px;
-
     width: 58px;
     height: 58px;
-
     border-radius: 50%;
   }
 
   .whatsapp-expert.expanded {
     width: 58px;
     height: 58px;
-
     border-radius: 50%;
-
     transform: none;
   }
 
@@ -573,9 +347,7 @@
   .wa-icon-box {
     width: 44px;
     height: 44px;
-
     min-width: 44px;
-
     border-radius: 50%;
   }
 
@@ -594,10 +366,7 @@
   }
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* ======= REDUCED MOTION ====== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -607,7 +376,6 @@
   .wa-online,
   .wa-live {
     animation: none !important;
-
     transition: none !important;
   }
 }
