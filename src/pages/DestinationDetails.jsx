@@ -49,37 +49,52 @@ const DestinationDetails = () => {
   return (
     <main className="destination-page">
 
-      {/* 01. Destination Hero */}
+      {/* =========================================
+          01. Destination Hero
+          ========================================= */}
       <DestinationHero
         destination={destination}
+        destinations={destinationsData}
       />
 
-      {/* 02. Destination Highlights */}
+      {/* =========================================
+          02. Destination Highlights
+          ========================================= */}
       <DestinationHighlights
         destination={destination}
       />
 
-      {/* 03. Destination Gallery */}
+      {/* =========================================
+          03. Destination Gallery
+          ========================================= */}
       <DestinationGallery
         destination={destination}
       />
 
-      {/* 04. Destination Travel Guide */}
+      {/* =========================================
+          04. Destination Travel Guide
+          ========================================= */}
       <DestinationGuide
         destination={destination}
       />
 
-      {/* 05. Traveler Testimonials */}
+      {/* =========================================
+          05. Traveler Testimonials
+          ========================================= */}
       <TravelerTestimonials
         destination={destination}
       />
 
-      {/* 06. Destination FAQ */}
+      {/* =========================================
+          06. Destination FAQ
+          ========================================= */}
       <DestinationFAQ
         destination={destination}
       />
 
-      {/* 07. Final CTA */}
+      {/* =========================================
+          07. Final CTA
+          ========================================= */}
       <DestinationCTA
         destination={destination}
       />
