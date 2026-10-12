@@ -71,14 +71,21 @@ function DestinationHighlights({
   const destinationName =
     destination.name || destination.title || destination.destinationName || "Your Destination";
 
-  const rawAttractions = attractionsProp || [
-    destination.attractions,
-    destination.popularAttractions,
-    destination.famousPlaces,
-    destination.highlights,
-    destination.experiences,
-    destination.thingsToDo,
-  ].find((value) => Array.isArray(value) && value.length > 0) || [];
+  const rawAttractions =
+    (Array.isArray(attractionsProp) && attractionsProp.length > 0
+      ? attractionsProp
+      : null) ||
+    [
+      destination.attractions,
+      destination.popularAttractions,
+      destination.famousPlaces,
+      destination.highlights,
+      destination.experiences,
+      destination.thingsToDo,
+    ].find(
+      (value) => Array.isArray(value) && value.length > 0
+    ) ||
+    [];
 
   const attractions = useMemo(
     () => rawAttractions.map((item, index) => normalizePlace(item, index, destinationName)).filter(Boolean),

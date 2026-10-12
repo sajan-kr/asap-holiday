@@ -12,15 +12,52 @@ export const destinationsData = [
     duration: "6 Nights / 7 Days",
     rating: "4.8",
     video: "/video/shimla.mp4",
-    description:
-      "Snow mountains, adventure valleys, cafes and scenic beauty.",
+    description: "Snow mountains, adventure valleys, cafes and scenic beauty.",
     cities: ["Shimla", "Manali", "Kasol", "Dharamshala"],
+
     highlights: [
       "Snow Mountains",
       "Adventure Activities",
       "Nature Views",
       "Camping",
     ],
+
+    attractions: [
+      {
+        id: "shimla",
+        name: "Shimla",
+        category: "Hill Stations",
+        location: "Shimla, Himachal Pradesh",
+        description: "Explore Mall Road and scenic mountain views.",
+        image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=900",
+      },
+      {
+        id: "manali",
+        name: "Manali",
+        category: "Adventure",
+        location: "Manali, Himachal Pradesh",
+        description: "Enjoy mountain scenery and outdoor adventures.",
+        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=900",
+      },
+      {
+        id: "kasol",
+        name: "Kasol",
+        category: "Nature",
+        location: "Kasol, Himachal Pradesh",
+        description: "Discover riverside walks and peaceful surroundings.",
+        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900",
+      },
+      {
+        id: "dharamshala",
+        name: "Dharamshala",
+        category: "Culture",
+        location: "Dharamshala, Himachal Pradesh",
+        description: "Explore monasteries and mountain views.",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=900",
+      },
+    ],
+
+    bookingUrl: "#destination-cta",
   },
 
   {
@@ -300,7 +337,7 @@ export const destinationsData = [
       "Blue Ocean",
     ],
   },
-    {
+  {
     id: 14,
     slug: "thailand",
     title: "Thailand",
@@ -428,7 +465,7 @@ export const destinationsData = [
     image: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1600&auto=format&fit=crop",
     description: "Natural beauty, islands and vibrant street culture.",
     cities: ["Hanoi", "Da Nang", "Ho Chi Minh"],
-    highlights: ["Cruise Tours","Street Food", "Beaches", "Culture",],
+    highlights: ["Cruise Tours", "Street Food", "Beaches", "Culture",],
   },
 
   {
@@ -444,6 +481,6 @@ export const destinationsData = [
     rating: "5.0",
     description: "Technology, cherry blossoms and traditional culture.",
     cities: ["Tokyo", "Kyoto", "Osaka", "Mount Fuji",],
-    highlights: ["Cherry Blossoms","Anime Culture","Bullet Train","Traditional Temples",],
+    highlights: ["Cherry Blossoms", "Anime Culture", "Bullet Train", "Traditional Temples",],
   }
 ];
