@@ -98,7 +98,7 @@
 /* Eyebrow */
 
 .destination-cta__eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
   gap: 9px;
@@ -132,6 +132,7 @@
   letter-spacing: -1.5px;
 
   font-weight: 800;
+  text-align: start;
 }
 
 .destination-cta__content h2 span {
@@ -151,6 +152,7 @@
   font-size: 16px;
 
   line-height: 1.8;
+  text-align: start;
 }
 
 
