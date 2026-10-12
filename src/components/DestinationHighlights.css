@@ -425,6 +425,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  text-align: start;
 }
 
 .dh-description {
@@ -610,7 +611,8 @@
 .dh-modal-content>p {
   color: #718092;
   font-size: 13px;
-  line-height: 1.8
+  line-height: 1.8;
+  text-align: start;
 }
 
 .dh-modal-duration {
@@ -847,6 +849,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: start;
 }
 
 .dh-modal-content h3 {
@@ -854,6 +857,7 @@
   color: #1c2b3b;
   font-size: 27px;
   line-height: 1.3;
+  text-align: start;
 }
 
 .dh-modal-content>p {
