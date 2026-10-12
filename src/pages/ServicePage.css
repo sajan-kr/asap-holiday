@@ -1,0 +1,255 @@
+
+.service-page {
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+  padding: 56px 20px;
+  background: #f7f9fc;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-card {
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #e8edf4;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(8, 43, 98, 0.08);
+  text-align: center;
+}
+
+.service-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #ff5b0a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.service-card h1 {
+  margin: 0 0 14px;
+  color: #082b62;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.2;
+}
+
+.service-card h2 {
+  margin: 0 0 14px;
+  color: #243c5d;
+  font-size: clamp(18px, 3vw, 22px);
+  line-height: 1.5;
+}
+
+.service-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #68778b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.service-form {
+  margin-top: 32px;
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid #e7edf5;
+  border-radius: 15px;
+  background: #fbfcfe;
+  text-align: left;
+}
+
+.service-form-heading {
+  margin-bottom: 24px;
+}
+
+.service-form-heading h3 {
+  margin: 0 0 7px;
+  color: #082b62;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.service-form-heading p {
+  margin: 0;
+  color: #68778b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.service-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-field-full {
+  grid-column: 1 / -1;
+}
+
+.service-field label {
+  color: #243c5d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-field input,
+.service-field textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #1c2b3a;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.service-field input {
+  min-height: 46px;
+}
+
+.service-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.service-field input::placeholder,
+.service-field textarea::placeholder {
+  color: #9aa6b5;
+}
+
+.service-field input:focus,
+.service-field textarea:focus {
+  border-color: #ff5b0a;
+  box-shadow: 0 0 0 3px rgba(255, 91, 10, 0.1);
+}
+
+.service-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 9px;
+  background: #ff5b0a;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.service-button:hover {
+  background: #e94d00;
+  transform: translateY(-1px);
+}
+
+.service-form > .service-button {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.service-form-note {
+  margin: 14px 0 0;
+  color: #778498;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.service-form-error {
+  margin: 16px 0 0;
+  color: #c62828;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.service-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f5;
+  font-size: 13px;
+}
+
+.service-contact-label {
+  width: 100%;
+  color: #68778b;
+}
+
+.service-contact a {
+  color: #082b62;
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.service-contact a:hover,
+.service-home-link:hover {
+  color: #ff5b0a;
+}
+
+.service-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: #082b62;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .service-page {
+    padding: 30px 14px;
+  }
+
+  .service-card {
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .service-form {
+    padding: 18px 14px;
+  }
+
+  .service-form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .service-field-full {
+    grid-column: auto;
+  }
+
+  .service-form-heading h3 {
+    font-size: 20px;
+  }
+
+  .service-contact {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
