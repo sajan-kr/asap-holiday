@@ -1,53 +1,16 @@
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-
+import { createPortal } from "react-dom";
+import React, { useEffect, useMemo, useState, } from "react";
+import { Link, useNavigate, } from "react-router-dom";
 import {
-  Link,
-  useNavigate,
-} from "react-router-dom";
-
-import {
-  FaArrowRight,
-  FaCalendarAlt,
-  FaCamera,
-  FaChevronLeft,
-  FaChevronRight,
-  FaClock,
-  FaCompass,
-  FaHeart,
-  FaMapMarkerAlt,
-  FaMountain,
-  FaPaperPlane,
-  FaPlay,
-  FaSearch,
-  FaShareAlt,
-  FaStar,
-  FaTimes,
-  FaUmbrellaBeach,
-  FaUsers,
-  FaWhatsapp,
-  FaCloudSun,
-  FaMoon,
-  FaSun,
-  FaTint,
-  FaWind,
-  FaThermometerHalf,
+  FaArrowRight, FaCalendarAlt, FaCamera, FaChevronLeft, FaChevronRight, FaClock, FaCompass, FaHeart,
+  FaMapMarkerAlt, FaMountain, FaPaperPlane, FaPlay, FaSearch, FaShareAlt, FaStar, FaTimes, FaUmbrellaBeach,
+  FaUsers, FaWhatsapp, FaCloudSun, FaMoon, FaSun, FaTint, FaWind, FaThermometerHalf,
 } from "react-icons/fa";
 
 import {
-  WEATHER_CODE_MAP,
-  formatLocalTime,
-  getCitySubtitle,
-  getCountryCode,
-  getDestinationTagline,
-  getSeason,
-  normalizeCityName,
-  slugify,
+  WEATHER_CODE_MAP, formatLocalTime, getCitySubtitle, getCountryCode, getDestinationTagline,
+  getSeason, normalizeCityName, slugify,
 } from "../data/destinationHeroData";
-
 import "./DestinationHero.css";
 
 const GEO_URL =
@@ -210,15 +173,15 @@ async function fetchLiveWeather(
     high:
       Math.round(
         daily.temperature_2m_max?.[0] ??
-          current.temperature_2m ??
-          0
+        current.temperature_2m ??
+        0
       ),
 
     low:
       Math.round(
         daily.temperature_2m_min?.[0] ??
-          current.temperature_2m ??
-          0
+        current.temperature_2m ??
+        0
       ),
 
     condition: weatherCode.label,
@@ -406,8 +369,8 @@ const DestinationHero = ({
           typeof item === "string"
             ? item
             : item?.title ||
-              item?.name ||
-              "Experience";
+            item?.name ||
+            "Experience";
 
         return {
           title,
@@ -452,10 +415,10 @@ const DestinationHero = ({
   const destinationIndex =
     Array.isArray(destinations)
       ? destinations.findIndex(
-          (item) =>
-            item?.slug ===
-            destination?.slug
-        )
+        (item) =>
+          item?.slug ===
+          destination?.slug
+      )
       : -1;
 
   // ----------------------------------------------------------
@@ -572,7 +535,7 @@ const DestinationHero = ({
 
     setActiveCity(
       (index + cities.length) %
-        cities.length
+      cities.length
     );
   };
 
@@ -671,10 +634,9 @@ const DestinationHero = ({
         destination.title ||
         "ASAP Holidays",
 
-      text: `Explore ${
-        destination.title ||
+      text: `Explore ${destination.title ||
         "this destination"
-      } with ASAP Holidays.`,
+        } with ASAP Holidays.`,
 
       url: window.location.href,
     };
@@ -709,12 +671,10 @@ const DestinationHero = ({
 
   const whatsappMessage =
     encodeURIComponent(
-      `Hi ASAP Holidays, I want to plan a trip to ${
-        destination?.title || "this destination"
-      }${
-        currentCity
-          ? `, especially ${currentCity.name}`
-          : ""
+      `Hi ASAP Holidays, I want to plan a trip to ${destination?.title || "this destination"
+      }${currentCity
+        ? `, especially ${currentCity.name}`
+        : ""
       }. Please share the best packages.`
     );
 
@@ -783,11 +743,10 @@ const DestinationHero = ({
   return (
     <>
       <section
-        className={`dh ${
-          weather?.isDay === false
+        className={`dh ${weather?.isDay === false
             ? "dh-night"
             : ""
-        }`}
+          }`}
       >
         {/* ================================================
             BACKGROUND
@@ -1031,8 +990,8 @@ const DestinationHero = ({
                   {weatherLoading
                     ? "--"
                     : weather
-                    ? weather.temperature
-                    : "—"}
+                      ? weather.temperature
+                      : "—"}
 
                   <sup>°C</sup>
                 </div>
@@ -1051,9 +1010,9 @@ const DestinationHero = ({
 
                   {weather?.timezone
                     ? ` · ${weather.timezone.replace(
-                        /_/g,
-                        " "
-                      )}`
+                      /_/g,
+                      " "
+                    )}`
                     : ""}
                 </span>
               </div>
@@ -1470,174 +1429,123 @@ const DestinationHero = ({
         </div>
       )}
 
-      {/* ==================================================
-          PLANNER MODAL
-      ================================================== */}
 
-      {showPlanner && (
-        <div
-          className="dh-modal"
-          role="dialog"
-          aria-modal="true"
-          onMouseDown={(event) => {
-            if (
-              event.target ===
-              event.currentTarget
-            ) {
-              setShowPlanner(false);
-            }
-          }}
-        >
-          <div className="dh-planner">
-            <button
-              type="button"
-              className="dh-modal-close"
-              onClick={() =>
-                setShowPlanner(false)
+      {/* PLANNER MODAL */}
+      {showPlanner &&
+        createPortal(
+          <div
+            className="dh-modal dh-planner-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Plan your ${destination.title} trip`}
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) {
+                setShowPlanner(false);
               }
-              aria-label="Close planner"
-            >
-              <FaTimes />
-            </button>
+            }}
+          >
+            <div className="dh-planner">
+              <button
+                type="button"
+                className="dh-modal-close"
+                onClick={() => setShowPlanner(false)}
+                aria-label="Close planner"
+              >
+                <FaTimes />
+              </button>
 
-            <div className="dh-planner-header">
-              <span>
-                PLAN YOUR ESCAPE
-              </span>
-
-              <h2>
-                {destination.title}
-              </h2>
-
-              <p>
-                Tell us a little about
-                your trip and explore
-                the best available
-                packages.
-              </p>
-            </div>
-
-            <form
-              onSubmit={submitPlanner}
-            >
-              <div className="dh-form-grid">
-                <label>
-                  <span>
-                    Travellers
-                  </span>
-
-                  <div className="dh-input-icon">
-                    <FaUsers />
-
-                    <input
-                      type="number"
-                      min="1"
-                      max="20"
-                      value={travellers}
-                      onChange={(event) =>
-                        setTravellers(
-                          Math.max(
-                            1,
-                            Math.min(
-                              20,
-                              Number(
-                                event.target
-                                  .value
-                              ) || 1
-                            )
-                          )
-                        )
-                      }
-                    />
-                  </div>
-                </label>
-
-                <label>
-                  <span>
-                    Travel Date
-                  </span>
-
-                  <div className="dh-input-icon">
-                    <FaCalendarAlt />
-
-                    <input
-                      type="date"
-                      value={travelDate}
-                      onChange={(event) =>
-                        setTravelDate(
-                          event.target.value
-                        )
-                      }
-                    />
-                  </div>
-                </label>
+              <div className="dh-planner-header">
+                <span>PLAN YOUR ESCAPE</span>
+                <h2>{destination.title}</h2>
+                <p>
+                  Tell us a little about your trip and explore
+                  the best available packages.
+                </p>
               </div>
 
-              <label className="dh-city-select">
-                <span>
-                  Preferred City
-                </span>
+              <form onSubmit={submitPlanner}>
+                {/* Keep your existing form fields here:
+              Travellers, Travel Date, Preferred City */}
 
-                <div className="dh-input-icon">
-                  <FaMapMarkerAlt />
+                <div className="dh-form-grid">
+                  <label>
+                    <span>Travellers</span>
+                    <div className="dh-input-icon">
+                      <FaUsers />
+                      <input
+                        type="number"
+                        min="1"
+                        max="20"
+                        value={travellers}
+                        onChange={(event) =>
+                          setTravellers(
+                            Math.max(
+                              1,
+                              Math.min(
+                                20,
+                                Number(event.target.value) || 1
+                              )
+                            )
+                          )
+                        }
+                        required
+                      />
+                    </div>
+                  </label>
 
-                  <select
-                    value={
-                      currentCity?.slug ||
-                      ""
-                    }
-                    onChange={(event) => {
-                      const index =
-                        cities.findIndex(
-                          (city) =>
-                            city.slug ===
-                            event.target
-                              .value
+                  <label>
+                    <span>Travel Date</span>
+                    <div className="dh-input-icon">
+                      <FaCalendarAlt />
+                      <input
+                        type="date"
+                        min={new Date().toISOString().split("T")[0]}
+                        value={travelDate}
+                        onChange={(event) =>
+                          setTravelDate(event.target.value)
+                        }
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <label className="dh-city-select">
+                  <span>Preferred City</span>
+                  <div className="dh-input-icon">
+                    <FaMapMarkerAlt />
+                    <select
+                      value={currentCity?.slug || ""}
+                      onChange={(event) => {
+                        const index = cities.findIndex(
+                          (city) => city.slug === event.target.value
                         );
 
-                      if (index >= 0) {
-                        setActiveCity(
-                          index
-                        );
-                      }
-                    }}
-                  >
-                    {cities.length === 0 ? (
-                      <option value="">
-                        Entire destination
-                      </option>
-                    ) : (
-                      cities.map(
-                        (city) => (
-                          <option
-                            key={city.slug}
-                            value={
-                              city.slug
-                            }
-                          >
+                        if (index >= 0) setActiveCity(index);
+                      }}
+                    >
+                      {cities.length === 0 ? (
+                        <option value="">Entire destination</option>
+                      ) : (
+                        cities.map((city) => (
+                          <option key={city.slug} value={city.slug}>
                             {city.name}
                           </option>
-                        )
-                      )
-                    )}
-                  </select>
-                </div>
-              </label>
+                        ))
+                      )}
+                    </select>
+                  </div>
+                </label>
 
-              <button
-                type="submit"
-                className="dh-planner-submit"
-              >
-                <span>
-                  Find Packages
-                </span>
+                <button type="submit" className="dh-planner-submit">
+                  <span>Find Packages</span>
+                  <FaSearch />
+                </button>
+              </form>
+            </div>
+          </div>,
+          document.body
+        )}
 
-                <FaSearch />
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </>
   );
 };

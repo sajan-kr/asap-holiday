@@ -2276,3 +2276,230 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================
+   PLANNER MODAL — RESPONSIVE FIX
+   Fixes Plan My Trip + Start Planning
+========================================= */
+
+body.dh-modal-open {
+  overflow: hidden !important;
+}
+
+.dh-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  padding: 20px 16px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  background: rgba(4, 8, 15, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dh-planner {
+  position: relative !important;
+  flex: 0 0 auto;
+
+  width: min(520px, 100%) !important;
+  max-width: 100%;
+
+  max-height: calc(100vh - 40px) !important;
+  max-height: calc(100dvh - 40px) !important;
+
+  margin: auto;
+  padding: 30px 28px 26px !important;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b2c #172033;
+
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+
+  background: linear-gradient(145deg, #172033, #0d1421);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.dh-planner-header {
+  padding-right: 24px;
+  margin-bottom: 22px;
+}
+
+.dh-planner-header h2 {
+  margin: 8px 0;
+  font-size: clamp(24px, 5vw, 30px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.dh-planner-header p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.dh-planner form {
+  width: 100%;
+}
+
+.dh-planner .dh-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dh-planner label {
+  min-width: 0;
+}
+
+.dh-planner .dh-input-icon,
+.dh-planner input,
+.dh-planner select {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dh-planner .dh-planner-submit {
+  margin-bottom: 0;
+}
+
+.dh-planner .dh-modal-close {
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+}
+
+/* Tablets and mobile phones */
+@media (max-width: 600px) {
+  .dh-modal {
+    padding: 12px !important;
+  }
+
+  .dh-planner {
+    width: 100% !important;
+    max-height: calc(100vh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+
+    padding: 25px 18px 20px !important;
+    border-radius: 16px;
+  }
+
+  .dh-planner-header {
+    padding-right: 20px;
+    margin-bottom: 18px;
+  }
+
+  .dh-planner-header h2 {
+    font-size: 25px;
+  }
+
+  .dh-planner .dh-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .dh-planner label {
+    margin-bottom: 12px;
+  }
+
+  .dh-planner .dh-planner-submit {
+    min-height: 46px;
+  }
+}
+
+/* Short browser windows */
+@media (max-height: 520px) {
+  .dh-modal {
+    align-items: flex-start !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .dh-planner {
+    max-height: calc(100vh - 20px) !important;
+    max-height: calc(100dvh - 20px) !important;
+    margin: auto;
+  }
+}
+
+/* Planner modal — fixed to the viewport */
+.dh-modal.dh-planner-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  max-width: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+  padding: 20px !important;
+  margin: 0 !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  background: rgba(5, 12, 25, 0.78) !important;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.dh-modal.dh-planner-modal .dh-planner {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  flex: 0 1 520px !important;
+
+  width: 520px !important;
+  max-width: 100% !important;
+  max-height: calc(100dvh - 40px) !important;
+
+  margin: auto !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .dh-modal.dh-planner-modal {
+    padding: 12px !important;
+  }
+
+  .dh-modal.dh-planner-modal .dh-planner {
+    width: 100% !important;
+    max-height: calc(100dvh - 24px) !important;
+    border-radius: 16px;
+  }
+
+  .dh-modal.dh-planner-modal .dh-form-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
