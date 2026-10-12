@@ -57,12 +57,8 @@ const DestinationDetails = () => {
         destinations={destinationsData}
       />
 
-      {/* =========================================
-          02. Destination Highlights
-          ========================================= */}
-      <DestinationHighlights
-        destination={destination}
-      />
+      {/* // Use the destination object you already select by slug. */}
+      <DestinationHighlights destination={destination} />
 
       {/* =========================================
           03. Destination Gallery
