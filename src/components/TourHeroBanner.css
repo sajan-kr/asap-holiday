@@ -636,6 +636,7 @@
   padding: 20px;
   background: rgba(4, 12, 23, 0.74);
   backdrop-filter: blur(8px);
+  z-index: 99999;
 }
 
 .heroBookingDrawer {
