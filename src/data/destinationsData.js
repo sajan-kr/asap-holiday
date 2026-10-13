@@ -1,7 +1,5 @@
 export const destinationsData = [
   // ================= INDIA & AROUND =================
-
-
   {
     id: 1,
     slug: "himachal-pradesh",
@@ -72,9 +70,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 2,
     slug: "ladakh",
@@ -163,8 +158,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 3,
     slug: "nepal",
@@ -253,9 +246,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 4,
     slug: "sikkim",
@@ -344,9 +334,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 5,
     slug: "kailash-mansarovar",
@@ -413,9 +400,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 5,
     slug: "kailash-mansarovar",
@@ -557,12 +541,8 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900",
       },
     ],
-
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 7,
     slug: "goa",
@@ -573,7 +553,6 @@ export const destinationsData = [
     price: "₹38,000",
     duration: "4 Nights / 5 Days",
     rating: "4.7",
-
     image:
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1600&auto=format&fit=crop",
 
@@ -592,7 +571,6 @@ export const destinationsData = [
       "Water Sports",
       "Resorts",
     ],
-
     // NEW: Destination gallery images
     images: [
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1600&auto=format&fit=crop",
@@ -604,7 +582,6 @@ export const destinationsData = [
       "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
     ],
-
     attractions: [
       {
         id: "baga-beach",
@@ -650,9 +627,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 8,
     slug: "kerala",
@@ -683,7 +657,6 @@ export const destinationsData = [
       "Houseboats",
       "Nature",
     ],
-
     // NEW: Destination gallery images
     images: [
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1600&auto=format&fit=crop",
@@ -741,9 +714,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 9,
     slug: "kashmir",
@@ -832,8 +802,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 10,
     slug: "andaman",
@@ -1006,8 +974,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 12,
     slug: "dubai",
@@ -1081,8 +1047,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 13,
     slug: "maldives",
@@ -1156,9 +1120,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
-
   {
     id: 14,
     slug: "thailand",
@@ -1232,8 +1193,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 15,
     slug: "switzerland",
@@ -1307,8 +1266,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 16,
     slug: "singapore",
@@ -1382,8 +1339,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 17,
     slug: "paris",
@@ -1457,8 +1412,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 18,
     slug: "turkey",
@@ -1532,8 +1485,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 19,
     slug: "vietnam",
@@ -1607,8 +1558,6 @@ export const destinationsData = [
 
     bookingUrl: "#destination-cta",
   },
-
-
   {
     id: 20,
     slug: "japan",
