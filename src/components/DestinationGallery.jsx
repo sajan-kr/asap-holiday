@@ -271,9 +271,8 @@ const DestinationGallery = ({ destination }) => {
                   ref={(element) => {
                     thumbnailRefs.current[index] = element;
                   }}
-                  className={`dg-thumb ${
-                    activeImage === index ? "is-active" : ""
-                  }`}
+                  className={`dg-thumb ${activeImage === index ? "is-active" : ""
+                    }`}
                   onClick={() => setActiveImage(index)}
                   aria-label={`View image ${index + 1}`}
                   aria-pressed={activeImage === index}

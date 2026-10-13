@@ -1,8 +1,4 @@
-
-/* ==========================================
-   ASAP HOLIDAYS — SIGNATURE DESTINATION GALLERY
-========================================== */
-
+/* ======= ASAP HOLIDAYS — SIGNATURE DESTINATION GALLERY ======= */
 .destination-gallery {
   --dg-orange: #ff7417;
   --dg-navy: #10203f;
@@ -197,7 +193,6 @@
 }
 
 /* CAPTION */
-
 .dg-featured__caption {
   position: absolute;
   right: 150px;
@@ -217,8 +212,6 @@
   text-align: start;
 }
 
-
-
 .dg-featured__caption h3 {
   max-width: 100%;
   margin: 0;
@@ -235,7 +228,6 @@
   /* Limit the title to two lines */
   max-height: calc(1.15em * 2);
 }
-
 
 .dg-featured__caption p {
   max-width: 450px;
