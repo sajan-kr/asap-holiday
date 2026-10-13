@@ -214,10 +214,12 @@
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-align: start;
 }
 
+
+
 .dg-featured__caption h3 {
-  display: -webkit-box;
   max-width: 100%;
   margin: 0;
   overflow: hidden;
@@ -228,9 +230,12 @@
   line-height: 1.15;
   letter-spacing: -0.5px;
   overflow-wrap: anywhere;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  text-align: start;
+
+  /* Limit the title to two lines */
+  max-height: calc(1.15em * 2);
 }
+
 
 .dg-featured__caption p {
   max-width: 450px;
@@ -238,6 +243,7 @@
   color: rgba(255, 255, 255, 0.92);
   font-size: 12px;
   line-height: 1.7;
+  text-align: start;
 }
 
 /* NAVIGATION */

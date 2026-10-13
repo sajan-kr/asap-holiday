@@ -16,6 +16,7 @@ const DestinationGallery = ({ destination }) => {
   const [paused, setPaused] = useState(false);
 
   const thumbnailRefs = useRef([]);
+  const thumbnailRailRef = useRef(null);
   const touchStartX = useRef(null);
 
   const name =
@@ -33,7 +34,8 @@ const DestinationGallery = ({ destination }) => {
       ...new Set(
         source.filter(
           (image) =>
-            typeof image === "string" && image.trim().length > 0
+            typeof image === "string" &&
+            image.trim().length > 0
         )
       ),
     ];
@@ -45,14 +47,18 @@ const DestinationGallery = ({ destination }) => {
   const current = String(activeImage + 1).padStart(2, "0");
   const count = String(total).padStart(2, "0");
 
-  // Reset when the destination changes.
+  // Reset the gallery when the destination changes.
   useEffect(() => {
     setActiveImage(0);
     setPaused(false);
     thumbnailRefs.current = [];
+
+    if (thumbnailRailRef.current) {
+      thumbnailRailRef.current.scrollLeft = 0;
+    }
   }, [destination?.slug, destination?.image]);
 
-  // Keep the selected index valid.
+  // Keep the selected index valid if the image list changes.
   useEffect(() => {
     if (total === 0) {
       setActiveImage(0);
@@ -72,12 +78,33 @@ const DestinationGallery = ({ destination }) => {
     return () => window.clearInterval(timer);
   }, [total, paused]);
 
-  // Keep the selected thumbnail visible.
+  // FIX: Scroll only the thumbnail rail, never the whole page.
   useEffect(() => {
-    thumbnailRefs.current[activeImage]?.scrollIntoView({
+    const rail = thumbnailRailRef.current;
+    const thumbnail = thumbnailRefs.current[activeImage];
+
+    if (!rail || !thumbnail) return;
+
+    const railRect = rail.getBoundingClientRect();
+    const thumbnailRect = thumbnail.getBoundingClientRect();
+
+    // Calculate the thumbnail's horizontal position inside the rail.
+    const targetLeft =
+      rail.scrollLeft +
+      thumbnailRect.left -
+      railRect.left -
+      (rail.clientWidth - thumbnailRect.width) / 2;
+
+    // Scroll only the thumbnail container horizontally.
+    rail.scrollTo({
+      left: Math.max(
+        0,
+        Math.min(
+          targetLeft,
+          rail.scrollWidth - rail.clientWidth
+        )
+      ),
       behavior: "smooth",
-      block: "nearest",
-      inline: "nearest",
     });
   }, [activeImage]);
 
@@ -90,9 +117,7 @@ const DestinationGallery = ({ destination }) => {
   const previousImage = () => {
     if (total <= 1) return;
 
-    setActiveImage(
-      (index) => (index - 1 + total) % total
-    );
+    setActiveImage((index) => (index - 1 + total) % total);
   };
 
   const handleTouchStart = (event) => {
@@ -125,7 +150,6 @@ const DestinationGallery = ({ destination }) => {
       aria-label={`${name} photo gallery`}
     >
       <div className="destination-gallery__container">
-
         {/* Section heading */}
         <header className="dg-heading">
           <span className="dg-eyebrow">
@@ -183,7 +207,7 @@ const DestinationGallery = ({ destination }) => {
             <span>{count}</span>
           </div>
 
-          {/* Previous and next */}
+          {/* Previous and next buttons */}
           {total > 1 && (
             <>
               <button
@@ -236,7 +260,10 @@ const DestinationGallery = ({ destination }) => {
               </span>
             </div>
 
-            <div className="dg-thumbnails">
+            <div
+              className="dg-thumbnails"
+              ref={thumbnailRailRef}
+            >
               {images.map((image, index) => (
                 <button
                   type="button"
@@ -319,7 +346,6 @@ const DestinationGallery = ({ destination }) => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
