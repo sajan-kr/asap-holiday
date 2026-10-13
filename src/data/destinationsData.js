@@ -1,6 +1,7 @@
 export const destinationsData = [
   // ================= INDIA & AROUND =================
 
+
   {
     id: 1,
     slug: "himachal-pradesh",
@@ -20,6 +21,18 @@ export const destinationsData = [
       "Adventure Activities",
       "Nature Views",
       "Camping",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -60,6 +73,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 2,
     slug: "ladakh",
@@ -89,6 +104,18 @@ export const destinationsData = [
       "Lakes",
       "Monasteries",
       "Mountain Passes",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -137,6 +164,7 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
   {
     id: 3,
     slug: "nepal",
@@ -166,6 +194,18 @@ export const destinationsData = [
       "Temples",
       "Adventure",
       "Nature",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -214,6 +254,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 4,
     slug: "sikkim",
@@ -243,6 +285,18 @@ export const destinationsData = [
       "Monasteries",
       "Waterfalls",
       "Nature",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -291,6 +345,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 5,
     slug: "kailash-mansarovar",
@@ -318,6 +374,18 @@ export const destinationsData = [
       "Pilgrimage",
       "Mountain Views",
       "Lake",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -346,6 +414,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 5,
     slug: "kailash-mansarovar",
@@ -373,6 +443,18 @@ export const destinationsData = [
       "Pilgrimage",
       "Mountain Views",
       "Lake",
+    ],
+
+    // NEW: Gallery images
+    images: [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -431,6 +513,18 @@ export const destinationsData = [
       "Peaceful Views",
     ],
 
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "thimphu",
@@ -467,6 +561,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 7,
     slug: "goa",
@@ -495,6 +591,18 @@ export const destinationsData = [
       "Nightlife",
       "Water Sports",
       "Resorts",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -543,6 +651,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 8,
     slug: "kerala",
@@ -572,6 +682,18 @@ export const destinationsData = [
       "Tea Gardens",
       "Houseboats",
       "Nature",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -620,6 +742,8 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
+
   {
     id: 9,
     slug: "kashmir",
@@ -649,6 +773,18 @@ export const destinationsData = [
       "Snow",
       "Valleys",
       "Shikara Ride",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -697,6 +833,7 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
+
   {
     id: 10,
     slug: "andaman",
@@ -725,6 +862,18 @@ export const destinationsData = [
       "Island Tours",
       "Beaches",
       "Water Sports",
+    ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1600&auto=format&fit=crop",
     ],
 
     attractions: [
@@ -763,7 +912,6 @@ export const destinationsData = [
     bookingUrl: "#destination-cta",
   },
 
-
   // ================= INTERNATIONAL =================
 
   {
@@ -776,17 +924,53 @@ export const destinationsData = [
     price: "₹82,000",
     duration: "5 Nights / 6 Days",
     rating: "4.9",
+
     image:
       "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
+
+    // Destination Gallery images
+    images: [
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop",
+
+      // Tropical beach
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+
+      // Waterfall and rainforest
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=1600&auto=format&fit=crop",
+
+      // Sunset by the ocean
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+
+      // Green tropical landscape
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=1600&auto=format&fit=crop",
+
+      // Turquoise sea
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1600&auto=format&fit=crop",
+
+      // Tropical island scenery
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1600&auto=format&fit=crop",
+
+      // Scenic tropical coast
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     description:
       "Luxury beaches, waterfalls and tropical resorts.",
-    cities: ["Ubud", "Kuta", "Seminyak", "Nusa Penida"],
+
+    cities: [
+      "Ubud",
+      "Kuta",
+      "Seminyak",
+      "Nusa Penida",
+    ],
+
     highlights: [
       "Luxury Villas",
       "Beach Clubs",
       "Waterfalls",
       "Temples",
     ],
+
     attractions: [
       {
         id: "ubud",
@@ -819,8 +1003,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 12,
@@ -832,17 +1018,34 @@ export const destinationsData = [
     price: "₹95,000",
     duration: "4 Nights / 5 Days",
     rating: "4.8",
+
     image:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Luxury city with skyscrapers, shopping and desert safari.",
+
     cities: ["Downtown Dubai", "Marina", "Palm Jumeirah"],
+
     highlights: [
       "Burj Khalifa",
       "Desert Safari",
       "Luxury Shopping",
       "Skyline",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "burj-khalifa",
@@ -875,8 +1078,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 13,
@@ -888,17 +1093,34 @@ export const destinationsData = [
     price: "₹1,25,000",
     duration: "4 Nights / 5 Days",
     rating: "5.0",
+
     image:
       "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Private island paradise with water villas and beaches.",
+
     cities: ["Male", "Maafushi", "Vaadhoo Island"],
+
     highlights: [
       "Water Villas",
       "Luxury Resorts",
       "Romantic Stay",
       "Blue Ocean",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "male",
@@ -931,8 +1153,11 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
+
 
   {
     id: 14,
@@ -944,17 +1169,34 @@ export const destinationsData = [
     price: "₹78,000",
     duration: "5 Nights / 6 Days",
     rating: "4.8",
+
     image:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Beautiful beaches, nightlife and island adventures.",
+
     cities: ["Bangkok", "Phuket", "Krabi", "Pattaya"],
+
     highlights: [
       "Island Tours",
       "Nightlife",
       "Beaches",
       "Street Food",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "bangkok",
@@ -987,8 +1229,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 15,
@@ -1000,17 +1244,34 @@ export const destinationsData = [
     price: "₹2,10,000",
     duration: "7 Nights / 8 Days",
     rating: "4.9",
+
     image:
       "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Snow mountains, scenic trains and luxury experiences.",
+
     cities: ["Zurich", "Lucerne", "Interlaken", "Geneva"],
+
     highlights: [
       "Swiss Alps",
       "Luxury Trains",
       "Snow Activities",
       "Lakes",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "zurich",
@@ -1043,8 +1304,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 16,
@@ -1056,17 +1319,34 @@ export const destinationsData = [
     price: "₹95,000",
     duration: "4 Nights / 5 Days",
     rating: "4.8",
+
     image:
       "https://images.unsplash.com/photo-1496939376851-89342e90adcd?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Modern city with skyline, shopping and attractions.",
+
     cities: ["Marina Bay", "Sentosa", "Orchard Road"],
+
     highlights: [
       "Marina Bay Sands",
       "Universal Studios",
       "Gardens By The Bay",
       "Luxury Shopping",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1496939376851-89342e90adcd?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "marina-bay",
@@ -1099,8 +1379,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 17,
@@ -1112,17 +1394,34 @@ export const destinationsData = [
     price: "₹1,85,000",
     duration: "6 Nights / 7 Days",
     rating: "4.9",
+
     image:
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Romantic city with Eiffel Tower and luxury fashion.",
+
     cities: ["Eiffel Tower", "Louvre Museum", "Montmartre"],
+
     highlights: [
       "Eiffel Tower",
       "Luxury Fashion",
       "French Cafes",
       "Museums",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1566139884669-3f9b1f3a3a34?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "eiffel-tower",
@@ -1155,8 +1454,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 18,
@@ -1168,17 +1469,34 @@ export const destinationsData = [
     price: "₹1,10,000",
     duration: "6 Nights / 7 Days",
     rating: "4.8",
+
     image:
       "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Historic architecture, hot air balloons and culture.",
+
     cities: ["Istanbul", "Cappadocia", "Antalya"],
+
     highlights: [
       "Hot Air Balloons",
       "Mosques",
       "Turkish Food",
       "Historic Culture",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "istanbul",
@@ -1211,8 +1529,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 19,
@@ -1224,17 +1544,34 @@ export const destinationsData = [
     price: "₹82,000",
     duration: "5 Nights / 6 Days",
     rating: "4.7",
+
     image:
       "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1600&auto=format&fit=crop",
+
     description:
       "Natural beauty, islands and vibrant street culture.",
+
     cities: ["Hanoi", "Da Nang", "Ho Chi Minh"],
+
     highlights: [
       "Cruise Tours",
       "Street Food",
       "Beaches",
       "Culture",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540611025311-01df3cef54b5?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531737212413-667205e1cda7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "hanoi",
@@ -1267,8 +1604,10 @@ export const destinationsData = [
           "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 
   {
     id: 20,
@@ -1281,14 +1620,34 @@ export const destinationsData = [
     price: "₹2,40,000",
     duration: "7 Nights / 8 Days",
     rating: "5.0",
+
+    // NEW: Main destination image
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1600&auto=format&fit=crop",
+
     description: "Technology, cherry blossoms and traditional culture.",
+
     cities: ["Tokyo", "Kyoto", "Osaka", "Mount Fuji"],
+
     highlights: [
       "Cherry Blossoms",
       "Anime Culture",
       "Bullet Train",
       "Traditional Temples",
     ],
+
+    // NEW: Destination gallery images
+    images: [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1600&auto=format&fit=crop",
+    ],
+
     attractions: [
       {
         id: "tokyo",
@@ -1299,6 +1658,8 @@ export const destinationsData = [
         image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=900",
       },
     ],
+
     bookingUrl: "#destination-cta",
   },
+
 ];
