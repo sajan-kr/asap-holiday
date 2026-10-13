@@ -144,11 +144,7 @@ const DestinationGallery = ({ destination }) => {
   if (!destination || total === 0) return null;
 
   return (
-    <section
-      className="destination-gallery"
-      id="destination-gallery"
-      aria-label={`${name} photo gallery`}
-    >
+    <section className="destination-gallery" id="destination-gallery" aria-label={`${name} photo gallery`}>
       <div className="destination-gallery__container">
         {/* Section heading */}
         <header className="dg-heading">
@@ -167,8 +163,7 @@ const DestinationGallery = ({ destination }) => {
         </header>
 
         {/* Featured image */}
-        <div
-          className="dg-featured"
+        <div className="dg-featured"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
