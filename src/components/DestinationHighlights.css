@@ -1,1929 +1,965 @@
 .dhl-section {
-
   padding: 58px 0;
-
   background: #fff;
-
   color: #1c2b3a;
-
-  font-family: "Poppins", sans-serif
-
+  font-family: "Poppins", sans-serif;
 }
-
-
 
 .dhl-container {
-
   width: min(1180px, calc(100% - 40px));
-
-  margin: 0 auto
-
+  margin: 0 auto;
 }
-
-
 
 .dhl-heading-row {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: flex-end;
-
   gap: 24px;
-
-  margin-bottom: 26px
-
+  margin-bottom: 26px;
 }
-
-
 
 .dhl-heading-copy {
-
-  min-width: 0
-
+  min-width: 0;
 }
-
-
 
 .dhl-eyebrow {
-
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
   margin-bottom: 10px;
-
   color: #e98029;
-
-  font-size: 11px;
-
+  font-size: 12px;
   font-weight: 700;
-
-  letter-spacing: 1.4px
-
+  letter-spacing: 1.4px;
 }
-
-
 
 .dhl-heading-copy h2 {
-
-    margin: 0;
-
-    color: #1b2939;
-
-    font-size: clamp(25px, 3vw, 35px);
-
-    line-height: 1.3;
-
-    letter-spacing: -.7px;
-
-    text-align: start;
-
+  margin: 0;
+  color: #1b2939;
+  font-size: clamp(28px, 3.4vw, 43px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -.7px;
+  text-align: start;
 }
-
-
 
 .dhl-heading-copy h2 span {
-
-  color: #e98029
-
+  color: #e98029;
 }
-
-
 
 .dhl-heading-copy p {
-
   max-width: 580px;
-
   margin: 10px 0 0;
-
   color: #788596;
-
   font-size: 13px;
-
-  line-height: 1.8
-
+  line-height: 1.8;
 }
-
-
 
 .dhl-plan-button {
-
   display: inline-flex;
-
   flex-shrink: 0;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
-
   padding: 12px 17px;
-
   border: 0;
-
   border-radius: 8px;
-
   background: #e98029;
-
   color: #fff;
-
   font: inherit;
-
   font-size: 12px;
-
   font-weight: 700;
-
   cursor: pointer;
-
-  transition: background .2s ease, transform .2s ease
-
+  transition: background .2s ease, transform .2s ease;
 }
-
-
 
 .dhl-plan-button:hover {
-
   background: #cf6919;
-
-  transform: translateY(-2px)
-
+  transform: translateY(-2px);
 }
-
-
 
 .dhl-booking-message {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: flex-start;
-
   gap: 12px;
-
   margin: 0 0 16px;
-
   padding: 12px 14px;
-
   border: 1px solid #f0c99f;
-
   border-radius: 8px;
-
   background: #fff7ed;
-
   color: #85501d;
-
   font-size: 12px;
-
-  line-height: 1.6
-
+  line-height: 1.6;
 }
-
-
 
 .dhl-booking-message button {
-
   flex-shrink: 0;
-
   border: 0;
-
   background: transparent;
-
   color: inherit;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-toolbar {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   padding: 16px 0;
-
-  border-top: 1px solid #edf0f4
-
+  border-top: 1px solid #edf0f4;
 }
-
-
 
 .dhl-search {
-
   display: flex;
-
   align-items: center;
-
   flex: 1;
-
   gap: 10px;
-
   min-width: 0;
-
   height: 42px;
-
   padding: 0 12px;
-
   border: 1px solid #e4e9ef;
-
   border-radius: 8px;
-
   color: #8b96a4;
-
-  transition: border-color .2s ease
-
+  transition: border-color .2s ease;
 }
-
-
 
 .dhl-search:focus-within {
-
-  border-color: #e98029
-
+  border-color: #e98029;
 }
-
-
 
 .dhl-search input {
-
   width: 100%;
-
   min-width: 0;
-
   border: 0;
-
   outline: none;
-
   background: transparent;
-
   color: #29394a;
-
   font: inherit;
-
-  font-size: 12px
-
+  font-size: 12px;
 }
-
-
 
 .dhl-search input::placeholder {
-
-  color: #9aa4b0
-
+  color: #9aa4b0;
 }
-
-
 
 .dhl-search button {
-
   display: grid;
-
   place-items: center;
-
   padding: 4px;
-
   border: 0;
-
   background: transparent;
-
   color: #7b8794;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-saved-filter,
-
 .dhl-sort {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 8px;
-
   min-height: 42px;
-
   padding: 0 12px;
-
   border: 1px solid #e4e9ef;
-
   border-radius: 8px;
-
   background: #fff;
-
   color: #657283;
-
   font: inherit;
-
-  font-size: 11px
-
+  font-size: 11px;
 }
-
-
 
 .dhl-saved-filter {
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-saved-filter.active {
-
   border-color: #efb68b;
-
   background: #fff4eb;
-
-  color: #d76c20
-
+  color: #d76c20;
 }
-
-
 
 .dhl-saved-filter span {
-
   display: grid;
-
   place-items: center;
-
   min-width: 20px;
-
   height: 20px;
-
   padding: 0 5px;
-
   border-radius: 20px;
-
-  background: #f1f3f6
-
+  background: #f1f3f6;
 }
-
-
 
 .dhl-sort select {
-
   max-width: 130px;
-
   border: 0;
-
   outline: none;
-
   background: transparent;
-
   color: inherit;
-
   font: inherit;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-categories {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 8px;
-
-  margin: 0 0 15px
-
+  margin: 0 0 15px;
 }
-
-
 
 .dhl-categories button {
-
   padding: 8px 13px;
-
   border: 1px solid #e7ecf1;
-
   border-radius: 7px;
-
   background: #fff;
-
   color: #697788;
-
   font: inherit;
-
   font-size: 11px;
-
   cursor: pointer;
-
-  transition: all .2s ease
-
+  transition: all .2s ease;
 }
-
-
 
 .dhl-categories button:hover,
-
 .dhl-categories button.active {
-
   border-color: #e98029;
-
   background: #fff4e9;
-
-  color: #ce691b
-
+  color: #ce691b;
 }
-
-
 
 .dhl-categories button.active {
-
-  font-weight: 700
-
+  font-weight: 700;
 }
-
-
 
 .dhl-results {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 12px;
-
   margin: 15px 0;
-
   color: #8994a1;
-
-  font-size: 11px
-
+  font-size: 12px;
 }
-
-
 
 .dhl-results strong {
-
-  color: #253447
-
+  color: #253447;
 }
-
-
 
 .dhl-results>button {
-
   padding: 4px 0;
-
   border: 0;
-
   background: transparent;
-
   color: #d86d20;
-
   font: inherit;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-grid {
-
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 18px
-
+  gap: 18px;
 }
-
-
 
 .dhl-card {
-
   position: relative;
-
   min-width: 0;
-
   overflow: hidden;
-
   border: 1px solid #e7ecf1;
-
   border-radius: 12px;
-
   background: #fff;
-
-  transition: transform .25s ease, box-shadow .25s ease
-
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-
-
 
 .dhl-card:hover {
-
   transform: translateY(-4px);
-
-  box-shadow: 0 12px 28px rgba(31, 47, 65, .09)
-
+  box-shadow: 0 12px 28px rgba(31, 47, 65, .09);
 }
-
-
 
 .dhl-image-button {
-
   position: relative;
-
   display: block;
-
   width: 100%;
-
   height: 165px;
-
   padding: 0;
-
   overflow: hidden;
-
   border: 0;
-
   background: #edf1f5;
-
   text-align: left;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-image {
-
   display: block;
-
   width: 100%;
-
   height: 100%;
-
   object-fit: cover;
-
-  transition: transform .4s ease
-
+  transition: transform .4s ease;
 }
-
-
 
 .dhl-card:hover .dhl-image {
-
-  transform: scale(1.05)
-
+  transform: scale(1.05);
 }
-
-
 
 .dhl-image-placeholder {
-
   display: flex;
-
   width: 100%;
-
   height: 100%;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 8px;
-
-  color: #e98029
-
+  color: #e98029;
 }
-
-
 
 .dhl-image-placeholder svg {
-
-  font-size: 28px
-
+  font-size: 28px;
 }
-
-
 
 .dhl-image-placeholder span {
-
   padding: 0 10px;
-
   color: #5d6b7b;
-
   font-size: 12px;
-
-  text-align: center
-
+  text-align: center;
 }
-
-
 
 .dhl-image-overlay {
-
   position: absolute;
-
   inset: 40% 0 0;
-
   background: linear-gradient(transparent, rgba(15, 28, 43, .65));
-
-  pointer-events: none
-
+  pointer-events: none;
 }
-
-
 
 .dhl-category-badge {
-
   position: absolute;
-
   bottom: 11px;
-
   left: 10px;
-
   max-width: calc(100% - 70px);
-
   overflow: hidden;
-
   padding: 6px 9px;
-
   border-radius: 5px;
-
   background: rgba(255, 255, 255, .96);
-
   color: #2c3a4b;
-
   font-size: 10px;
-
   font-weight: 700;
-
   text-overflow: ellipsis;
-
-  white-space: nowrap
-
+  white-space: nowrap;
 }
-
-
 
 .dhl-image-cta {
-
   position: absolute;
-
   right: 10px;
-
   bottom: 14px;
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
   color: #fff;
-
   font-size: 9px;
-
   font-weight: 700;
-
   opacity: 0;
-
   transform: translateY(4px);
-
-  transition: opacity .2s ease, transform .2s ease
-
+  transition: opacity .2s ease, transform .2s ease;
 }
-
-
 
 .dhl-card:hover .dhl-image-cta,
-
 .dhl-image-button:focus-visible .dhl-image-cta {
-
   opacity: 1;
-
-  transform: translateY(0)
-
+  transform: translateY(0);
 }
-
-
 
 .dhl-heart {
-
   position: absolute;
-
   top: 10px;
-
   right: 10px;
-
   z-index: 2;
-
   display: grid;
-
   place-items: center;
-
   width: 34px;
-
   height: 34px;
-
   border: 0;
-
   border-radius: 50%;
-
   background: rgba(255, 255, 255, .97);
-
   color: #586678;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-
   cursor: pointer;
-
-  transition: transform .2s ease, color .2s ease
-
+  transition: transform .2s ease, color .2s ease;
 }
-
-
 
 .dhl-heart:hover {
-
-  transform: scale(1.08)
-
+  transform: scale(1.08);
 }
-
-
 
 .dhl-heart.saved {
-
-  color: #e34e61
-
+  color: #e34e61;
 }
-
-
 
 .dhl-card-body {
-
-  padding: 14px
-
+  padding: 14px;
 }
-
-
 
 .dhl-location {
-
   display: flex;
-
   align-items: center;
-
   gap: 6px;
-
   min-width: 0;
-
   color: #8491a0;
-
-  font-size: 10px
-
+  font-size: 10px;
 }
-
-
 
 .dhl-location svg {
-
   flex-shrink: 0;
-
-  color: #e98029
-
+  color: #e98029;
 }
-
-
 
 .dhl-location span {
-
   overflow: hidden;
-
   text-overflow: ellipsis;
-
-  white-space: nowrap
-
+  white-space: nowrap;
 }
-
-
 
 .dhl-card-body h3 {
-
   display: -webkit-box;
-
   overflow: hidden;
-
   min-height: 42px;
-
   margin: 9px 0 6px;
-
   color: #1c2b3b;
-
   font-size: 14px;
-
   font-weight: 700;
-
   line-height: 1.5;
-
-
-
   -webkit-box-orient: vertical;
-
   -webkit-line-clamp: 2;
-
   line-clamp: 2;
-
   text-align: start;
-
 }
-
-
 
 .dhl-description {
-
   display: -webkit-box;
-
   overflow: hidden;
-
   min-height: 36px;
-
   margin: 0;
-
   color: #788596;
-
-  font-size: 11px;
-
+  font-size: 12px;
   line-height: 1.65;
-
-
-
   -webkit-box-orient: vertical;
-
   -webkit-line-clamp: 2;
-
   line-clamp: 2;
-
 }
-
-
 
 .dhl-card-footer {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 8px;
-
   margin-top: 13px;
-
   padding-top: 10px;
-
-  border-top: 1px solid #eff2f5
-
+  border-top: 1px solid #eff2f5;
 }
-
-
 
 .dhl-duration {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 5px;
-
   color: #8793a0;
-
-  font-size: 9px
-
+  font-size: 9px;
 }
-
-
 
 .dhl-explore-link {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 7px;
-
   margin-left: auto;
-
   padding: 0;
-
   border: 0;
-
   background: transparent;
-
   color: #dd731f;
-
   font: inherit;
-
-  font-size: 11px;
-
+  font-size: 12px;
   font-weight: 700;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-explore-link:hover {
-
-  color: #b9560e
-
+  color: #b9560e;
 }
-
-
 
 .dhl-view-all-wrap {
-
   display: flex;
-
   justify-content: center;
-
-  margin-top: 28px
-
+  margin-top: 28px;
 }
-
-
 
 .dhl-view-all {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 10px;
-
   padding: 12px 21px;
-
   border: 1px solid #efc6a5;
-
   border-radius: 8px;
-
   background: #fff;
-
   color: #d86d20;
-
   font: inherit;
-
   font-size: 12px;
-
   font-weight: 700;
-
   cursor: pointer;
-
-  transition: background .2s ease
-
+  transition: background .2s ease;
 }
-
-
 
 .dhl-view-all:hover {
-
-  background: #fff4e9
-
+  background: #fff4e9;
 }
-
-
 
 .dhl-arrow-up {
-
-  transform: rotate(-90deg)
-
+  transform: rotate(-90deg);
 }
-
-
 
 .dhl-empty {
-
   padding: 42px 16px;
-
   border: 1px dashed #dce4ec;
-
   border-radius: 12px;
-
   color: #8390a0;
-
-  text-align: center
-
+  text-align: center;
 }
-
-
 
 .dhl-empty>svg {
-
   color: #e98029;
-
-  font-size: 25px
-
+  font-size: 25px;
 }
-
-
 
 .dhl-empty h3 {
-
   margin: 12px 0 6px;
-
   color: #263648;
-
-  font-size: 17px
-
+  font-size: 17px;
 }
-
-
 
 .dhl-empty p {
-
-  font-size: 12px
-
+  font-size: 12px;
 }
-
-
 
 .dhl-empty button {
-
   padding: 9px 14px;
-
   border: 0;
-
   border-radius: 6px;
-
   background: #fff0e3;
-
   color: #c96216;
-
   font: inherit;
-
   font-size: 12px;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
 
-
-
 .dhl-modal-backdrop {
-
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 20px;
-
   overflow-y: auto;
-
   background: rgba(13, 24, 38, .72);
-
   backdrop-filter: blur(4px);
 
 }
 
-
-
 .dhl-modal {
-
   position: relative;
-
   width: min(520px, 100%);
-
   max-height: calc(100vh - 40px);
-
   overflow-y: auto;
-
   border-radius: 15px;
-
   background: #fff;
-
   box-shadow: 0 25px 80px rgba(0, 0, 0, .25);
-
-  animation: dhl-modal-in .2s ease-out
-
+  animation: dhl-modal-in .2s ease-out;
 }
-
-
 
 .dhl-modal-close {
-
   position: absolute;
-
   top: 12px;
-
   right: 12px;
-
   z-index: 2;
-
   display: grid;
-
   place-items: center;
-
   width: 36px;
-
   height: 36px;
-
   border: 0;
-
   border-radius: 50%;
-
   background: #fff;
-
   color: #293748;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-modal-image {
-
   display: block;
-
   width: 100%;
-
   height: 240px;
-
   object-fit: cover
-
 }
-
-
 
 .dhl-modal-content {
-
-  padding: 24px
-
+  padding: 24px;
 }
-
-
 
 .dhl-modal-category {
-
   color: #e98029;
-
-  font-size: 11px;
-
+  font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 1px;
-
-  text-transform: uppercase
-
+  text-transform: uppercase;
 }
-
-
 
 .dhl-modal-content h3 {
-
   margin: 8px 0 12px;
-
   color: #1c2b3b;
-
-  font-size: 25px
-
+  font-size: 25px;
 }
-
-
 
 .dhl-modal-content>p {
-
   color: #718092;
-
   font-size: 13px;
-
   line-height: 1.8;
-
   text-align: start;
-
 }
-
-
 
 .dhl-modal-duration {
-
   display: flex;
-
   align-items: center;
-
-  gap: 8px
-
+  gap: 8px;
 }
-
-
 
 .dhl-modal-duration svg {
-
-  color: #e98029
-
+  color: #e98029;
 }
-
-
 
 .dhl-modal-actions {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 10px;
-
-  margin-top: 20px
-
+  margin-top: 20px;
 }
-
-
 
 .dhl-modal-save {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 8px;
-
   padding: 11px 14px;
-
   border: 1px solid #e4e9ef;
-
   border-radius: 8px;
-
   background: #fff;
-
   color: #485667;
-
   font: inherit;
-
   font-size: 12px;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 .dhl-modal-plan {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
-
   width: 100%;
-
   margin-top: 12px;
-
   padding: 12px;
-
   border: 0;
-
   border-radius: 8px;
-
   background: #fff2e6;
-
   color: #c96317;
-
   font: inherit;
-
   font-size: 12px;
-
   font-weight: 700;
-
-  cursor: pointer
-
+  cursor: pointer;
 }
-
-
 
 @keyframes dhl-modal-in {
-
   from {
-
     opacity: 0;
-
-    transform: translateY(8px)
-
+    transform: translateY(8px);
   }
-
-
 
   to {
-
     opacity: 1;
-
-    transform: translateY(0)
-
+    transform: translateY(0);
   }
-
 }
-
-
 
 @media(max-width:1024px) {
-
   .dhl-grid {
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 15px
-
+    gap: 15px;
   }
-
 }
-
-
 
 @media(max-width:720px) {
-
   .dhl-section {
-
-    padding: 42px 0
-
+    padding: 42px 0;
   }
-
-
 
   .dhl-container {
-
-    width: calc(100% - 30px)
-
+    width: calc(100% - 30px);
   }
-
-
 
   .dhl-heading-row {
-
     align-items: flex-start;
-
     flex-direction: column;
-
-    gap: 16px
-
+    gap: 16px;
   }
-
-
 
   .dhl-toolbar {
-
-    flex-wrap: wrap
-
+    flex-wrap: wrap;
   }
-
-
 
   .dhl-search {
-
-    flex-basis: 100%
-
+    flex-basis: 100%;
   }
-
-
 
   .dhl-saved-filter,
-
   .dhl-sort {
-
-    flex: 1
-
+    flex: 1;
   }
-
-
 
   .dhl-grid {
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 12px
-
+    gap: 12px;
   }
-
-
 
   .dhl-image-button {
-
-    height: 145px
-
+    height: 145px;
   }
-
-
 
   .dhl-card-body {
-
-    padding: 11px
-
+    padding: 11px;
   }
-
-
 
   .dhl-card-body h3 {
-
-    font-size: 13px
-
+    font-size: 13px;
   }
-
-
 
   .dhl-description {
-
-    font-size: 10px
-
+    font-size: 10px;
   }
-
-
 
   .dhl-image-cta {
-
-    display: none
-
+    display: none;
   }
-
-
 
   .dhl-modal-image {
-
-    height: 200px
-
+    height: 200px;
   }
-
-
 
   .dhl-modal-content {
-
-    padding: 18px
-
+    padding: 18px;
   }
-
 }
-
-
 
 @media(max-width:380px) {
-
   .dhl-container {
-
-    width: calc(100% - 24px)
-
+    width: calc(100% - 24px);
   }
-
-
 
   .dhl-grid {
-
-    grid-template-columns: 1fr
-
+    grid-template-columns: 1fr;
   }
-
-
 
   .dhl-image-button {
-
-    height: 190px
-
+    height: 190px;
   }
-
-
 
   .dhl-card-body h3,
-
   .dhl-description {
-
-    min-height: 0
-
+    min-height: 0;
   }
-
 }
-
-
 
 @media(prefers-reduced-motion:reduce) {
 
-
-
   .dhl-card,
-
   .dhl-image,
-
   .dhl-heart,
-
   .dhl-plan-button {
-
-    transition: none
-
+    transition: none;
   }
-
-
 
   .dhl-modal {
-
-    animation: none
-
+    animation: none;
   }
-
 }
-
-
 
 /* Popup backdrop */
-
 .dhl-modal-backdrop {
-
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 20px;
-
   overflow-y: auto;
-
   background: rgba(13, 24, 38, 0.72);
-
   backdrop-filter: blur(4px);
-
-    z-index: 99999999;
-
+  z-index: 99999999;
 }
-
-
 
 /* Popup container */
-
 .dhl-modal {
-
   position: relative;
-
   display: grid;
-
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-
   width: min(850px, 100%);
-
   max-height: calc(100vh - 40px);
-
   overflow-x: hidden;
-
   overflow-y: auto;
-
   border-radius: 15px;
-
   background: #fff;
-
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
-
   animation: dhl-modal-in 0.2s ease-out;
-
 }
-
-
 
 /* Close button */
-
 .dhl-modal-close {
-
   position: absolute;
-
   top: 12px;
-
   right: 12px;
-
   z-index: 3;
-
   display: grid;
-
   place-items: center;
-
   width: 36px;
-
   height: 36px;
-
   border: 0;
-
   border-radius: 50%;
-
   background: #fff;
-
   color: #293748;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-
   cursor: pointer;
-
 }
-
-
 
 /* Popup image */
-
 .dhl-modal-image {
-
   display: block;
-
   width: 100%;
-
   height: 100%;
-
   min-height: 360px;
-
   max-height: 520px;
-
   object-fit: cover;
-
 }
-
-
 
 /* Popup text content */
-
 .dhl-modal-content {
-
   min-width: 0;
-
   padding: 42px 26px 26px;
-
   overflow-wrap: anywhere;
-
 }
-
-
 
 .dhl-modal-category {
-
   color: #e98029;
-
-  font-size: 11px;
-
+  font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 1px;
-
   text-transform: uppercase;
-
   text-align: start;
-
 }
-
-
 
 .dhl-modal-content h3 {
-
   margin: 10px 0 12px;
-
   color: #1c2b3b;
-
   font-size: 27px;
-
   line-height: 1.3;
-
   text-align: start;
-
 }
-
-
 
 .dhl-modal-content>p {
-
   color: #718092;
-
-  font-size: 13px;
-
+  font-size: 14px;
   line-height: 1.8;
-
 }
-
-
 
 .dhl-modal-duration {
-
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
 }
-
-
 
 .dhl-modal-duration svg {
-
   flex-shrink: 0;
-
   color: #e98029;
-
 }
-
-
 
 .dhl-modal-actions {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 10px;
-
   margin-top: 20px;
-
 }
-
-
 
 .dhl-modal-save {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 8px;
-
   padding: 11px 14px;
-
   border: 1px solid #e4e9ef;
-
   border-radius: 8px;
-
   background: #fff;
-
   color: #485667;
-
   font: inherit;
-
   font-size: 12px;
-
   cursor: pointer;
-
 }
-
-
 
 .dhl-modal-plan {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
-
   width: 100%;
-
   margin-top: 12px;
-
   padding: 12px;
-
   border: 0;
-
   border-radius: 8px;
-
   background: #fff2e6;
-
   color: #c96317;
-
   font: inherit;
-
   font-size: 12px;
-
   font-weight: 700;
-
   line-height: 1.6;
-
   cursor: pointer;
-
 }
-
-
 
 @keyframes dhl-modal-in {
-
   from {
-
     opacity: 0;
-
     transform: translateY(8px);
-
   }
-
-
 
   to {
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
-
 }
-
-
 
 /* Tablet and mobile popup */
-
 @media (max-width: 650px) {
-
   .dhl-modal-backdrop {
-
     padding: 12px;
-
   }
-
-
 
   .dhl-modal {
-
     grid-template-columns: minmax(0, 1fr);
-
     width: min(440px, 100%);
-
     max-height: calc(100vh - 24px);
-
   }
-
-
 
   .dhl-modal-image {
-
     height: 220px;
-
     min-height: 0;
-
     max-height: none;
-
   }
-
-
 
   .dhl-modal-content {
-
     padding: 24px 20px 20px;
-
   }
-
-
 
   .dhl-modal-content h3 {
-
     font-size: 23px;
-
   }
-
 }
 
-
-
 @media (prefers-reduced-motion: reduce) {
-
   .dhl-modal {
-
     animation: none;
-
   }
-
 }
