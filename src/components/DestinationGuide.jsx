@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React, { useId, useRef, useState } from "react";
 
 import {
   FaCalendarAlt,
@@ -8,523 +9,517 @@ import {
   FaHotel,
   FaCar,
   FaLightbulb,
+  FaPlane,
+  FaArrowRight,
+  FaCompass,
+  FaUsers,
+  FaWallet,
+  FaMapMarkedAlt,
+  FaCheckCircle,
+  FaHome,
+  FaSuitcase,
+  FaRegCircle,
+  FaChevronRight,
+  FaMapMarkerAlt,
+  FaClipboardCheck,
 } from "react-icons/fa";
 
+import { getDestinationGuide } from "../data/destinationGuideData";
 import "./DestinationGuide.css";
 
-const DestinationGuide = ({ destination }) => {
-  // ------------------------------------------------
-  // Active guide tab
-  // ------------------------------------------------
+const tabs = [
+  {
+    id: "overview",
+    label: "Trip Essentials",
+    icon: FaCompass,
+  },
+  {
+    id: "stay",
+    label: "Places to Stay",
+    icon: FaHotel,
+  },
+  {
+    id: "transport",
+    label: "Getting Around",
+    icon: FaCar,
+  },
+  {
+    id: "tips",
+    label: "Smart Travel Tips",
+    icon: FaLightbulb,
+  },
+];
+
+const overviewItems = [
+  {
+    key: "bestTime",
+    label: "BEST TIME TO VISIT",
+    icon: FaCalendarAlt,
+    color: "orange",
+  },
+  {
+    key: "duration",
+    label: "RECOMMENDED DURATION",
+    icon: FaClock,
+    color: "blue",
+  },
+  {
+    key: "currency",
+    label: "LOCAL CURRENCY",
+    icon: FaMoneyBillWave,
+    color: "green",
+  },
+  {
+    key: "language",
+    label: "LANGUAGE",
+    icon: FaLanguage,
+    color: "purple",
+  },
+];
+
+const optionIcons = {
+  luxury: FaHotel,
+  home: FaHome,
+  budget: FaWallet,
+  plane: FaPlane,
+  car: FaCar,
+  local: FaMapMarkedAlt,
+};
+
+const defaultChecklist = [
+  "Check the weather forecast",
+  "Confirm accommodation",
+  "Plan transport and transfers",
+  "Keep travel documents ready",
+];
+
+const DestinationGuide = ({ destination = {} }) => {
   const [activeTab, setActiveTab] = useState("overview");
+  const [checkedItems, setCheckedItems] = useState([]);
+  const tabRefs = useRef({});
+  const id = useId();
 
+  const guide = getDestinationGuide(destination);
 
-  // ------------------------------------------------
-  // Guide information
-  //
-  // These values can later be moved into
-  // destinationsData.js for destination-specific data.
-  // ------------------------------------------------
-  const guideTabs = [
-    {
-      id: "overview",
-      label: "Overview",
-      icon: <FaCalendarAlt />,
-    },
-    {
-      id: "stay",
-      label: "Where To Stay",
-      icon: <FaHotel />,
-    },
-    {
-      id: "transport",
-      label: "Getting Around",
-      icon: <FaCar />,
-    },
-    {
-      id: "tips",
-      label: "Travel Tips",
-      icon: <FaLightbulb />,
-    },
-  ];
+  const destinationName =
+    destination.title ||
+    destination.name ||
+    "your destination";
 
+  const enquiryUrl =
+    destination.bookingUrl ||
+    destination.enquiryUrl ||
+    "/contact";
+
+  const destinationLocation =
+    destination.country ||
+    destination.location ||
+    "Your next adventure";
+
+  const activeTabId = `${id}-tab-${activeTab}`;
+  const activePanelId = `${id}-panel-${activeTab}`;
+
+  const checklistProgress = Math.round(
+    (checkedItems.length / defaultChecklist.length) * 100
+  );
+
+  const toggleChecklistItem = (item) => {
+    setCheckedItems((previous) =>
+      previous.includes(item)
+        ? previous.filter((entry) => entry !== item)
+        : [...previous, item]
+    );
+  };
+
+  const changeTab = (tabId, shouldFocus = false) => {
+    setActiveTab(tabId);
+
+    if (shouldFocus) {
+      tabRefs.current[tabId]?.focus();
+    }
+  };
+
+  const handleTabKeyDown = (event, index) => {
+    let nextIndex = index;
+
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % tabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    changeTab(tabs[nextIndex].id, true);
+  };
+
+  const renderOptions = (items = []) => (
+    <div className="destination-guide__options">
+      {items.map((item, index) => {
+        const Icon = optionIcons[item.icon] || FaCompass;
+
+        return (
+          <article
+            className="destination-guide__option"
+            key={`${item.title}-${index}`}
+          >
+            <div className="destination-guide__option-top">
+              <span className="destination-guide__option-icon">
+                <Icon aria-hidden="true" />
+              </span>
+
+              <span className="destination-guide__option-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+
+            {item.tag && (
+              <span className="destination-guide__option-tag">
+                {item.tag}
+              </span>
+            )}
+
+            <h4>{item.title}</h4>
+            <p>{item.description}</p>
+          </article>
+        );
+      })}
+    </div>
+  );
 
   return (
     <section
-      id="destination-guide"
       className="destination-guide"
+      id="destination-guide"
+      aria-labelledby={`${id}-heading`}
     >
-
       <div className="destination-container">
-
-        {/* =================================================
-            SECTION HEADER
-        ================================================= */}
-        <div className="destination-section-header">
-
-          <span className="destination-section-eyebrow">
-            TRAVEL GUIDE
+        {/* Section introduction */}
+        <header className="destination-guide__header">
+          <span className="destination-guide__eyebrow">
+            <FaCompass aria-hidden="true" />
+            THE TRAVEL PLAYBOOK
           </span>
 
-          <h2>
-            Everything You Need To Know
+          <h2 id={`${id}-heading`}>
+            Your next adventure
+            <span> starts here.</span>
           </h2>
 
           <p>
-            Plan your {destination.name} trip with
-            useful information before you travel.
+            A little planning goes a long way. Discover the
+            essentials for your next journey to {destinationName}.
           </p>
 
-        </div>
-
-
-        {/* =================================================
-            GUIDE WRAPPER
-        ================================================= */}
-        <div className="destination-guide__wrapper">
-
-          {/* =================================================
-              TAB NAVIGATION
-          ================================================= */}
-          <div className="destination-guide__tabs">
-
-            {guideTabs.map((tab) => (
-
-              <button
-                key={tab.id}
-                type="button"
-                className={`
-                  destination-guide__tab
-                  ${
-                    activeTab === tab.id
-                      ? "is-active"
-                      : ""
-                  }
-                `}
-                onClick={() => setActiveTab(tab.id)}
-              >
-
-                <span className="destination-guide__tab-icon">
-                  {tab.icon}
-                </span>
-
-                <span>
-                  {tab.label}
-                </span>
-
-              </button>
-
-            ))}
-
+          <div className="destination-guide__location">
+            <FaMapMarkerAlt aria-hidden="true" />
+            <span>{destinationLocation}</span>
+            <span className="destination-guide__location-dot" />
+            <span>Travel guide</span>
           </div>
+        </header>
 
+        {/* Guide card */}
+        <div className="destination-guide__wrapper">
+          {/* Interactive navigation */}
+          <div
+            className="destination-guide__tabs"
+            role="tablist"
+            aria-label="Destination guide sections"
+          >
+            {tabs.map((tab, index) => {
+              const Icon = tab.icon;
+              const active = activeTab === tab.id;
 
-          {/* =================================================
-              TAB CONTENT
-          ================================================= */}
-          <div className="destination-guide__content">
-
-            {/* ===============================================
-                OVERVIEW
-            =============================================== */}
-            {activeTab === "overview" && (
-
-              <div className="destination-guide__panel">
-
-                <div className="destination-guide__panel-heading">
-
-                  <span>
-                    PLAN YOUR TRIP
+              return (
+                <button
+                  key={tab.id}
+                  ref={(element) => {
+                    tabRefs.current[tab.id] = element;
+                  }}
+                  id={`${id}-tab-${tab.id}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls={`${id}-panel-${tab.id}`}
+                  tabIndex={active ? 0 : -1}
+                  className={`destination-guide__tab ${active ? "is-active" : ""
+                    }`}
+                  onClick={() => changeTab(tab.id)}
+                  onKeyDown={(event) =>
+                    handleTabKeyDown(event, index)
+                  }
+                >
+                  <span className="destination-guide__tab-icon">
+                    <Icon aria-hidden="true" />
                   </span>
 
-                  <h3>
-                    Know Before You Go
-                  </h3>
+                  <span className="destination-guide__tab-label">
+                    {tab.label}
+                  </span>
+
+                  <FaChevronRight
+                    className="destination-guide__tab-arrow"
+                    aria-hidden="true"
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Dynamic panel */}
+          <div
+            id={activePanelId}
+            className="destination-guide__content"
+            role="tabpanel"
+            aria-labelledby={activeTabId}
+            tabIndex={0}
+          >
+            {activeTab === "overview" && (
+              <div className="destination-guide__panel">
+                <div className="destination-guide__panel-heading">
+                  <span className="destination-guide__section-kicker">
+                    YOUR TRIP, AT A GLANCE
+                  </span>
+
+                  <h3>Know before you go.</h3>
 
                   <p>
-                    A few important details to help
-                    you prepare for your journey.
+                    Get the important details sorted before
+                    you set off for {destinationName}.
                   </p>
-
                 </div>
-
 
                 <div className="destination-guide__info-grid">
+                  {overviewItems.map((item) => {
+                    const Icon = item.icon;
 
-                  {/* Best Time */}
-                  <div className="destination-guide__info-card">
+                    return (
+                      <article
+                        className={`destination-guide__info-card tone-${item.color}`}
+                        key={item.key}
+                      >
+                        <span className="destination-guide__info-icon">
+                          <Icon aria-hidden="true" />
+                        </span>
 
-                    <div className="destination-guide__info-icon">
-                      <FaCalendarAlt />
-                    </div>
+                        <div className="destination-guide__info-copy">
+                          <span>{item.label}</span>
+                          <strong>
+                            {guide[item.key] || "Check before travelling"}
+                          </strong>
+                        </div>
 
-                    <div>
-                      <span>Best Time</span>
-
-                      <strong>
-                        Year Round
-                      </strong>
-                    </div>
-
-                  </div>
-
-
-                  {/* Duration */}
-                  <div className="destination-guide__info-card">
-
-                    <div className="destination-guide__info-icon">
-                      <FaClock />
-                    </div>
-
-                    <div>
-                      <span>Recommended Duration</span>
-
-                      <strong>
-                        5 - 7 Days
-                      </strong>
-                    </div>
-
-                  </div>
-
-
-                  {/* Currency */}
-                  <div className="destination-guide__info-card">
-
-                    <div className="destination-guide__info-icon">
-                      <FaMoneyBillWave />
-                    </div>
-
-                    <div>
-                      <span>Currency</span>
-
-                      <strong>
-                        Local Currency
-                      </strong>
-                    </div>
-
-                  </div>
-
-
-                  {/* Language */}
-                  <div className="destination-guide__info-card">
-
-                    <div className="destination-guide__info-icon">
-                      <FaLanguage />
-                    </div>
-
-                    <div>
-                      <span>Language</span>
-
-                      <strong>
-                        English & Local
-                      </strong>
-                    </div>
-
-                  </div>
-
+                        <FaCheckCircle
+                          className="destination-guide__info-check"
+                          aria-hidden="true"
+                        />
+                      </article>
+                    );
+                  })}
                 </div>
 
-              </div>
+                <div className="destination-guide__budget-note">
+                  <span className="destination-guide__budget-icon">
+                    <FaWallet aria-hidden="true" />
+                  </span>
 
+                  <div>
+                    <strong>Plan your budget</strong>
+                    <p>
+                      {guide.budget ||
+                        "Choose a budget that fits your travel style."}
+                    </p>
+                  </div>
+                </div>
+              </div>
             )}
 
-
-            {/* ===============================================
-                WHERE TO STAY
-            =============================================== */}
             {activeTab === "stay" && (
-
               <div className="destination-guide__panel">
-
                 <div className="destination-guide__panel-heading">
-
-                  <span>
-                    ACCOMMODATION
+                  <span className="destination-guide__section-kicker">
+                    FIND YOUR HAPPY PLACE
                   </span>
 
-                  <h3>
-                    Where Should You Stay?
-                  </h3>
+                  <h3>Stay your way.</h3>
 
                   <p>
-                    Choose accommodation according
-                    to your travel style and budget.
+                    From special getaways to practical stays,
+                    choose the style that fits your trip.
                   </p>
-
                 </div>
 
-
-                <div className="destination-guide__options">
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaHotel />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Luxury Hotels
-                      </h4>
-
-                      <p>
-                        Premium properties with
-                        exceptional comfort and services.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaHotel />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Family-Friendly Stays
-                      </h4>
-
-                      <p>
-                        Comfortable accommodation
-                        suitable for families and groups.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaHotel />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Budget Accommodation
-                      </h4>
-
-                      <p>
-                        Practical and comfortable
-                        options for budget-conscious travelers.
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
+                {renderOptions(guide.stays)}
               </div>
-
             )}
 
-
-            {/* ===============================================
-                TRANSPORT
-            =============================================== */}
             {activeTab === "transport" && (
-
               <div className="destination-guide__panel">
-
                 <div className="destination-guide__panel-heading">
-
-                  <span>
-                    TRANSPORTATION
+                  <span className="destination-guide__section-kicker">
+                    THE JOURNEY MATTERS
                   </span>
 
-                  <h3>
-                    Getting Around
-                  </h3>
+                  <h3>Make getting around easy.</h3>
 
                   <p>
-                    Explore the destination comfortably
-                    with the right transportation option.
+                    Think ahead about transfers and local travel
+                    so you can spend more time exploring.
                   </p>
-
                 </div>
 
-
-                <div className="destination-guide__options">
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaPlane />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Airport Transfers
-                      </h4>
-
-                      <p>
-                        Convenient transfers between
-                        the airport and your accommodation.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaCar />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Private Transport
-                      </h4>
-
-                      <p>
-                        Travel comfortably with private
-                        cars and dedicated transportation.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__option">
-
-                    <div className="destination-guide__option-icon">
-                      <FaCar />
-                    </div>
-
-                    <div>
-                      <h4>
-                        Local Transport
-                      </h4>
-
-                      <p>
-                        Use local transportation to
-                        explore nearby attractions.
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
+                {renderOptions(guide.transport)}
               </div>
-
             )}
 
-
-            {/* ===============================================
-                TRAVEL TIPS
-            =============================================== */}
             {activeTab === "tips" && (
-
               <div className="destination-guide__panel">
-
                 <div className="destination-guide__panel-heading">
-
-                  <span>
-                    TRAVEL SMART
+                  <span className="destination-guide__section-kicker">
+                    YOUR PRE-TRIP CHECKLIST
                   </span>
 
-                  <h3>
-                    Helpful Travel Tips
-                  </h3>
+                  <h3>Travel smart. Enjoy more.</h3>
 
                   <p>
-                    Simple tips to make your trip
-                    smoother and more enjoyable.
+                    Use these reminders to get organised before
+                    your {destinationName} adventure.
                   </p>
-
                 </div>
-
 
                 <div className="destination-guide__tips">
+                  {guide.tips.map((tip, index) => (
+                    <article
+                      className="destination-guide__tip"
+                      key={`${tip.title}-${index}`}
+                    >
+                      <span className="destination-guide__tip-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
 
-                  <div className="destination-guide__tip">
-
-                    <span>01</span>
-
-                    <div>
-                      <h4>
-                        Plan Important Activities Early
-                      </h4>
-
-                      <p>
-                        Reserve popular experiences
-                        and activities in advance.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__tip">
-
-                    <span>02</span>
-
-                    <div>
-                      <h4>
-                        Keep Important Documents Safe
-                      </h4>
-
-                      <p>
-                        Carry copies of important
-                        travel documents and bookings.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__tip">
-
-                    <span>03</span>
-
-                    <div>
-                      <h4>
-                        Stay Flexible
-                      </h4>
-
-                      <p>
-                        Leave some free time to discover
-                        unexpected places and experiences.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="destination-guide__tip">
-
-                    <span>04</span>
-
-                    <div>
-                      <h4>
-                        Ask Your Travel Expert
-                      </h4>
-
-                      <p>
-                        Contact ASAP Holidays for
-                        destination-specific assistance.
-                      </p>
-                    </div>
-
-                  </div>
-
+                      <div className="destination-guide__tip-copy">
+                        <h4>{tip.title}</h4>
+                        <p>{tip.description}</p>
+                      </div>
+                    </article>
+                  ))}
                 </div>
 
+                <div className="destination-guide__checklist">
+                  <div className="destination-guide__checklist-heading">
+                    <span className="destination-guide__checklist-icon">
+                      <FaClipboardCheck aria-hidden="true" />
+                    </span>
+
+                    <div>
+                      <h4>My trip checklist</h4>
+                      <p>
+                        {checkedItems.length} of {defaultChecklist.length}{" "}
+                        tasks completed
+                      </p>
+                    </div>
+
+                    <strong>{checklistProgress}%</strong>
+                  </div>
+
+                  <div
+                    className="destination-guide__progress"
+                    role="progressbar"
+                    aria-label="Trip checklist progress"
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-valuenow={checklistProgress}
+                  >
+                    <span
+                      style={{ width: `${checklistProgress}%` }}
+                    />
+                  </div>
+
+                  <div className="destination-guide__checklist-items">
+                    {defaultChecklist.map((item) => {
+                      const checked = checkedItems.includes(item);
+
+                      return (
+                        <label
+                          className={`destination-guide__checklist-item ${checked ? "is-checked" : ""
+                            }`}
+                          key={item}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={checked}
+                            onChange={() => toggleChecklistItem(item)}
+                          />
+
+                          <span className="destination-guide__custom-check">
+                            {checked ? (
+                              <FaCheckCircle aria-hidden="true" />
+                            ) : (
+                              <FaRegCircle aria-hidden="true" />
+                            )}
+                          </span>
+
+                          <span>{item}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+
+                  {checkedItems.length === defaultChecklist.length && (
+                    <p
+                      className="destination-guide__complete-message"
+                      role="status"
+                    >
+                      <FaCheckCircle aria-hidden="true" />
+                      You're all set for your next adventure!
+                    </p>
+                  )}
+                </div>
               </div>
-
             )}
-
           </div>
 
+          {/* Enquiry CTA */}
+          <footer className="destination-guide__footer">
+            <div className="destination-guide__footer-copy">
+              <span className="destination-guide__footer-icon">
+                <FaSuitcase aria-hidden="true" />
+              </span>
+
+              <div>
+                <h3>Let's make this trip happen.</h3>
+                <p>
+                  Get in touch with ASAP Holidays to plan
+                  your {destinationName} getaway.
+                </p>
+              </div>
+            </div>
+
+            <a
+              className="destination-guide__cta"
+              href={enquiryUrl}
+              aria-label={`Plan a trip to ${destinationName}`}
+            >
+              Plan My Trip
+              <FaArrowRight aria-hidden="true" />
+            </a>
+          </footer>
         </div>
 
+        <p className="destination-guide__bottom-note">
+          <FaLightbulb aria-hidden="true" />
+          <span>
+            Great trips start with a little planning and a lot
+            of excitement.
+          </span>
+        </p>
       </div>
-
     </section>
   );
 };
