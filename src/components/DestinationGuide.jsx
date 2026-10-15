@@ -2,83 +2,86 @@
 import React, { useId, useRef, useState } from "react";
 
 import {
-  FaCalendarAlt,
-  FaClock,
-  FaMoneyBillWave,
-  FaLanguage,
-  FaHotel,
-  FaCar,
-  FaLightbulb,
-  FaPlane,
   FaArrowRight,
-  FaCompass,
-  FaUsers,
-  FaWallet,
-  FaMapMarkedAlt,
+  FaCalendarAlt,
+  FaCar,
+  FaCheck,
   FaCheckCircle,
-  FaHome,
-  FaSuitcase,
-  FaRegCircle,
   FaChevronRight,
+  FaClock,
+  FaCompass,
+  FaGlobeAsia,
+  FaHotel,
+  FaHome,
+  FaLanguage,
+  FaLightbulb,
   FaMapMarkerAlt,
-  FaClipboardCheck,
+  FaMapMarkedAlt,
+  FaMoneyBillWave,
+  FaPlane,
+  FaSuitcase,
+  FaWallet,
 } from "react-icons/fa";
 
 import { getDestinationGuide } from "../data/destinationGuideData";
 import "./DestinationGuide.css";
 
-const tabs = [
+const GUIDE_TABS = [
   {
     id: "overview",
-    label: "Trip Essentials",
+    label: "Trip essentials",
+    number: "01",
     icon: FaCompass,
   },
   {
     id: "stay",
-    label: "Places to Stay",
+    label: "Where to stay",
+    number: "02",
     icon: FaHotel,
   },
   {
     id: "transport",
-    label: "Getting Around",
+    label: "Getting around",
+    number: "03",
     icon: FaCar,
   },
   {
     id: "tips",
-    label: "Smart Travel Tips",
+    label: "Travel smart",
+    number: "04",
     icon: FaLightbulb,
   },
 ];
 
-const overviewItems = [
+const OVERVIEW_ITEMS = [
   {
     key: "bestTime",
     label: "BEST TIME TO VISIT",
     icon: FaCalendarAlt,
-    color: "orange",
+    tone: "orange",
   },
   {
     key: "duration",
-    label: "RECOMMENDED DURATION",
+    label: "IDEAL DURATION",
     icon: FaClock,
-    color: "blue",
+    tone: "blue",
   },
   {
     key: "currency",
     label: "LOCAL CURRENCY",
     icon: FaMoneyBillWave,
-    color: "green",
+    tone: "green",
   },
   {
     key: "language",
     label: "LANGUAGE",
     icon: FaLanguage,
-    color: "purple",
+    tone: "purple",
   },
 ];
 
-const optionIcons = {
-  luxury: FaHotel,
+const OPTION_ICONS = {
+  hotel: FaHotel,
   home: FaHome,
   budget: FaWallet,
   plane: FaPlane,
@@ -86,11 +89,11 @@ const optionIcons = {
   local: FaMapMarkedAlt,
 };
 
-const defaultChecklist = [
-  "Check the weather forecast",
+const CHECKLIST_ITEMS = [
+  "Check the weather",
   "Confirm accommodation",
-  "Plan transport and transfers",
-  "Keep travel documents ready",
+  "Plan transport",
+  "Prepare travel documents",
 ];
 
 const DestinationGuide = ({ destination = {} }) => {
@@ -102,39 +105,31 @@ const DestinationGuide = ({ destination = {} }) => {
   const guide = getDestinationGuide(destination);
 
   const destinationName =
-    destination.title ||
     destination.name ||
+    destination.title ||
     "your destination";
-
-  const enquiryUrl =
-    destination.bookingUrl ||
-    destination.enquiryUrl ||
-    "/contact";
 
   const destinationLocation =
     destination.country ||
     destination.location ||
-    "Your next adventure";
+    "Travel inspiration";
+
+  const enquiryUrl =
+    destination.enquiryUrl ||
+    destination.bookingUrl ||
+    "/contact";
+
+  const progress = Math.round(
+    (checkedItems.length / CHECKLIST_ITEMS.length) * 100
+  );
 
   const activeTabId = `${id}-tab-${activeTab}`;
   const activePanelId = `${id}-panel-${activeTab}`;
 
-  const checklistProgress = Math.round(
-    (checkedItems.length / defaultChecklist.length) * 100
-  );
-
-  const toggleChecklistItem = (item) => {
-    setCheckedItems((previous) =>
-      previous.includes(item)
-        ? previous.filter((entry) => entry !== item)
-        : [...previous, item]
-    );
-  };
-
-  const changeTab = (tabId, shouldFocus = false) => {
+  const selectTab = (tabId, moveFocus = false) => {
     setActiveTab(tabId);
 
-    if (shouldFocus) {
+    if (moveFocus) {
       tabRefs.current[tabId]?.focus();
     }
   };
@@ -142,26 +137,44 @@ const DestinationGuide = ({ destination = {} }) => {
   const handleTabKeyDown = (event, index) => {
     let nextIndex = index;
 
-    if (event.key === "ArrowRight") {
-      nextIndex = (index + 1) % tabs.length;
-    } else if (event.key === "ArrowLeft") {
-      nextIndex = (index - 1 + tabs.length) % tabs.length;
-    } else if (event.key === "Home") {
-      nextIndex = 0;
-    } else if (event.key === "End") {
-      nextIndex = tabs.length - 1;
-    } else {
-      return;
+    switch (event.key) {
+      case "ArrowRight":
+        nextIndex = (index + 1) % GUIDE_TABS.length;
+        break;
+
+      case "ArrowLeft":
+        nextIndex =
+          (index - 1 + GUIDE_TABS.length) % GUIDE_TABS.length;
+        break;
+
+      case "Home":
+        nextIndex = 0;
+        break;
+
+      case "End":
+        nextIndex = GUIDE_TABS.length - 1;
+        break;
+
+      default:
+        return;
     }
 
     event.preventDefault();
-    changeTab(tabs[nextIndex].id, true);
+    selectTab(GUIDE_TABS[nextIndex].id, true);
+  };
+
+  const toggleChecklist = (item) => {
+    setCheckedItems((current) =>
+      current.includes(item)
+        ? current.filter((value) => value !== item)
+        : [...current, item]
+    );
   };
 
   const renderOptions = (items = []) => (
     <div className="destination-guide__options">
       {items.map((item, index) => {
-        const Icon = optionIcons[item.icon] || FaCompass;
+        const Icon = OPTION_ICONS[item.icon] || FaCompass;
 
         return (
           <article
@@ -199,40 +212,40 @@ const DestinationGuide = ({ destination = {} }) => {
       aria-labelledby={`${id}-heading`}
     >
       <div className="destination-container">
-        {/* Section introduction */}
+        {/* Editorial introduction */}
         <header className="destination-guide__header">
           <span className="destination-guide__eyebrow">
-            <FaCompass aria-hidden="true" />
+            <FaGlobeAsia aria-hidden="true" />
             THE TRAVEL PLAYBOOK
           </span>
 
           <h2 id={`${id}-heading`}>
-            Your next adventure
-            <span> starts here.</span>
+            The art of travelling
+            <span> well.</span>
           </h2>
 
           <p>
-            A little planning goes a long way. Discover the
-            essentials for your next journey to {destinationName}.
+            Discover the details, plan your route and get ready
+            for a memorable journey to {destinationName}.
           </p>
 
           <div className="destination-guide__location">
             <FaMapMarkerAlt aria-hidden="true" />
+            <span>{destinationName}</span>
+            <span className="destination-guide__location-divider" />
             <span>{destinationLocation}</span>
-            <span className="destination-guide__location-dot" />
-            <span>Travel guide</span>
           </div>
         </header>
 
-        {/* Guide card */}
+        {/* Guide application */}
         <div className="destination-guide__wrapper">
-          {/* Interactive navigation */}
-          <div
+          {/* Navigation */}
+          <nav
             className="destination-guide__tabs"
             role="tablist"
-            aria-label="Destination guide sections"
+            aria-label="Travel guide sections"
           >
-            {tabs.map((tab, index) => {
+            {GUIDE_TABS.map((tab, index) => {
               const Icon = tab.icon;
               const active = activeTab === tab.id;
 
@@ -248,13 +261,18 @@ const DestinationGuide = ({ destination = {} }) => {
                   aria-selected={active}
                   aria-controls={`${id}-panel-${tab.id}`}
                   tabIndex={active ? 0 : -1}
-                  className={`destination-guide__tab ${active ? "is-active" : ""
-                    }`}
-                  onClick={() => changeTab(tab.id)}
+                  className={`destination-guide__tab ${
+                    active ? "is-active" : ""
+                  }`}
+                  onClick={() => selectTab(tab.id)}
                   onKeyDown={(event) =>
                     handleTabKeyDown(event, index)
                   }
                 >
+                  <span className="destination-guide__tab-number">
+                    {tab.number}
+                  </span>
+
                   <span className="destination-guide__tab-icon">
                     <Icon aria-hidden="true" />
                   </span>
@@ -270,9 +288,9 @@ const DestinationGuide = ({ destination = {} }) => {
                 </button>
               );
             })}
-          </div>
+          </nav>
 
-          {/* Dynamic panel */}
+          {/* Active content */}
           <div
             id={activePanelId}
             className="destination-guide__content"
@@ -284,24 +302,24 @@ const DestinationGuide = ({ destination = {} }) => {
               <div className="destination-guide__panel">
                 <div className="destination-guide__panel-heading">
                   <span className="destination-guide__section-kicker">
-                    YOUR TRIP, AT A GLANCE
+                    BEFORE YOU SET OFF
                   </span>
 
                   <h3>Know before you go.</h3>
 
                   <p>
-                    Get the important details sorted before
-                    you set off for {destinationName}.
+                    Four essentials to help you plan your
+                    {` ${destinationName}`} trip with confidence.
                   </p>
                 </div>
 
                 <div className="destination-guide__info-grid">
-                  {overviewItems.map((item) => {
+                  {OVERVIEW_ITEMS.map((item) => {
                     const Icon = item.icon;
 
                     return (
                       <article
-                        className={`destination-guide__info-card tone-${item.color}`}
+                        className={`destination-guide__info-card tone-${item.tone}`}
                         key={item.key}
                       >
                         <span className="destination-guide__info-icon">
@@ -315,10 +333,12 @@ const DestinationGuide = ({ destination = {} }) => {
                           </strong>
                         </div>
 
-                        <FaCheckCircle
-                          className="destination-guide__info-check"
+                        <span
+                          className="destination-guide__info-marker"
                           aria-hidden="true"
-                        />
+                        >
+                          <FaCheckCircle />
+                        </span>
                       </article>
                     );
                   })}
@@ -330,7 +350,8 @@ const DestinationGuide = ({ destination = {} }) => {
                   </span>
 
                   <div>
-                    <strong>Plan your budget</strong>
+                    <span>SMART TRAVEL TIP</span>
+                    <strong>Make your budget work for you.</strong>
                     <p>
                       {guide.budget ||
                         "Choose a budget that fits your travel style."}
@@ -350,8 +371,8 @@ const DestinationGuide = ({ destination = {} }) => {
                   <h3>Stay your way.</h3>
 
                   <p>
-                    From special getaways to practical stays,
-                    choose the style that fits your trip.
+                    Discover different accommodation styles and
+                    choose what suits your kind of adventure.
                   </p>
                 </div>
 
@@ -363,14 +384,14 @@ const DestinationGuide = ({ destination = {} }) => {
               <div className="destination-guide__panel">
                 <div className="destination-guide__panel-heading">
                   <span className="destination-guide__section-kicker">
-                    THE JOURNEY MATTERS
+                    EVERY MILE MATTERS
                   </span>
 
-                  <h3>Make getting around easy.</h3>
+                  <h3>Enjoy the journey.</h3>
 
                   <p>
                     Think ahead about transfers and local travel
-                    so you can spend more time exploring.
+                    to make exploring easier.
                   </p>
                 </div>
 
@@ -382,14 +403,14 @@ const DestinationGuide = ({ destination = {} }) => {
               <div className="destination-guide__panel">
                 <div className="destination-guide__panel-heading">
                   <span className="destination-guide__section-kicker">
-                    YOUR PRE-TRIP CHECKLIST
+                    THE PRE-TRIP EDIT
                   </span>
 
                   <h3>Travel smart. Enjoy more.</h3>
 
                   <p>
-                    Use these reminders to get organised before
-                    your {destinationName} adventure.
+                    A few practical reminders to help you prepare
+                    for {destinationName}.
                   </p>
                 </div>
 
@@ -403,7 +424,7 @@ const DestinationGuide = ({ destination = {} }) => {
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <div className="destination-guide__tip-copy">
+                      <div>
                         <h4>{tip.title}</h4>
                         <p>{tip.description}</p>
                       </div>
@@ -411,58 +432,54 @@ const DestinationGuide = ({ destination = {} }) => {
                   ))}
                 </div>
 
+                {/* Interactive preparation checklist */}
                 <div className="destination-guide__checklist">
                   <div className="destination-guide__checklist-heading">
                     <span className="destination-guide__checklist-icon">
-                      <FaClipboardCheck aria-hidden="true" />
+                      <FaSuitcase aria-hidden="true" />
                     </span>
 
                     <div>
-                      <h4>My trip checklist</h4>
+                      <h4>Your adventure checklist</h4>
                       <p>
-                        {checkedItems.length} of {defaultChecklist.length}{" "}
-                        tasks completed
+                        {checkedItems.length} of {CHECKLIST_ITEMS.length}{" "}
+                        completed
                       </p>
                     </div>
 
-                    <strong>{checklistProgress}%</strong>
+                    <strong>{progress}%</strong>
                   </div>
 
                   <div
                     className="destination-guide__progress"
                     role="progressbar"
-                    aria-label="Trip checklist progress"
+                    aria-label="Trip preparation progress"
                     aria-valuemin={0}
                     aria-valuemax={100}
-                    aria-valuenow={checklistProgress}
+                    aria-valuenow={progress}
                   >
-                    <span
-                      style={{ width: `${checklistProgress}%` }}
-                    />
+                    <span style={{ width: `${progress}%` }} />
                   </div>
 
                   <div className="destination-guide__checklist-items">
-                    {defaultChecklist.map((item) => {
+                    {CHECKLIST_ITEMS.map((item) => {
                       const checked = checkedItems.includes(item);
 
                       return (
                         <label
-                          className={`destination-guide__checklist-item ${checked ? "is-checked" : ""
-                            }`}
                           key={item}
+                          className={`destination-guide__checklist-item ${
+                            checked ? "is-checked" : ""
+                          }`}
                         >
                           <input
                             type="checkbox"
                             checked={checked}
-                            onChange={() => toggleChecklistItem(item)}
+                            onChange={() => toggleChecklist(item)}
                           />
 
-                          <span className="destination-guide__custom-check">
-                            {checked ? (
-                              <FaCheckCircle aria-hidden="true" />
-                            ) : (
-                              <FaRegCircle aria-hidden="true" />
-                            )}
+                          <span className="destination-guide__checkbox">
+                            {checked && <FaCheck aria-hidden="true" />}
                           </span>
 
                           <span>{item}</span>
@@ -471,13 +488,13 @@ const DestinationGuide = ({ destination = {} }) => {
                     })}
                   </div>
 
-                  {checkedItems.length === defaultChecklist.length && (
+                  {progress === 100 && (
                     <p
                       className="destination-guide__complete-message"
                       role="status"
                     >
                       <FaCheckCircle aria-hidden="true" />
-                      You're all set for your next adventure!
+                      All checked! You are ready for the next step.
                     </p>
                   )}
                 </div>
@@ -485,7 +502,7 @@ const DestinationGuide = ({ destination = {} }) => {
             )}
           </div>
 
-          {/* Enquiry CTA */}
+          {/* Enquiry footer */}
           <footer className="destination-guide__footer">
             <div className="destination-guide__footer-copy">
               <span className="destination-guide__footer-icon">
@@ -493,7 +510,12 @@ const DestinationGuide = ({ destination = {} }) => {
               </span>
 
               <div>
+                <span className="destination-guide__footer-kicker">
+                  YOUR NEXT CHAPTER
+                </span>
+
                 <h3>Let's make this trip happen.</h3>
+
                 <p>
                   Get in touch with ASAP Holidays to plan
                   your {destinationName} getaway.
@@ -506,18 +528,15 @@ const DestinationGuide = ({ destination = {} }) => {
               href={enquiryUrl}
               aria-label={`Plan a trip to ${destinationName}`}
             >
-              Plan My Trip
+              Plan my trip
               <FaArrowRight aria-hidden="true" />
             </a>
           </footer>
         </div>
 
         <p className="destination-guide__bottom-note">
-          <FaLightbulb aria-hidden="true" />
-          <span>
-            Great trips start with a little planning and a lot
-            of excitement.
-          </span>
+          <FaCompass aria-hidden="true" />
+          Great trips start with thoughtful planning.
         </p>
       </div>
     </section>
