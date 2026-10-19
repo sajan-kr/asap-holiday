@@ -85,14 +85,13 @@
 }
 
 .dg-editorial__intro h2 {
-  margin: 0;
-  max-width: 570px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 5.7vw, 76px);
-  font-weight: 500;
-  letter-spacing: -2.7px;
-  line-height: 1.04;
-  text-align: left;
+    margin: 4px 0 9px;
+    color: #182a36;
+    font-size: clamp(28px, 3.4vw, 43px);
+    font-weight: 750;
+    letter-spacing: -1.6px;
+    line-height: 1.12;
+    text-align: start;
 }
 
 .dg-editorial__intro h2 em,
@@ -107,7 +106,7 @@
   color: var(--dg-muted);
   font-size: 13px;
   line-height: 1.95;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__place {
@@ -190,6 +189,7 @@
   font-family: Georgia, serif;
   font-size: clamp(25px, 3vw, 38px);
   font-weight: 500;
+  text-align: start;
 }
 
 .dg-editorial__photo-small {
@@ -346,6 +346,7 @@
   font-size: 18px;
   font-style: italic;
   line-height: 1.45;
+  text-align: left;
 }
 
 .dg-editorial__aside-note>span:last-child {
@@ -354,6 +355,7 @@
   font-weight: 800;
   letter-spacing: 1.4px;
   text-align: left;
+  display: block;
 }
 
 .dg-editorial__panel {
@@ -377,7 +379,7 @@
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.8px;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__panel-heading h3 {
@@ -402,7 +404,7 @@
   color: var(--dg-muted);
   font-size: 12px;
   line-height: 1.85;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__essentials {
@@ -434,10 +436,10 @@
   display: block;
   margin-bottom: 7px;
   color: #929990;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: 1.1px;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__essential strong {
@@ -445,7 +447,7 @@
   color: var(--dg-ink);
   font-size: 12px;
   line-height: 1.5;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__tip {
@@ -473,7 +475,7 @@
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 1.3px;
-  text-align: left;
+  text-align: start;
   display: block;
 }
 
@@ -482,7 +484,7 @@
   font-family: Georgia, serif;
   font-size: 19px;
   font-weight: 500;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__tip p {
@@ -535,7 +537,7 @@
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-align: left;
+  text-align: start;
   display: block;
 }
 
@@ -544,16 +546,16 @@
   font-family: Georgia, serif;
   font-size: 20px;
   font-weight: 500;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__option p,
 .dg-editorial__tip-row p {
   margin: 0;
   color: var(--dg-muted);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.8;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__empty {
@@ -596,6 +598,7 @@
   margin: 0 0 5px;
   font-size: 12px;
   font-weight: 700;
+  text-align: start;
 }
 
 .dg-editorial__checklist {
@@ -623,7 +626,7 @@
   margin: 0;
   color: var(--dg-muted);
   font-size: 10px;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__checklist-head>strong {
@@ -719,7 +722,7 @@
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 1.8px;
-  text-align: left;
+  text-align: start;
   display: block;
 }
 
@@ -733,9 +736,9 @@
 .dg-editorial__footer p {
   margin: 0;
   color: #c4ceca;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.7;
-  text-align: left;
+  text-align: start;
 }
 
 .dg-editorial__cta {
@@ -1088,13 +1091,10 @@
 .dg-editorial__aside-note p {
   max-width: 210px;
   font-size: 20px;
-  text-align: left;
 }
 
 .dg-editorial__aside-note>span:last-child {
   font-size: 9px;
-  text-align: left;
-  display: block;
 }
 
 .dg-editorial__panel-heading {
@@ -1218,7 +1218,6 @@
 .dg-editorial__tip-row h4 {
   margin-bottom: 7px;
   font-size: 13px;
-  text-align: left;
 }
 
 .dg-editorial__checklist {
@@ -1418,9 +1417,7 @@
    FINAL POLISH — PREMIUM HIERARCHY & MORE INTENTIONAL SPACE
 ========================================================= */
 .destination-guide.dg-editorial {
-  background:
-    radial-gradient(ellipse at 88% 7%, rgba(244, 119, 53, .055), transparent 27%),
-    var(--dg-cream);
+  background: #ffffff;
 }
 
 .dg-editorial__container {
@@ -1652,8 +1649,7 @@
 
 .dg-editorial__tip-row p {
   max-width: 590px;
-  font-size: 12px;
-  text-align: left;
+  font-size: 11px;
 }
 
 .dg-editorial__checklist {
@@ -1867,7 +1863,7 @@
 
 .dg-editorial__intro h2 {
   max-width: 490px;
-  font-size: clamp(47px, 4.9vw, 66px);
+  font-size: clamp(47px, 4.9vw, 42px);
   letter-spacing: -2.4px;
   line-height: 1.06;
 }
@@ -2059,7 +2055,7 @@
 }
 
 .dg-editorial__footer p {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .dg-editorial__cta {
