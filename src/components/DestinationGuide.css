@@ -115,7 +115,7 @@
   flex-wrap: wrap;
   gap: 10px;
   color: #53635e;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -307,7 +307,7 @@
 }
 
 .dg-editorial__tab-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -490,7 +490,7 @@
 .dg-editorial__tip p {
   margin: 0;
   color: var(--dg-muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.75;
 }
 
@@ -553,7 +553,7 @@
 .dg-editorial__tip-row p {
   margin: 0;
   color: var(--dg-muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
   text-align: start;
 }
@@ -702,7 +702,7 @@
 .dg-editorial__complete {
   margin: 15px 0 0;
   color: #43795d;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -736,7 +736,7 @@
 .dg-editorial__footer p {
   margin: 0;
   color: #c4ceca;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
   text-align: start;
 }
@@ -751,7 +751,7 @@
   padding: 0 21px;
   color: white;
   background: var(--dg-orange);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   text-decoration: none;
   transition: background .2s ease, transform .2s ease;
@@ -925,7 +925,7 @@
   }
 
   .dg-editorial__essential strong {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .dg-editorial__tip {
@@ -986,7 +986,7 @@
 }
 
 .dg-editorial__eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1.7px;
 }
 
@@ -1080,7 +1080,7 @@
 }
 
 .dg-editorial__tab-arrow {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__aside-note {
@@ -1231,7 +1231,7 @@
 }
 
 .dg-editorial__checklist-head p {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__checklist-head>strong {
@@ -1399,7 +1399,7 @@
   }
 
   .dg-editorial__check-item {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .dg-editorial__footer h3 {
@@ -1466,7 +1466,7 @@
 }
 
 .dg-editorial__place {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -1528,7 +1528,7 @@
 
 .dg-editorial__tab-label {
   color: #344b43;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__tab.is-active .dg-editorial__tab-label {
@@ -1631,7 +1631,7 @@
 }
 
 .dg-editorial__option p {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.85;
 }
 
@@ -1649,7 +1649,7 @@
 
 .dg-editorial__tip-row p {
   max-width: 590px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__checklist {
@@ -1663,7 +1663,7 @@
 
 .dg-editorial__check-item {
   padding: 2px 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__footer {
@@ -1877,7 +1877,7 @@
 
 .dg-editorial__place {
   color: #2f4b43;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__photo-story {
@@ -1931,7 +1931,7 @@
 }
 
 .dg-editorial__tab-label {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -2011,7 +2011,7 @@
 }
 
 .dg-editorial__option p {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__tips-list {
@@ -2027,7 +2027,7 @@
 }
 
 .dg-editorial__tip-row p {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__checklist {
@@ -2041,7 +2041,7 @@
 
 .dg-editorial__check-item {
   min-height: 36px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__footer {
@@ -2056,13 +2056,13 @@
 }
 
 .dg-editorial__footer p {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .dg-editorial__cta {
   min-height: 48px;
   padding: 0 20px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 @media (max-width: 900px) {
@@ -2210,7 +2210,7 @@
 
   .dg-editorial__panel-intro {
     margin: 15px 0 19px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .dg-editorial__essential {
@@ -2228,7 +2228,7 @@
   }
 
   .dg-editorial__essential strong {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .dg-editorial__tip {
@@ -2292,7 +2292,7 @@
   }
 
   .dg-editorial__footer p {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .dg-editorial__cta {
