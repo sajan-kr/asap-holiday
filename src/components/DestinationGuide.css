@@ -1992,7 +1992,8 @@
 }
 
 .dg-editorial__tip p {
-  font-size: 11px;
+  font-size: 12px;
+  text-align: start;
 }
 
 .dg-editorial__option-grid {
