@@ -1,381 +1,524 @@
-/* =========================================================
-   DESTINATION TESTIMONIALS
-========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
 
-.destination-testimonials {
-  position: relative;
-
-  padding: 105px 0;
-
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(255, 122, 0, 0.06),
-      transparent 30%
-    ),
-    #f7f9fc;
+.traveler-reviews {
+  --tr-green: #183d32;
+  --tr-orange: #e7854d;
+  --tr-muted: #777e77;
+  padding: 64px 24px 52px;
+  background: #fbfaf7;
+  color: var(--tr-green);
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
 }
 
+.traveler-reviews *,
+.traveler-reviews *::before,
+.traveler-reviews *::after {
+  box-sizing: border-box;
+}
 
-/* =========================================================
-   TESTIMONIAL GRID
-========================================================= */
+.traveler-reviews__container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
 
-.destination-testimonials__grid {
+.traveler-reviews__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.traveler-reviews__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: #b76d43;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.traveler-reviews__eyebrow-line {
+  display: inline-block;
+  width: 23px;
+  height: 1px;
+  background: var(--tr-orange);
+}
+
+.traveler-reviews__header h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px, 4vw, 47px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.traveler-reviews__header h2 em {
+  color: var(--tr-orange);
+  font-weight: 500;
+}
+
+.traveler-reviews__header > p {
+  margin: 0 0 5px;
+  color: var(--tr-muted);
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: right;
+}
+
+.traveler-reviews__layout {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.88fr);
+  align-items: center;
+  min-height: 400px;
+  position: relative;
 }
 
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.destination-testimonial-card {
+.traveler-reviews__photo {
   position: relative;
+  align-self: stretch;
+  min-height: 400px;
+  overflow: hidden;
+  background: #dfe5dc;
+}
 
+.traveler-reviews__photo > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.traveler-reviews__photo:hover > img {
+  transform: scale(1.035);
+}
+
+.traveler-reviews__photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 35, 27, 0.03) 35%,
+    rgba(12, 35, 27, 0.68) 100%
+  );
+  pointer-events: none;
+}
+
+.traveler-reviews__photo-fallback {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-
-  min-height: 350px;
-
-  padding: 32px;
-
-  border: 1px solid #e9edf2;
-
-  border-radius: 22px;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 12px 40px rgba(16, 35, 63, 0.055);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 30px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 75% 20%, rgba(255, 255, 255, 0.35), transparent 40%),
+    linear-gradient(145deg, #aebcaf 0%, #627c6d 52%, #294a3d 100%);
 }
 
-.destination-testimonial-card:hover {
-  border-color: rgba(255, 122, 0, 0.25);
-
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 25px 60px rgba(16, 35, 63, 0.11);
+.traveler-reviews__photo-fallback svg {
+  font-size: 22px;
 }
 
+.traveler-reviews__photo-fallback span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-/* =========================================================
-   QUOTE ICON
-========================================================= */
+.traveler-reviews__photo-fallback strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(25px, 3vw, 38px);
+  font-weight: 500;
+}
 
-.destination-testimonial-card__quote {
+.traveler-reviews__photo-label {
   position: absolute;
-
-  top: 25px;
-  right: 25px;
-
-  width: 45px;
-  height: 45px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 12px;
-
-  background: #fff3e8;
-
-  color: #ff7a00;
-
-  font-size: 17px;
-}
-
-
-/* =========================================================
-   RATING
-========================================================= */
-
-.destination-testimonial-card__rating {
+  bottom: 28px;
+  left: 30px;
   display: flex;
-
-  gap: 4px;
-
-  margin-bottom: 22px;
+  flex-direction: column;
+  gap: 7px;
+  color: #fff;
+  z-index: 1;
 }
 
-.destination-testimonial-card__rating svg {
-  color: #ffb21c;
-
-  font-size: 14px;
+.traveler-reviews__photo-label span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-
-/* =========================================================
-   REVIEW
-========================================================= */
-
-.destination-testimonial-card__text {
-  margin: 0;
-
-  color: #4f5d70;
-
-  font-size: 14px;
-
-  line-height: 1.85;
+.traveler-reviews__photo-label strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(25px, 3vw, 35px);
+  font-weight: 500;
 }
 
+.traveler-reviews__card {
+  position: relative;
+  z-index: 2;
+  margin: 32px 0 32px -52px;
+  padding: 30px 30px 23px;
+  background: #fff;
+  border: 1px solid #eeece5;
+  box-shadow: 0 16px 50px rgba(35, 53, 43, 0.09);
+  animation: travelerReviewIn 0.3s ease both;
+}
 
-/* =========================================================
-   TRAVELER
-========================================================= */
+@keyframes travelerReviewIn {
+  from {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-.destination-testimonial-card__traveler {
+.traveler-reviews__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.traveler-reviews__stars {
   display: flex;
   align-items: center;
-
-  gap: 12px;
-
-  margin-top: auto;
-
-  padding-top: 28px;
-}
-
-
-/* Avatar */
-
-.destination-testimonial-card__avatar {
-  width: 48px;
-  height: 48px;
-
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff7a00,
-      #ff9d42
-    );
-
-  color: #ffffff;
-
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
-/* Details */
-
-.destination-testimonial-card__details {
-  display: flex;
-  flex-direction: column;
-
-  gap: 3px;
-}
-
-.destination-testimonial-card__details strong {
-  color: #10233f;
-
-  font-size: 14px;
-}
-
-.destination-testimonial-card__details span {
-  color: #8a94a4;
-
+  gap: 4px;
+  color: var(--tr-orange);
   font-size: 11px;
 }
 
-
-/* =========================================================
-   TRUST BAR
-========================================================= */
-
-.destination-testimonials__trust {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 45px;
-
-  margin-top: 55px;
-
-  padding: 24px 30px;
-
-  border: 1px solid #e9edf2;
-
-  border-radius: 18px;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 10px 30px rgba(16, 35, 63, 0.04);
+.traveler-reviews__star--empty {
+  color: #deded8;
 }
 
-
-/* Rating */
-
-.destination-testimonials__trust-rating {
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
+.traveler-reviews__verified {
+  color: #8a8d82;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
 }
 
-.destination-testimonials__trust-rating > strong {
-  color: #10233f;
-
-  font-size: 30px;
-  line-height: 1;
-}
-
-.destination-testimonials__trust-rating > div {
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-.destination-testimonials__trust-stars {
-  display: flex;
-
-  gap: 3px;
-}
-
-.destination-testimonials__trust-stars svg {
-  color: #ffb21c;
-
-  font-size: 12px;
-}
-
-.destination-testimonials__trust-rating span {
-  color: #8a94a4;
-
-  font-size: 10px;
-}
-
-
-/* Divider */
-
-.destination-testimonials__trust-divider {
-  width: 1px;
-  height: 40px;
-
-  background: #e6eaf0;
-}
-
-
-/* Trust numbers */
-
-.destination-testimonials__trust-text {
-  display: flex;
-  flex-direction: column;
-
-  gap: 4px;
-}
-
-.destination-testimonials__trust-text strong {
-  color: #10233f;
-
+.traveler-reviews__quote-icon {
+  display: block;
+  margin-top: 27px;
+  color: var(--tr-orange);
   font-size: 20px;
 }
 
-.destination-testimonials__trust-text span {
-  color: #8a94a4;
+.traveler-reviews__card blockquote {
+  margin: 13px 0 25px;
+  color: #263f34;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 2.25vw, 29px);
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
 
+.traveler-reviews__trip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px 0;
+  border-top: 1px solid #eeeae2;
+  border-bottom: 1px solid #eeeae2;
+}
+
+.traveler-reviews__trip > span {
+  color: #92958b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.traveler-reviews__trip strong {
+  color: #344d40;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.traveler-reviews__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 17px;
+}
+
+.traveler-reviews__traveler {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.traveler-reviews__avatar {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9eee6;
+  color: var(--tr-green);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.traveler-reviews__traveler-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.traveler-reviews__traveler-info strong {
+  color: #2c4236;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.traveler-reviews__traveler-info span {
+  color: #85877f;
   font-size: 10px;
 }
 
+.traveler-reviews__controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+.traveler-reviews__count {
+  margin-right: 5px;
+  white-space: nowrap;
+  color: #354b3f;
+  font-size: 9px;
+  font-weight: 700;
+}
 
+.traveler-reviews__count span {
+  color: #b3b4ad;
+}
+
+.traveler-reviews__controls button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #e4e4dc;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--tr-green);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.traveler-reviews__controls button:hover:not(:disabled) {
+  border-color: var(--tr-green);
+  background: var(--tr-green);
+  color: #fff;
+}
+
+.traveler-reviews__controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.traveler-reviews__controls button svg {
+  font-size: 11px;
+}
+
+.traveler-reviews__bottom {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 23px;
+  color: #8a8b82;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.traveler-reviews__bottom-line {
+  width: 44px;
+  height: 1px;
+  background: #dedbd2;
+}
+
+/* Tablet */
 @media (max-width: 900px) {
-
-  .destination-testimonials__grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .traveler-reviews {
+    padding: 50px 22px 40px;
   }
 
-  .destination-testimonial-card:last-child {
-    grid-column: 1 / -1;
+  .traveler-reviews__layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    min-height: 370px;
   }
 
+  .traveler-reviews__photo {
+    min-height: 370px;
+  }
+
+  .traveler-reviews__card {
+    margin-left: -32px;
+    padding: 24px 22px 20px;
+  }
+
+  .traveler-reviews__card blockquote {
+    font-size: 23px;
+  }
+
+  .traveler-reviews__controls {
+    gap: 5px;
+  }
+
+  .traveler-reviews__controls button {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .destination-testimonials {
-    padding: 75px 0;
+/* Mobile */
+@media (max-width: 640px) {
+  .traveler-reviews {
+    padding: 38px 16px 30px;
   }
 
-  .destination-testimonials__grid {
-    grid-template-columns: 1fr;
+  .traveler-reviews__header {
+    display: block;
+    margin-bottom: 22px;
   }
 
-  .destination-testimonial-card:last-child {
-    grid-column: auto;
+  .traveler-reviews__eyebrow {
+    margin-bottom: 11px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
   }
 
-  .destination-testimonial-card {
-    min-height: 320px;
-
-    padding: 27px;
+  .traveler-reviews__header h2 {
+    font-size: 34px;
+    letter-spacing: -0.8px;
   }
 
+  .traveler-reviews__header > p {
+    margin-top: 13px;
+    text-align: left;
+    font-size: 11px;
+    line-height: 1.7;
+  }
 
-  /* Trust bar becomes vertical */
+  .traveler-reviews__header > p br {
+    display: none;
+  }
 
-  .destination-testimonials__trust {
+  .traveler-reviews__layout {
+    display: flex;
     flex-direction: column;
-
-    gap: 20px;
-
-    padding: 25px;
+    align-items: stretch;
+    gap: 0;
   }
 
-  .destination-testimonials__trust-divider {
-    width: 80px;
-    height: 1px;
+  .traveler-reviews__photo {
+    min-height: 240px;
+    height: 240px;
   }
 
+  .traveler-reviews__photo-label {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .traveler-reviews__photo-label strong {
+    font-size: 27px;
+  }
+
+  .traveler-reviews__card {
+    width: calc(100% - 20px);
+    margin: -28px auto 0;
+    padding: 22px 19px 18px;
+  }
+
+  .traveler-reviews__quote-icon {
+    margin-top: 22px;
+  }
+
+  .traveler-reviews__card blockquote {
+    margin: 10px 0 20px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .traveler-reviews__footer {
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  .traveler-reviews__controls {
+    margin-left: auto;
+  }
+
+  .traveler-reviews__bottom {
+    margin-top: 20px;
+    gap: 9px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .traveler-reviews__bottom-line {
+    flex: 1;
+    width: auto;
+  }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .destination-testimonial-card {
-    padding: 23px;
+@media (max-width: 360px) {
+  .traveler-reviews__card {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
-  .destination-testimonial-card__quote {
-    width: 40px;
-    height: 40px;
-
-    top: 20px;
-    right: 20px;
+  .traveler-reviews__card blockquote {
+    font-size: 21px;
   }
 
-  .destination-testimonial-card__text {
-    font-size: 13px;
+  .traveler-reviews__verified {
+    font-size: 7px;
+    letter-spacing: 0.7px;
   }
 
+  .traveler-reviews__count {
+    margin-right: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .traveler-reviews *,
+  .traveler-reviews *::before,
+  .traveler-reviews *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
