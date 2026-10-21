@@ -92,14 +92,12 @@ export default function TravelerTestimonials({ destination }) {
               <span className="traveler-reviews__eyebrow-line" />
               REAL STORIES, REAL JOURNEYS
             </span>
-
             <h2>
               Memories made.
               <br />
               <em>Stories shared.</em>
             </h2>
           </div>
-
           <p>
             A destination is more than a place.
             <br />
