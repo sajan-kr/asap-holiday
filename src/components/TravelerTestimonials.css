@@ -31,7 +31,7 @@
 }
 
 .traveler-reviews__eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 9px;
   margin-bottom: 14px;
@@ -39,6 +39,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-align: start;
 }
 
 .traveler-reviews__eyebrow-line {
@@ -55,6 +56,7 @@
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -1.5px;
+  text-align: start;
 }
 
 .traveler-reviews__header h2 em {
@@ -297,6 +299,7 @@
 .traveler-reviews__traveler-info span {
   color: #85877f;
   font-size: 10px;
+  text-align: start;
 }
 
 .traveler-reviews__controls {
