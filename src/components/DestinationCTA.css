@@ -1,330 +1,1047 @@
-/* =========================================================
-   DESTINATION FINAL CTA
-========================================================= */
+
+/* ==================================================
+   ASAP HOLIDAYS — DESTINATION CTA
+   Centered cinematic hero design
+================================================== */
 
 .destination-cta {
+  --cta-orange: #ff7829;
+  --cta-orange-light: #ffab72;
+  --cta-dark: #101b2b;
+
   position: relative;
-  overflow: hidden;
-  padding: 100px 0;
-  background:
-    linear-gradient(
-      135deg,
-      #0c1c32 0%,
-      #10233f 55%,
-      #172f50 100%
-    );
-  color: #ffffff;
+  width: 100%;
+  padding: 30px 0 55px;
+  box-sizing: border-box;
+  background: #f4f6f8;
 }
 
-/* =========================================================
-   DECORATIVE GLOWS
-========================================================= */
+/* ==================================================
+   CENTERED CONTAINER
+================================================== */
+
+.destination-cta__container {
+  width: calc(100% - 64px);
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   HERO BACKGROUND
+================================================== */
+
+.destination-cta__hero {
+  --destination-cta-image: none;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 610px;
+  padding: 30px 40px 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 22px;
+
+  background-color: #172b3e;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 17, 29, 0.91) 0%,
+      rgba(5, 17, 29, 0.75) 40%,
+      rgba(5, 17, 29, 0.27) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 17, 29, 0.35),
+      transparent 45%
+    ),
+    var(--destination-cta-image);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: #fff;
+}
+
+/* Background decoration */
+
+.destination-cta__overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
 
 .destination-cta__glow {
   position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(2px);
-}
+  z-index: -1;
 
-.destination-cta__glow--one {
-  width: 420px;
-  height: 420px;
-  top: -250px;
+  width: 400px;
+  height: 400px;
+
+  top: -230px;
   right: -100px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 122, 0, 0.22),
-      transparent 70%
-    );
+
+  border-radius: 50%;
+
+  background: rgba(255, 120, 41, 0.16);
+  filter: blur(100px);
+
+  pointer-events: none;
 }
 
-.destination-cta__glow--two {
-  width: 350px;
-  height: 350px;
-  bottom: -230px;
-  left: -120px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 122, 0, 0.14),
-      transparent 70%
-    );
-}
+/* ==================================================
+   TOP BAR
+================================================== */
 
-/* =========================================================
-   CTA WRAPPER
-========================================================= */
-
-.destination-cta__wrapper {
+.destination-cta__topbar {
   position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(330px, 0.85fr);
+  z-index: 1;
+
+  display: flex;
   align-items: center;
-  gap: 70px;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
 }
 
-/* =========================================================
-   LEFT CONTENT
-========================================================= */
+.destination-cta__topbar-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  text-align: right;
+}
+
+.destination-cta__live-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #4fe0a0;
+
+  box-shadow: 0 0 12px rgba(79, 224, 160, 0.4);
+}
+
+/* ==================================================
+   MAIN LAYOUT
+================================================== */
+
+.destination-cta__layout {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(340px, 0.88fr);
+
+  align-items: center;
+  gap: 50px;
+
+  flex: 1;
+
+  padding: 45px 0;
+}
 
 .destination-cta__content {
-  max-width: 700px;
+  min-width: 0;
+  max-width: 650px;
 }
 
-/* Eyebrow */
+/* ==================================================
+   EYEBROW
+================================================== */
 
 .destination-cta__eyebrow {
   display: flex;
   align-items: center;
-  gap: 9px;
-  margin-bottom: 20px;
-  color: #ff9a3d;
-  font-size: 11px;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  margin-bottom: 25px;
+
+  color: #ffb37f;
+
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.6px;
 }
 
-.destination-cta__eyebrow svg {
-  font-size: 14px;
+.destination-cta__eyebrow-icon {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 171, 114, 0.55);
+  border-radius: 50%;
+
+  background: rgba(255, 120, 41, 0.14);
+
+  font-size: 15px;
+
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
 }
 
-/* Heading */
+.destination-cta__content:hover
+.destination-cta__eyebrow-icon {
+  transform: rotate(-10deg);
+  background: rgba(255, 120, 41, 0.25);
+}
 
-.destination-cta__content h2 {
+/* ==================================================
+   HEADING
+================================================== */
+
+.destination-cta__title {
   margin: 0;
-  color: #ffffff;
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  font-weight: 800;
-  text-align: start;
+
+  color: #fff;
+
+  font-size: clamp(42px, 5.1vw, 68px);
+  font-weight: 750;
+
+  line-height: 1.04;
+  letter-spacing: -2.8px;
+
+  text-align: left;
 }
 
-.destination-cta__content h2 span {
-  color: #ff8a00;
+.destination-cta__title span {
+  color: var(--cta-orange-light);
 }
 
+/* ==================================================
+   DESCRIPTION
+================================================== */
 
-/* Description */
+.destination-cta__description {
+  max-width: 475px;
 
-.destination-cta__content > p {
-  max-width: 610px;
   margin: 22px 0 0;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 16px;
-  line-height: 1.8;
-  text-align: start;
+
+  color: rgba(255, 255, 255, 0.79);
+
+  font-size: 13px;
+  line-height: 1.9;
+
+  text-align: left;
 }
 
-/* =========================================================
-   CTA BUTTONS
-========================================================= */
+/* ==================================================
+   ACTION BUTTONS
+================================================== */
 
 .destination-cta__actions {
   display: flex;
   align-items: center;
-  gap: 13px;
-  margin-top: 35px;
-}
+  flex-wrap: wrap;
+  gap: 12px;
 
-/* Primary */
+  margin-top: 26px;
+}
 
 .destination-cta__primary-btn,
 .destination-cta__whatsapp-btn {
-  min-height: 54px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 0 22px;
-  border-radius: 12px;
+  gap: 13px;
+
+  min-height: 51px;
+  padding: 0 17px;
+
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 750;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
+
   transition:
     transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .destination-cta__primary-btn {
-  background: #ff7a00;
-  color: #ffffff;
+  background: var(--cta-orange);
+  color: #152033;
+
+  box-shadow: 0 9px 24px rgba(255, 120, 41, 0.2);
 }
 
 .destination-cta__primary-btn:hover {
-  background: #ff8f24;
   transform: translateY(-3px);
+
+  background: #ff9b5d;
+
+  box-shadow: 0 15px 28px rgba(255, 120, 41, 0.27);
 }
 
-/* WhatsApp */
+.destination-cta__button-icon {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+  background: rgba(16, 27, 43, 0.12);
+
+  transition: transform 0.3s ease;
+}
+
+.destination-cta__primary-btn:hover
+.destination-cta__button-icon {
+  transform: translateX(3px);
+}
 
 .destination-cta__whatsapp-btn {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #fff;
   backdrop-filter: blur(10px);
 }
 
 .destination-cta__whatsapp-btn svg {
-  color: #42d66d;
-  font-size: 17px;
+  color: #45df91;
+  font-size: 19px;
 }
 
 .destination-cta__whatsapp-btn:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.13);
   transform: translateY(-3px);
+
+  border-color: rgba(69, 223, 145, 0.6);
+  background: rgba(69, 223, 145, 0.12);
 }
 
-/* =========================================================
-   SUPPORT CARD
-========================================================= */
+/* ==================================================
+   TRUST POINTS
+================================================== */
 
-.destination-cta__support-card {
-  position: relative;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.075);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+.destination-cta__trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 24px;
 }
 
-/* Icon */
-
-.destination-cta__support-icon {
-  width: 55px;
-  height: 55px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: 15px;
-  background: rgba(255, 122, 0, 0.14);
-  color: #ff8a00;
-  font-size: 20px;
-}
-
-/* Text */
-
-.destination-cta__support-content > span {
-  display: block;
-  margin-bottom: 8px;
-  color: #ff9a3d;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.destination-cta__support-content h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 23px;
-  line-height: 1.3;
-}
-
-.destination-cta__support-content p {
-  margin: 13px 0 0;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 13px;
-  line-height: 1.75;
-}
-
-/* Support link */
-
-.destination-cta__support-link {
+.destination-cta__trust span {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  margin-top: 25px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 12px;
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.destination-cta__trust svg {
+  color: var(--cta-orange-light);
+  font-size: 11px;
+}
+
+/* ==================================================
+   ENQUIRY CARD
+================================================== */
+
+.destination-cta__card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 27px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 23px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  color: #1c1c1c;
+
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.19);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.destination-cta__card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* Card header */
+
+.destination-cta__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #e9e6e2;
+}
+
+.destination-cta__card-eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #969696;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.destination-cta__card-header h3 {
+  margin: 0;
+
+  color: #1b1b1b;
+
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+
+  overflow-wrap: anywhere;
+}
+
+.destination-cta__card-header h3 span {
   font-weight: 700;
-  transition: color 0.3s ease, gap 0.3s ease;
 }
 
-.destination-cta__support-link svg {
-  color: #ff8a00;
+.destination-cta__card-heart {
+  display: grid;
+  place-items: center;
+
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #e9e2db;
+  border-radius: 50%;
+
+  color: #999;
+
+  font-size: 14px;
 }
 
-.destination-cta__support-link:hover {
-  color: #ff8a00;
-  gap: 13px;
+/* ==================================================
+   TRIP STATS
+================================================== */
+
+.destination-cta__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-bottom: 21px;
+
+  border-bottom: 1px solid #e9e6e2;
 }
 
-/* =========================================================
+.destination-cta__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-width: 0;
+
+  gap: 9px;
+
+  padding: 18px 8px;
+
+  text-align: center;
+}
+
+.destination-cta__stat + .destination-cta__stat {
+  border-left: 1px solid #e9e6e2;
+}
+
+.destination-cta__stat > span {
+  color: #999;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.destination-cta__stat strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  color: #252525;
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+.destination-cta__stat strong svg {
+  color: var(--cta-orange);
+  font-size: 10px;
+}
+
+/* ==================================================
+   HIGHLIGHTS
+================================================== */
+
+.destination-cta__highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px 14px;
+
+  margin-bottom: 23px;
+}
+
+.destination-cta__highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+
+  min-width: 0;
+
+  color: #707070;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.destination-cta__highlight svg {
+  flex-shrink: 0;
+
+  margin-top: 3px;
+
+  color: var(--cta-orange);
+  font-size: 10px;
+}
+
+.destination-cta__highlight span {
+  overflow-wrap: anywhere;
+}
+
+/* ==================================================
+   CARD ACTIONS
+================================================== */
+
+.destination-cta__card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 57px;
+
+  gap: 9px;
+}
+
+.destination-cta__card-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-width: 0;
+  min-height: 59px;
+
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  background: var(--cta-orange);
+  color: #fff;
+
+  text-decoration: none;
+
+  box-shadow: 0 9px 20px rgba(255, 120, 41, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-cta__card-primary:hover {
+  transform: translateY(-2px);
+
+  background: #f86b1c;
+
+  box-shadow: 0 13px 25px rgba(255, 120, 41, 0.25);
+}
+
+.destination-cta__card-primary > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.destination-cta__card-primary small {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.destination-cta__card-primary > svg {
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+.destination-cta__card-whatsapp {
+  display: grid;
+  place-items: center;
+
+  min-width: 0;
+
+  border-radius: 12px;
+
+  background: #27cf70;
+  color: #fff;
+
+  font-size: 23px;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.destination-cta__card-whatsapp:hover {
+  transform: translateY(-2px);
+
+  background: #1dbb62;
+}
+
+/* ==================================================
+   SUPPORT FOOTER
+================================================== */
+
+.destination-cta__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.destination-cta__card-footer a,
+.destination-cta__card-footer > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #999;
+
+  font-size: 9px;
+  line-height: 1.6;
+
+  text-decoration: none;
+}
+
+.destination-cta__card-footer a svg {
+  flex-shrink: 0;
+
+  color: var(--cta-orange);
+  font-size: 10px;
+}
+
+.destination-cta__card-footer > span svg {
+  color: var(--cta-orange);
+}
+
+/* Optional price */
+
+.destination-cta__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 15px;
+  padding-top: 14px;
+
+  border-top: 1px solid #e9e6e2;
+
+  color: #858585;
+  font-size: 10px;
+}
+
+.destination-cta__price strong {
+  color: #222;
+  font-size: 13px;
+}
+
+/* ==================================================
+   BOTTOM BRAND STRIP
+================================================== */
+
+.destination-cta__bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 17px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.19);
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.destination-cta__bottom-line {
+  width: 38px;
+  height: 1px;
+
+  background: var(--cta-orange-light);
+}
+
+/* ==================================================
+   LAPTOP
+================================================== */
+
+@media (max-width: 1100px) {
+  .destination-cta__container {
+    width: calc(100% - 40px);
+  }
+
+  .destination-cta__hero {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .destination-cta__layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(310px, 0.9fr);
+
+    gap: 30px;
+  }
+
+  .destination-cta__title {
+    font-size: clamp(40px, 5vw, 55px);
+    letter-spacing: -2px;
+  }
+
+  .destination-cta__card {
+    padding: 23px;
+  }
+}
+
+/* ==================================================
    TABLET
-========================================================= */
+================================================== */
 
-@media (max-width: 950px) {
-  .destination-cta__wrapper {
-    grid-template-columns: 1fr;
-    gap: 45px;
+@media (max-width: 820px) {
+  .destination-cta {
+    padding: 24px 0 40px;
+  }
+
+  .destination-cta__container {
+    width: calc(100% - 32px);
+  }
+
+  .destination-cta__hero {
+    min-height: auto;
+    padding: 25px 26px 18px;
+
+    border-radius: 18px;
+
+    background-position: center;
+  }
+
+  .destination-cta__layout {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 35px;
+
+    padding: 48px 0;
   }
 
   .destination-cta__content {
-    max-width: 800px;
+    max-width: 600px;
   }
 
-  .destination-cta__support-card {
-    width: min(600px, 100%);
+  .destination-cta__title {
+    font-size: clamp(44px, 7vw, 62px);
+  }
+
+  .destination-cta__description {
+    max-width: 500px;
+  }
+
+  .destination-cta__card {
+    max-width: 530px;
+  }
+
+  .destination-cta__bottom {
+    gap: 12px;
   }
 }
 
-
-/* =========================================================
+/* ==================================================
    MOBILE
-========================================================= */
+================================================== */
 
-@media (max-width: 650px) {
-
+@media (max-width: 520px) {
   .destination-cta {
-    padding: 75px 0;
+    padding: 16px 0 30px;
   }
 
-  .destination-cta__content h2 {
-    font-size: 40px;
-    letter-spacing: -1px;
+  .destination-cta__container {
+    width: calc(100% - 20px);
   }
 
-  .destination-cta__content > p {
-    font-size: 14px;
+  .destination-cta__hero {
+    padding: 21px 17px 16px;
+
+    border-radius: 15px;
+  }
+
+  .destination-cta__topbar {
+    align-items: flex-start;
+    gap: 12px;
+
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+
+  .destination-cta__topbar-right {
+    max-width: 55%;
+    gap: 6px;
+  }
+
+  .destination-cta__live-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .destination-cta__layout {
+    gap: 28px;
+    padding: 45px 0 34px;
+  }
+
+  .destination-cta__eyebrow {
+    gap: 8px;
+
+    margin-bottom: 19px;
+
+    font-size: 8px;
+    letter-spacing: 0.9px;
+  }
+
+  .destination-cta__eyebrow-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 13px;
+  }
+
+  .destination-cta__title {
+    font-size: clamp(34px, 9vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+  }
+
+  .destination-cta__description {
+    margin-top: 16px;
+
+    font-size: 12px;
+    line-height: 1.85;
   }
 
   .destination-cta__actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
+
+    margin-top: 22px;
   }
 
   .destination-cta__primary-btn,
   .destination-cta__whatsapp-btn {
     width: 100%;
+    min-height: 49px;
   }
 
-  .destination-cta__support-card {
-    padding: 25px;
+  .destination-cta__trust {
+    gap: 8px;
+    margin-top: 17px;
   }
 
-}
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .destination-cta__content h2 {
-    font-size: 36px;
+  .destination-cta__trust span {
+    padding: 8px 10px;
+    font-size: 8px;
   }
 
-  .destination-cta__support-content h3 {
+  .destination-cta__card {
+    padding: 20px 16px;
+    border-radius: 17px;
+  }
+
+  .destination-cta__card-header {
+    padding-bottom: 17px;
+  }
+
+  .destination-cta__card-header h3 {
     font-size: 20px;
   }
 
+  .destination-cta__card-heart {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .destination-cta__stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .destination-cta__stat {
+    padding: 15px 4px;
+    gap: 8px;
+  }
+
+  .destination-cta__stat > span {
+    font-size: 8px;
+  }
+
+  .destination-cta__stat strong {
+    font-size: 9px;
+  }
+
+  .destination-cta__highlights {
+    gap: 11px 8px;
+  }
+
+  .destination-cta__highlight {
+    font-size: 9px;
+  }
+
+  .destination-cta__card-actions {
+    grid-template-columns: minmax(0, 1fr) 48px;
+    gap: 8px;
+  }
+
+  .destination-cta__card-primary {
+    min-height: 55px;
+    padding: 9px 12px;
+  }
+
+  .destination-cta__card-primary > span {
+    font-size: 12px;
+  }
+
+  .destination-cta__card-primary small {
+    font-size: 7px;
+  }
+
+  .destination-cta__card-whatsapp {
+    font-size: 20px;
+  }
+
+  .destination-cta__card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+
+    margin-top: 14px;
+  }
+
+  .destination-cta__bottom {
+    gap: 9px;
+
+    font-size: 7px;
+    letter-spacing: 0.7px;
+    line-height: 1.6;
+  }
+
+  .destination-cta__bottom-line {
+    width: 22px;
+  }
+}
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-cta *,
+  .destination-cta *::before,
+  .destination-cta *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
