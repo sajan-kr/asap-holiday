@@ -248,15 +248,13 @@
 }
 
 .related-package-description {
-  display: -webkit-box;
   min-height: 63px;
+  max-height: 63px;
   margin: 10px 0 17px;
   overflow: hidden;
   color: #81788d;
   font-size: 12px;
   line-height: 1.8;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 
 /* Duration and price */
