@@ -1,28 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ArrowDown,
+  ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
-  CalendarDays,
+  Check,
   Clock3,
-  Home,
+  Heart,
   MapPin,
+  Share2,
   ShieldCheck,
-  Star,
   Sparkles,
+  Star,
+  Users,
 } from "lucide-react";
 
 import "./PackageHero.css";
 
 const PackageHero = ({ item, navigate }) => {
-  if (!item) return null;
+  const [isSaved, setIsSaved] = useState(false);
+  const [shareMessage, setShareMessage] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-  const title = item.title || "Discover Your Next Escape";
-  const location = item.location || "Explore the destination";
-  const image = item.image;
-  const rating = item.rating || "4.9";
-  const duration = item.duration || "Custom itinerary";
-  const price = item.price;
+  const packageId = item?.id ?? item?.slug ?? item?.title ?? "holiday-package";
+
+  const title = item?.title || "Discover Your Next Adventure";
+  const location = item?.location || "Discover the Destination";
+  const image =
+    item?.image ||
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=85";
+
+  const rating = item?.rating ?? "4.9";
+  const duration = item?.duration || "Flexible Duration";
+  const price = item?.price;
+
+  const formattedPrice =
+    typeof price === "number"
+      ? price.toLocaleString("en-IN")
+      : typeof price === "string"
+        ? price.replace(/^(₹|Rs\.?\s*)/i, "").trim()
+        : null;
+
+  // Restore saved state for the current package.
+  useEffect(() => {
+    setIsSaved(false);
+    setShareMessage("");
+
+    try {
+      const savedPackages = JSON.parse(
+        localStorage.getItem("asap-holidays-wishlist") || "[]"
+      );
+
+      setIsSaved(
+        Array.isArray(savedPackages) &&
+          savedPackages.some((id) => String(id) === String(packageId))
+      );
+    } catch {
+      setIsSaved(false);
+    }
+  }, [packageId]);
+
+  // Smoothly scroll to an existing section.
+  const scrollToSection = (selector) => {
+    const section = document.querySelector(selector);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   const handleBooking = () => {
     const bookingSection = document.querySelector("#package-booking");
@@ -32,149 +79,189 @@ const PackageHero = ({ item, navigate }) => {
         behavior: "smooth",
         block: "start",
       });
+      return;
     }
-  };
 
-  const handleExplore = () => {
-    const detailsSection = document.querySelector(
-      ".package-details-content"
+    // Keep compatibility with a page that uses a booking-details section.
+    const alternativeSection = document.querySelector(
+      ".package-booking, .package-details-content"
     );
 
-    if (detailsSection) {
-      detailsSection.scrollIntoView({
+    if (alternativeSection) {
+      alternativeSection.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
   };
 
-  const handleHome = () => {
-    if (typeof navigate === "function") {
-      navigate("/");
-    } else {
-      window.location.href = "/";
+  const handleExplore = () => {
+    scrollToSection(".package-details-content");
+  };
+
+  const handleWishlist = () => {
+    try {
+      const savedPackages = JSON.parse(
+        localStorage.getItem("asap-holidays-wishlist") || "[]"
+      );
+
+      const validPackages = Array.isArray(savedPackages)
+        ? savedPackages
+        : [];
+
+      const alreadySaved = validPackages.some(
+        (id) => String(id) === String(packageId)
+      );
+
+      const updatedPackages = alreadySaved
+        ? validPackages.filter((id) => String(id) !== String(packageId))
+        : [...validPackages, packageId];
+
+      localStorage.setItem(
+        "asap-holidays-wishlist",
+        JSON.stringify(updatedPackages)
+      );
+
+      setIsSaved(!alreadySaved);
+      setShareMessage(
+        alreadySaved ? "Removed from saved packages" : "Package saved!"
+      );
+
+      window.setTimeout(() => setShareMessage(""), 2200);
+    } catch {
+      setShareMessage("Unable to save this package in your browser.");
+      window.setTimeout(() => setShareMessage(""), 2500);
     }
   };
 
-  const formattedPrice =
-    price !== undefined &&
-    price !== null &&
-    price !== ""
-      ? typeof price === "number"
-        ? `₹${price.toLocaleString("en-IN")}`
-        : String(price)
-      : null;
+  const handleShare = async () => {
+    const shareData = {
+      title,
+      text: `Explore ${title} with ASAP Holidays.`,
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareData.url);
+        setShareMessage("Package link copied!");
+      } else {
+        // Fallback for browsers without Clipboard API support.
+        const textArea = document.createElement("textarea");
+        textArea.value = shareData.url;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        const copied = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        setShareMessage(
+          copied
+            ? "Package link copied!"
+            : "Unable to copy the link. Please copy the page URL."
+        );
+      }
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        setShareMessage("Unable to share this package right now.");
+      }
+    }
+
+    window.setTimeout(() => setShareMessage(""), 2500);
+  };
 
   return (
     <section className="package-hero">
       {/* Background image */}
       <div className="package-hero__background">
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            className="package-hero__image"
-            fetchPriority="high"
-          />
-        )}
+        <img
+          className={`package-hero__image ${
+            imageLoaded ? "is-loaded" : ""
+          }`}
+          src={image}
+          alt={`${title} travel destination`}
+          fetchPriority="high"
+          onLoad={() => setImageLoaded(true)}
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src =
+              "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=85";
+          }}
+        />
 
         <div className="package-hero__overlay" />
-        <div className="package-hero__accent" />
+        <div className="package-hero__glow" />
       </div>
 
-      {/* Main content */}
       <div className="package-hero__container">
-        {/* Breadcrumb */}
-        <nav
-          className="package-hero__breadcrumb"
-          aria-label="Breadcrumb"
-        >
+        {/* Breadcrumb navigation */}
+        <nav className="package-hero__breadcrumb" aria-label="Breadcrumb">
           <button
             type="button"
-            className="package-hero__breadcrumb-home"
-            onClick={handleHome}
-            aria-label="Go to homepage"
+            className="package-hero__back"
+            onClick={() => {
+              if (typeof navigate === "function") {
+                navigate(-1);
+              } else {
+                window.history.back();
+              }
+            }}
+            aria-label="Go back"
           >
-            <Home size={15} strokeWidth={1.8} />
-            <span>Home</span>
+            <ArrowLeft size={15} />
           </button>
 
-          <span className="package-hero__breadcrumb-divider">
-            /
-          </span>
-
-          <span className="package-hero__breadcrumb-parent">
-            Destinations
-          </span>
-
-          <span className="package-hero__breadcrumb-divider">
-            /
-          </span>
-
+          <span>Home</span>
+          <span className="package-hero__breadcrumb-separator">/</span>
+          <span>Holiday Packages</span>
+          <span className="package-hero__breadcrumb-separator">/</span>
           <span
             className="package-hero__breadcrumb-current"
-            title={title}
+            aria-current="page"
           >
             {title}
           </span>
         </nav>
 
-        {/* Hero layout */}
-        <div className="package-hero__main">
+        <div className="package-hero__layout">
+          {/* Main destination content */}
           <div className="package-hero__content">
-            {/* Eyebrow */}
             <div className="package-hero__eyebrow">
-              <span className="package-hero__eyebrow-line" />
-
-              <Sparkles
-                size={15}
-                strokeWidth={1.7}
-                aria-hidden="true"
-              />
-
+              <Sparkles size={15} />
               <span>YOUR NEXT GREAT ESCAPE</span>
             </div>
 
-            {/* Title */}
-            <h1 className="package-hero__title">
-              {title}
-              <span className="package-hero__title-highlight">
-                .
-              </span>
-            </h1>
+            <h1 className="package-hero__title">{title}</h1>
 
-            {/* Location */}
             <div className="package-hero__location">
-              <MapPin size={17} strokeWidth={1.8} />
-
+              <MapPin size={17} strokeWidth={2} />
               <span>{location}</span>
             </div>
 
-            {/* Description */}
             <p className="package-hero__description">
-              Discover remarkable places, unforgettable
-              experiences, and thoughtfully planned journeys
-              designed around the way you love to travel.
+              Discover remarkable places, unforgettable experiences, and
+              thoughtfully planned holidays made around the way you love to
+              travel.
             </p>
 
-            {/* Package information */}
-            <div className="package-hero__details">
-              <div className="package-hero__detail">
-                <span className="package-hero__detail-icon package-hero__detail-icon--star">
+            {/* Destination information */}
+            <div className="package-hero__quick-info">
+              <div className="package-hero__info-item">
+                <span className="package-hero__info-icon">
                   <Star size={17} fill="currentColor" />
                 </span>
 
-                <span className="package-hero__detail-copy">
-                  <span className="package-hero__detail-label">
-                    Guest rating
-                  </span>
-
-                  <span className="package-hero__detail-value">
-                    {rating}
-                    <span className="package-hero__rating-caption">
-                      / 5
-                    </span>
-                  </span>
+                <span className="package-hero__info-copy">
+                  <strong>{rating}</strong>
+                  <small>Guest rating</small>
                 </span>
               </div>
 
@@ -183,19 +270,14 @@ const PackageHero = ({ item, navigate }) => {
                 aria-hidden="true"
               />
 
-              <div className="package-hero__detail">
-                <span className="package-hero__detail-icon">
-                  <Clock3 size={18} strokeWidth={1.7} />
+              <div className="package-hero__info-item">
+                <span className="package-hero__info-icon">
+                  <Clock3 size={17} />
                 </span>
 
-                <span className="package-hero__detail-copy">
-                  <span className="package-hero__detail-label">
-                    Duration
-                  </span>
-
-                  <span className="package-hero__detail-value">
-                    {duration}
-                  </span>
+                <span className="package-hero__info-copy">
+                  <strong>{duration}</strong>
+                  <small>Trip duration</small>
                 </span>
               </div>
 
@@ -204,129 +286,179 @@ const PackageHero = ({ item, navigate }) => {
                 aria-hidden="true"
               />
 
-              <div className="package-hero__detail package-hero__detail--flexible">
-                <span className="package-hero__detail-icon">
-                  <CalendarDays
-                    size={18}
-                    strokeWidth={1.7}
-                  />
+              <div className="package-hero__info-item">
+                <span className="package-hero__info-icon">
+                  <Users size={17} />
                 </span>
 
-                <span className="package-hero__detail-copy">
-                  <span className="package-hero__detail-label">
-                    Travel style
-                  </span>
-
-                  <span className="package-hero__detail-value">
-                    Made for you
-                  </span>
+                <span className="package-hero__info-copy">
+                  <strong>Made for you</strong>
+                  <small>Travel experiences</small>
                 </span>
               </div>
             </div>
 
-            {/* Actions */}
+            {/* Main actions */}
             <div className="package-hero__actions">
               <button
                 type="button"
-                className="package-hero__cta"
+                className="package-hero__button package-hero__button--primary"
                 onClick={handleBooking}
               >
-                <span>Plan Your Trip</span>
-
-                <span className="package-hero__cta-arrow">
-                  <ArrowRight size={18} strokeWidth={2} />
-                </span>
+                <span>Book This Package</span>
+                <ArrowRight size={18} />
               </button>
 
               <button
                 type="button"
-                className="package-hero__discover"
+                className="package-hero__button package-hero__button--secondary"
                 onClick={handleExplore}
               >
-                <span className="package-hero__discover-icon">
-                  <ArrowDown size={16} />
-                </span>
-
-                <span>Explore the journey</span>
+                <span>Explore Details</span>
+                <ArrowDown size={17} />
               </button>
             </div>
 
-            {/* Trust indicator */}
+            {/* Trust indicators */}
             <div className="package-hero__trust">
-              <ShieldCheck size={16} strokeWidth={1.7} />
+              <ShieldCheck size={17} />
+              <span>Personalized trips</span>
 
-              <span>
-                Thoughtfully planned. Personally experienced.
-              </span>
+              <span className="package-hero__trust-dot" />
+
+              <Check size={16} />
+              <span>Dedicated travel support</span>
             </div>
           </div>
 
-          {/* Right-side editorial note */}
+          {/* Package highlights card */}
           <aside
-            className="package-hero__side-note"
-            aria-label="Travel inspiration"
+            className="package-hero__card"
+            aria-label="Package highlights"
           >
-            <span className="package-hero__side-note-line" />
-
-            <span className="package-hero__side-note-label">
-              THE ART OF TRAVEL
-            </span>
-
-            <span className="package-hero__side-note-text">
-              Go beyond
-              <br />
-              the ordinary.
-            </span>
-          </aside>
-        </div>
-
-        {/* Bottom information bar */}
-        <div className="package-hero__bottom">
-          <div className="package-hero__bottom-intro">
-            <span className="package-hero__bottom-index">
-              01
-            </span>
-
-            <span className="package-hero__bottom-heading">
-              A journey worth remembering
-            </span>
-          </div>
-
-          <div className="package-hero__bottom-right">
-            {formattedPrice && (
-              <div className="package-hero__bottom-price">
-                <span className="package-hero__bottom-price-label">
-                  Starting from
+            <div className="package-hero__card-top">
+              <div>
+                <span className="package-hero__card-kicker">
+                  YOUR JOURNEY STARTS HERE
                 </span>
 
-                <span className="package-hero__bottom-price-value">
-                  {formattedPrice}
-                </span>
+                <h2>Make it memorable.</h2>
               </div>
-            )}
+
+              <div className="package-hero__card-icon">
+                <Sparkles size={20} />
+              </div>
+            </div>
+
+            <div className="package-hero__card-image-wrap">
+              <img
+                src={image}
+                alt=""
+                className="package-hero__card-image"
+                loading="lazy"
+              />
+
+              <div className="package-hero__card-image-overlay" />
+
+              <div className="package-hero__card-image-label">
+                <MapPin size={14} />
+                <span>{location}</span>
+              </div>
+            </div>
+
+            <div className="package-hero__card-details">
+              <div className="package-hero__card-detail">
+                <span>Duration</span>
+                <strong>{duration}</strong>
+              </div>
+
+              <div className="package-hero__card-detail">
+                <span>Guest rating</span>
+                <strong className="package-hero__card-rating">
+                  <Star size={15} fill="currentColor" />
+                  {rating}
+                </strong>
+              </div>
+            </div>
+
+            <div className="package-hero__price-area">
+              <div className="package-hero__price-copy">
+                <span>Package price</span>
+
+                {formattedPrice ? (
+                  <strong className="package-hero__price">
+                    ₹{formattedPrice}
+                    <small> onwards</small>
+                  </strong>
+                ) : (
+                  <strong className="package-hero__price">
+                    Let's plan it
+                  </strong>
+                )}
+              </div>
+
+              <button
+                type="button"
+                className={`package-hero__icon-button ${
+                  isSaved ? "is-saved" : ""
+                }`}
+                onClick={handleWishlist}
+                aria-label={
+                  isSaved ? "Remove from wishlist" : "Save to wishlist"
+                }
+                aria-pressed={isSaved}
+                title={isSaved ? "Remove from wishlist" : "Save package"}
+              >
+                <Heart
+                  size={19}
+                  fill={isSaved ? "currentColor" : "none"}
+                />
+              </button>
+
+              <button
+                type="button"
+                className="package-hero__icon-button"
+                onClick={handleShare}
+                aria-label="Share this package"
+                title="Share package"
+              >
+                <Share2 size={18} />
+              </button>
+            </div>
 
             <button
               type="button"
-              className="package-hero__bottom-link"
-              onClick={handleExplore}
+              className="package-hero__card-cta"
+              onClick={handleBooking}
             >
-              <span>Discover more</span>
-
-              <ArrowUpRight
-                size={17}
-                strokeWidth={1.8}
-                className="package-hero__bottom-link-icon"
-              />
+              Plan My Trip
+              <ArrowRight size={17} />
             </button>
-          </div>
-        </div>
-      </div>
 
-      {/* Decorative vertical line */}
-      <div
-        className="package-hero__vertical-line"
-        aria-hidden="true"
-      />
+            <p className="package-hero__card-note">
+              <ShieldCheck size={14} />
+              <span>Let's make your next trip unforgettable.</span>
+            </p>
+
+            {shareMessage && (
+              <div className="package-hero__toast" role="status">
+                <Check size={15} />
+                {shareMessage}
+              </div>
+            )}
+          </aside>
+        </div>
+
+        {/* Scroll indicator */}
+        <button
+          type="button"
+          className="package-hero__scroll"
+          onClick={handleExplore}
+        >
+          <span>SCROLL TO EXPLORE</span>
+          <ArrowDown size={15} />
+        </button>
+      </div>
     </section>
   );
 };
