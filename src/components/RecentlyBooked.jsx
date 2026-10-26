@@ -286,8 +286,8 @@ export default function RecentlyBooked() {
                                             <div
                                                 key={index}
                                                 className={`dropdown-item ${selectedDestination === item
-                                                        ? "active-item"
-                                                        : ""
+                                                    ? "active-item"
+                                                    : ""
                                                     }`}
                                                 onClick={() => {
 
@@ -417,12 +417,16 @@ export default function RecentlyBooked() {
 
                                         <div className="image-overlay">
 
-                                            <button className="explore-btn">
-
+                                            <button
+                                                type="button"
+                                                className="explore-btn"
+                                                onClick={(event) => {
+                                                    event.stopPropagation();
+                                                    goToPage(item.slug);
+                                                }}
+                                            >
                                                 Explore
-
                                                 <ArrowUpRight size={18} />
-
                                             </button>
 
                                         </div>
@@ -469,10 +473,14 @@ export default function RecentlyBooked() {
 
                                         </div>
 
-                                        <button>
-
+                                        <button
+                                            type="button"
+                                            onClick={(event) => {
+                                                event.stopPropagation();
+                                                goToPage(item.slug);
+                                            }}
+                                        >
                                             View Details
-
                                         </button>
 
                                     </div>
