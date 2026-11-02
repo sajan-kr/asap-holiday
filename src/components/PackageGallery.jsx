@@ -257,9 +257,8 @@ const PackageGallery = ({ item = {} }) => {
 
               <button
                 type="button"
-                className={`package-gallery-favorite ${
-                  favorites.includes(0) ? "is-favorite" : ""
-                }`}
+                className={`package-gallery-favorite ${favorites.includes(0) ? "is-favorite" : ""
+                  }`}
                 onClick={(event) => {
                   event.stopPropagation();
                   toggleFavorite(0);
@@ -300,9 +299,8 @@ const PackageGallery = ({ item = {} }) => {
 
                 <button
                   type="button"
-                  className={`package-gallery-favorite ${
-                    favorites.includes(1) ? "is-favorite" : ""
-                  }`}
+                  className={`package-gallery-favorite ${favorites.includes(1) ? "is-favorite" : ""
+                    }`}
                   onClick={(event) => {
                     event.stopPropagation();
                     toggleFavorite(1);
@@ -523,9 +521,8 @@ const PackageGallery = ({ item = {} }) => {
                 <button
                   type="button"
                   key={`${image.url}-${index}`}
-                  className={`package-gallery-thumbnail ${
-                    activeImage === index ? "active" : ""
-                  }`}
+                  className={`package-gallery-thumbnail ${activeImage === index ? "active" : ""
+                    }`}
                   onClick={() => setActiveImage(index)}
                   aria-label={`View image ${index + 1}`}
                 >

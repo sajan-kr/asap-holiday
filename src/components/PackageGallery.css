@@ -1,4 +1,3 @@
-
 /* =========================================
    ASAP HOLIDAYS - PACKAGE GALLERY
    Brand colors:
@@ -212,12 +211,10 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.03) 0%,
-    rgba(0, 0, 0, 0.02) 35%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.03) 0%,
+      rgba(0, 0, 0, 0.02) 35%,
+      rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -265,7 +262,7 @@
   color: #fff;
 }
 
-.package-gallery-main-caption > span {
+.package-gallery-main-caption>span {
   display: block;
   margin-bottom: 9px;
   color: rgba(255, 255, 255, 0.8);
@@ -383,7 +380,7 @@
   font-weight: 700;
 }
 
-.package-gallery-more-overlay > span:last-child {
+.package-gallery-more-overlay>span:last-child {
   font-size: 12px;
   letter-spacing: 0.5px;
 }
@@ -611,7 +608,7 @@
   padding: 20px 0;
 }
 
-.package-gallery-lightbox-caption > span {
+.package-gallery-lightbox-caption>span {
   display: block;
   margin-bottom: 5px;
   color: var(--pg-orange);
@@ -801,11 +798,9 @@
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(
-    180deg,
-    transparent 55%,
-    rgba(0, 0, 0, 0.45)
-  );
+  background: linear-gradient(180deg,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45));
 }
 
 .package-gallery-all-number {
@@ -1014,7 +1009,7 @@
     font-size: 24px;
   }
 
-  .package-gallery-main-caption > span {
+  .package-gallery-main-caption>span {
     font-size: 10px;
   }
 
@@ -1048,7 +1043,7 @@
     font-size: 24px;
   }
 
-  .package-gallery-more-overlay > span:last-child {
+  .package-gallery-more-overlay>span:last-child {
     font-size: 10px;
   }
 
@@ -1134,7 +1129,7 @@
     font-size: 15px;
   }
 
-  .package-gallery-lightbox-caption > span {
+  .package-gallery-lightbox-caption>span {
     font-size: 9px;
     letter-spacing: 1px;
   }
@@ -1202,7 +1197,7 @@
     font-size: 20px;
   }
 
-  .package-gallery-main-caption > span {
+  .package-gallery-main-caption>span {
     font-size: 9px;
   }
 
@@ -1238,6 +1233,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .package-gallery-section *,
   .package-gallery-lightbox *,
   .package-gallery-all-modal * {
