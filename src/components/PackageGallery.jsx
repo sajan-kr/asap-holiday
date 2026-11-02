@@ -1,145 +1,141 @@
 
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-} from "react";
-
-import {
-  Camera,
-  ChevronLeft,
-  ChevronRight,
-  X,
-  Maximize2,
-  Download,
-  Share2,
-  Images,
-  MapPin,
-  Heart,
-  LoaderCircle,
-  AlertCircle,
-} from "lucide-react";
-
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import "./PackageGallery.css";
 
-const PackageGallery = ({ item }) => {
-  const [activeImage, setActiveImage] = useState(null);
-  const [showAll, setShowAll] = useState(false);
-  const [loadedImages, setLoadedImages] = useState({});
-  const [failedImages, setFailedImages] = useState({});
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
 
-  const [touchStart, setTouchStart] = useState(null);
+const getImageUrl = (image) => {
+  if (typeof image === "string") return image;
+  if (image && typeof image === "object") {
+    return image.url || image.src || image.image || "";
+  }
+  return "";
+};
+
+const PackageGallery = ({ item = {} }) => {
+  const [activeImage, setActiveImage] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isAllPhotosOpen, setIsAllPhotosOpen] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+  const [failedImages, setFailedImages] = useState({});
+  const [isSharing, setIsSharing] = useState(false);
 
   const images = useMemo(() => {
-    const gallery = [
-      ...(item?.image ? [item.image] : []),
+    const sourceImages = [
+      item?.image,
       ...(Array.isArray(item?.gallery) ? item.gallery : []),
     ];
 
-    return [...new Set(gallery.filter(Boolean))];
-  }, [item?.image, item?.gallery]);
+    const uniqueImages = [];
+    const seen = new Set();
 
-  const currentImage = images[activeImage];
+    sourceImages.forEach((image) => {
+      const url = getImageUrl(image);
 
-  const openImage = useCallback((index) => {
+      if (url && !seen.has(url)) {
+        seen.add(url);
+        uniqueImages.push({
+          url,
+          alt:
+            typeof image === "object" && image?.alt
+              ? image.alt
+              : `${item?.title || "Holiday package"} destination`,
+        });
+      }
+    });
+
+    return uniqueImages.length
+      ? uniqueImages
+      : [{ url: FALLBACK_IMAGE, alt: "Holiday destination" }];
+  }, [item?.image, item?.gallery, item?.title]);
+
+  const totalImages = images.length;
+  const currentImage = images[activeImage] || images[0];
+
+  const getSafeImage = (index) => {
+    if (failedImages[index]) return FALLBACK_IMAGE;
+    return images[index]?.url || FALLBACK_IMAGE;
+  };
+
+  const handleImageError = (index) => {
+    setFailedImages((previous) => ({
+      ...previous,
+      [index]: true,
+    }));
+  };
+
+  const openLightbox = (index = 0) => {
     setActiveImage(index);
-  }, []);
+    setIsLightboxOpen(true);
+    setIsAllPhotosOpen(false);
+  };
 
-  const closeViewer = useCallback(() => {
-    setActiveImage(null);
-  }, []);
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
 
-  const showNext = useCallback(() => {
-    setActiveImage((current) =>
-      current === null ? 0 : (current + 1) % images.length
+  const nextImage = useCallback(() => {
+    setActiveImage((previous) => (previous + 1) % totalImages);
+  }, [totalImages]);
+
+  const previousImage = useCallback(() => {
+    setActiveImage(
+      (previous) => (previous - 1 + totalImages) % totalImages
     );
-  }, [images.length]);
+  }, [totalImages]);
 
-  const showPrevious = useCallback(() => {
-    setActiveImage((current) =>
-      current === null
-        ? 0
-        : (current - 1 + images.length) % images.length
-    );
-  }, [images.length]);
-
-  // Reset gallery when destination changes
   useEffect(() => {
-    setActiveImage(null);
-    setShowAll(false);
-    setIsFavorite(false);
-    setLoadedImages({});
-    setFailedImages({});
-  }, [item?.slug, item?.title, item?.image]);
-
-  // Keyboard navigation and modal scroll locking
-  useEffect(() => {
-    if (activeImage === null && !showAll) return;
-
-    const previousOverflow = document.body.style.overflow;
-
-    document.body.style.overflow = "hidden";
+    if (!isLightboxOpen && !isAllPhotosOpen) return;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        closeViewer();
-        setShowAll(false);
+        closeLightbox();
+        setIsAllPhotosOpen(false);
       }
 
-      if (activeImage !== null && event.key === "ArrowRight") {
-        showNext();
+      if (isLightboxOpen && event.key === "ArrowRight") {
+        nextImage();
       }
 
-      if (activeImage !== null && event.key === "ArrowLeft") {
-        showPrevious();
+      if (isLightboxOpen && event.key === "ArrowLeft") {
+        previousImage();
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [activeImage, showAll, closeViewer, showNext, showPrevious]);
+  }, [isLightboxOpen, isAllPhotosOpen, nextImage, previousImage]);
 
-  const handleImageLoad = (index) => {
-    setLoadedImages((prev) => ({
-      ...prev,
-      [index]: true,
-    }));
+  useEffect(() => {
+    document.body.style.overflow =
+      isLightboxOpen || isAllPhotosOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLightboxOpen, isAllPhotosOpen]);
+
+  const toggleFavorite = (index) => {
+    setFavorites((previous) =>
+      previous.includes(index)
+        ? previous.filter((favorite) => favorite !== index)
+        : [...previous, index]
+    );
   };
 
-  const handleImageError = (index) => {
-    setFailedImages((prev) => ({
-      ...prev,
-      [index]: true,
-    }));
-  };
-
-  // Download image
   const downloadImage = async () => {
-    if (!currentImage) return;
-
-    setIsDownloading(true);
-
     try {
-      const response = await fetch(currentImage);
-
-      if (!response.ok) {
-        throw new Error("Image download failed");
-      }
-
+      const response = await fetch(currentImage.url);
       const blob = await response.blob();
       const blobUrl = URL.createObjectURL(blob);
 
       const link = document.createElement("a");
-
       link.href = blobUrl;
-      link.download = `${item?.slug || "destination"}-${activeImage + 1}.jpg`;
+      link.download = `asap-holidays-${activeImage + 1}.jpg`;
 
       document.body.appendChild(link);
       link.click();
@@ -147,168 +143,412 @@ const PackageGallery = ({ item }) => {
 
       URL.revokeObjectURL(blobUrl);
     } catch {
-      window.open(currentImage, "_blank", "noopener,noreferrer");
-    } finally {
-      setIsDownloading(false);
+      window.open(currentImage.url, "_blank", "noopener,noreferrer");
     }
   };
 
-  // Share image
   const shareImage = async () => {
-    if (!currentImage) return;
+    const shareData = {
+      title: item?.title || "ASAP Holidays",
+      text: `Explore ${item?.title || "this holiday destination"} with ASAP Holidays`,
+      url: currentImage.url,
+    };
 
     try {
       if (navigator.share) {
-        await navigator.share({
-          title: item?.title || "ASAP Holidays",
-          text: `Explore ${item?.title || "this destination"} with ASAP Holidays.`,
-          url: currentImage,
-        });
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(currentImage.url);
+        setIsSharing(true);
+        setTimeout(() => setIsSharing(false), 2000);
       } else {
-        await navigator.clipboard.writeText(currentImage);
-        alert("Image link copied!");
+        window.prompt("Copy image URL:", currentImage.url);
       }
     } catch (error) {
-      if (error.name !== "AbortError") {
-        console.error("Share failed:", error);
+      if (error?.name !== "AbortError") {
+        console.error("Unable to share image:", error);
       }
     }
   };
 
-  // Mobile swipe
   const handleTouchStart = (event) => {
-    setTouchStart(event.touches[0].clientX);
+    const touch = event.touches[0];
+    event.currentTarget.dataset.touchStartX = touch.clientX;
   };
 
   const handleTouchEnd = (event) => {
-    if (touchStart === null) return;
+    const touch = event.changedTouches[0];
+    const startX = Number(event.currentTarget.dataset.touchStartX);
+    const difference = startX - touch.clientX;
 
-    const touchEnd = event.changedTouches[0].clientX;
-    const difference = touchStart - touchEnd;
+    if (Math.abs(difference) < 50) return;
 
-    if (Math.abs(difference) > 60) {
-      difference > 0 ? showNext() : showPrevious();
+    if (difference > 0) {
+      nextImage();
+    } else {
+      previousImage();
     }
-
-    setTouchStart(null);
   };
-
-  if (!images.length) return null;
 
   return (
     <>
-      <section className="package-gallery">
-        {/* Heading */}
-        <div className="package-gallery-top">
+      <section className="package-gallery-section">
+        <div className="package-gallery-container">
           <div className="package-gallery-heading">
-            <span className="package-gallery-eyebrow">
-              <Camera size={15} />
-              DESTINATION COLLECTION
-            </span>
-
-            <h2>
-              Moments worth
-              <span> remembering.</span>
-            </h2>
-
-            <p>
-              Discover breathtaking landscapes, beautiful places,
-              and unforgettable moments waiting for you.
-            </p>
-          </div>
-
-          <div className="package-gallery-stat">
-            <div className="package-gallery-stat-icon">
-              <Images size={20} />
-            </div>
-
-            <div>
-              <strong>{String(images.length).padStart(2, "0")}</strong>
-              <span>Beautiful views</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Gallery */}
-        <div className="package-gallery-grid">
-          {images.slice(0, 5).map((image, index) => (
-            <button
-              key={`${image}-${index}`}
-              type="button"
-              className={`package-gallery-item package-gallery-item-${index + 1}`}
-              onClick={() => openImage(index)}
-              aria-label={`Open photo ${index + 1}`}
-            >
-              {!loadedImages[index] && !failedImages[index] && (
-                <span className="package-gallery-skeleton">
-                  <LoaderCircle size={22} />
-                </span>
-              )}
-
-              {failedImages[index] ? (
-                <span className="package-gallery-fallback">
-                  <AlertCircle size={25} />
-                  <span>Image unavailable</span>
-                </span>
-              ) : (
-                <img
-                  src={image}
-                  alt={`${item?.title || "Destination"} photo ${index + 1}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  onLoad={() => handleImageLoad(index)}
-                  onError={() => handleImageError(index)}
-                />
-              )}
-
-              <span className="package-gallery-image-overlay" />
-
-              <span className="package-gallery-expand">
-                <Maximize2 size={17} />
+            <div className="package-gallery-heading-content">
+              <span className="package-gallery-eyebrow">
+                <span className="package-gallery-eyebrow-line" />
+                YOUR JOURNEY IN PICTURES
               </span>
 
-              {index === 0 && (
-                <span className="package-gallery-featured-label">
-                  <MapPin size={12} />
-                  Featured destination
-                </span>
-              )}
+              <h2>
+                Explore the <span>Experience</span>
+              </h2>
 
-              {index === 4 && images.length > 5 && (
-                <span className="package-gallery-more">
-                  <Images size={22} />
-                  <strong>+{images.length - 5}</strong>
-                  <span>Explore more photos</span>
-                </span>
-              )}
+              <p>
+                Discover the beauty, moments, and unforgettable experiences
+                waiting for you.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className="package-gallery-view-all"
+              onClick={() => setIsAllPhotosOpen(true)}
+              aria-label={`View all ${totalImages} photos`}
+            >
+              <span>View all photos</span>
+              <span className="package-gallery-photo-count">
+                {totalImages}
+              </span>
+              <span className="package-gallery-arrow">↗</span>
             </button>
-          ))}
-        </div>
-
-        {/* Footer */}
-        <div className="package-gallery-footer">
-          <div className="package-gallery-footer-text">
-            <span className="package-gallery-footer-dot" />
-            <span>Captured moments. Extraordinary journeys.</span>
           </div>
 
-          <button
-            type="button"
-            className="package-gallery-view-all"
-            onClick={() => setShowAll(true)}
-          >
-            <Images size={17} />
-            Explore all photos
-            <span>{images.length}</span>
-            <ChevronRight size={16} />
-          </button>
+          <div className="package-gallery-grid">
+            {/* Main image */}
+            <div
+              className="package-gallery-main"
+              onClick={() => openLightbox(0)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") openLightbox(0);
+              }}
+              aria-label="Open main gallery image"
+            >
+              <img
+                src={getSafeImage(0)}
+                alt={images[0]?.alt}
+                onError={() => handleImageError(0)}
+              />
+
+              <div className="package-gallery-image-overlay" />
+
+              <div className="package-gallery-main-label">
+                <span className="package-gallery-label-dot" />
+                DESTINATION HIGHLIGHT
+              </div>
+
+              <div className="package-gallery-main-caption">
+                <span>{item?.location || "Explore your destination"}</span>
+                <h3>{item?.title || "Your next unforgettable journey"}</h3>
+              </div>
+
+              <button
+                type="button"
+                className={`package-gallery-favorite ${
+                  favorites.includes(0) ? "is-favorite" : ""
+                }`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  toggleFavorite(0);
+                }}
+                aria-label={
+                  favorites.includes(0)
+                    ? "Remove from favorites"
+                    : "Add to favorites"
+                }
+              >
+                {favorites.includes(0) ? "♥" : "♡"}
+              </button>
+
+              <div className="package-gallery-expand">
+                <span>↗</span>
+              </div>
+            </div>
+
+            {/* Secondary image */}
+            {totalImages > 1 && (
+              <div
+                className="package-gallery-secondary"
+                onClick={() => openLightbox(1)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") openLightbox(1);
+                }}
+                aria-label="Open second gallery image"
+              >
+                <img
+                  src={getSafeImage(1)}
+                  alt={images[1]?.alt}
+                  onError={() => handleImageError(1)}
+                />
+
+                <div className="package-gallery-image-overlay" />
+
+                <button
+                  type="button"
+                  className={`package-gallery-favorite ${
+                    favorites.includes(1) ? "is-favorite" : ""
+                  }`}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    toggleFavorite(1);
+                  }}
+                  aria-label={
+                    favorites.includes(1)
+                      ? "Remove from favorites"
+                      : "Add to favorites"
+                  }
+                >
+                  {favorites.includes(1) ? "♥" : "♡"}
+                </button>
+
+                <div className="package-gallery-expand">
+                  <span>↗</span>
+                </div>
+              </div>
+            )}
+
+            {/* Third image */}
+            {totalImages > 2 && (
+              <div
+                className="package-gallery-small package-gallery-third"
+                onClick={() => openLightbox(2)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") openLightbox(2);
+                }}
+                aria-label="Open third gallery image"
+              >
+                <img
+                  src={getSafeImage(2)}
+                  alt={images[2]?.alt}
+                  onError={() => handleImageError(2)}
+                />
+
+                <div className="package-gallery-image-overlay" />
+
+                <div className="package-gallery-expand">
+                  <span>↗</span>
+                </div>
+              </div>
+            )}
+
+            {/* Fourth image */}
+            {totalImages > 3 && (
+              <div
+                className="package-gallery-small package-gallery-fourth"
+                onClick={() => openLightbox(3)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") openLightbox(3);
+                }}
+                aria-label="Open fourth gallery image"
+              >
+                <img
+                  src={getSafeImage(3)}
+                  alt={images[3]?.alt}
+                  onError={() => handleImageError(3)}
+                />
+
+                <div className="package-gallery-image-overlay" />
+
+                <div className="package-gallery-expand">
+                  <span>↗</span>
+                </div>
+              </div>
+            )}
+
+            {/* More photos */}
+            {totalImages > 4 && (
+              <button
+                type="button"
+                className="package-gallery-more"
+                onClick={() => setIsAllPhotosOpen(true)}
+              >
+                <img
+                  src={getSafeImage(4)}
+                  alt={images[4]?.alt}
+                  onError={() => handleImageError(4)}
+                />
+
+                <div className="package-gallery-more-overlay">
+                  <span className="package-gallery-more-icon">▦</span>
+                  <strong>+{totalImages - 4}</strong>
+                  <span>More photos</span>
+                </div>
+              </button>
+            )}
+          </div>
+
+          <div className="package-gallery-bottom">
+            <div className="package-gallery-bottom-info">
+              <span className="package-gallery-bottom-icon">✦</span>
+              <span>
+                {totalImages} curated moments from your destination
+              </span>
+            </div>
+
+            <button
+              type="button"
+              className="package-gallery-bottom-link"
+              onClick={() => setIsAllPhotosOpen(true)}
+            >
+              Explore gallery <span>↗</span>
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* All photos modal */}
-      {showAll && (
+      {/* Fullscreen Lightbox */}
+      {isLightboxOpen && (
+        <div
+          className="package-gallery-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image viewer"
+          onClick={closeLightbox}
+        >
+          <div
+            className="package-gallery-lightbox-content"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="package-gallery-lightbox-header">
+              <div className="package-gallery-lightbox-brand">
+                <span className="package-gallery-lightbox-brand-icon">✦</span>
+                <div>
+                  <strong>ASAP HOLIDAYS</strong>
+                  <span>Discover. Explore. Experience.</span>
+                </div>
+              </div>
+
+              <div className="package-gallery-lightbox-actions">
+                <button
+                  type="button"
+                  onClick={downloadImage}
+                  aria-label="Download image"
+                  title="Download image"
+                >
+                  ↓
+                </button>
+
+                <button
+                  type="button"
+                  onClick={shareImage}
+                  aria-label="Share image"
+                  title="Share image"
+                >
+                  ↗
+                </button>
+
+                <button
+                  type="button"
+                  onClick={closeLightbox}
+                  aria-label="Close viewer"
+                  title="Close"
+                  className="package-gallery-lightbox-close"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+
+            {isSharing && (
+              <div className="package-gallery-share-message">
+                Image link copied!
+              </div>
+            )}
+
+            <div
+              className="package-gallery-lightbox-stage"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <button
+                type="button"
+                className="package-gallery-lightbox-nav package-gallery-lightbox-prev"
+                onClick={previousImage}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+
+              <img
+                src={getSafeImage(activeImage)}
+                alt={currentImage?.alt}
+                onError={() => handleImageError(activeImage)}
+                className="package-gallery-lightbox-image"
+              />
+
+              <button
+                type="button"
+                className="package-gallery-lightbox-nav package-gallery-lightbox-next"
+                onClick={nextImage}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            </div>
+
+            <div className="package-gallery-lightbox-footer">
+              <div className="package-gallery-lightbox-caption">
+                <span>{item?.location || "ASAP Holidays"}</span>
+                <h3>{item?.title || "Discover your next destination"}</h3>
+              </div>
+
+              <div className="package-gallery-lightbox-counter">
+                <strong>{String(activeImage + 1).padStart(2, "0")}</strong>
+                <span>/</span>
+                {String(totalImages).padStart(2, "0")}
+              </div>
+            </div>
+
+            <div className="package-gallery-lightbox-thumbnails">
+              {images.map((image, index) => (
+                <button
+                  type="button"
+                  key={`${image.url}-${index}`}
+                  className={`package-gallery-thumbnail ${
+                    activeImage === index ? "active" : ""
+                  }`}
+                  onClick={() => setActiveImage(index)}
+                  aria-label={`View image ${index + 1}`}
+                >
+                  <img
+                    src={getSafeImage(index)}
+                    alt={image.alt}
+                    onError={() => handleImageError(index)}
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* All Photos Modal */}
+      {isAllPhotosOpen && (
         <div
           className="package-gallery-all-modal"
-          onClick={() => setShowAll(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="All destination photos"
+          onClick={() => setIsAllPhotosOpen(false)}
         >
           <div
             className="package-gallery-all-content"
@@ -317,173 +557,44 @@ const PackageGallery = ({ item }) => {
             <div className="package-gallery-all-header">
               <div>
                 <span className="package-gallery-eyebrow">
-                  <Images size={15} />
-                  COMPLETE COLLECTION
+                  DESTINATION COLLECTION
                 </span>
-
-                <h3>{item?.title || "Destination Gallery"}</h3>
-                <p>{images.length} photographs to explore</p>
+                <h2>
+                  All <span>Photos</span>
+                </h2>
+                <p>{totalImages} beautiful moments to explore</p>
               </div>
 
               <button
                 type="button"
                 className="package-gallery-all-close"
-                onClick={() => setShowAll(false)}
-                aria-label="Close gallery"
+                onClick={() => setIsAllPhotosOpen(false)}
+                aria-label="Close all photos"
               >
-                <X size={23} />
+                ×
               </button>
             </div>
 
             <div className="package-gallery-all-grid">
               {images.map((image, index) => (
                 <button
-                  key={`${image}-${index}`}
                   type="button"
-                  onClick={() => {
-                    setShowAll(false);
-                    openImage(index);
-                  }}
+                  key={`${image.url}-${index}`}
+                  className="package-gallery-all-item"
+                  onClick={() => openLightbox(index)}
                 >
                   <img
-                    src={image}
-                    alt={`${item?.title || "Destination"} photo ${index + 1}`}
+                    src={getSafeImage(index)}
+                    alt={image.alt}
+                    onError={() => handleImageError(index)}
                     loading="lazy"
                   />
 
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+                  <span className="package-gallery-all-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-      {/* Fullscreen viewer */}
-      {activeImage !== null && (
-        <div
-          className="package-gallery-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Destination photo viewer"
-          onClick={closeViewer}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* Top toolbar */}
-          <div className="package-gallery-lightbox-top">
-            <div className="package-gallery-lightbox-brand">
-              <Camera size={18} />
-              <span>ASAP HOLIDAYS</span>
-            </div>
-
-            <div className="package-gallery-lightbox-actions">
-              <button
-                type="button"
-                onClick={downloadImage}
-                disabled={isDownloading}
-                aria-label="Download image"
-              >
-                {isDownloading ? (
-                  <LoaderCircle size={19} />
-                ) : (
-                  <Download size={19} />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={shareImage}
-                aria-label="Share image"
-              >
-                <Share2 size={19} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setIsFavorite((prev) => !prev)}
-                className={isFavorite ? "is-favorite" : ""}
-                aria-label="Favorite image"
-              >
-                <Heart
-                  size={19}
-                  fill={isFavorite ? "currentColor" : "none"}
-                />
-              </button>
-
-              <button
-                type="button"
-                onClick={closeViewer}
-                aria-label="Close viewer"
-              >
-                <X size={22} />
-              </button>
-            </div>
-          </div>
-
-          {/* Main image */}
-          <div
-            className="package-gallery-lightbox-content"
-            onClick={(event) => event.stopPropagation()}
-          >
-            {images.length > 1 && (
-              <button
-                type="button"
-                className="package-gallery-nav package-gallery-prev"
-                onClick={showPrevious}
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={27} />
-              </button>
-            )}
-
-            <div className="package-gallery-lightbox-image-wrap">
-              <img
-                key={currentImage}
-                src={currentImage}
-                alt={`${item?.title || "Destination"} photo ${activeImage + 1}`}
-                className="package-gallery-lightbox-image"
-              />
-            </div>
-
-            {images.length > 1 && (
-              <button
-                type="button"
-                className="package-gallery-nav package-gallery-next"
-                onClick={showNext}
-                aria-label="Next image"
-              >
-                <ChevronRight size={27} />
-              </button>
-            )}
-          </div>
-
-          {/* Bottom toolbar */}
-          <div
-            className="package-gallery-lightbox-bottom"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="package-gallery-lightbox-caption">
-              <span>{item?.location || "ASAP Holidays"}</span>
-              <h3>{item?.title || "Discover the world"}</h3>
-            </div>
-
-            <div className="package-gallery-lightbox-counter">
-              <strong>{String(activeImage + 1).padStart(2, "0")}</strong>
-              <span>/</span>
-              {String(images.length).padStart(2, "0")}
-            </div>
-
-            <div className="package-gallery-thumbnails">
-              {images.map((image, index) => (
-                <button
-                  type="button"
-                  key={`${image}-${index}`}
-                  className={activeImage === index ? "active" : ""}
-                  onClick={() => openImage(index)}
-                  aria-label={`Go to photo ${index + 1}`}
-                >
-                  <img src={image} alt="" />
+                  <span className="package-gallery-all-item-arrow">↗</span>
                 </button>
               ))}
             </div>
