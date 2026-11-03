@@ -489,6 +489,7 @@
   color: #fff;
   font-size: 12px;
   letter-spacing: 2px;
+  text-align: left;
 }
 
 .package-gallery-lightbox-brand span:last-child {
@@ -615,6 +616,7 @@
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .package-gallery-lightbox-caption h3 {
