@@ -469,6 +469,7 @@
   color: var(--inc-heading);
   font-size: 12px;
   font-weight: 800;
+  text-align: left;
 }
 
 .inc-note p {
@@ -476,6 +477,7 @@
   color: #827b78;
   font-size: 11px;
   line-height: 1.8;
+  text-align: left;
 }
 
 /* TABLET */
