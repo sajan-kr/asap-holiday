@@ -1,106 +1,220 @@
-import React from "react";
+
+import React, { useState } from "react";
 import {
-  Sparkles,
   MapPin,
-  Clock,
+  CalendarDays,
   Star,
-  CheckCircle2,
+  Check,
+  ChevronDown,
+  ArrowUpRight,
+  ArrowRight,
   Compass,
+  BadgeCheck,
+  Sparkles,
 } from "lucide-react";
 
 import "./PackageOverview.css";
 
-const PackageOverview = ({ item }) => {
+const PackageOverview = ({ item, onEnquire }) => {
+  const [expanded, setExpanded] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+
   if (!item) return null;
 
-  const highlights = [
-    {
-      icon: MapPin,
-      title: "Beautiful Destination",
-      description: `Explore the unforgettable sights of ${item.location}.`,
-    },
-    {
-      icon: Clock,
-      title: "Perfectly Planned",
-      description: `${item.duration} of memorable travel experiences.`,
-    },
-    {
-      icon: Star,
-      title: "Exceptional Experience",
-      description: `Discover a highly rated holiday experience, rated ${item.rating}/5.`,
-    },
-  ];
+  const title = item.title || "Your Holiday Experience";
+  const location = item.location || "Destination";
+  const duration = item.duration || "Flexible Duration";
+  const description =
+    item.description ||
+    `Discover the beauty of ${location} with a thoughtfully planned holiday experience.`;
+
+  const rating = Number(item.rating);
+  const hasRating = Number.isFinite(rating) && rating > 0 && rating <= 5;
+
+  const highlights = Array.isArray(item.highlights)
+    ? item.highlights
+        .map((value) =>
+          typeof value === "string"
+            ? value
+            : value?.title || value?.name || ""
+        )
+        .filter(Boolean)
+    : [];
+
+  const visibleHighlights = showAll
+    ? highlights
+    : highlights.slice(0, 6);
+
+  const isLongDescription = description.length > 260;
 
   return (
-    <section className="package-overview">
-      <div className="package-overview-top">
-        <div className="package-overview-heading">
-          <span className="package-overview-eyebrow">
-            <Sparkles size={15} />
-            YOUR JOURNEY, REIMAGINED
-          </span>
+    <section className="po-section">
+      <div className="po-header">
+        <div className="po-heading">
+          <div className="po-eyebrow">
+            <span className="po-eyebrow-line" />
+            <Sparkles size={14} />
+            DISCOVER YOUR JOURNEY
+          </div>
 
           <h2>
-            More Than a Trip.
-            <br />
-            <span>An Unforgettable Experience.</span>
+            Your Journey, <em>At a Glance.</em>
           </h2>
+
+          <p>
+            Explore the details that make this holiday
+            experience worth looking forward to.
+          </p>
         </div>
 
-        <div className="package-overview-destination">
-          <Compass size={20} />
+        <div className="po-header-mark">
+          <Compass size={25} strokeWidth={1.4} />
+        </div>
+      </div>
+
+      <div className="po-summary">
+        <div className="po-summary-title">
+          <span className="po-summary-kicker">
+            PACKAGE OVERVIEW
+          </span>
+          <h3>{title}</h3>
+        </div>
+
+        <div className="po-facts">
+          <div className="po-fact">
+            <div className="po-fact-icon">
+              <MapPin size={20} />
+            </div>
+            <div>
+              <span>DESTINATION</span>
+              <strong>{location}</strong>
+            </div>
+          </div>
+
+          <div className="po-fact">
+            <div className="po-fact-icon">
+              <CalendarDays size={20} />
+            </div>
+            <div>
+              <span>DURATION</span>
+              <strong>{duration}</strong>
+            </div>
+          </div>
+
+          {hasRating && (
+            <div className="po-fact">
+              <div className="po-fact-icon">
+                <Star size={20} />
+              </div>
+              <div>
+                <span>GUEST RATING</span>
+                <strong>{rating.toFixed(1)} / 5</strong>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="po-body">
+        <div className="po-section-heading">
           <div>
-            <span>Discover</span>
-            <strong>{item.location}</strong>
+            <span className="po-section-kicker">
+              GET TO KNOW YOUR TRIP
+            </span>
+            <h3>About This Experience</h3>
+          </div>
+          <span className="po-section-index">01</span>
+        </div>
+
+        <div className="po-description">
+          <p className={!expanded ? "po-clamped" : ""}>
+            {description}
+          </p>
+
+          {isLongDescription && (
+            <button
+              type="button"
+              className="po-text-button"
+              onClick={() => setExpanded(!expanded)}
+              aria-expanded={expanded}
+            >
+              {expanded ? "Show Less" : "Read Full Overview"}
+              <ChevronDown
+                size={16}
+                className={expanded ? "po-rotate" : ""}
+              />
+            </button>
+          )}
+        </div>
+
+        {highlights.length > 0 && (
+          <div className="po-highlights">
+            <div className="po-section-heading">
+              <div>
+                <span className="po-section-kicker">
+                  THE BEST OF YOUR TRIP
+                </span>
+                <h3>Experience Highlights</h3>
+              </div>
+              <span className="po-section-index">02</span>
+            </div>
+
+            <div className="po-highlights-grid">
+              {visibleHighlights.map((highlight, index) => (
+                <div className="po-highlight" key={index}>
+                  <span className="po-highlight-check">
+                    <Check size={15} strokeWidth={2.5} />
+                  </span>
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+
+            {highlights.length > 6 && (
+              <button
+                type="button"
+                className="po-text-button"
+                onClick={() => setShowAll(!showAll)}
+                aria-expanded={showAll}
+              >
+                {showAll
+                  ? "Show Fewer Highlights"
+                  : `View All ${highlights.length} Highlights`}
+                <ChevronDown
+                  size={16}
+                  className={showAll ? "po-rotate" : ""}
+                />
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div className="po-footer">
+        <div className="po-footer-left">
+          <span className="po-footer-icon">
+            <BadgeCheck size={23} strokeWidth={1.8} />
+          </span>
+
+          <div>
+            <strong>Ready to explore {location}?</strong>
+            <p>
+              Have questions? Our travel team is here to help
+              you plan your holiday.
+            </p>
           </div>
         </div>
-      </div>
 
-      <div className="package-overview-description">
-        <p>
-          {item.description ||
-            `Experience the beauty of ${item.location} with a thoughtfully planned holiday. From incredible destinations to memorable moments, ${item.title} brings together the experiences that make a journey truly special.`}
-        </p>
-      </div>
-
-      <div className="package-overview-highlights">
-        {highlights.map((highlight, index) => {
-          const Icon = highlight.icon;
-
-          return (
-            <article
-              className="package-overview-highlight"
-              key={highlight.title}
-            >
-              <div className="package-overview-highlight-top">
-                <span className="package-overview-icon">
-                  <Icon size={21} />
-                </span>
-
-                <span className="package-overview-number">
-                  0{index + 1}
-                </span>
-              </div>
-
-              <h3>{highlight.title}</h3>
-
-              <p>{highlight.description}</p>
-            </article>
-          );
-        })}
-      </div>
-
-      <div className="package-overview-note">
-        <span className="package-overview-note-icon">
-          <CheckCircle2 size={19} />
-        </span>
-
-        <p>
-          <strong>Thoughtfully curated for you.</strong>
-          <span>
-            Every journey is an opportunity to discover something extraordinary.
-          </span>
-        </p>
+        {typeof onEnquire === "function" && (
+          <button
+            type="button"
+            className="po-enquire-btn"
+            onClick={() => onEnquire(item)}
+          >
+            Plan My Trip
+            <ArrowUpRight size={18} />
+          </button>
+        )}
       </div>
     </section>
   );
