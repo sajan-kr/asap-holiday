@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -18,10 +19,8 @@ const PackageDetails = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  // Get the selected package using its URL slug.
   const item = packagesData[slug];
 
-  // Handle invalid or unavailable package slugs.
   if (!item) {
     return (
       <main className="package-not-found">
@@ -30,14 +29,20 @@ const PackageDetails = () => {
             PACKAGE NOT FOUND
           </span>
 
-          <h1>Looks like this journey took a wrong turn.</h1>
+          <h1>
+            Looks like this journey took a wrong turn.
+          </h1>
 
           <p>
-            The travel package you're looking for may be unavailable
-            or the link may be incorrect.
+            The travel package you're looking for may be
+            unavailable or the link may be incorrect.
           </p>
 
-          <button type="button" className="package-not-found-btn" onClick={() => navigate("/")}>
+          <button
+            type="button"
+            className="package-not-found-btn"
+            onClick={() => navigate("/")}
+          >
             Back to Home
           </button>
         </div>
@@ -45,41 +50,46 @@ const PackageDetails = () => {
     );
   }
 
+  const packageReviews = Array.isArray(item.reviews)
+    ? item.reviews
+    : [];
+
   return (
     <div className="package-details-page">
-      {/* 1. Package Hero */}
+      {/* 1. Hero */}
       <PackageHero item={item} navigate={navigate} />
 
-      {/* Main package details */}
       <main className="package-details-content">
         <div className="details-container">
-          {/* Left Column */}
           <div className="details-left">
-            {/* 2. Package Gallery */}
+            {/* 2. Gallery */}
             <PackageGallery item={item} />
 
-            {/* 3. Package Overview */}
+            {/* 3. Overview */}
             <PackageOverview item={item} />
 
-            {/* 4. Day-by-Day Itinerary */}
+            {/* 4. Itinerary */}
             <PackageItinerary item={item} />
 
-            {/* 5. Package Inclusions */}
+            {/* 5. Inclusions */}
             <PackageInclusions item={item} />
 
-            {/* 6. Traveller Reviews */}
-            <PackageReviews item={item} />
+            {/* 6. Reviews */}
+            <PackageReviews
+              key={slug}
+              item={item}
+              reviews={packageReviews}
+            />
           </div>
 
-          {/* Right Column: Sticky Booking Card */}
           <aside className="details-right">
             {/* 7. Booking Card */}
             <PackageBookingCard item={item} />
           </aside>
         </div>
 
-        {/* 8. Related Packages */}
         <div className="related-packages-wrapper">
+          {/* 8. Related Packages */}
           <RelatedPackages
             currentSlug={slug}
             currentPackage={item}
