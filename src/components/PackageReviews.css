@@ -376,16 +376,16 @@
 
 .apr-card-body p {
   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   overflow: hidden;
   margin: 0;
   color: var(--apr-muted);
   font-size: 13px;
   line-height: 1.85;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
   text-align: start;
 }
-
 .apr-card-body p.expanded {
   display: block;
   overflow: visible;
