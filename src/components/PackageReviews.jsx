@@ -146,7 +146,7 @@ const PackageReviews = ({ item, reviews }) => {
     return [];
   }, [reviews, item?.reviews]);
 
-  const stats = useMemo(() => {
+  const stats = useMemo(() => { 
     const total = reviewList.length;
 
     const average = total
